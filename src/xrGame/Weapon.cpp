@@ -516,7 +516,6 @@ void CWeapon::Load(LPCSTR section)
     m_pdm.m_fPDM_disp_crouch_no_acc = pSettings->r_float(section, "PDM_disp_crouch_no_acc");
     m_crosshair_inertion = READ_IF_EXISTS(pSettings, r_float, section, "crosshair_inertion", 5.91f);
     m_first_bullet_controller.load(section);
-    fireDispersionConditionFactor = pSettings->r_float(section, "fire_dispersion_condition_factor");
 
     // modified by Peacemaker [17.10.08]
     //	misfireProbability			  = pSettings->r_float(section,"misfire_probability");

@@ -16,7 +16,7 @@
 //возвращает 1, если оружие в отличном состоянии и >1 если повреждено
 float CWeapon::GetConditionDispersionFactor() const
 {
-    return (1.f + fireDispersionConditionFactor * (1.f - GetCondition()));
+    return (2.f * (1.f - GetCondition())); // Где два, там повышение дисперсии например в два раза
 }
 
 float CWeapon::GetFireDispersion(bool with_cartridge, bool for_crosshair)

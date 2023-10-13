@@ -44,6 +44,8 @@ protected:
     UIArtefactParamItem* m_fPsyHealthRestoreSpeed;
     UIArtefactParamItem* m_fIntoxicationRestoreSpeed;
     UIArtefactParamItem* m_fSleepenessRestoreSpeed;
+    UIArtefactParamItem* m_fRepairRestoreSpeed;
+    UIArtefactParamItem* m_fDevChargeRestoreSpeed;
 
     CUIStatic* m_Prop_line;
 

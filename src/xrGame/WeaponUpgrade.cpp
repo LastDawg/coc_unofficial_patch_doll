@@ -62,9 +62,7 @@ bool CWeapon::install_upgrade_ammo_class(LPCSTR section, bool test)
 
 bool CWeapon::install_upgrade_disp(LPCSTR section, bool test)
 {
-    bool result = process_if_exists(
-        section, "fire_dispersion_condition_factor", &CInifile::r_float, fireDispersionConditionFactor, test);
-    result |= process_if_exists(section, "fire_distance", &CInifile::r_float, fireDistance, test);
+    bool result = process_if_exists(section, "fire_distance", &CInifile::r_float, fireDistance, test);
 
     u8 rm = (cam_recoil.ReturnMode) ? 1 : 0;
     result |= process_if_exists_set(section, "cam_return", &CInifile::r_u8, rm, test);

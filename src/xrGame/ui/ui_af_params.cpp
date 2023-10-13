@@ -39,6 +39,8 @@ CUIArtefactParams::CUIArtefactParams()
     m_fSleepenessRestoreSpeed = nullptr;
     m_artefact_count = nullptr;
     m_fAfVisRadius = nullptr;
+    m_fRepairRestoreSpeed = nullptr;
+    m_fDevChargeRestoreSpeed = nullptr;
 	m_Prop_line = nullptr;
 }
 
@@ -56,6 +58,8 @@ CUIArtefactParams::~CUIArtefactParams()
     xr_delete   (m_fSleepenessRestoreSpeed);
     xr_delete   (m_artefact_count);
     xr_delete   (m_fAfVisRadius);
+    xr_delete   (m_fRepairRestoreSpeed);
+    xr_delete   (m_fDevChargeRestoreSpeed);
 	xr_delete	(m_Prop_line);
 }
 
@@ -242,6 +246,24 @@ void CUIArtefactParams::InitFromXml(CUIXml& xml)
     }
 
     {
+        m_fRepairRestoreSpeed = new UIArtefactParamItem();
+        m_fRepairRestoreSpeed->Init(xml, "repair_restore_speed");
+        m_fRepairRestoreSpeed->SetAutoDelete(false);
+        LPCSTR name = StringTable().translate("ui_inv_repair_speed").c_str();
+        m_fRepairRestoreSpeed->SetCaption(name);
+        xml.SetLocalRoot(base_node);
+    }
+
+    {
+        m_fDevChargeRestoreSpeed = new UIArtefactParamItem();
+        m_fDevChargeRestoreSpeed->Init(xml, "device_charge_restore_speed");
+        m_fDevChargeRestoreSpeed->SetAutoDelete(false);
+        LPCSTR name = StringTable().translate("ui_inv_charge_speed").c_str();
+        m_fDevChargeRestoreSpeed->SetCaption(name);
+        xml.SetLocalRoot(base_node);
+    }
+
+    {
         m_additional_weight = new UIArtefactParamItem();
         m_additional_weight->Init(xml, "additional_weight");
         m_additional_weight->SetAutoDelete(false);
@@ -405,6 +427,32 @@ void CUIArtefactParams::SetInfo(const CArtefact* pInvItem)
             h += m_fPsyHealthRestoreSpeed->GetWndSize().y;
             AttachChild(m_fPsyHealthRestoreSpeed);
         }
+    }
+
+    val = pSettings->r_float(af_section, "repair_restore_speed");
+    if (!fis_zero(val))
+    {
+        m_fRepairRestoreSpeed->SetValue(val);
+
+        pos.set(m_fRepairRestoreSpeed->GetWndPos());
+        pos.y = h;
+        m_fRepairRestoreSpeed->SetWndPos(pos);
+
+        h += m_fRepairRestoreSpeed->GetWndSize().y;
+        AttachChild(m_fRepairRestoreSpeed);
+    }
+
+	val = pSettings->r_float(af_section, "device_charge_restore_speed");
+    if (!fis_zero(val))
+    {
+        m_fDevChargeRestoreSpeed->SetValue(val);
+
+        pos.set(m_fDevChargeRestoreSpeed->GetWndPos());
+        pos.y = h;
+        m_fDevChargeRestoreSpeed->SetWndPos(pos);
+
+        h += m_fDevChargeRestoreSpeed->GetWndSize().y;
+        AttachChild(m_fDevChargeRestoreSpeed);
     }
 
     for (u32 i = 0; i < ALife::eRestoreTypeMax; ++i)

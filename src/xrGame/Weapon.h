@@ -502,11 +502,6 @@ public:
     CameraRecoil zoom_cam_recoil; // using zoom =(scope)
 
 protected:
-    //фактор увеличения дисперсии при максимальной изношености
-    //(на сколько процентов увеличится дисперсия)
-    float fireDispersionConditionFactor;
-    //вероятность осечки при максимальной изношености
-
     // modified by Peacemaker [17.10.08]
     //	float					misfireProbability;
     //	float					misfireConditionK;

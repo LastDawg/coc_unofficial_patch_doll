@@ -56,6 +56,9 @@ CArtefact::CArtefact()
     m_fVolumetricQuality = 1.0f;
     m_fVolumetricDistance = 0.3f;
     m_fVolumetricIntensity = 0.5f;
+
+    m_fRepairRestoreSpeed = 0.0f;
+    m_fDevChargeRestoreSpeed = 0.0f;
 }
 
 CArtefact::~CArtefact() {}
@@ -69,8 +72,7 @@ void CArtefact::Load(LPCSTR section)
     m_bLightsEnabled = !!pSettings->r_bool(section, "lights_enabled");
     if (m_bLightsEnabled)
     {
-        sscanf(pSettings->r_string(section, "trail_light_color"), "%f,%f,%f", &m_TrailLightColor.r,
-            &m_TrailLightColor.g, &m_TrailLightColor.b);
+        sscanf(pSettings->r_string(section, "trail_light_color"), "%f,%f,%f", &m_TrailLightColor.r, &m_TrailLightColor.g, &m_TrailLightColor.b);
         m_fTrailLightRange = pSettings->r_float(section, "trail_light_range");
     }
 
@@ -83,6 +85,8 @@ void CArtefact::Load(LPCSTR section)
     m_fThirstRestoreSpeed = pSettings->r_float(section, "thirst_restore_speed");
     m_fIntoxicationRestoreSpeed = READ_IF_EXISTS(pSettings, r_float, section, "intoxication_restore_speed", 0.0f);
     m_fSleepenessRestoreSpeed = READ_IF_EXISTS(pSettings, r_float, section, "sleepeness_restore_speed", 0.0f);
+    m_fRepairRestoreSpeed = READ_IF_EXISTS(pSettings, r_float, section, "repair_restore_speed", 0.0f);
+    m_fDevChargeRestoreSpeed = READ_IF_EXISTS(pSettings, r_float, section, "device_charge_restore_speed", 0.0f);
 
     m_fJumpSpeed = READ_IF_EXISTS(pSettings, r_float, section, "jump_speed", 0.0f);
     m_fWalkAccel = READ_IF_EXISTS(pSettings, r_float, section, "walk_accel", 0.0f);

@@ -87,6 +87,8 @@ const float respawn_auto = 7.f;
 #include "xrScriptEngine/script_engine.hpp"
 #include "helicopter.h"
 #include "Flashlight.h"
+#include "CustomDetector.h"
+#include "PDA.h"
 //-Alundaio
 #include "XrayGameConstants.h"
 
@@ -1746,6 +1748,19 @@ void CActor::UpdateArtefactsOnBeltAndOutfit()
     {
         const auto artefact = smart_cast<CArtefact*>(it);
 
+        // Inv Items
+        CCustomOutfit* outfit = smart_cast<CCustomOutfit*>(inventory().ItemFromSlot(OUTFIT_SLOT));
+        CUnvest* unvest = smart_cast<CUnvest*>(inventory().ItemFromSlot(UNVEST_SLOT));
+        CHelmet* helmet = smart_cast<CHelmet*>(inventory().ItemFromSlot(HELMET_SLOT));
+        CBackpack* backpack = smart_cast<CBackpack*>(inventory().ItemFromSlot(BACKPACK_SLOT));
+        CWeapon* knife = smart_cast<CWeapon*>(inventory().ItemFromSlot(KNIFE_SLOT));
+        CWeapon* weapon = smart_cast<CWeapon*>(inventory().ItemFromSlot(INV_SLOT_2));
+        CWeapon* weapon2 = smart_cast<CWeapon*>(inventory().ItemFromSlot(INV_SLOT_3));
+        CCustomDetector* detector = smart_cast<CCustomDetector*>(inventory().ItemFromSlot(DETECTOR_SLOT));
+        CFlashlight* hand_flashlight = smart_cast<CFlashlight*>(inventory().ItemFromSlot(DETECTOR_SLOT));
+        CTorch* head_flashlight = smart_cast<CTorch*>(inventory().ItemFromSlot(TORCH_SLOT));
+        CPda* pda = smart_cast<CPda*>(inventory().ItemFromSlot(PDA_SLOT));
+
         if (artefact)
         {
             float art_cond = artefact->GetCondition();
@@ -1757,6 +1772,27 @@ void CActor::UpdateArtefactsOnBeltAndOutfit()
             conditions().ChangeThirst(artefact->m_fThirstRestoreSpeed * art_cond * f_update_time);
             conditions().ChangeIntoxication(artefact->m_fIntoxicationRestoreSpeed * art_cond * f_update_time);
             conditions().ChangeSleepeness(artefact->m_fSleepenessRestoreSpeed * art_cond * f_update_time);
+
+            if (outfit && outfit->GetCondition() < 1.0f)
+                outfit->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (helmet && helmet->GetCondition() < 1.0f)
+                helmet->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (backpack && backpack->GetCondition() < 1.0f)
+                backpack->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (pda && pda->GetCondition() < 1.0f)
+                pda->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (detector && detector->GetCondition() < 1.0f)
+                detector->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (hand_flashlight && hand_flashlight->GetCondition() < 1.0f)
+                hand_flashlight->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (head_flashlight && head_flashlight->GetCondition() < 1.0f)
+                head_flashlight->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (knife && knife->GetCondition() < 1.0f)
+                knife->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (weapon && weapon->GetCondition() < 1.0f)
+                weapon->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+            if (weapon2 && weapon2->GetCondition() < 1.0f)
+                weapon2->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
 
             jump_speed_add += (artefact->m_fJumpSpeed * art_cond);
             walk_accel_add += (artefact->m_fWalkAccel * art_cond);
