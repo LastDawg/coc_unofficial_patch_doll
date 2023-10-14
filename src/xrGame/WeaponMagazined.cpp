@@ -120,9 +120,9 @@ void CWeaponMagazined::Load(LPCSTR section)
     if (WeaponSoundExist(section, "snd_addon_switch"))
         m_sounds.LoadSound(section, "snd_addon_switch", "sndAddonSwitch", false, m_eSoundEmptyClick);
     if (WeaponSoundExist(section, "snd_pump_gun"))
-        m_sounds.LoadSound(section, "snd_pump_gun", "sndPumpGun", true, m_eSoundReload);
+        m_sounds.LoadSound(section, "snd_pump_gun", "sndPumpGun", true, m_eSoundShot);
     if (WeaponSoundExist(section, "snd_pump_gun_l"))
-        m_sounds.LoadSound(section, "snd_pump_gun_l", "sndPumpGunLast", true, m_eSoundReload);
+        m_sounds.LoadSound(section, "snd_pump_gun_l", "sndPumpGunLast", true, m_eSoundShot);
     if (WeaponSoundExist(section, "snd_draw_empty"))
         m_sounds.LoadSound(section, "snd_draw_empty", "sndShowEmpty", false, m_eSoundShowEmpty);
     if (WeaponSoundExist(section, "snd_holster_empty"))
@@ -842,11 +842,11 @@ void CWeaponMagazined::OnShot()
 #endif
 
     // Передёргивание затвора отдельным звуком
-    if (m_sounds.FindSoundItem("sndPumpGun", false) && (!isHUDAnimationExist("anm_shot_l") || isHUDAnimationExist("anm_shot_l") && m_ammoElapsed.type1 > 1) && (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)) 
+    if (m_sounds.FindSoundItem("sndPumpGun", false) && (!m_sounds.FindSoundItem("sndPumpGunLast", false) || m_sounds.FindSoundItem("sndPumpGunLast", false) && m_ammoElapsed.type1 > 1) && (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)) 
     {
         PlaySound("sndPumpGun", get_LastFP());
     }
-    if (m_sounds.FindSoundItem("sndPumpGunLast", false) && (isHUDAnimationExist("anm_shot_l") && m_ammoElapsed.type1 > 1) && (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)) 
+    if (m_sounds.FindSoundItem("sndPumpGunLast", false) && isHUDAnimationExist("anm_shot_l") && m_ammoElapsed.type1 > 1 && (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)) 
     {
         PlaySound("sndPumpGunLast", get_LastFP());
     }
