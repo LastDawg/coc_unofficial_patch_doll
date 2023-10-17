@@ -20,8 +20,12 @@ ICF bool CLevelGraph::valid_vertex_id(u32 id) const
 
 ICF CLevelGraph::CVertex* CLevelGraph::vertex(const u32 vertex_id) const
 {
+#ifdef _M_X64
+    return (valid_vertex_id(vertex_id)) ? (m_nodes + vertex_id) : (m_nodes + header().vertex_count() - 1);
+#else
     VERIFY(valid_vertex_id(vertex_id));
     return (m_nodes + vertex_id);
+#endif
 }
 
 ICF u32 CLevelGraph::vertex(const CVertex* vertex_p) const

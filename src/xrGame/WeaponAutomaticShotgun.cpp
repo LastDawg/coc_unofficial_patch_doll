@@ -104,6 +104,9 @@ void CWeaponAutomaticShotgun::Reload()
 
 void CWeaponAutomaticShotgun::TriStateReload()
 {
+    if (m_magazine.size() == (u32)iMagazineSize || !HaveCartridgeInInventory(1))
+        return;
+
     if (isHUDAnimationExist("anm_reload_misfire"))
     {
         if (IsMisfire() && m_ammoElapsed.type1 == 0 || !IsMisfire())
@@ -119,9 +122,6 @@ void CWeaponAutomaticShotgun::TriStateReload()
             SwitchState(eUnMisfire);
         }
     }
-
-    if (m_magazine.size() == (u32)iMagazineSize || !HaveCartridgeInInventory(1))
-        return;
 
     if (!isHUDAnimationExist("anm_reload_misfire"))
     {

@@ -95,7 +95,16 @@ IC const CGameGraph::_GRAPH_ID& CGameGraph::value(u32 const /*vertex_id*/, const
 }
 
 IC const float& CGameGraph::edge_weight(const_iterator i) const { return (i->distance()); }
-IC const CGameGraph::CVertex* CGameGraph::vertex(u32 const vertex_id) const { return (m_nodes + vertex_id); }
+
+IC const CGameGraph::CVertex* CGameGraph::vertex(u32 const vertex_id) const 
+{ 
+#ifdef _M_X64
+    return (valid_vertex_id(vertex_id)) ? (m_nodes + vertex_id) : (m_nodes + header().vertex_count() - 1);
+#else
+    return (m_nodes + vertex_id);
+#endif
+}
+
 IC const u8& CGameGraph::CHeader::version() const { return (m_version); }
 IC GameGraph::_LEVEL_ID GameGraph::CHeader::level_count() const
 {

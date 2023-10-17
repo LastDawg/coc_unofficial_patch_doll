@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "MbHelpers.h"
+#include <codecvt>
+#include <locale>
 
 #define BITS1_MASK 0x80 // 10000000b
 #define BITS2_MASK 0xC0 // 11000000b
@@ -15,12 +17,13 @@
 
 #ifdef MB_DUMB_CONVERSION
 
-u16 mbhMulti2WideDumb(wchar_t* WideStr, wchar_t* WidePos, u16 WideStrSize, const char* MultiStr)
+u16 mbhMulti2WideDumb(xr_wide_char* WideStr, xr_wide_char* WidePos, u16 WideStrSize, const char* MultiStr)
 {
     u16 spos = 0, dpos = 0;
-    wchar_t b1;
-    wchar_t wc = 0;
+    u8 b1;
+    xr_wide_char wc = 0;
     VERIFY(MultiStr);
+
     if (!MultiStr[0])
         return 0;
     if (WideStr || WidePos)
@@ -51,13 +54,14 @@ u16 mbhMulti2WideDumb(wchar_t* WideStr, wchar_t* WidePos, u16 WideStrSize, const
 
 #endif // MB_DUMB_CONVERSION
 
-u16 mbhMulti2Wide(wchar_t* WideStr, wchar_t* WidePos, u16 WideStrSize, const char* MultiStr)
+u16 mbhMulti2Wide(xr_wide_char* WideStr, xr_wide_char* WidePos, u16 WideStrSize, const char* MultiStr)
 {
     u16 spos = 0;
     u16 dpos = 0;
-    wchar_t b1, b2, b3;
-    wchar_t wc = 0;
+    u8 b1, b2, b3;
+    xr_wide_char wc = 0;
     VERIFY(MultiStr);
+
     if (!MultiStr[0])
         return 0;
     if (WideStr || WidePos)
@@ -68,7 +72,9 @@ u16 mbhMulti2Wide(wchar_t* WideStr, wchar_t* WidePos, u16 WideStrSize, const cha
             WidePos[dpos] = spos;
         spos++;
         if ((b1 & BITS1_MASK) == BITS1_EXP)
+        {
             wc = b1;
+        }
         else if ((b1 & BITS3_MASK) == BITS3_EXP)
         {
             b2 = MultiStr[spos++];
@@ -126,4 +132,22 @@ u16 mbhMulti2Wide(wchar_t* WideStr, wchar_t* WidePos, u16 WideStrSize, const cha
     if (WideStr)
         WideStr[0] = dpos;
     return dpos;
+}
+
+xr_string StringFromUTF8(const char* in, const std::locale& locale)
+{
+    using wcvt = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>;
+    auto wstr = wcvt{}.from_bytes(in);
+    xr_string result(wstr.size(), '\0');
+    std::use_facet<std::ctype<wchar_t>>(locale).narrow(wstr.data(), wstr.data() + wstr.size(), '?', &result[0]);
+    return result;
+}
+
+xr_string StringToUTF8(const char* in, const std::locale& locale)
+{
+    using wcvt = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>;
+    std::wstring wstr(xr_strlen(in), L'\0');
+    std::use_facet<std::ctype<wchar_t>>(locale).widen(in, in + xr_strlen(in), &wstr[0]);
+    std::string result = wcvt{}.to_bytes(wstr.data(), wstr.data() + wstr.size());
+    return result.data();
 }
