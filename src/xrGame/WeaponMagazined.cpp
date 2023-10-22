@@ -826,6 +826,9 @@ void CWeaponMagazined::OnShot()
     if (IsOutScopeAfterShot()) // Принудительно выходим из зума, если out_scope_after_shot = true (для болтовок)
         OnZoomOut();
 
+    if (SprintType)
+        SprintType = false;
+
     //Alundaio: LAYERED_SND_SHOOT
 #ifdef LAYERED_SND_SHOOT
     if (m_bHasDistantShotSound && !IsSilencerAttached() && GameConstants::GetWeaponDistantSounds() && Position().distance_to(Device.vCameraPosition) > GameConstants::GetWeaponSoundDist() && Position().distance_to(Device.vCameraPosition) < GameConstants::GetWeaponSoundDistFar())
@@ -1929,12 +1932,6 @@ void CWeaponMagazined::PlayAnimAim()
 { 
 	if (IsRotatingToZoom())
     {
-        if (SprintType) // Сразу принудительно их отключаем, чтобы не было багов, когда выходишь из аима, а она только проигрывается
-        {
-            SwitchState(eSprintEnd);
-            return;
-        }
-
         if (m_ammoElapsed.type1 == 0 && isHUDAnimationExist("anm_idle_aim_start_empty"))
         {
             PlayHUDMotionNew("anm_idle_aim_start_empty", true, GetState());
