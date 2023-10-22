@@ -773,7 +773,14 @@ void CWeaponMagazinedWGrenade::PlayAnimIdle()
                 CEntity::SEntityState st;
                 pActor->g_State(st);
                 if (st.bSprint)
+                {
+					if (!SprintType)
+                    {
+                        SwitchState(eSprintStart);
+                        return;
+                    }
                     act_state = 1;
+                }
                 else if (pActor->AnyMove())
                 {
                     if (!st.bCrouch)
@@ -781,6 +788,12 @@ void CWeaponMagazinedWGrenade::PlayAnimIdle()
                     if (st.bCrouch)
                         act_state = 3;
                 }
+                else 
+                    if (SprintType)
+                    {
+                        SwitchState(eSprintEnd);
+                        return;
+                    }
             }
             // В режиме стрельбы ПГ
 			if (m_bGrenadeMode)

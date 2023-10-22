@@ -73,7 +73,7 @@ void CWeaponShotgun::OnAnimationEnd(u32 state)
     {
     case eSubstateReloadBegin:
     {
-        if (m_bOpenWeaponCartridge || m_bOpenWeaponEmptyCartridge && isHUDAnimationExist("anm_open_empty"))
+        if (m_bOpenWeaponCartridge || m_bOpenWeaponEmptyCartridge && isHUDAnimationExist("anm_open_empty") && m_ammoElapsed.type1 == 0)
             AddCartridge(1);
 
         m_sub_state = eSubstateReloadInProcess;

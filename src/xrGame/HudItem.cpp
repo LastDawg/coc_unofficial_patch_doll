@@ -178,6 +178,18 @@ void CHudItem::OnStateSwitch(u32 S, u32 oldState)
 
     switch (S)
     {
+    case eSprintStart: 
+        SetPending(FALSE);
+
+        PlayAnimSprintStart();
+    break;
+
+    case eSprintEnd: 
+        SetPending(FALSE);
+
+        PlayAnimSprintEnd();
+    break;
+
     case eBore:
         SetPending(FALSE);
 
@@ -190,7 +202,6 @@ void CHudItem::OnStateSwitch(u32 S, u32 oldState)
             if (m_sounds.FindSoundItem("sndBoreJammed", false) && IsMisfireNow())
                 m_sounds.PlaySound("sndBoreJammed", P, object().H_Root(), !!GetHUDmode(), false, m_started_rnd_anim_idx);
         }
-
         break;
     }
     g_player_hud->updateMovementLayerState();
@@ -206,8 +217,22 @@ void CHudItem::OnAnimationEnd(u32 state)
 
     switch (state)
     {
-    case eBore: { SwitchState(eIdle);
-    }
+        case eBore: 
+        { 
+            SwitchState(eIdle);
+        }
+        break;
+        case eSprintStart: 
+        {
+            SprintType = true;
+            SwitchState(eIdle);
+        }
+        break;
+        case eSprintEnd: 
+        {
+            SprintType = false;
+            SwitchState(eIdle);
+        }
     break;
     }
 }
@@ -660,6 +685,32 @@ void CHudItem::PlayAnimIdle()
     PlayHUDMotion("anm_idle", TRUE, NULL, GetState());
 }
 
+void CHudItem::PlayAnimSprintStart()
+{
+	auto wpn = smart_cast<CWeapon*>(this);
+	string128 guns_sprint_start_anm;
+	xr_strconcat(guns_sprint_start_anm, "anm_idle_sprint_start", (wpn && wpn->IsMisfire()) ? "_jammed" : ((wpn && ((wpn->GetAmmoElapsed() == 0 && !wpn->m_bGrenadeMode) || (wpn->GetAmmoElapsed() == 0 && wpn->m_bGrenadeMode))) ? "_empty" : ""), (wpn && wpn->IsGrenadeLauncherAttached()) ? (wpn && wpn->m_bGrenadeMode ? "_g" : "_w_gl") : "");
+    if (isHUDAnimationExist(guns_sprint_start_anm))
+        PlayHUDMotion(guns_sprint_start_anm, true, nullptr, GetState());
+	else {
+		SprintType = true;
+		SwitchState(eIdle);
+	}
+}
+
+void CHudItem::PlayAnimSprintEnd()
+{
+	auto wpn = smart_cast<CWeapon*>(this);
+	string128 guns_sprint_end_anm;
+	xr_strconcat(guns_sprint_end_anm, "anm_idle_sprint_end", (wpn && wpn->IsMisfire()) ? "_jammed" : ((wpn && ((wpn->GetAmmoElapsed() == 0 && !wpn->m_bGrenadeMode) || (wpn->GetAmmoElapsed() == 0 && wpn->m_bGrenadeMode))) ? "_empty" : ""), (wpn && wpn->IsGrenadeLauncherAttached()) ? (wpn && wpn->m_bGrenadeMode ? "_g" : "_w_gl") : "");
+    if (isHUDAnimationExist(guns_sprint_end_anm))
+        PlayHUDMotion(guns_sprint_end_anm, true, nullptr, GetState());
+	else {
+		SprintType = false;
+		SwitchState(eIdle);
+	}
+}
+
 bool CHudItem::TryPlayAnimIdle()
 {
     if (MovingAnimAllowedNow())
@@ -671,9 +722,21 @@ bool CHudItem::TryPlayAnimIdle()
             pActor->g_State(st);
             if (st.bSprint)
             {
+                if (!SprintType)
+                {
+                    SwitchState(eSprintStart);
+                    return true;
+                }
                 PlayAnimIdleSprint();
                 return true;
             }
+            else 
+                if (SprintType)
+                {
+                    SwitchState(eSprintEnd);
+                    return true;
+                }
+
             if (pActor->AnyMove())
             {
                 if (!st.bCrouch)

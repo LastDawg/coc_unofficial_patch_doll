@@ -643,6 +643,8 @@ void CWeaponMagazined::UpdateCL()
         case eShowing:
         case eHiding:
         case eReload:
+        case eSprintStart:
+        case eSprintEnd:
         case eIdle:
         {
             fShotTimeCounter -= dt;
@@ -841,16 +843,6 @@ void CWeaponMagazined::OnShot()
         PlaySound(m_sSndShotCurrent.c_str(), get_LastFP(), (u8)-1); //Alundaio: Play sound at index (ie. snd_shoot, snd_shoot1, snd_shoot2, snd_shoot3)
 #endif
 
-    // Передёргивание затвора отдельным звуком
-    if (m_sounds.FindSoundItem("sndPumpGun", false) && (!m_sounds.FindSoundItem("sndPumpGunLast", false) || m_sounds.FindSoundItem("sndPumpGunLast", false) && m_ammoElapsed.type1 > 1) && (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)) 
-    {
-        PlaySound("sndPumpGun", get_LastFP());
-    }
-    if (m_sounds.FindSoundItem("sndPumpGunLast", false) && isHUDAnimationExist("anm_shot_l") && m_ammoElapsed.type1 > 1 && (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)) 
-    {
-        PlaySound("sndPumpGunLast", get_LastFP());
-    }
-
     // Звук лязгающей ленты для пулемёта
     if (m_sounds.FindSoundItem("sndTape", false) && m_ammoElapsed.type1 > 3)
     {
@@ -908,6 +900,18 @@ void CWeaponMagazined::OnShot()
 
     // Эффект сдвига (отдача)
     AddHUDShootingEffect();
+
+    // Передёргивание затвора отдельным звуком
+    if (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)
+    {
+        if (m_sounds.FindSoundItem("sndPumpGun", false) && m_ammoElapsed.type1 > 1)
+            PlaySound("sndPumpGun", get_LastFP());
+        else if (m_sounds.FindSoundItem("sndPumpGunLast", false) && isHUDAnimationExist("anm_shot_l") &&
+            m_ammoElapsed.type1 == 1)
+            PlaySound("sndPumpGunLast", get_LastFP());
+        else
+            PlaySound("sndPumpGun", get_LastFP());
+    }
 
 #ifdef EXTENDED_WEAPON_CALLBACKS
 	IGameObject	*object = smart_cast<IGameObject*>(H_Parent());
@@ -1925,6 +1929,12 @@ void CWeaponMagazined::PlayAnimAim()
 { 
 	if (IsRotatingToZoom())
     {
+        if (SprintType) // Сразу принудительно их отключаем, чтобы не было багов, когда выходишь из аима, а она только проигрывается
+        {
+            SwitchState(eSprintEnd);
+            return;
+        }
+
         if (m_ammoElapsed.type1 == 0 && isHUDAnimationExist("anm_idle_aim_start_empty"))
         {
             PlayHUDMotionNew("anm_idle_aim_start_empty", true, GetState());

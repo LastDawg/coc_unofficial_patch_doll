@@ -19,6 +19,8 @@ public:
     enum EHudStates
     {
         eIdle = 0,
+        eSprintStart,
+        eSprintEnd,
         eShowing,
         eHiding,
         eHidden,
@@ -79,6 +81,8 @@ protected:
         bool m_bStopAtEndAnimIsRunning;
     };
 
+    bool SprintType{};
+
 public:
     virtual void Load(LPCSTR section);
     virtual BOOL net_Spawn(CSE_Abstract* DC) { return TRUE; };
@@ -125,6 +129,8 @@ public:
     virtual void PlayAnimIdleMoving();
     virtual void PlayAnimIdleMovingCrouch();
     virtual void PlayAnimIdleSprint();
+    virtual void PlayAnimSprintStart();
+    virtual void PlayAnimSprintEnd();
 
     virtual void UpdateCL();
     virtual void renderable_Render();
