@@ -62,7 +62,6 @@ public:
         eSilencer = 0,
         eScope,
         eLauncher,
-        eLaser,
         eMaxAddon
     };
 
@@ -77,7 +76,6 @@ protected:
     bool is_scope();
     bool is_silencer();
     bool is_launcher();
-    bool is_laser();
 
 public:
     CUIWeaponCellItem(CWeapon* itm);

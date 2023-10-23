@@ -338,39 +338,5 @@ bool CWeapon::install_upgrade_addon(LPCSTR section, bool test)
     }
     result |= result2;
 
-    temp_int = (int)m_eLaserStatus;
-    result2 = process_if_exists_set(section, "laser_status", &CInifile::r_s32, temp_int, test);
-    if (result2 && !test)
-    {
-        m_eLaserStatus = (ALife::EWeaponAddonStatus)temp_int;
-        if (m_eLaserStatus == ALife::eAddonAttachable || m_eLaserStatus == ALife::eAddonPermanent)
-        {
-            if (m_eLaserStatus == ALife::eAddonAttachable)
-            {
-                if (pSettings->line_exist(section, "laser_sect"))
-                {
-                    LPCSTR str = pSettings->r_string(section, "laser_sect");
-                    for (int i = 0, count = _GetItemCount(str); i < count; ++i)
-                    {
-                        string128 scope_section;
-                        _GetItem(str, i, scope_section);
-                        m_lasers.push_back(scope_section);
-                    }
-                }
-                else
-                {
-                    m_lasers.push_back(section);
-                }
-            }
-            else
-            {
-                m_lasers.push_back(section);
-                if (m_eLaserStatus == ALife::eAddonPermanent)
-                    InitAddons();
-            }
-        }
-    }
-    result |= result2;
-
     return result;
 }

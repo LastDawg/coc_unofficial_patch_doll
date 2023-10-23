@@ -757,13 +757,6 @@ bool CUIActorMenu::highlight_addons_for_weapon(PIItem weapon_item, CUICellItem* 
         ci->m_select_armament = true;
         return true;
     }
-
-    CLaser* pLaser = smart_cast<CLaser*>(item);
-    if (pLaser && weapon_item->CanAttach(pLaser))
-    {
-        ci->m_select_armament = true;
-        return true;
-    }
     return false;
 }
 
@@ -775,9 +768,8 @@ void CUIActorMenu::highlight_weapons_for_addon(PIItem addon_item, CUIDragDropLis
     CScope* pScope = smart_cast<CScope*>(addon_item);
     CSilencer* pSilencer = smart_cast<CSilencer*>(addon_item);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(addon_item);
-    CLaser* pLaser = smart_cast<CLaser*>(addon_item);
 
-    if (!pScope && !pSilencer && !pGrenadeLauncher && !pLaser)
+    if (!pScope && !pSilencer && !pGrenadeLauncher)
     {
         return;
     }
@@ -808,11 +800,6 @@ void CUIActorMenu::highlight_weapons_for_addon(PIItem addon_item, CUIDragDropLis
             continue;
         }
         if (pGrenadeLauncher && weapon->CanAttach(pGrenadeLauncher))
-        {
-            ci->m_select_armament = true;
-            continue;
-        }
-        if (pLaser && weapon->CanAttach(pLaser))
         {
             ci->m_select_armament = true;
             continue;

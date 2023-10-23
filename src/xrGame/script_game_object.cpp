@@ -580,31 +580,6 @@ LPCSTR CScriptGameObject::get_silencer_name() const
     return "none";
 }
 
-void CScriptGameObject::detach_laser() const
-{
-    CInventoryItem* inventory_item = smart_cast<CInventoryItem*>(&object());
-    if (inventory_item)
-    {
-        CWeapon* weapon = smart_cast<CWeapon*>(inventory_item);
-        if (weapon)
-            if (weapon->LaserAttachable() && weapon->IsLaserAttached())
-                weapon->Detach(weapon->GetLaserName().c_str(), true);
-    }
-}
-
-LPCSTR CScriptGameObject::get_laser_name() const
-{
-    CInventoryItem* inventory_item = smart_cast<CInventoryItem*>(&object());
-    if (inventory_item)
-    {
-        CWeapon* weapon = smart_cast<CWeapon*>(inventory_item);
-        if (weapon)
-            if (weapon->LaserAttachable() && weapon->IsLaserAttached())
-                return weapon->GetLaserName().c_str();
-    }
-    return "none";
-}
-
 float CScriptGameObject::GetPsyFactor() const
 {
     CPda* pda = smart_cast<CPda*>(&object());

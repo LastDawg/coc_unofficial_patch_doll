@@ -219,12 +219,10 @@ class_<CScriptGameObject>& script_register_game_object2(class_<CScriptGameObject
         .def("weapon_is_grenadelauncher", &CScriptGameObject::Weapon_IsGrenadeLauncherAttached)
         .def("weapon_is_scope", &CScriptGameObject::Weapon_IsScopeAttached)
         .def("weapon_is_silencer", &CScriptGameObject::Weapon_IsSilencerAttached)
-        .def("weapon_is_laser", &CScriptGameObject::Weapon_IsLaserAttached)
 
         .def("weapon_grenadelauncher_status", &CScriptGameObject::Weapon_GrenadeLauncher_Status)
         .def("weapon_scope_status", &CScriptGameObject::Weapon_Scope_Status)
         .def("weapon_silencer_status", &CScriptGameObject::Weapon_Silencer_Status)
-        .def("weapon_laser_status", &CScriptGameObject::Weapon_Laser_Status)
 
         .def("allow_sprint", &CScriptGameObject::AllowSprint)
 
@@ -458,7 +456,6 @@ class_<CScriptGameObject>& script_register_game_object2(class_<CScriptGameObject
         .def("cast_Scope", &objectCast<CScope>)
         .def("cast_Silencer", &objectCast<CSilencer>)
         .def("cast_GrenadeLauncher", &objectCast<CGrenadeLauncher>)
-        .def("cast_Laser", &objectCast<CLaser>)
         .def("cast_WeaponMagazined", &objectCast<CWeaponMagazined>)
         .def("cast_SpaceRestrictor", &objectCast<CSpaceRestrictor>)
         .def("cast_Stalker", &objectCast<CAI_Stalker>)

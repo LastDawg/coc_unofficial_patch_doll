@@ -174,15 +174,13 @@ public:
         eWeaponAddonScope = 1 << 0,
         eWeaponAddonGrenadeLauncher = 1 << 1,
         eWeaponAddonSilencer = 1 << 2,
-        // Лазер и фонарь
-        eWeaponAddonLaser = 1 << 3,
-        eWeaponAddonFlashlightOn = 1 << 4,
+        // Фонарь
+        eWeaponAddonFlashlightOn = 1 << 3,
     };
 
     EWeaponAddonStatus m_scope_status;
     EWeaponAddonStatus m_silencer_status;
     EWeaponAddonStatus m_grenade_launcher_status;
-    EWeaponAddonStatus m_laser_status;
 
     u32 timestamp;
     u8 wpn_flags;
@@ -227,7 +225,6 @@ public:
                 u16 scope : 6; // 2^6 possible scope sections // пометка
                 u16 silencer : 5; // 2^5 possible sections
                 u16 launcher : 5;
-                u16 laser : 5;
             };
         };
     };

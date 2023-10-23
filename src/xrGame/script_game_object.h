@@ -217,8 +217,6 @@ public:
     LPCSTR get_grenade_launcher_name() const;
     void detach_silencer() const;
     LPCSTR get_silencer_name() const;
-    void detach_laser() const;
-    LPCSTR get_laser_name() const;
 
     // CEntity
     _DECLARE_FUNCTION10(DeathTime, u32);
@@ -443,12 +441,10 @@ public:
     bool Weapon_IsGrenadeLauncherAttached();
     bool Weapon_IsScopeAttached();
     bool Weapon_IsSilencerAttached();
-    bool Weapon_IsLaserAttached();
 
     int Weapon_GrenadeLauncher_Status();
     int Weapon_Scope_Status();
     int Weapon_Silencer_Status();
-    int Weapon_Laser_Status();
 
     LPCSTR ProfileName();
     LPCSTR CharacterName();

@@ -1346,7 +1346,7 @@ bool CWeaponMagazined::Action(u16 cmd, u32 flags)
     {
         if (flags & CMD_START)
         {
-            if (!IsLaserAttached())
+            if (!IsHasLaser())
                 return false;
 
             OnWeaponAddonLaserSwitch();
@@ -1358,7 +1358,7 @@ bool CWeaponMagazined::Action(u16 cmd, u32 flags)
     {
         if (flags & CMD_START)
         {
-            if (!IsLaserAttached() || (IsLaserAttached() && !bLaserSupportFlashlight))
+            if (!HasFlashlight())
                 return false;
 
             OnWeaponAddonFlashlightSwitch();
@@ -1386,7 +1386,6 @@ bool CWeaponMagazined::CanAttach(PIItem pIItem)
     CScope* pScope = smart_cast<CScope*>(pIItem);
     CSilencer* pSilencer = smart_cast<CSilencer*>(pIItem);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(pIItem);
-    CLaser* pLaser = smart_cast<CLaser*>(pIItem);
 
     if (pScope && m_eScopeStatus == ALife::eAddonAttachable &&
         (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonScope) == 0)
@@ -1432,16 +1431,6 @@ bool CWeaponMagazined::CanAttach(PIItem pIItem)
                 if (pSettings->r_string((*it), "grenade_launcher_name") == pIItem->object().cNameSect())
                     return true;
             }
-        }
-        return false;
-    }
-    else if (pLaser && m_eLaserStatus == ALife::eAddonAttachable && (m_flagsAddOnState&CSE_ALifeItemWeapon::eWeaponAddonLaser) == 0)
-    {
-        auto it = m_lasers.begin();
-        for (; it != m_lasers.end(); it++)
-        {
-            if (pSettings->r_string((*it), "laser_name") == pIItem->object().cNameSect())
-                return true;
         }
         return false;
     }
@@ -1491,16 +1480,6 @@ bool CWeaponMagazined::CanDetach(const char* item_section_name)
         }
         return false;
     }
-    else if (m_eLaserStatus == ALife::eAddonAttachable && 0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaser))
-    {
-        auto it = m_lasers.begin();
-        for (; it != m_lasers.end(); it++)
-        {
-            if (pSettings->r_string((*it), "laser_name") == item_section_name)
-                return true;
-        }
-        return false;
-    }
     else
         return inherited::CanDetach(item_section_name);
 }
@@ -1512,7 +1491,6 @@ bool CWeaponMagazined::Attach(PIItem pIItem, bool b_send_event)
     CScope* pScope = smart_cast<CScope*>(pIItem);
     CSilencer* pSilencer = smart_cast<CSilencer*>(pIItem);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(pIItem);
-    CLaser* pLaser = smart_cast<CLaser*>(pIItem);
 
     if (pScope && m_eScopeStatus == ALife::eAddonAttachable &&
         (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonScope) == 0)
@@ -1556,19 +1534,6 @@ bool CWeaponMagazined::Attach(PIItem pIItem, bool b_send_event)
             {
                 m_cur_addon.launcher = u16(it - m_launchers.begin());
                 m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonGrenadeLauncher;
-                result = true;
-            }
-        }
-    }
-    else if (pLaser && m_eLaserStatus == ALife::eAddonAttachable && (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaser) == 0)
-    {
-        auto it = m_lasers.begin();
-        for (; it != m_lasers.end(); it++)
-        {
-            if (pSettings->r_string((*it), "laser_name") == pIItem->object().cNameSect())
-            {
-                m_cur_addon.laser = u16(it - m_lasers.begin());
-                m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonLaser;
                 result = true;
             }
         }
@@ -1658,22 +1623,6 @@ bool CWeaponMagazined::DetachGrenadeLauncher(const char* item_section_name, bool
     return detached;
 }
 
-bool CWeaponMagazined::DetachLaser(const char* item_section_name, bool b_spawn_item)
-{
-    bool detached = false;
-    auto it = m_lasers.begin();
-    for (; it != m_lasers.end(); it++)
-    {
-        LPCSTR iter_scope_name = pSettings->r_string((*it), "laser_name");
-        if (!xr_strcmp(iter_scope_name, item_section_name))
-        {
-            m_cur_addon.laser = 0;
-            detached = true;
-        }
-    }
-    return detached;
-}
-
 bool CWeaponMagazined::Detach(const char* item_section_name, bool b_spawn_item)
 {
     if (m_eScopeStatus == ALife::eAddonAttachable && DetachScope(item_section_name, b_spawn_item))
@@ -1722,21 +1671,6 @@ bool CWeaponMagazined::Detach(const char* item_section_name, bool b_spawn_item)
 
         return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
     }
-    else if (m_eLaserStatus == ALife::eAddonAttachable && DetachLaser(item_section_name, b_spawn_item))
-    {
-        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaser) == 0)
-        {
-            Msg("ERROR: laser addon already detached.");
-            return true;
-        }
-        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonLaser;
-
-        UpdateAddonsVisibility();
-        InitAddons();
-        SyncronizeWeaponToServer();
-
-        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
-    }
     else
         return inherited::Detach(item_section_name, b_spawn_item);;
 }
@@ -1774,23 +1708,6 @@ void CWeaponMagazined::InitAddons()
         {
             m_zoom_params.m_bUseDynamicZoom = READ_IF_EXISTS(pSettings, r_bool, cNameSect(), "scope_dynamic_zoom", FALSE);
         }
-    }
-
-    if (IsLaserAttached())
-    {
-        if (m_eLaserStatus == ALife::eAddonAttachable)
-        {
-            LoadCurrentLaserParams(GetLaserName().c_str());
-
-            if (bLaserSupportFlashlight)
-                LoadCurrentFlashlightParams(GetLaserName().c_str());
-        }
-    }
-    if (m_eLaserStatus == ALife::eAddonAttachable && !IsLaserAttached())
-    {
-        if (HasFlashlight() && bLaserSupportFlashlight && m_bLaserShaderOn)
-            g_pGamePersistent->laser_shader_data.laser_factor = 0.f;
-            //m_bLaserShaderOn = false;
     }
 
     if (IsSilencerAttached() /* && SilencerAttachable() */)
@@ -2167,12 +2084,12 @@ void CWeaponMagazined::OnWeaponAddonLaserSwitch()
     if (GetState() != eIdle)
         return;
 
-    if (IsLaserAttached() && !m_bLaserShaderOn)
+    if (IsHasLaser() && !m_bLaserShaderOn)
     {
         g_pGamePersistent->laser_shader_data.laser_factor = 1.f;
         m_bLaserShaderOn = true;
     }
-    else if (IsLaserAttached() && m_bLaserShaderOn)
+    else if (IsHasLaser() && m_bLaserShaderOn)
     {
         g_pGamePersistent->laser_shader_data.laser_factor = 0.f;
         m_bLaserShaderOn = false;

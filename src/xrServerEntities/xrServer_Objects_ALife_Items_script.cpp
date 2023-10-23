@@ -74,7 +74,6 @@ SCRIPT_EXPORT(CSE_ALifeItemWeapon, (CSE_ALifeItem),
                 value("eWeaponAddonGrenadeLauncher", int(CSE_ALifeItemWeapon::EWeaponAddonState::eWeaponAddonGrenadeLauncher)),
                 value("eWeaponAddonScope", int(CSE_ALifeItemWeapon::EWeaponAddonState::eWeaponAddonScope)),
                 value("eWeaponAddonSilencer", int(CSE_ALifeItemWeapon::EWeaponAddonState::eWeaponAddonSilencer)),
-                value("eWeaponAddonLaser", int(CSE_ALifeItemWeapon::EWeaponAddonState::eWeaponAddonLaser)),
                 value("eAddonAttachable", int(CSE_ALifeItemWeapon::EWeaponAddonStatus::eAddonAttachable)),
                 value("eAddonDisabled", int(CSE_ALifeItemWeapon::EWeaponAddonStatus::eAddonDisabled)),
                 value("eAddonPermanent", int(CSE_ALifeItemWeapon::EWeaponAddonStatus::eAddonPermanent))
@@ -88,7 +87,6 @@ SCRIPT_EXPORT(CSE_ALifeItemWeapon, (CSE_ALifeItem),
             .def_readwrite("grenade_launcher_status", &CSE_ALifeItemWeapon::m_grenade_launcher_status)
             .def_readwrite("silencer_status", &CSE_ALifeItemWeapon::m_silencer_status)
             .def_readwrite("scope_status", &CSE_ALifeItemWeapon::m_scope_status)
-            .def_readwrite("laser_status", &CSE_ALifeItemWeapon::m_laser_status)
 		    .def("get_ammo_type",		&CSE_ALifeItemWeapon::get_ammo_type)
 		    .def("get_ammo_type2",		&CSE_ALifeItemWeapon::get_ammo_type2)
 		    .def("set_ammo_type",		&CSE_ALifeItemWeapon::set_ammo_type)

@@ -93,8 +93,6 @@ class_<CScriptGameObject>& script_register_game_object1(class_<CScriptGameObject
         .def("get_grenade_launcher_name", &CScriptGameObject::get_grenade_launcher_name)
         .def("detach_silencer", &CScriptGameObject::detach_silencer)
         .def("get_silencer_name", &CScriptGameObject::get_silencer_name)
-        .def("detach_laser", &CScriptGameObject::detach_laser)
-        .def("get_laser_name", &CScriptGameObject::get_laser_name)
 
         .def("death_time", &CScriptGameObject::DeathTime)
         //		.def("armor",						&CScriptGameObject::Armor)

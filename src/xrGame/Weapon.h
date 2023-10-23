@@ -98,8 +98,6 @@ public:
 
     virtual void HUD_VisualBulletUpdate(bool force = false, int force_idx = -1);
 
-    bool bLaserSupportFlashlight;
-
     // Mortan/SWM 3 scope system
 	bool bUseAltScope;
     bool bScopeIsHasTexture;
@@ -114,7 +112,6 @@ public:
     void LoadCurrentScopeParams(LPCSTR section);
     void UpdateAltScope();
 
-    void LoadCurrentLaserParams(LPCSTR section);
     void LoadCurrentFlashlightParams(LPCSTR section);
 
     shared_str GetNameWithAttachment();
@@ -193,6 +190,7 @@ public:
     bool IsOpenWeaponEmptyCartridge() const { return m_bOpenWeaponEmptyCartridge; }
     bool IsOpenWeaponCartridge() const { return m_bOpenWeaponCartridge; }
     bool IsDiffShotModes() const { return m_bDiffShotModes; }
+    bool IsHasLaser() const { return m_bHasLaser; }
 
     bool IsLaserShaderOn() const { return m_bLaserShaderOn; }
 
@@ -225,6 +223,7 @@ protected:
     bool m_bMotionMarkShell;
     bool m_bOutScopeAfterShot;
 
+    bool m_bHasLaser;
     bool m_bLaserShaderOn;
 
     // a misfire happens, you'll need to rearm weapon
@@ -240,19 +239,16 @@ public:
     bool IsGrenadeLauncherAttached() const;
     bool IsScopeAttached() const;
     bool IsSilencerAttached() const;
-    bool IsLaserAttached() const;
     bool bGrenadeLauncherNSilencer;
     bool HaveCartridgeInInventory(u8 cnt);
 
     virtual bool GrenadeLauncherAttachable();
     virtual bool ScopeAttachable();
     virtual bool SilencerAttachable();
-    virtual bool LaserAttachable();
 
     ALife::EWeaponAddonStatus get_GrenadeLauncherStatus() const { return m_eGrenadeLauncherStatus; }
     ALife::EWeaponAddonStatus get_ScopeStatus() const { return m_eScopeStatus; }
     ALife::EWeaponAddonStatus get_SilencerStatus() const { return m_eSilencerStatus; }
-    ALife::EWeaponAddonStatus get_LaserStatus() const { return m_eLaserStatus; }
     virtual bool UseScopeTexture() { return true; };
     //обновление видимости для косточек аддонов
     void UpdateAddonsVisibility();
@@ -267,12 +263,9 @@ public:
     int GetSilencerY() { return pSettings->r_s32(m_silencers[m_cur_addon.silencer], "silencer_y"); }
     int GetGrenadeLauncherX() { return pSettings->r_s32(m_launchers[m_cur_addon.launcher], "grenade_launcher_x"); }
     int GetGrenadeLauncherY() { return pSettings->r_s32(m_launchers[m_cur_addon.launcher], "grenade_launcher_y"); }
-    int GetLaserX() { return pSettings->r_s32(m_lasers[m_cur_addon.laser], "laser_x"); }
-    int GetLaserY() { return pSettings->r_s32(m_lasers[m_cur_addon.laser], "laser_y"); }
     const shared_str GetGrenadeLauncherName() const { return pSettings->r_string(m_launchers[m_cur_addon.launcher], "grenade_launcher_name"); }
     const shared_str GetScopeName() const;
     const shared_str GetSilencerName() const { return pSettings->r_string(m_silencers[m_cur_addon.silencer], "silencer_name"); }
-    const shared_str GetLaserName() const { return pSettings->r_string(m_lasers[m_cur_addon.laser], "laser_name"); }
 
     IC void ForceUpdateAmmo() { m_BriefInfo_CalcFrame = 0; }
     u8 GetAddonsState() const { return m_flagsAddOnState; };
@@ -282,8 +275,6 @@ protected:
     shared_str m_sWpn_scope_bone;
     shared_str m_sWpn_silencer_bone;
     shared_str m_sWpn_launcher_bone;
-    shared_str m_sWpn_laser_bone;
-    shared_str m_sWpn_laser_bone2;
     shared_str m_sHud_wpn_flashlight_cone_bone; // Луч света, худ
 
     xr_vector<shared_str> m_all_scope_bones;
@@ -299,7 +290,6 @@ protected:
     ALife::EWeaponAddonStatus m_eScopeStatus;
     ALife::EWeaponAddonStatus m_eSilencerStatus;
     ALife::EWeaponAddonStatus m_eGrenadeLauncherStatus;
-    ALife::EWeaponAddonStatus m_eLaserStatus;
 
 	struct current_addon_t
     {
@@ -311,7 +301,6 @@ protected:
                 u16 scope : 6; // 2^6 possible scope sections // пометка 
                 u16 silencer : 5; // 2^5 possible sections
                 u16 launcher : 5;
-                u16 laser : 5;
             };
         };
     };
@@ -630,7 +619,6 @@ public:
     SCOPES_VECTOR m_scopes;
     SCOPES_VECTOR m_silencers;
     SCOPES_VECTOR m_launchers;
-    SCOPES_VECTOR m_lasers;
 
     CWeaponAmmo* m_pCurrentAmmo;
 

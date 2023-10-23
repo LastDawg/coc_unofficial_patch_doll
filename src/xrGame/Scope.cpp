@@ -13,7 +13,6 @@ SCRIPT_EXPORT(CScope, (CGameObject), {
     [
         class_<CScope, CGameObject>("CScope").def(constructor<>()),
         class_<CSilencer, CGameObject>("CSilencer").def(constructor<>()),
-        class_<CGrenadeLauncher, CGameObject>("CGrenadeLauncher").def(constructor<>()),
-        class_<CLaser, CGameObject>("CLaser").def(constructor<>())
+        class_<CGrenadeLauncher, CGameObject>("CGrenadeLauncher").def(constructor<>())
     ];
 });

@@ -116,13 +116,13 @@ CWeapon::CWeapon()
     bNVsecondVPavaible = false;
     bNVsecondVPstatus = false;
     bScopeSupportClipReload = true;
-    bLaserSupportFlashlight = false;
 
     m_bDiffShotModes = false;
     m_bMotionMarkShell = false;
     m_bMisfireOneCartRemove = false;
     m_bOutScopeAfterShot = false;
 
+    m_bHasLaser = false;
     m_bLaserShaderOn = false;
 
 	// Альт. прицеливание
@@ -367,7 +367,6 @@ void CWeapon::ForceUpdateFireParticles()
 LPCSTR wpn_scope_def_bone       = "wpn_scope";
 LPCSTR wpn_silencer_def_bone    = "wpn_silencer";
 LPCSTR wpn_launcher_def_bone    = "wpn_launcher";
-LPCSTR wpn_laser_def_bone       = "wpn_laser";
 
 void CWeapon::Load(LPCSTR section)
 {
@@ -535,6 +534,7 @@ void CWeapon::Load(LPCSTR section)
     m_bMotionMarkShell = READ_IF_EXISTS(pSettings, r_bool, section, "motion_mark_shell", false);
     m_bMisfireOneCartRemove = READ_IF_EXISTS(pSettings, r_bool, section, "misfire_one_cartridge_remove", false);
     m_bOutScopeAfterShot = READ_IF_EXISTS(pSettings, r_bool, section, "out_scope_after_shot", false);
+    m_bHasLaser = READ_IF_EXISTS(pSettings, r_bool, section, "has_laser", false);
 
     // hands
     eHandDependence = EHandDependence(pSettings->r_s32(section, "hand_dependence"));
@@ -549,7 +549,6 @@ void CWeapon::Load(LPCSTR section)
     m_eScopeStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "scope_status");
     m_eSilencerStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "silencer_status");
     m_eGrenadeLauncherStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "grenade_launcher_status");
-    m_eLaserStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "laser_status");
 
     m_zoom_params.m_bZoomEnabled = !!pSettings->r_bool(section, "zoom_enabled");
     m_zoom_params.m_fZoomRotateTime = pSettings->r_float(section, "zoom_rotate_time");
@@ -562,6 +561,8 @@ void CWeapon::Load(LPCSTR section)
     bGrenadeLauncherNSilencer = READ_IF_EXISTS(pSettings, r_bool, section, "GrenadeLauncherNSilencer", false);
 
     Load3DScopeParams(section);
+    // Фонарик
+    LoadCurrentFlashlightParams(section);
 
     if (bScopeIsHasTexture || bIsSecondVPZoomPresent())
     {
@@ -617,24 +618,6 @@ void CWeapon::Load(LPCSTR section)
         else
         {
             m_launchers.push_back(section);
-        }
-    }
-
-    if (m_eLaserStatus == ALife::eAddonAttachable)
-    {
-        if (pSettings->line_exist(section, "laser_sect"))
-        {
-            LPCSTR str = pSettings->r_string(section, "laser_sect");
-            for (int i = 0, count = _GetItemCount(str); i < count; ++i)
-            {
-                string128 scope_section;
-                _GetItem(str, i, scope_section);
-                m_lasers.push_back(scope_section);
-            }
-        }
-        else
-        {
-            m_lasers.push_back(section);
         }
     }
 
@@ -734,11 +717,6 @@ void CWeapon::Load(LPCSTR section)
     else
         m_sWpn_launcher_bone = wpn_launcher_def_bone;
 
-    if (pSettings->line_exist(section, "laser_bone"))
-        m_sWpn_laser_bone = pSettings->r_string(section, "laser_bone");
-    else
-        m_sWpn_laser_bone = wpn_laser_def_bone;
-
     auto LoadBoneNames = [](pcstr section, pcstr line, RStringVec& list) 
     {
         list.clear();
@@ -807,14 +785,14 @@ void CWeapon::UpdateFlashlight()
     if (flashlight_render)
     {
         auto io = smart_cast<CInventoryOwner*>(H_Parent());
-        if (!flashlight_render->get_active() && (bLaserSupportFlashlight && IsLaserAttached()) && GetHUDmode()  && IsFlashlightOn() && (!H_Parent() || (io && this == io->inventory().ActiveItem())))
+        if (!flashlight_render->get_active() && GetHUDmode()  && IsFlashlightOn() && (!H_Parent() || (io && this == io->inventory().ActiveItem())))
         {
             flashlight_render->set_active(true);
             flashlight_omni->set_active(true);
             flashlight_glow->set_active(true);
             UpdateAddonsVisibility();
         }
-        else if (flashlight_render->get_active() && ((bLaserSupportFlashlight && !IsLaserAttached()) || !GetHUDmode() || !IsFlashlightOn() || !(!H_Parent() || (io && this == io->inventory().ActiveItem()))))
+        else if (flashlight_render->get_active() && !GetHUDmode() || !IsFlashlightOn() || !(!H_Parent() || (io && this == io->inventory().ActiveItem())))
         {
             flashlight_render->set_active(false);
             flashlight_omni->set_active(false);
@@ -880,8 +858,6 @@ BOOL CWeapon::net_Spawn(CSE_Abstract* DC)
         m_cur_addon.silencer = 0;
     if (m_cur_addon.launcher >= (u16)m_launchers.size())
         m_cur_addon.launcher = 0;
-    if (m_cur_addon.laser >= (u16)m_lasers.size())
-        m_cur_addon.laser = 0;
 
 	if (m_bGrenadeMode) // normal ammo will be in *2
     {
@@ -1712,15 +1688,9 @@ bool CWeapon::IsSilencerAttached() const
     return (ALife::eAddonAttachable == m_eSilencerStatus && 0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSilencer)) || ALife::eAddonPermanent == m_eSilencerStatus;
 }
 
-bool CWeapon::IsLaserAttached() const
-{
-    return (ALife::eAddonAttachable == m_eLaserStatus && 0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaser)) || ALife::eAddonPermanent == m_eLaserStatus;
-}
-
 bool CWeapon::GrenadeLauncherAttachable() { return (ALife::eAddonAttachable == m_eGrenadeLauncherStatus); }
 bool CWeapon::ScopeAttachable() { return (ALife::eAddonAttachable == m_eScopeStatus); }
 bool CWeapon::SilencerAttachable() { return (ALife::eAddonAttachable == m_eSilencerStatus); }
-bool CWeapon::LaserAttachable() { return (ALife::eAddonAttachable == m_eLaserStatus); }
 
 void CWeapon::UpdateHUDAddonsVisibility()
 { // actor only
@@ -1788,17 +1758,6 @@ void CWeapon::UpdateHUDAddonsVisibility()
     }
     else if (m_eGrenadeLauncherStatus == ALife::eAddonPermanent)
         SetBoneVisible(m_sWpn_launcher_bone, TRUE);
-
-    if (LaserAttachable())
-    {
-        SetBoneVisible(m_sWpn_laser_bone, IsLaserAttached());
-    }
-    if (m_eLaserStatus == ALife::eAddonDisabled)
-    {
-        SetBoneVisible(m_sWpn_laser_bone, FALSE);
-    }
-    else if (m_eLaserStatus == ALife::eAddonPermanent)
-        SetBoneVisible(m_sWpn_laser_bone, TRUE);
 
     // Фонарик, световой луч
     if (m_sHud_wpn_flashlight_cone_bone.size() && has_flashlight)
@@ -1935,27 +1894,6 @@ void CWeapon::UpdateAddonsVisibility()
     {
         pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
         //		Log("gl", pWeaponVisual->LL_GetBoneVisible			(bone_id));
-    }
-
-    bone_id = pWeaponVisual->LL_BoneID(m_sWpn_laser_bone);
-
-    if (LaserAttachable() && bone_id != BI_NONE)
-    {
-        if (IsLaserAttached())
-        {
-            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
-                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
-        }
-        else
-        {
-            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
-                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
-        }
-    }
-    if (m_eLaserStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
-    {
-        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
-        //		Log("laser", pWeaponVisual->LL_GetBoneVisible			(bone_id));
     }
 
     pWeaponVisual->CalculateBones_Invalidate();
@@ -2897,10 +2835,6 @@ float CWeapon::Weight() const
     {
         res += pSettings->r_float(GetSilencerName(), "inv_weight");
     }
-    if (IsLaserAttached() && m_lasers.size())
-    {
-        res += pSettings->r_float(GetLaserName(), "inv_weight");
-    }
     res += GetMagazineWeight(m_magazine);
 
     return res;
@@ -3072,10 +3006,6 @@ u32 CWeapon::Cost() const
     if (IsSilencerAttached() && m_silencers.size())
     {
         res += pSettings->r_u32(GetSilencerName(), "cost");
-    }
-    if (IsLaserAttached() && m_lasers.size())
-    {
-        res += pSettings->r_u32(GetLaserName(), "cost");
     }
 
     if (m_ammoElapsed.type1)
@@ -3465,11 +3395,6 @@ bool CWeapon::bChangeNVSecondVPStatus() // ПНВ
 }
 
 // Лазер, фонарик
-
-void CWeapon::LoadCurrentLaserParams(LPCSTR section)
-{
-    bLaserSupportFlashlight = READ_IF_EXISTS(pSettings, r_bool, section, "support_flashlight", false); // Для всяких AN/PEQ
-}
 
 void CWeapon::LoadCurrentFlashlightParams(LPCSTR section)
 {
