@@ -26,9 +26,6 @@ class CBinocularsVision;
 class CNightVisionEffector;
 class CLAItem;
 
-#define WEAPON_INDOOR_HEMI_FACTOR 0.05f
-#define WEAPON_SND_REFLECTION_HUD_FACTOR 0.7f  
-
 class CWeapon : public CHudItemObject, public CShootingObject
 {
     typedef CHudItemObject inherited;

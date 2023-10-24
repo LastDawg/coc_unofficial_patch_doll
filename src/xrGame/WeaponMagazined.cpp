@@ -105,7 +105,6 @@ void CWeaponMagazined::Load(LPCSTR section)
 
     m_sounds.LoadSound(section, "snd_empty", "sndEmptyClick", false, m_eSoundEmptyClick);
     m_sounds.LoadSound(section, "snd_reload", "sndReload", true, m_eSoundReload);
-    m_sounds.LoadSound(section, "snd_reflect", "sndReflect", true, m_eSoundReflect);
 
 	if (WeaponSoundExist(section, "snd_ammo_check"))
         m_sounds.LoadSound(section, "snd_ammo_check", "sndAmmoCheck", false, m_eSoundEmptyClick);
@@ -223,7 +222,7 @@ bool CWeaponMagazined::UseScopeTexture()
 
 void CWeaponMagazined::FireStart()
 {
-    if (!IsMisfire() && (!strstr(Core.Params, "-dev") || !strstr(Core.Params, "-dbg") && GetCondition() > 0.0f))
+    if (!IsMisfire() && GetCondition() > 0.0f)
     { 
         if (IsValid())
         {
@@ -846,6 +845,18 @@ void CWeaponMagazined::OnShot()
         PlaySound(m_sSndShotCurrent.c_str(), get_LastFP(), (u8)-1); //Alundaio: Play sound at index (ie. snd_shoot, snd_shoot1, snd_shoot2, snd_shoot3)
 #endif
 
+    // Передёргивание затвора отдельным звуком
+    if (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)
+    {
+        if (m_sounds.FindSoundItem("sndPumpGun", false) && m_ammoElapsed.type1 > 1)
+            PlaySound("sndPumpGun", get_LastFP());
+        else if (m_sounds.FindSoundItem("sndPumpGunLast", false) && isHUDAnimationExist("anm_shot_l") &&
+            m_ammoElapsed.type1 == 1)
+            PlaySound("sndPumpGunLast", get_LastFP());
+        else
+            PlaySound("sndPumpGun", get_LastFP());
+    }
+
     // Звук лязгающей ленты для пулемёта
     if (m_sounds.FindSoundItem("sndTape", false) && m_ammoElapsed.type1 > 3)
     {
@@ -879,42 +890,8 @@ void CWeaponMagazined::OnShot()
     ForceUpdateFireParticles();
     StartSmokeParticles(get_LastFP(), vel);
 
-	if (IsSilencerAttached() == false)
-    {
-        bool bIndoor = false;
-        if (H_Parent() != nullptr)
-        {
-            bIndoor = H_Parent()->renderable_ROS()->get_luminocity_hemi() < WEAPON_INDOOR_HEMI_FACTOR;
-        }
-
-        if (bIndoor && m_sounds.FindSoundItem("sndReflect", false))
-        {
-            if (IsHudModeNow())
-            {
-                HUD_SOUND_ITEM::SetHudSndGlobalVolumeFactor(WEAPON_SND_REFLECTION_HUD_FACTOR);
-            }
-            PlaySound("sndReflect", get_LastFP());
-            // m_sSndShotCurrent = "sndReflect";
-            HUD_SOUND_ITEM::SetHudSndGlobalVolumeFactor(1.0f);
-        }
-        // else
-        // m_sSndShotCurrent = "sndShot";
-    }
-
     // Эффект сдвига (отдача)
     AddHUDShootingEffect();
-
-    // Передёргивание затвора отдельным звуком
-    if (!IsDiffShotModes() || IsDiffShotModes() && GetCurrentFireMode() == 1)
-    {
-        if (m_sounds.FindSoundItem("sndPumpGun", false) && m_ammoElapsed.type1 > 1)
-            PlaySound("sndPumpGun", get_LastFP());
-        else if (m_sounds.FindSoundItem("sndPumpGunLast", false) && isHUDAnimationExist("anm_shot_l") &&
-            m_ammoElapsed.type1 == 1)
-            PlaySound("sndPumpGunLast", get_LastFP());
-        else
-            PlaySound("sndPumpGun", get_LastFP());
-    }
 
 #ifdef EXTENDED_WEAPON_CALLBACKS
 	IGameObject	*object = smart_cast<IGameObject*>(H_Parent());
@@ -2344,13 +2321,6 @@ bool CWeaponMagazined::install_upgrade_impl(LPCSTR section, bool test)
     if (result2 && !test)
     {
         m_sounds.LoadSound(section, "snd_reload", "sndReload", true, m_eSoundReload);
-    }
-    result |= result2;
-
-	result2 = process_if_exists_set(section, "snd_reflect", &CInifile::r_string, str, test);
-    if (result2 && !test)
-    {
-        m_sounds.LoadSound(section, "snd_reflect", "sndReflect", false, m_eSoundReflect);
     }
     result |= result2;
 
