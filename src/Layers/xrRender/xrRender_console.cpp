@@ -201,6 +201,10 @@ float ps_r2_ssaLOD_A = 64.f;
 float ps_r2_ssaLOD_B = 48.f;
 float ps_r2_tf_Mipbias = 0.0f;
 
+extern ENGINE_API Fvector4 ps_ssfx_rain_1;
+extern ENGINE_API Fvector4 ps_ssfx_rain_2;
+extern ENGINE_API Fvector4 ps_ssfx_rain_3;
+
 // R2-specific
 Flags32 ps_r2_ls_flags = {R2FLAG_SUN
     //| R2FLAG_SUN_IGNORE_PORTALS
@@ -907,6 +911,11 @@ void xrRender_initconsole()
 	// Screen Space Shaders
     CMD4(CCC_Vector4, "ssfx_wpn_dof_1", &ps_ssfx_wpn_dof_1, tw2_min, tw2_max);
     CMD4(CCC_Float, "ssfx_wpn_dof_2", &ps_ssfx_wpn_dof_2, 0.0f, 1.0f);
+
+    CMD3(CCC_Mask, "r3_new_ssfx_rain", &ps_r2_ls_flags_ext, R4FLAGEXT_NEW_RAIN);
+    CMD4(CCC_Vector4, "ssfx_rain_1", &ps_ssfx_rain_1, Fvector4().set(0, 0, 0, 0), Fvector4().set(10, 5, 5, 2));
+    CMD4(CCC_Vector4, "ssfx_rain_2", &ps_ssfx_rain_2, Fvector4().set(0, 0, 0, 0), Fvector4().set(1, 10, 10, 10));
+    CMD4(CCC_Vector4, "ssfx_rain_3", &ps_ssfx_rain_3, Fvector4().set(0, 0, 0, 0), Fvector4().set(1, 10, 10, 10));
 
     CMD3(CCC_Preset, "_preset", &ps_Preset, qpreset_token);
 

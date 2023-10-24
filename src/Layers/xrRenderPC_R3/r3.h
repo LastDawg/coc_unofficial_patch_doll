@@ -102,6 +102,8 @@ public:
         u32 forcegloss : 1;
         u32 forceskinw : 1;
         float forcegloss_v;
+
+        u32 ssfx_rain : 1;
     } o;
     struct RenderR3Statistics
     {

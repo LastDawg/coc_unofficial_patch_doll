@@ -396,6 +396,12 @@ void CRender::create()
         }
     }
 
+	// Ascii's Screen Space Shaders - Check if SSS shaders exist
+    string_path fn;
+    o.ssfx_rain = FS.exist(fn, "$game_shaders$", "r3\\effects_rain_splash", ".ps") ? 1 : 0;
+
+    Msg("- SSS RAIN SHADER INSTALLED %i", o.ssfx_rain);
+
     // constants
     RImplementation.Resources->RegisterConstantSetup("parallax", &binder_parallax);
     RImplementation.Resources->RegisterConstantSetup("water_intensity", &binder_water_intensity);
@@ -885,6 +891,7 @@ HRESULT CRender::shader_compile(LPCSTR name, IReader* fs, LPCSTR pFunctionName, 
     char c_sun_shafts[32];
     char c_ssao[32];
     char c_sun_quality[32];
+    char c_rain_quality[32];
 
     char sh_name[MAX_PATH] = "";
     u32 len = 0;
@@ -1278,6 +1285,21 @@ HRESULT CRender::shader_compile(LPCSTR name, IReader* fs, LPCSTR pFunctionName, 
     }
     sh_name[len] = '0' + char(o.dx10_minmax_sm != 0);
     ++len;
+
+	if (ps_ssfx_rain_1.w > 0)
+    {
+        xr_sprintf(c_rain_quality, "%d", u8(ps_ssfx_rain_1.w));
+        defines[def_it].Name = "SSFX_RAIN_QUALITY";
+        defines[def_it].Definition = c_rain_quality;
+        def_it++;
+        xr_strcat(sh_name, c_rain_quality);
+        len += xr_strlen(c_rain_quality);
+    }
+    else
+    {
+        sh_name[len] = '0';
+        ++len;
+    }
 
     // Be carefull!!!!! this should be at the end to correctly generate
     // compiled shader name;

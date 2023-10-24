@@ -507,6 +507,10 @@ virtual void Save (IWriter *F) {};
 #endif
 */
 
+ENGINE_API Fvector4 ps_ssfx_rain_1 = { 2.0f, 0.1f, 0.6f, 2.f }; // Len, Width, Speed, Quality
+ENGINE_API Fvector4 ps_ssfx_rain_2 = { 0.7f, 0.1f, 1.0f, 0.5f }; // Alpha, Brigthness, Refraction, Reflection
+ENGINE_API Fvector4 ps_ssfx_rain_3 = { 0.01f, 1.0f, 0.0f, 0.0f }; // Alpha, Refraction ( Splashes ) - Yohji: Alpha was edited (0.5->0.01f) due to a bug with transparency and other particles.
+
 ENGINE_API BOOL r2_sun_static = TRUE;
 ENGINE_API BOOL r2_advanced_pp = FALSE; // advanced post process and effects
 

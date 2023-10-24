@@ -190,5 +190,9 @@ public:
     virtual void DestroyInternal(bool bForce) = 0;
 };
 
+extern ENGINE_API Fvector4 ps_ssfx_rain_1;
+extern ENGINE_API Fvector4 ps_ssfx_rain_2;
+extern ENGINE_API Fvector4 ps_ssfx_rain_3;
+
 extern ENGINE_API IGame_Persistent* g_pGamePersistent;
 #endif // IGame_PersistentH

@@ -29,6 +29,10 @@
 #include "xrCore/xrCore_benchmark_macros.h"
 #include "xrCore/xr_token.h"
 
+extern ENGINE_API Fvector4 ps_ssfx_rain_1;
+extern ENGINE_API Fvector4 ps_ssfx_rain_2;
+extern ENGINE_API Fvector4 ps_ssfx_rain_3;
+
 class ENGINE_API IConsole_Command
 {
 public:

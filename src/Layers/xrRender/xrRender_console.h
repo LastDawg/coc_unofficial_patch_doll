@@ -207,7 +207,8 @@ enum
     R3FLAG_MSAA_OPT = (1 << 29),
     R3FLAG_GBUFFER_OPT = (1 << 30),
     R3FLAG_USE_DX10_1 = (1 << 31),
-    // R3FLAG_MSAA_ALPHATEST		= (1<<31),
+    R4FLAGEXT_NEW_RAIN = (1 << 32),
+    // R3FLAG_MSAA_ALPHATEST		= (1<<33),
 };
 
 enum

@@ -83,6 +83,7 @@ private:
      ref_sound snd_Wind;
      ref_sound snd_RainOnMask;
 
+     float rain_hemi = 0.0f;
 
 	private:
     // Utilities
@@ -96,7 +97,7 @@ private:
     void p_free(Particle* P);
 
     // Some methods
-    void Born(Item& dest, float radius);
+    void Born(Item& dest, float radius, float speed);
     void Hit(Fvector& pos);
     BOOL RayPick(const Fvector& s, const Fvector& d, float& range, collide::rq_target tgt);
     void RenewItem(Item& dest, float height, BOOL bHit);
@@ -107,6 +108,7 @@ public:
 
     void Render();
     void OnFrame();
+    float GetRainHemi() { return rain_hemi; }
 
     void StopAmbient();
     void SetInvalidateState();
