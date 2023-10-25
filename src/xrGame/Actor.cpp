@@ -1761,7 +1761,7 @@ void CActor::UpdateArtefactsOnBeltAndOutfit()
         CTorch* head_flashlight = smart_cast<CTorch*>(inventory().ItemFromSlot(TORCH_SLOT));
         CPda* pda = smart_cast<CPda*>(inventory().ItemFromSlot(PDA_SLOT));
 
-        if (artefact)
+        if (artefact) // Если в слоте
         {
             float art_cond = artefact->GetCondition();
             conditions().ChangeBleeding(artefact->m_fBleedingRestoreSpeed * art_cond * f_update_time);
@@ -1780,13 +1780,13 @@ void CActor::UpdateArtefactsOnBeltAndOutfit()
             if (backpack && backpack->GetCondition() < 1.0f)
                 backpack->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
             if (pda && pda->GetCondition() < 1.0f)
-                pda->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+                pda->ChangeCondition((+artefact->m_fDevChargeRestoreSpeed * art_cond) * Device.fTimeDelta);
             if (detector && detector->GetCondition() < 1.0f)
-                detector->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+                detector->ChangeCondition((+artefact->m_fDevChargeRestoreSpeed * art_cond) * Device.fTimeDelta);
             if (hand_flashlight && hand_flashlight->GetCondition() < 1.0f)
-                hand_flashlight->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+                hand_flashlight->ChangeCondition((+artefact->m_fDevChargeRestoreSpeed * art_cond) * Device.fTimeDelta);
             if (head_flashlight && head_flashlight->GetCondition() < 1.0f)
-                head_flashlight->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
+                head_flashlight->ChangeCondition((+artefact->m_fDevChargeRestoreSpeed * art_cond) * Device.fTimeDelta);
             if (knife && knife->GetCondition() < 1.0f)
                 knife->ChangeCondition((+artefact->m_fRepairRestoreSpeed * art_cond) * Device.fTimeDelta);
             if (weapon && weapon->GetCondition() < 1.0f)
