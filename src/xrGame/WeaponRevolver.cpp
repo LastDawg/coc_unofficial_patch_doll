@@ -5,7 +5,7 @@
 
 CWeaponRevolver::CWeaponRevolver()
 {
-    m_eSoundClose = ESoundTypes(SOUND_TYPE_WEAPON_RECHARGING);
+    m_eSoundReload = ESoundTypes(SOUND_TYPE_WEAPON_RECHARGING);
     SetPending(false);
 }
 
@@ -21,7 +21,13 @@ void CWeaponRevolver::Load(LPCSTR section)
 {
     inherited::Load(section);
 
-    m_sounds.LoadSound(section, "snd_close", "sndClose", false, m_eSoundClose);
+    m_sounds.LoadSound(section, "snd_reload_less_1", "sndReloadRevolver1", false, m_eSoundReload);
+    m_sounds.LoadSound(section, "snd_reload_less_2", "sndReloadRevolver2", false, m_eSoundReload);
+    m_sounds.LoadSound(section, "snd_reload_less_3", "sndReloadRevolver3", false, m_eSoundReload);
+    m_sounds.LoadSound(section, "snd_reload_less_4", "sndReloadRevolver4", false, m_eSoundReload);
+    m_sounds.LoadSound(section, "snd_reload_less_5", "sndReloadRevolver5", false, m_eSoundReload);
+    m_sounds.LoadSound(section, "snd_reload_less_6", "sndReloadRevolver6", false, m_eSoundReload);
+    m_sounds.LoadSound(section, "snd_reload_less_7", "sndReloadRevolver7", false, m_eSoundReload);
 }
 
 void CWeaponRevolver::OnH_B_Chield()
@@ -31,96 +37,86 @@ void CWeaponRevolver::OnH_B_Chield()
 
 void CWeaponRevolver::PlayAnimShow()
 {
-    VERIFY(GetState()==eShowing);
-
-    if (m_ammoElapsed.type1 == 0)
-        PlayHUDMotion("anm_show_empty", false, this, GetState());
-    else
-        inherited::PlayAnimShow();
+    inherited::PlayAnimShow();
 }
 
 void CWeaponRevolver::PlayAnimBore()
 {
-    if (m_ammoElapsed.type1 == 0)
-        PlayHUDMotion("anm_bore_empty", true, this, GetState());
-    else
-        inherited::PlayAnimBore();
+    inherited::PlayAnimBore();
 }
 
 void CWeaponRevolver::PlayAnimIdleSprint()
 {
-    if (m_ammoElapsed.type1 == 0)
-        PlayHUDMotion("anm_idle_sprint_empty", true, nullptr, GetState());
-    else
-        inherited::PlayAnimIdleSprint();
+    inherited::PlayAnimIdleSprint();
 }
 
 void CWeaponRevolver::PlayAnimIdleMoving()
 {
-    if (m_ammoElapsed.type1 == 0)
-        PlayHUDMotion("anm_idle_moving_empty", true, nullptr, GetState());
-    else
-        inherited::PlayAnimIdleMoving();
+    inherited::PlayAnimIdleMoving();
 }
-
 
 void CWeaponRevolver::PlayAnimIdle()
 {
-    if (TryPlayAnimIdle()) return;
-
-    if (m_ammoElapsed.type1 == 0)
-        PlayHUDMotion("anm_idle_empty", true, nullptr, GetState());
-    else
-        inherited::PlayAnimIdle();
+    inherited::PlayAnimIdle();
 }
 
 void CWeaponRevolver::PlayAnimAim()
 {
-    if (m_ammoElapsed.type1 == 0)
-        PlayHUDMotion("anm_idle_aim_empty", true, nullptr, GetState());
-    else
-        inherited::PlayAnimAim();
+    inherited::PlayAnimAim();
 }
 
 void CWeaponRevolver::PlayAnimReload()
 {
+    int full_drum = m_ammoElapsed.type1 == iMagazineSize;
+
     auto state = GetState();
     VERIFY(state  == eReload);
-    if (m_ammoElapsed.type1 == 1)
-        PlayHUDMotion("anm_reload_1", true, this, state);
-    else if (m_ammoElapsed.type1 == 2)
-        PlayHUDMotion("anm_reload_2", true, this, state);
-    else if (m_ammoElapsed.type1 == 3)
-        PlayHUDMotion("anm_reload_3", true, this, state);
-    else if (m_ammoElapsed.type1 == 4)
-        PlayHUDMotion("anm_reload_4", true, this, state);
-    else if (m_ammoElapsed.type1 == 5)
-        PlayHUDMotion("anm_reload_5", true, this, state);
-    else
-        PlayHUDMotion("anm_reload", true, this, state);
 
+    if (bMisfire)
+    {
+        if (isHUDAnimationExist("anm_reload_misfire"))
+            PlayHUDMotion("anm_reload_misfire", true, this, state);
+        else if (isHUDAnimationExist("anm_reload_unjam"))
+            PlayHUDMotion("anm_reload_unjam", true, this, state);
+        else if (isHUDAnimationExist("anm_unjam"))
+            PlayHUDMotion("anm_unjam", true, this, state);
+        else if (isHUDAnimationExist("anm_reload_jammed"))
+            PlayHUDMotion("anm_reload_jammed", true, this, state);
+        else
+            PlayHUDMotion("anm_reload_empty", true, this, state);
+    }
+    else
+    {
+        if (full_drum - 1 && isHUDAnimationExist("anm_reload_less_1"))
+            PlayHUDMotion("anm_reload_less_1", true, this, state);
+        else if (full_drum - 2 && isHUDAnimationExist("anm_reload_less_2"))
+            PlayHUDMotion("anm_reload_less_2", true, this, state);
+        else if (full_drum - 3 && isHUDAnimationExist("anm_reload_less_3"))
+            PlayHUDMotion("anm_reload_less_3", true, this, state);
+        else if (full_drum - 4 && isHUDAnimationExist("anm_reload_less_4"))
+            PlayHUDMotion("anm_reload_less_4", true, this, state);
+        else if (full_drum - 5 && isHUDAnimationExist("anm_reload_less_5"))
+            PlayHUDMotion("anm_reload_less_5", true, this, state);
+        else if (full_drum - 6 && isHUDAnimationExist("anm_reload_less_6"))
+            PlayHUDMotion("anm_reload_less_6", true, this, state);
+        else if (full_drum - 7 && isHUDAnimationExist("anm_reload_less_7"))
+            PlayHUDMotion("anm_reload_less_7", true, this, state);
+        else if (m_ammoElapsed.type1 == 0 && isHUDAnimationExist("anm_reload_empty"))
+            PlayHUDMotion("anm_reload_empty", true, this, state);
+        else
+            PlayHUDMotion("anm_reload_empty", true, this, state);
+    }
 }
 
 
 void CWeaponRevolver::PlayAnimHide()
 {
-    VERIFY(GetState()==eHiding);
-    if (m_ammoElapsed.type1 == 0)
-    {
-        PlaySound("sndClose", get_LastFP());
-        PlayHUDMotion("anm_hide_empty", true, this, GetState());
-    }
-    else
-        inherited::PlayAnimHide();
+    inherited::PlayAnimHide();
 }
 
 void CWeaponRevolver::PlayAnimShoot()
 {
-    VERIFY(GetState()==eFire);
-    if (m_ammoElapsed.type1 > 1)
-        PlayHUDMotion("anm_shots", false, this, GetState());
-    else
-        PlayHUDMotion("anm_shot_l", false, this, GetState());
+    inherited::PlayAnimShoot();
 }
 
 
@@ -142,5 +138,48 @@ void CWeaponRevolver::OnShot()
 void CWeaponRevolver::UpdateSounds()
 {
     inherited::UpdateSounds();
-    m_sounds.SetPosition("sndClose", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver1", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver2", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver3", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver4", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver5", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver6", get_LastFP());
+    m_sounds.SetPosition("sndReloadRevolver7", get_LastFP());
+}
+
+void CWeaponRevolver::PlayReloadSound()
+{
+    int full_drum = m_ammoElapsed.type1 == iMagazineSize;
+
+    if (m_sounds_enabled)
+    {
+        if (bMisfire)
+        {
+            if (m_sounds.FindSoundItem("sndReloadMisfire", false))
+                PlaySound("sndReloadMisfire", get_LastFP());
+            else
+                PlaySound("sndReloadEmpty", get_LastFP());
+        }
+        else
+        {
+            if (full_drum - 1 && m_sounds.FindSoundItem("sndReloadRevolver1", false))
+                PlaySound("sndReloadRevolver1", get_LastFP());
+            else if (full_drum - 2 && m_sounds.FindSoundItem("sndReloadRevolver2", false))
+                PlaySound("sndReloadRevolver2", get_LastFP());
+            else if (full_drum - 3 && m_sounds.FindSoundItem("sndReloadRevolver3", false))
+                PlaySound("sndReloadRevolver3", get_LastFP());
+            else if (full_drum - 4 && m_sounds.FindSoundItem("sndReloadRevolver4", false))
+                PlaySound("sndReloadRevolver4", get_LastFP());
+            else if (full_drum - 5 && m_sounds.FindSoundItem("sndReloadRevolver5", false))
+                PlaySound("sndReloadRevolver5", get_LastFP());
+            else if (full_drum - 6 && m_sounds.FindSoundItem("sndReloadRevolver6", false))
+                PlaySound("sndReloadRevolver6", get_LastFP());
+            else if (full_drum - 7 && m_sounds.FindSoundItem("sndReloadRevolver7", false))
+                PlaySound("sndReloadRevolver7", get_LastFP());
+            else if (m_ammoElapsed.type1 == 0 && m_sounds.FindSoundItem("sndReloadEmpty", false))
+                PlaySound("sndReloadEmpty", get_LastFP());
+            else
+                PlaySound("sndReloadEmpty", get_LastFP());
+        }
+    }
 }

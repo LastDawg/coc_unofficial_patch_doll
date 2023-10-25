@@ -18,7 +18,6 @@ public:
     void net_Destroy() override;
     void OnH_B_Chield() override;
 
-    //анимации
     void PlayAnimShow() override;
     void PlayAnimIdle() override;
     void PlayAnimIdleMoving() override;
@@ -28,12 +27,12 @@ public:
     void PlayAnimShoot() override;
     void PlayAnimBore() override;
     void PlayAnimAim() override;
-    //virtual void PlayReloadSound();
+
     void UpdateSounds() override;
+    void PlayReloadSound() override;
 
 protected:
     bool AllowFireWhileWorking() override { return true; }
 
-    ESoundTypes m_eSoundClose;
-    //ESoundTypes m_eSoundReloadEmpty;
+    ESoundTypes m_eSoundReloadEmpty;
 };

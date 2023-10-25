@@ -1445,19 +1445,19 @@ float CWeapon::GetControlInertionFactor() const
         {
             if (GetSecondVPFov() < 15.f)
             {
-                return 9.5f;
+                return 5.1f;
             }
             else if (GetSecondVPFov() < 20.f)
             {
-                return 7.5f;
+                return 4.3f;
             }
             else if (GetSecondVPFov() < 35.f)
             {
-                return 5.5f;
+                return 3.2f;
             }
             else if (GetSecondVPFov() < 55.f)
             {
-                return 2.5f;
+                return 1.3f;
             }
             else
             {
