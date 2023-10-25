@@ -323,7 +323,7 @@ void CPseudoGigant::on_threaten_execute()
     CActor* pA = const_cast<CActor*>(smart_cast<const CActor*>(EnemyMan.get_enemy()));
     if (!pA)
         return;
-    if (pA->is_jump() && !m_kick_hit_jumping_actor) // Не наносит урона, если прыгаем
+    if (pA && pA->is_jump() && !m_kick_hit_jumping_actor) // Не наносит урона, если прыгаем
         return;
 
     float dist_to_enemy = pA->Position().distance_to(Position());
@@ -368,7 +368,9 @@ void CPseudoGigant::on_threaten_execute()
 	if (Actor() && m_kick_drop_actor_weapon)
     {
         CInventoryItem* active_item = Actor()->inventory().ActiveItem();
-        active_item->SetDropManual(true);
+
+        if (active_item)
+            active_item->SetDropManual(true);
     }
 }
 
