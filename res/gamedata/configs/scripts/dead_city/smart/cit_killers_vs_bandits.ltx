@@ -1,7 +1,11 @@
 [smart_terrain]
 squad_id = 7
-max_population = 4
-respawn_idle = 162000
-faction_controlled = army, bandit, killer, monolith
-default_faction = bandit
-faction_respawn_num = 2
+max_population = 2
+respawn_idle = 162000respawn_params = respawn@cit_killers_vs_bandits
+
+[respawn@cit_killers_vs_bandits]
+spawn
+
+[spawn]
+spawn_squads = simulation_zombie
+spawn_num = 3

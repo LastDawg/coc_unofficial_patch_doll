@@ -1,0 +1,250 @@
+[wpn_vihr]:new_weapon_params
+$npc                                               = off
+$prefetch                                          = 8
+$spawn                                             = "weapons\wpn_vihr"
+ammo_class                                         = ammo_9x39_pab9, ammo_9x39_ap
+ammo_elapsed                                       = 30
+ammo_mag_size                                      = 30
+animation_slot                                     = 2
+bullet_speed                                       = 290
+cam_return							               = 0
+
+cam_relax_speed						               = 10.0
+cam_dispersion						               = 0.8
+;cam_dispersion_horz 			                   = 0.8
+cam_dispersion_inc 					               = 0.8
+cam_dispersion_frac 				               = 0.7			
+cam_max_angle						               = 12.0				
+cam_max_angle_horz 					               = 7.0				
+cam_step_angle_horz 				               = 0.25	
+
+class                                              = WP_AK74
+
+condition_shot_dec                                 = 0.00111
+
+control_inertion_factor                            = 1.25f
+cost                                               = 45000
+crosshair_inertion                                 = 6.25
+description                                        = st_wpn_vihr_descr
+ef_main_weapon_type                                = 3
+ef_weapon_type                                     = 7
+fire_dispersion_base                               = 0.13
+fire_distance                                      = 450
+fire_modes                                         = 1, -1
+grenade_class                                      = ammo_m209
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.4
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.00
+holder_range_modifier                              = 2.00
+hud                                                = wpn_vihr_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 2
+inv_grid_width                                     = 4
+inv_grid_x                                         = 27
+inv_grid_y                                         = 12
+inv_name                                           = st_wpn_vihr
+inv_weight                                         = 2.4
+launch_speed                                       = 0
+light_color                                        = 0.6, 0.5, 0.3
+light_disabled                                     = true
+light_range                                        = 0.01
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 90
+min_radius                                         = 50
+misfire_chance                                     = 0.11
+
+parent_section                                     = wpn_vihr
+
+PDM_disp_base 				                       = 0.2
+PDM_disp_vel_factor 		                       = 0.7
+PDM_disp_accel_factor 			                   = 0.7
+PDM_disp_crouch	 			                       = 0.55
+PDM_disp_crouch_no_acc 			                   = 0.55
+
+ph_mass                                            = 3
+
+reload_dof                                         = 0.0, 0.5, 5, 2
+rpm                                                = 800
+rpm_empty_click                                    = 200
+scheduled                                          = off 
+scope_name                                         = pso_scope
+scope_status                                       = 2
+scope_x                                            = 55
+scope_y                                            = 0
+scope_zoom_factor                                  = 1.1
+scope_dynamic_zoom                                 = off
+
+scopes                                             = pso_scope, 1pn93_1_scope, kobra_scope, okp_scope
+use_alt_aim_hud 								   = true
+
+shell_particles                                    = ;weapons\9x39
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 2
+silencer_x                                         = 176
+silencer_y                                         = 11
+single_handed                                      = 0
+slot                                               = 2
+
+snd_bore                                           = nil
+snd_draw										   = weapons\vihr\vihr_draw
+snd_empty               						   = weapons\vintorez\vss_empty
+snd_holster										   = weapons\vihr\vihr_holster
+snd_reload										   = weapons\vihr\vihr_reload
+snd_reload_empty								   = weapons\vihr\vihr_reload_empty
+snd_reload_misfire								   = weapons\vihr\vihr_misfire
+snd_changefiremode                                 = weapons\vintorez\vss_firemode
+
+snd_shoot               						   = weapons\vihr\vihr_shoot
+snd_silncer_shot               					   = weapons\vintorez\vss_shoot
+snd_shoot_distant           					   = weapons\_gunfire\9a91\medium_distance
+snd_shoot_distant_far       					   = weapons\_gunfire\9a91\far_distance
+
+position        	    		                   = -0.026,-0.138,0.005
+orientation            			                   = 0,0,0
+fire_point              		                   = 0,0.174,0.4
+fire_point2             		                   = 0,0.097,0.722
+shell_point						                   = -0.02,0.167,0.082
+
+strap_bone0                                        = bip01_spine2
+strap_bone1                                        = bip01_spine1
+strap_position          		                   = -0.26,-0.11,0.25
+strap_orientation       		                   = -15,-9,110
+time_to_aim                                        = 1.0
+
+upgrade_scheme                                     = 
+upgrades                                 		   = 
+
+use_aim_bullet                                     = true
+visual                                             = dynamics\weapons\wpn_vihr\wpn_vihr.ogf
+weapon_class                                       = sniper_rifle
+
+zoom_cam_relax_speed				               = 12.0	
+zoom_cam_dispersion					               = 0.7
+zoom_cam_dispersion_inc				               = 0.7
+zoom_cam_dispersion_frac			               = 0.8
+zoom_cam_max_angle					               = 5.0
+zoom_cam_max_angle_horz				               = 3.0
+zoom_cam_step_angle_horz			               = 0.1
+
+zoom_dof                                           = 0.5, 1.0, 180
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.25
+
+smoke_particles									   = amik\weapons\smoke_particles\smoke_particles_00
+grenade_flame_particles 						   = amik\weapons\grenade_flame_particles\grenade_flame_particles_00
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_vihr_hud]:hud_base_weapon
+hands_orientation                		 = 2.2732, 1.319599, 0.1499993
+hands_orientation_16x9           		 = 2.2732, 1.319599, 0.1499993
+hands_position                   		 = 0.001868, -0.002514, -0.052596
+hands_position_16x9              		 = 0.001868, -0.002514, -0.052596
+aim_hud_offset_pos               		 = -0.06689, 0.040633, -0.106941
+aim_hud_offset_pos_16x9          		 = -0.06689, 0.040633, -0.106941
+aim_hud_offset_rot               		 = 0.037006, 0.032309, -0.038345
+aim_hud_offset_rot_16x9          		 = 0.037006, 0.032309, -0.038345
+item_position                    		 = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+anm_bore                                 = vihr_h_bore, idle
+anm_hide                                 = vihr_h_hide, vihr_g_hide, 0.64
+anm_idle                                 = vihr_h_idle, idle
+anm_idle_aim                             = vihr_idle_aim, idle
+anm_idle_moving                          = vihr_h_walk, idle
+anm_idle_sprint                          = vihr_h_sprint, idle
+anm_reload                               = vihr_h_reload, vihr_g_reload, 0.69
+anm_reload_empty                         = vihr_h_reload_empty, vihr_g_reload_empty, 0.677
+anm_reload_misfire                       = vihr_h_misfire , vihr_g_misfire
+anm_shots                                = vihr_h_shot, vihr_g_shot
+anm_shot_l                               = vihr_h_s_last, vihr_g_shot
+anm_show                                 = vihr_h_draw, vihr_g_draw, 0.775
+
+anm_bore_jammed                          = vihr_h_bore, idle_jammed
+anm_hide_jammed                          = vihr_h_hide, vihr_g_hide_jamm, 0.64
+anm_idle_jammed                          = vihr_h_idle, idle_jammed
+anm_idle_aim_jammed                      = vihr_idle_aim, idle_jammed
+anm_idle_moving_jammed                   = vihr_h_walk, idle_jammed
+anm_idle_sprint_jammed                   = vihr_h_sprint, idle_jammed
+anm_show_jammed                          = vihr_h_draw, vihr_g_draw_jamm, 0.775
+anm_shots_jammed                         = vihr_h_s_jamm, vihr_g_shot_jamm
+anm_shot_l_jammed                        = vihr_h_s_last, vihr_g_shot_jamm
+
+shell_bone                               = wpn_body
+shell_dir                                = 0, 1, 0
+shell_point                              = 0.02, 0.04, 0.131
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = 0, 0.037, 0.38
+fire_point2                              = -0.014, 0.01, -0.037
+
+item_visual                              = dynamics\weapons\wpn_vihr\wpn_vihr_hud.ogf
+
+;-----------------------------------------------------------------------------
+; Addons
+;-----------------------------------------------------------------------------
+
+[wpn_vihr_pso_scope]:wpn_vihr
+$spawn                          = "weapons\wpn_vihr_pso_scope"
+scope_x                         = 44
+scope_y                         = -1
+hud                             = wpn_vihr_pso_scope_hud
+
+[wpn_vihr_pso_scope_hud]:wpn_vihr_hud
+aim_hud_offset_pos				= -0.055390,0.024133,-0.096441
+aim_hud_offset_rot				= 0.038006,0.037809,-0.059345
+aim_hud_offset_pos_16x9			= -0.055390,0.024133,-0.096441
+aim_hud_offset_rot_16x9			= 0.038006,0.037809,-0.059345
+
+[wpn_vihr_kobra_scope]:wpn_vihr
+$spawn                          = "weapons\wpn_vihr_kobra_scope"
+scope_x                         = 80
+scope_y                         = 1
+hud                             = wpn_vihr_kobra_scope_hud
+visual                          = dynamics\weapons\wpn_vihr\wpn_vihr_kobra.ogf
+
+[wpn_vihr_kobra_scope_hud]:wpn_vihr_hud
+aim_hud_offset_pos				= -0.067890,0.003633,-0.068941
+aim_hud_offset_rot				= 0.023006,0.039559,-0.067845
+aim_hud_offset_pos_16x9			= -0.067890,0.003633,-0.068941
+aim_hud_offset_rot_16x9			= 0.023006,0.039559,-0.067845
+item_visual                     = dynamics\weapons\wpn_vihr\wpn_vihr_kobra_hud.ogf
+
+[wpn_vihr_okp_scope]:wpn_vihr
+$spawn                          = "weapons\wpn_vihr_okp_scope"
+scope_x                         = 78
+scope_y                         = -3
+hud                             = wpn_vihr_okp_scope_hud
+visual                          = dynamics\weapons\wpn_vihr\wpn_vihr_okp.ogf
+
+[wpn_vihr_okp_scope_hud]:wpn_vihr_hud
+aim_hud_offset_pos				= -0.062890,0.022633,-0.030941
+aim_hud_offset_rot				= 0.036256,0.034059,-0.055345
+aim_hud_offset_pos_16x9			= -0.062890,0.022633,-0.030941
+aim_hud_offset_rot_16x9			= 0.036256,0.034059,-0.055345
+item_visual                     = dynamics\weapons\wpn_vihr\wpn_vihr_okp_hud.ogf
+
+[wpn_vihr_1pn93_1_scope]:wpn_vihr
+$spawn                          = "weapons\wpn_vihr_1pn93_1_scope"
+scope_x                         = 74
+scope_y                         = -1
+hud                             = wpn_vihr_1pn93_1_scope_hud
+visual                          = dynamics\weapons\wpn_vihr\wpn_vihr_1pn93.ogf
+
+[wpn_vihr_1pn93_1_scope_hud]:wpn_vihr_hud
+aim_hud_offset_pos				= -0.051390,0.018633,-0.038941
+aim_hud_offset_rot				= 0.073506,0.030559,-0.072345
+aim_hud_offset_pos_16x9			= -0.051390,0.018633,-0.038941
+aim_hud_offset_rot_16x9			= 0.073506,0.030559,-0.072345
+item_visual                     = dynamics\weapons\wpn_vihr\wpn_vihr_1pn93_hud.ogf

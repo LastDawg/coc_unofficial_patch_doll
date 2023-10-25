@@ -1,0 +1,190 @@
+[wpn_toz194]:new_weapon_params
+GroupControlSection         = spawn_group
+$npc                        = on
+$prefetch                   = 8
+$spawn                      = "weapons\wpn_toz194"
+scheduled                   = off
+        
+class                       = WP_ASHTG
+slot                        = 2
+animation_slot              = 9
+ef_main_weapon_type         = 1
+ef_weapon_type              = 9
+hand_dependence             = 1
+single_handed               = 1
+  
+inv_grid_height             = 1
+inv_grid_width              = 4
+inv_grid_x                  = 27
+inv_grid_y                  = 22
+
+parent_section              = wpn_toz194
+scopes                      = none
+scope_status                = 0	
+
+inv_name                    = st_wpn_toz194
+description                 = st_wpn_toz194_descr
+        
+inv_weight                  = 2.9
+cost                        = 12000
+weapon_class                = shotgun
+        
+hud                         = wpn_toz194_hud
+visual                      = dynamics\weapons\wpn_toz194\wpn_toz194.ogf
+
+position                    = -0.024, -0.1, 0.1
+orientation                 = 0, -4, 0
+fire_point                  = 0, 0.158, 0.647
+fire_point2                 = 0, 0.158, 0.647
+shell_point                 = 0, 0.180, 0.647
+strap_bone0                 = bip01_spine2
+strap_bone1                 = bip01_spine1
+strap_position              = -0.26, -0.10, 0.05
+strap_orientation           = -15, -9, 110
+
+open_weapon_cartridge       = true
+open_weapon_empty_cartridge = true
+
+ph_mass                     = 4
+        
+light_color                 = 0.6, 0.5, 0.3
+light_range                 = 6.0
+light_time                  = 0.2
+light_var_color             = 0.05
+light_var_range             = 0.5
+        
+upgrade_scheme              = upgrade_scheme_wincheaster1300
+upgrades                    = up_gr_firstab_wincheaster1300, up_gr_seconab_wincheaster1300, up_gr_thirdab_wincheaster1300, up_gr_fourtab_wincheaster1300
+     
+tri_state_reload            = on
+fire_modes                  = 1
+ammo_class                  = ammo_12x70_buck, ammo_12x76_zhekan
+ammo_elapsed                = 8
+ammo_mag_size               = 8
+        
+scope_zoom_factor			= 1.1
+grenade_launcher_status     = 0
+        
+hit_impulse                 = 20
+hit_power                   = 0.64
+hit_type                    = fire_wound
+fire_distance               = 110
+bullet_speed                = 235
+rpm                         = 95        ;60 = 1 секунда
+rpm_empty_click             = 200
+        
+zoom_dof                    	 = 0.5, 1.0, 180
+zoom_enabled                	 = true
+control_inertion_factor     	 = 1.3f
+crosshair_inertion          	 = 6.85
+fire_dispersion_base       	 	 = 0.85
+        
+misfire_chance              = 0.08
+        
+condition_shot_dec          = 0.00253
+        		
+cam_return					= 0
+cam_relax_speed         	= 10
+cam_dispersion          	= 3.0
+cam_dispersion_inc			= 2.0
+cam_dispersion_frac			= 0.7
+cam_max_angle				= 20.0
+cam_max_angle_horz			= 15.0
+cam_step_angle_horz			= 3.0
+
+zoom_cam_relax_speed		= 10
+zoom_cam_dispersion			= 3.0
+zoom_cam_dispersion_inc		= 2.5
+zoom_cam_dispersion_frac	= 0.7
+zoom_cam_max_angle			= 12.0
+zoom_cam_max_angle_horz		= 7.0
+zoom_cam_step_angle_horz	= 3.0
+		        
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 2.0
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+        
+holder_fov_modifier         = 1.0
+holder_range_modifier       = 1.0
+min_radius                  = 0
+max_radius                  = 500
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_silencer_12x70
+silencer_status                                    = 2
+silencer_x                                         = 213
+silencer_y                                         = 16
+
+snd_reload_misfire				                   = weapons\win1300\revival
+snd_bore					                       = nil
+snd_draw										   = weapons\win1300\draw
+snd_holster										   = weapons\win1300\hide
+snd_empty               						   = weapons\win1300\empty
+snd_reload										   = weapons\mp133\mp133_close
+snd_open_weapon          						   = weapons\win1300\load_start
+snd_open_weapon_empty          					   = weapons\win1300\load_start_empty
+snd_add_cartridge							   	   = weapons\win1300\load
+snd_add_cartridge_empty							   = weapons\win1300\load_empty
+snd_close_weapon       							   = weapons\win1300\load_end
+
+snd_pump_gun                                       = weapons\win1300\pump, 1, 1.2
+snd_shoot               						   = weapons\win1300\shot
+snd_shoot_distant           					   = weapons\_gunfire\win1300\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = weapons\win1300\shot_silencer
+
+shell_particles             					   = ;weapons\12ga
+flame_particles			    					   = weapons\generic_weapon05
+smoke_particles     							   = ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles    					   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_toz194_hud]:hud_base_weapon
+hands_position					   = -0.016826,0.005727,-0.025579
+hands_orientation				   = 1.445501,2.208001,0.793000
+hands_position_16x9				   = -0.016826,0.005727,-0.025579
+hands_orientation_16x9			   = 1.445501,2.208001,0.793000
+aim_hud_offset_pos				   = -0.050303,0.033739,0.013257
+aim_hud_offset_rot				   = 0.034798,0.027301,-0.039650
+aim_hud_offset_pos_16x9			   = -0.050303,0.033739,0.013257
+aim_hud_offset_rot_16x9			   = 0.034798,0.027301,-0.039650
+item_position               	   = 0.006924,-0.003150,-0.000278
+item_orientation            	   = 0, 0, 0
+
+shell_bone                  	   = wpn_body
+shell_point                 	   = 0, 0, 0    
+fire_bone                   	   = wpn_body
+fire_point                  	   = 0, 0.03, 0.6
+
+anm_hide                    	   = pump_pistol_gwr_hide, toz_194_idle
+anm_idle                    	   = pump_pistol_gwr_idle, toz_194_idle
+anm_idle_aim                	   = pump_pistol_gwr_idle, toz_194_idle
+anm_idle_aim_moving         	   = pump_pistol_gwr_walk, toz_194_idle, 0.75
+anm_idle_aim_moving_crouch  	   = pump_pistol_gwr_walk, toz_194_idle
+anm_idle_moving             	   = pump_pistol_gwr_walk, toz_194_idle
+anm_idle_moving_crouch      	   = pump_pistol_gwr_walk, toz_194_idle
+anm_idle_sprint             	   = pump_pistol_gwr_sprint, toz_194_idle
+anm_shots                   	   = pump_pistol_gwr_shoot, toz_194_shot
+anm_show                    	   = pump_pistol_gwr_draw, toz_194_idle
+anm_open                    	   = pump_pistol_gwr_reload_start, toz_194_load_start
+anm_open_empty              	   = pump_pistol_gwr_reload_empty_start, toz_194_load_start_empty
+anm_add_cartridge           	   = pump_pistol_gwr_reload_ammo, toz_194_load
+anm_add_cartridge_empty     	   = pump_pistol_gwr_reload_empty_ammo, toz_194_load_empty
+anm_close                  		   = pump_pistol_gwr_reload_end, toz_194_idle
+anm_reload_misfire          	   = pump_pistol_gwr_revival, toz_194_revival
+
+anm_hide_jammed                    = pump_pistol_gwr_hide, toz_194_idle
+anm_idle_jammed                    = pump_pistol_gwr_idle, toz_194_idle
+anm_idle_aim_jammed                = pump_pistol_gwr_idle, toz_194_idle
+anm_idle_aim_moving_jammed         = pump_pistol_gwr_walk, toz_194_idle, 0.75
+anm_idle_aim_moving_crouch_jammed  = pump_pistol_gwr_walk, toz_194_idle
+anm_idle_moving_jammed             = pump_pistol_gwr_walk, toz_194_idle
+anm_idle_moving_crouch_jammed      = pump_pistol_gwr_walk, toz_194_idle
+anm_idle_sprint_jammed             = pump_pistol_gwr_sprint, toz_194_idle
+
+item_visual                 	   = dynamics\weapons\wpn_toz194\wpn_toz194_hud.ogf

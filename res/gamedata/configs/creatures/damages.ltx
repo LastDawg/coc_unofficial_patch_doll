@@ -533,6 +533,46 @@ eye_right 			 		= 1, 0.35
 jaw_1 		 		 		= 1, 0.35
 
 ;***************************************************************
+; NEW SECTIONS
+;***************************************************************
+
+[0_armory_class]:body_damage_00,head_damage_00
+hit_fraction_npc				= 1.0
+
+[0_armory_class_with_helmet]:body_damage_00,head_damage_sphere
+hit_fraction_npc				= 1.0
+
+[1_armory_class]:body_damage_010,head_damage_00
+hit_fraction_npc				= 0.3
+
+[1_armory_class_with_helmet]:body_damage_010,head_damage_sphere
+hit_fraction_npc				= 0.3
+
+[2_armory_class]:body_damage_020,head_damage_00
+hit_fraction_npc				= 0.3
+
+[2_armory_class_with_helmet]:body_damage_020,head_damage_sphere
+hit_fraction_npc				= 0.3
+
+[3_armory_class]:body_damage_030,head_damage_00
+hit_fraction_npc				= 0.1
+
+[3_armory_class_with_helmet]:body_damage_030,head_damage_sphere
+hit_fraction_npc				= 0.1
+
+[4_armory_class]:body_damage_040,head_damage_00
+hit_fraction_npc				= 0.1
+
+[4_armory_class_with_helmet]:body_damage_040,head_damage_sphere
+hit_fraction_npc				= 0.1
+
+[5_armory_class]:body_damage_050,head_damage_00
+hit_fraction_npc				= 0.1
+
+[5_armory_class_with_helmet]:body_damage_050,head_damage_sphere
+hit_fraction_npc				= 0.1
+
+;***************************************************************
 ; NPC SECTIONS
 ;***************************************************************
 
@@ -985,29 +1025,11 @@ ap_scale						= 0.7
 ; ACTOR HELM SECTIONS
 ;***************************************************************
 
-[actor_helm_mask]:body_damage_00, head_damage_00
+[actor_helm_class_0]:body_damage_00, head_damage_00
 
-[actor_helm_respirator]:body_damage_00, head_damage_0011
+[actor_helm_class_1]:body_damage_00, head_damage_015
 
-[actor_helm_m40]:body_damage_00, head_damage_0115
-
-[actor_helm_cs_1]:body_damage_00, head_damage_cs_1
-
-[actor_helm_hardhat]:body_damage_00, head_damage_hardhat
-
-[actor_helm_cs_2]:body_damage_00, head_damage_cs_2
-
-[actor_helm_screen]:body_damage_00, head_damage_015
-
-[actor_helm_cs_3]:body_damage_00, head_damage_cs_3
-
-[actor_helm_sphere]:body_damage_00, head_damage_sphere
-
-[actor_helm_tactic]:body_damage_00, head_damage_030
-
-[actor_helm_battle]:body_damage_00, head_damage_030
-
-[actor_helm_tacticm12]:body_damage_00, head_damage_035
+[actor_helm_class_2]:body_damage_00, head_damage_030
 
 ;***************************************************************
 ; ACTOR MODIFICATION SECTIONS

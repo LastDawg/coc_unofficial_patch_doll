@@ -157,7 +157,7 @@
 		<cap_ammo_count2 x="104" y="84" width="80" height="8">
 			<text font="letterica16" align="l" r="170" g="170" b="170"/>
 		</cap_ammo_count2>
-
+		
 		<cap_ammo_types x="18" y="100" width="120" height="8">
 			<text font="letterica16" align="l" r="170" g="170" b="170">ui_ammo_types</text>
 		</cap_ammo_types>

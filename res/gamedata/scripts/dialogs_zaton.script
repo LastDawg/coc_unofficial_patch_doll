@@ -414,7 +414,7 @@ end
 
 function zat_b33_transfer_fifth_item(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section(actor,"helm_hardhat_snag","in")
+	dialogs.relocate_item_section(actor,"af_soul","in")
 end
 
 function zat_b33_transfer_safe_container(first_speaker, second_speaker)
@@ -756,9 +756,8 @@ function is_good_gun(npc, item)
 	local section = item:section()
 	local wpn_table = {
 						[1] = "wpn_sig550",
-						[2] = "wpn_g36",
-						[3] = "wpn_groza",
-						[4] = "wpn_vintorez",
+						[2] = "wpn_groza",
+						[3] = "wpn_vintorez",
 						}
 
 	for k,v in pairs(wpn_table) do
@@ -882,7 +881,7 @@ end
 --Zaton B52
 
 function actor_has_nimble_weapon(first_speaker, second_speaker)
-	return db.actor:object("wpn_g36") ~= nil
+	return db.actor:object("wpn_m4a1") ~= nil
 end
 
 function zat_b51_robbery(first_speaker, second_speaker)
@@ -892,7 +891,7 @@ function zat_b51_robbery(first_speaker, second_speaker)
 	end
 	-- local need_item = {}
 
-	-- need_item["wpn_g36"] = true
+	-- need_item["wpn_m4a1"] = true
 
 	-- for k,v in pairs(need_item) do
 		-- if db.actor:object(k) ~= nil then
@@ -906,7 +905,7 @@ function zat_b51_rob_nimble_weapon(first_speaker, second_speaker)
 	local need_item = {}
 	local actor_has_item = {}
 
-	need_item["wpn_g36"] = true
+	need_item["wpn_m4a1"] = true
 
 	for k,v in pairs(need_item) do
 		if db.actor:object(k) ~= nil then
@@ -956,7 +955,7 @@ zat_b51_buy_item_table[1] = {		[1] = {item = {"wpn_desert_eagle"}}
 	}
 zat_b51_buy_item_table[2] = {	[1] = {item = {"wpn_protecta"}}
 	}
-zat_b51_buy_item_table[3] = {   [1] = {item = {"wpn_g36k"}}
+zat_b51_buy_item_table[3] = {   [1] = {item = {"wpn_m4a1"}}
 	}
 zat_b51_buy_item_table[4] = {	[1] = {item = {"wpn_vintorez"}}
 	}

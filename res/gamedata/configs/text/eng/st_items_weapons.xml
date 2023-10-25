@@ -3,18 +3,42 @@
 
 <!-- Weapons -->
 
+	<string id="st_wpn_ots33">
+		<text>OTs-33 "Pernach"</text>
+	</string>
+	<string id="st_wpn_ots33_descr">
+		<text>Further development of Stechkin pistols, which was conceived as a replacement for the APS based on the OTs-27. A good enough gun, but it never went into production.</text>
+	</string>	
+	<string id="st_wpn_fn2000">
+		<text>FN F2000</text>
+	</string>
+	<string id="st_wpn_fn2000_descr">
+		<text>The Belgian assault rifle of the Bullpup system. It has a weaver bar for sights and a mount for a grenade launcher under the barrel.</text>
+	</string>
+	<string id="st_wpn_ithaca_m37">
+		<text>Ithaca M37</text>
+	</string>
+	<string id="st_wpn_ithaca_m37_descr">
+		<text>The legendary American rifle in a modern design for a powerful 20th caliber.</text>
+	</string>
+	<string id="st_wpn_ithaca_m37_chrome">
+		<text>Ithaca M37 "Chrome"</text>
+	</string>
+	<string id="st_wpn_ithaca_m37_chrome_descr">
+		<text>A modern version of the American "trench gun" with plastic-replaced wood elements.</text>
+	</string>	
+	<string id="st_wpn_sks_short">
+		<text>SKS "Bastard"</text>
+	</string>
+	<string id="st_wpn_sks_short_descr">
+		<text>Extremely destructive weapons at close range and the fruit of the gloomy genius of criminals. It is heavily controlled and generally causes concern.</text>
+	</string>
 	<string id="st_wpn_spas12">
 		<text>SPAS 12</text>
 	</string>
 	<string id="st_wpn_spas12_descr">
 		<text>A pump-action shotgun with a semi-automatic firing mode. It is comfortable enough and has a small return, but it is expensive.</text>
 	</string>
-	<string id="st_wpn_vz61">
-		<text>Scorpion vz. 61</text>
-	</string>
-	<string id="st_wpn_vz61_descr">
-		<text>Compact Czechoslovak submachine gun, a veteran of many conflicts in the post-Soviet space.</text>
-	</string>	
 	<string id="st_wpn_bizon">
 		<text>PP-19 "Bizon"</text>
 	</string>
@@ -45,17 +69,11 @@
 	<string id="st_wpn_toz106_descr">
 		<text>He was popularly nicknamed "the death of the chairman" because of the dimensions uncharacteristic for hunting rifles. It is charged with a box magazine of the 20th caliber through a longitudinally sliding shutter.</text>
 	</string>
-	<string id="st_wpn_izh18">
-		<text>IZh-18</text>
+	<string id="st_wpn_mr18">
+		<text>MR-18</text>
 	</string>
-	<string id="st_wpn_izh18_descr">
+	<string id="st_wpn_mr18_descr">
 		<text>Single-barrel hunting-sports rifle of Russian production, existing for different calibers. Inexpensive, used mainly to eliminate single targets from afar.</text>
-	</string>
-	<string id="st_wpn_remington700">
-		<text>Remington 700</text>
-	</string>
-	<string id="st_wpn_remington700_descr">
-		<text>A popular American self - loading rifle with a cartridge .308 win. A fairly early version, which has a non-removable magazine for 5 rounds.</text>
 	</string>
 	<string id="st_wpn_arisaka">
 		<text>Arisaka Type 38</text>
@@ -67,8 +85,8 @@
 		<text>RPK</text>
 	</string>
 	<string id="st_wpn_rpk_descr">
-		<text>Kalashnikov machine gun with a slightly non-standard drum magazine for 75 rounds.</text>
-	</string>	
+		<text>Kalashnikov light machine gun, which has a very similar design and uses enlarged magazines, as well as bipods for convenience.</text>
+	</string>
 	<string id="st_wpn_rgm_40">
 		<text>RGM-40 "Kastet"</text>
 	</string>
@@ -99,12 +117,6 @@
 	<string id="st_wpn_tt33_descr">
 		<text>A Soviet pistol with a 7.62x25mm lethal cartridge popular at that time. Reliable and beautiful.</text>
 	</string>
-	<string id="st_wpn_g3">
-		<text>HK G3</text>
-	</string>
-	<string id="st_wpn_g3_descr">
-		<text>A post-war German rifle, designed essentially on the basis of the StG and became the platform for the following German weapons.</text>
-	</string>
 	<string id="st_wpn_glock">
 		<text>Glock 17</text>
 	</string>
@@ -122,12 +134,6 @@
 	</string>
 	<string id="st_wpn_fn_fiveseven_descr">
 		<text>Pistol under special 5.7õ28 mm. Pretty accuracy and power.</text>
-	</string>	
-	<string id="st_wpn_fnp45">
-		<text>FN FNP-45</text>
-	</string>
-	<string id="st_wpn_fnp45_descr">
-		<text>The Belgian pistol under .45 cal with completely nice sights.</text>
 	</string>	
 	<string id="st_wpn_mr412">
 		<text>MP-412 "Rex"</text>
@@ -158,12 +164,6 @@
 	</string>
 	<string id="st_wpn_toz194_descr">
 		<text>Pump-action post-perestroika rifle of the legendary TOZ line.</text>
-	</string>
-	<string id="st_wpn_ak12">
-		<text>AK-12</text>
-	</string>
-	<string id="st_wpn_ak12_descr">
-		<text>A modern Russian ar, however, not without some drawbacks. It is an upgrade of the AK-74M.</text>
 	</string>
 	<string id="st_wpn_cz75">
 		<text>CZ 75</text>
@@ -247,7 +247,7 @@
 		<text>AN-94</text>
 	</string>
 	<string id="st_wpn_ak74">
-		<text>AK-74</text>
+		<text>AKS-74</text>
 	</string>
 	<string id="st_wpn_ak74m">
 		<text>AK-74M</text>
@@ -274,17 +274,8 @@
 		<text>Desert Eagle</text>
 	</string>
 	<string id="st_wpn_fort">
-		<text>Fort-17</text>
-	</string>
-	<string id="st_wpn_g36">
-		<text>HK G36</text>
-	</string>
-	<string id="st_wpn_g36k">
-		<text>HK G36K</text>
-	</string>	
-	<string id="st_wpn_g36k_descr">
-		<text>A later version, on which the Picatinny rail is located. Allows you to set sights.</text>
-	</string>			
+		<text>Fort-12</text>
+	</string>		
 	<string id="st_wpn_gauss">
 		<text>Gauss rifle</text>
 	</string>
@@ -293,12 +284,6 @@
 	</string>
 	<string id="st_wpn_groza_descr">
 		<text>This assault rifle combined with a grenade launcher, which is similar to the AKM series, was specially developed for rapid response units. The main differences are its 9x39 calibre ammunition, bullpup layout, and extensive configuration options. This weapon is highly valued by military stalkers due to its ability to kill enemies wearing body armour behind improvised cover at a distance during urban combat, as well as its excellent stopping power.</text>
-	</string>
-	<string id="st_wpn_l85">
-		<text>L85</text>
-	</string>
-	<string id="st_wpn_lr300">
-		<text>LR-300</text>
 	</string>
 	<string id="st_wpn_m4a1">
 		<text>M4A1</text>
@@ -315,9 +300,6 @@
 	<string id="st_wpn_mp5_descr">
 		<text>This submachine gun deservedly enjoys great popularity due to its reliability, ease of handling and high accuracy of shooting. Adopted by the army and police units of many countries, it appeared on the black market and eventually reached the Zone.</text>
 	</string>	
-	<string id="st_wpn_pb">
-		<text>PB</text>
-	</string>
 	<string id="st_wpn_pm">
 		<text>PM</text>
 	</string>
@@ -399,6 +381,12 @@
 	<string id="st_wpn_mr133_descr">
 		<text>Ordinary pump-action shotgun from Russia, often used for hunting.</text>
 	</string>
+	<string id="st_wpn_mr155">
+		<text>MR-155</text>
+	</string>
+	<string id="st_wpn_mr155descr">
+		<text>A new semi-auto shotgun with not very good reliability.</text>
+	</string>	
 	<string id="st_wpn_abakan_descr">
 		<text>A modern assault rifle developed as a replacement for the ageing AKM 74/2. The main difference is its high speed 2-round burst firing mode, which allows two bullets to be fired at exactly the same spot on a target up to 100 metres away. This significantly increases the likelihood of hitting the target in comparison to the 1 round firing mode, which considerably improves kill potential, stopping power, and armour piercing capability.</text>
 	</string>
@@ -417,20 +405,8 @@
 	<string id="st_wpn_fort_descr">
 		<text>A Ukrainian-made pistol predominantly used by law enforcement organisations. Provides higher accuracy, better ergonomics, and a larger magazine capacity than the PMm. These pistols make it into the Zone in large numbers thanks to the sale of defective weapons, which suffer from technical miscalculations in early design models. Despite this, the pistol is in demand among stalkers thanks to its good combat characteristics.</text>
 	</string>
-	<string id="st_wpn_g36_descr">
-		<text>A new addition to the Western-made assault rifle family, which differs significantly from previous models in the series built on an automatic foundation with a semi-open bolt assembly, this weapon is more like American automatic gas-operated assault rifles with a short-stroke gas piston system. These changes ensure that the rifle is a first-rate example of a modern weapon: lightweight, reliable, and ergonomic.</text>
-	</string>
-	<string id="st_wpn_l85_descr">
-		<text>This rifle's considerable number of drawbacks caused most of these weapons to be modernised, with the retired stock making its way to the Zone via the black market. The rifle's main advantages are its built-in 4x scope, high single-shot accuracy, and reliable upgrade technology. When the weapon is fired in bursts, its accuracy decreases significantly, and the rifle's basic internal mechanisms become somewhat unreliable.</text>
-	</string>
-	<string id="st_wpn_lr300_descr">
-		<text>A new step in the development of this famous weapon family. The changes were made to the upper half of the steel construction comprising the barrel, gas tube and bolt assembly, reducing the weapon's weight, improving ergonomics and its gas system. The weapon is highly accurate, although its propensity to catch dirt makes it a poor choice for the Zone's difficult conditions.</text>
-	</string>
 	<string id="st_wpn_mine_descr">
 		<text>The PFM-1 is an anti-personnel mine with an infamous reputation for being the cause of large amounts of civilian casualties. Often referred to as a 'butterfly' mine due to its unusual shape.</text>
-	</string>
-	<string id="st_wpn_pb_descr">
-		<text>This pistol was developed in the second half of the 20th century on the basis of the PMm for use by special forces and scouting units. The front of the pistol's barrel is covered with an integrated silencer, while the bolt mechanism is short, which prevents a back-moving spring from being located inside it, and it is therefore situated in the weapon's handle. Morally obsolete, the weapon is still effective in the right hands.</text>
 	</string>
 	<string id="st_wpn_pm_descr">
 		<text>This Soviet legacy is the most common pistol in the Zone and is one of the best compact self-defence handguns available. It is small, highly reliable, easy to use and maintain in working order. It also suffers from several drawbacks, including its short range, low firing accuracy, and poor stopping power, while also losing out to modern pistols in its class in terms of weight and magazine size.</text>
@@ -458,19 +434,7 @@
 	</string>
 	
 <!-- Scopes -->	
-
-	<string id="st_leupold_rifleman_scope">
-		<text>Scope Leupold Rifleman</text>
-	</string>
-	<string id="st_leupold_rifleman_scope_descr">
-		<text>Commercial sight with a multiplicity of up to 9. It is mounted in a certain way, with the help of special rings not on the Weaver bar.</text>
-	</string>	
-	<string id="st_addon_susat_scope">
-		<text>Scope SUSAT L9A1</text>
-	</string>
-	<string id="st_addon_susat_scope_descr">
-		<text>A 4x standard sight designed for the British Army. A very rare thing.</text>
-	</string>		
+	
 	<string id="st_addon_specter_scope">
 		<text>Scope ELCAN SpecterDR</text>
 	</string>
@@ -489,12 +453,18 @@
 	<string id="st_1p59_scope_descr">
 		<text>Optical sight, which is specially designed for sniper rifles of the SVD type.</text>
 	</string>
-	<string id="st_addon_1pn93_scope">
-		<text>Scope 1PN93-2 AK</text>
+	<string id="st_addon_1pn93_1_scope">
+		<text>Scope 1PN93-1 AK</text>
 	</string>
-	<string id="st_addon_1pn93_scope_descr">
-		<text>The 1PN93-2 night sight is designed to monitor the battlefield and conduct targeted shooting in conditions of natural night illumination at ambient temperatures from plus 50 ° C to minus 50 ° C and relative humidity up to 100% (at a temperature of 25 ° C).</text>
+	<string id="st_addon_1pn93_1_scope_descr">
+		<text>The 1PN93-1 night sight is designed to monitor the battlefield and conduct targeted shooting in conditions of natural night illumination at ambient temperatures from plus 50 ° C to minus 50 ° C and relative humidity up to 100% (at a temperature of 25 ° C).</text>
 	</string>
+	<string id="st_addon_1pn93_4_scope">
+		<text>Scope 1PN93-4 SVD</text>
+	</string>
+	<string id="st_addon_1pn93_4_scope_descr">
+		<text>The 1PN93-4 night sight is designed to monitor the battlefield and conduct targeted shooting in conditions of natural night illumination at ambient temperatures from plus 50 ° C to minus 50 ° C and relative humidity up to 100% (at a temperature of 25 ° C).</text>
+	</string>	
 	<string id="st_addon_pn23_scope">
 		<text>Scope PN23 "Sarachin"</text>
 	</string>
@@ -519,6 +489,12 @@
 	<string id="st_addon_pu_scope_descr">
 		<text>The usual Soviet sight, which was installed on many types of weapons. Now it can only be worn on SKS or a Mosin rifle.</text>
 	</string>
+	<string id="st_addon_type97_scope">
+		<text>Type 97 scope</text>
+	</string>
+	<string id="st_addon_type97_scope_descr">
+		<text>A little-known sight that is attached to a Japanese carbine from the First and Second World Wars.</text>
+	</string>	
 	<string id="st_addon_4x34_scope">
 		<text>Scope PO 4x34</text>
 	</string>
@@ -543,12 +519,6 @@
 	<string id="st_addon_pso_scope_descr">
 		<text>A standard sight with a 4x magnification, used mainly on domestic weapons.</text>
 	</string>
-	<string id="st_1p29_scope">
-		<text>USP-1 "Tulpan"</text>
-	</string>
-	<string id="st_1p29_scope_descr">
-		<text>Standard Soviet rifle scope without illumination.</text>
-	</string>	
 	<string id="st_addon_scope_okp_scope">
 		<text>Collimator OKP-7</text>
 	</string>
@@ -912,21 +882,5 @@
 	<string id="st_wpn_crowbar_descr">
 		<text>An indispensable attribute of hacking anything, is popular in the Zone.</text>
 	</string>
-	
-<!-- Lasers - Flashlights -->
-		
-	<string id="st_wpn_addon_laser_weaver_an_peq">
-		<text>Tactical block "Zenit-2"</text>
-	</string>	
-	<string id="st_wpn_addon_laser_weaver_an_peq_descr">
-		<text>A commercial Russian tactical unit that includes an laser, flashlight and a take-out button. Used on Soviet rail mounts.</text>
-	</string>		
-		
-	<string id="st_wpn_addon_laser_weaver_an_peq">
-		<text>Tactical block AN/PEQ-15</text>
-	</string>	
-	<string id="st_wpn_addon_laser_weaver_an_peq_descr">
-		<text>Universal sighting device for NATO standard weapons. Combines both the laser and the flashlight.</text>
-	</string>	
 	
 </string_table>

@@ -64,7 +64,8 @@
 	<texture id="ui_am_prop_power_loss" x="825" y="452" width="19" height="19"/>
 	<texture id="ui_am_prop_det_detect_radius" x="825" y="490" width="19" height="19"/>
 	<texture id="ui_am_prop_artefact_count" x="825" y="471" width="19" height="19"/>	
-	<texture id="ui_am_prop_det_detect_radius" x="825" y="490" width="19" height="19"/>
+	<texture id="ui_am_prop_repair_restore_speed" x="806" y="680" width="19" height="19"/>
+	<texture id="ui_am_prop_device_charge_restore_speed" x="806" y="699" width="19" height="19"/>
 	
 	<!-- Бустеры -->	
 	<texture id="ui_am_boost_explosion_immunity" x="806" y="604" width="19" height="19" />	
@@ -83,6 +84,8 @@
 	<texture id="ui_am_prop_sleepeness_restore_speed_minus" x="806" y="528" width="19" height="19" />	
 	<texture id="ui_am_prop_psy_health_restore_speed_minus" x="863" y="623" width="19" height="19" />		
 	<texture id="ui_am_prop_intoxication_restore_speed_minus" x="863" y="547" width="19" height="19" />	
+	<texture id="ui_am_prop_repair_restore_speed_minus" x="863" y="642" width="19" height="19" />		
+	<texture id="ui_am_prop_device_charge_restore_speed_minus" x="863" y="661" width="19" height="19" />	
 	
     <texture id="ui_save_load_back" x="692" y="0" width="288" height="428" />
 	

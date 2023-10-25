@@ -1,62 +1,62 @@
 <specific_character id="sim_default_military_0_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
 	<icon>ui_inGame2_Soldier_1a</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1a</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_1</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1b</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1b</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_2</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1c</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1c</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_3</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1d</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1d</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_4</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1e</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1e</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_5</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_5" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1f</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1f</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_6</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_6" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1g</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1g</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_7</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_7" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1h</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1h</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_8</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_8" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1i</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1i</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_9</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_9" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1j</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1j</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_10</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_10" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1k</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1k</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_11</visual>
 </specific_character>
 <specific_character id="sim_default_military_0_default_11" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1l</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_1l</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_12</visual>
 </specific_character>
 <!--<specific_character id="sim_default_military_0_default_12" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
@@ -66,60 +66,60 @@
 <specific_character id="sim_default_military_1_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_1.xml"
     <icon>ui_inGame2_Soldier_2_bala</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_2_bala</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_13</visual>
 </specific_character>
 <specific_character id="sim_default_military_2_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_2.xml"
     <icon>ui_inGame2_Soldier_3</icon>
     <class>sim_default_military_2</class>
     <snd_config>characters_voice\human\military_3\</snd_config>
-    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_helmet_1</visual>
 </specific_character>
 <specific_character id="sim_default_military_2_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_2.xml"
     <icon>ui_inGame2_Soldier_2</icon>
     <class>sim_default_military_2</class>
     <snd_config>characters_voice\human\military_1\</snd_config>
-    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_helmet_2</visual>
 </specific_character>
 <specific_character id="sim_default_military_2_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_2.xml"
     <icon>ui_inGame2_Soldier_2</icon>
     <class>sim_default_military_2</class>
     <snd_config>characters_voice\human\military_1\</snd_config>
-    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_helmet_3</visual>
 </specific_character>
 <specific_character id="sim_default_military_3_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_2.xml"
     <icon>ui_inGame2_Soldier_3</icon>
     <class>sim_default_military_3</class>
     <snd_config>characters_voice\human\military_3\</snd_config>
-    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_helmet_4</visual>
 </specific_character>
 <specific_character id="sim_default_military_3_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
     <icon>ui_inGame2_Soldier_beret1</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_beret1</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_beret_1</visual>
 </specific_character>
 <specific_character id="sim_default_military_3_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
     <icon>ui_inGame2_Soldier_beret2</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_beret2</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_beret_2</visual>
 </specific_character>
 <specific_character id="sim_default_military_3_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
     <icon>ui_inGame2_Soldier_beret3</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_beret3</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_beret_3</visual>
 </specific_character>
 <specific_character id="sim_default_military_3_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
     <icon>ui_inGame2_Soldier_beret4</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_beret4</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_beret_4</visual>
 </specific_character>
 <specific_character id="sim_default_military_3_default_5" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
     <icon>ui_inGame2_Soldier_beret5</icon>
-    <visual>actors\stalker_soldier\stalker_soldier_beret5</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_beret_5</visual>
 </specific_character>
 <!--<specific_character id="sim_default_military_3_default_6" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
@@ -138,7 +138,7 @@
     <rank min="6000" max="20000" />
     <reputation min="-800" max="1900" />
     <money min="1500" max="3500" infinitive="0"/>
-    <visual>actors\stalker_soldier\stalker_soldier_2_bala</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_5</visual>
     <supplies>
 #include "gameplay\loadouts\army_base.ltx"
 #include "gameplay\loadouts\army_sniper.ltx"
@@ -154,7 +154,7 @@
 	#include "gameplay\profiles\character_desc_army_4.xml"
     <icon>ui_inGame2_Soldier_4</icon>
     <rank min="21000" max="28000" />
-    <visual>actors\stalker_soldier\stalker_soldier_4</visual>
+    <visual>random_characters\military\stalker_military_mil_armor_1</visual>
 	<supplies>
 #include "gameplay\loadouts\army_base.ltx"
 #include "gameplay\loadouts\army_tier_3.ltx"
@@ -168,7 +168,7 @@
 	#include "gameplay\profiles\character_desc_army_4.xml"
     <icon>ui_inGame2_soldier_5</icon>
     <rank min="21000" max="28000" />
-    <visual>actors\stalker_soldier\stalker_soldier_5</visual>
+    <visual>random_characters\military\stalker_military_mil_armor_2</visual>
 	<supplies>
 #include "gameplay\loadouts\army_base.ltx"
 #include "gameplay\loadouts\army_tier_3.ltx"
@@ -183,7 +183,7 @@
     <name>GENERATE_NAME_captain</name>
     <icon>ui_inGame2_soldier_sk9m</icon>
     <rank min="22000" max="29000" />
-    <visual>actors\stalker_soldier\stalker_soldier_4m</visual>
+    <visual>random_characters\military\stalker_military_mil_armor_3</visual>
     <supplies>
 #include "gameplay\loadouts\army_base.ltx"
 #include "gameplay\loadouts\army_tier_4.ltx"
@@ -198,7 +198,7 @@
     <name>GENERATE_NAME_captain</name>
     <icon>ui_inGame2_soldier_5</icon>
     <rank min="22000" max="29000" />
-    <visual>actors\stalker_soldier\stalker_soldier_5m</visual>
+    <visual>random_characters\military\stalker_military_mil_armor_4</visual>
     <supplies>
 #include "gameplay\loadouts\army_base.ltx"
 #include "gameplay\loadouts\army_tier_4.ltx"
@@ -211,9 +211,54 @@
 <specific_character id="sim_default_military_4_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_4.xml"
     <name>GENERATE_NAME_captain</name>
-    <icon>ui_inGame2_soldier_exo</icon>
+    <icon>ui_inGame2_soldier_5</icon>
     <rank min="23000" max="30000" />
-    <visual>actors\stalker_soldier\stalker_soldier_exo</visual>
+    <visual>random_characters\military\stalker_military_mil_armor_black_1</visual>
+    <supplies>
+#include "gameplay\loadouts\army_base.ltx"
+#include "gameplay\loadouts\army_tier_4.ltx"
+        [spawn] \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs_army.xml"
+    </supplies>
+</specific_character>
+<specific_character id="sim_default_military_4_default_5" team_default = "1">
+	#include "gameplay\profiles\character_desc_army_4.xml"
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_soldier_5</icon>
+    <rank min="23000" max="30000" />
+    <visual>random_characters\military\stalker_military_mil_armor_black_2</visual>
+    <supplies>
+#include "gameplay\loadouts\army_base.ltx"
+#include "gameplay\loadouts\army_tier_4.ltx"
+        [spawn] \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs_army.xml"
+    </supplies>
+</specific_character>
+<specific_character id="sim_default_military_4_default_6" team_default = "1">
+	#include "gameplay\profiles\character_desc_army_4.xml"
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_soldier_5</icon>
+    <rank min="23000" max="30000" />
+    <visual>random_characters\military\stalker_military_mil_armor_black_3</visual>
+    <supplies>
+#include "gameplay\loadouts\army_base.ltx"
+#include "gameplay\loadouts\army_tier_4.ltx"
+        [spawn] \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs_army.xml"
+    </supplies>
+</specific_character>
+<specific_character id="sim_default_military_4_default_7" team_default = "1">
+	#include "gameplay\profiles\character_desc_army_4.xml"
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_soldier_5</icon>
+    <rank min="23000" max="30000" />
+    <visual>random_characters\military\stalker_military_mil_armor_black_4</visual>
     <supplies>
 #include "gameplay\loadouts\army_base.ltx"
 #include "gameplay\loadouts\army_tier_4.ltx"

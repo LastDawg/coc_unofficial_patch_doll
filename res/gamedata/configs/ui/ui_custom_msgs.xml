@@ -154,7 +154,20 @@
         <gun_jammed x="200" y="70" width="600" height="50" ttl="3">
                 <text font="graffiti32"  r="240" g="217" b="182" a="255" align="c">gun_jammed</text>
         </gun_jammed>
-		
+	
+        <weapon_ammo_check_full x="200" y="70" width="600" height="50" ttl="3">
+                <text font="graffiti32"  r="240" g="217" b="182" a="255" align="c">weapon_ammo_check_full</text>
+        </weapon_ammo_check_full>
+        <weapon_ammo_check_over_half x="200" y="70" width="600" height="50" ttl="3">
+                <text font="graffiti32"  r="240" g="217" b="182" a="255" align="c">weapon_ammo_check_over_half</text>
+        </weapon_ammo_check_over_half>
+        <weapon_ammo_check_under_half x="200" y="70" width="600" height="50" ttl="3">
+                <text font="graffiti32"  r="240" g="217" b="182" a="255" align="c">weapon_ammo_check_under_half</text>
+        </weapon_ammo_check_under_half>		
+        <weapon_ammo_check_empty x="200" y="70" width="600" height="50" ttl="3">
+                <text font="graffiti32"  r="240" g="217" b="182" a="255" align="c">weapon_ammo_check_empty</text>
+        </weapon_ammo_check_empty>
+	
         <gun_broken x="200" y="70" width="600" height="50" ttl="3">
                 <text font="graffiti32"  r="240" g="217" b="182" a="255" align="c">gun_broken</text>
         </gun_broken>		
@@ -437,43 +450,6 @@
 	<helm_hardhat12 x="0" y="0" width="1024" height="768" stretch="1">
 		<texture>ui\helm_hardhat12</texture>
 	</helm_hardhat12>
-
-	<helm_protective1 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective1</texture>
-	</helm_protective1>
-	<helm_protective2 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective2</texture>
-	</helm_protective2>
-	<helm_protective3 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective3</texture>
-	</helm_protective3>
-	<helm_protective4 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective4</texture>
-	</helm_protective4>
-	<helm_protective5 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective5</texture>
-	</helm_protective5>
-	<helm_protective6 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective6</texture>
-	</helm_protective6>
-	<helm_protective7 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective7</texture>
-	</helm_protective7>
-	<helm_protective8 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective8</texture>
-	</helm_protective8>
-	<helm_protective9 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective9</texture>
-	</helm_protective9>
-	<helm_protective10 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective10</texture>
-	</helm_protective10>
-	<helm_protective11 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective11</texture>
-	</helm_protective11>
-	<helm_protective12 x="0" y="0" width="1024" height="768" stretch="1">
-		<texture>ui\helm_protective12</texture>
-	</helm_protective12>
 
 	<helm_battle1 x="0" y="0" width="1024" height="768" stretch="1">
 		<texture>ui\helm_battle1</texture>

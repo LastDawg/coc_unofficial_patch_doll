@@ -647,7 +647,6 @@ function setup_weapon_fetch_task(actor,npc,p)
 				"wpn_vintorez",
 				"wpn_svu",
 				"wpn_svd",
-				"wpn_g36",
 				"wpn_pkm"
 		}
 		wpn = itm[math.random(#itm)]
@@ -4404,7 +4403,7 @@ function zat_b202_spawn_b33_loot(actor, npc, p)
 		"af_soul"
 	}
 	item_table[5] = {
-		"helm_hardhat_snag"
+		"af_soul"
 	}
 	for k,v in pairs(info_table) do
 		local obj_id
@@ -5136,7 +5135,7 @@ function bar_arena_teleport (actor, npc)
 		table.insert(spawn_items, "grenade_f1")
 		table.insert(spawn_items, "grenade_f1")
 	elseif	has_alife_info("bar_arena_fight_8") then
-		table.insert(spawn_items, "wpn_g36")
+		table.insert(spawn_items, "wpn_m4a1")
 		table.insert(spawn_items, "radiation_outfit")
 		table.insert(spawn_items, "ammo_5.56x45_ap")
 		table.insert(spawn_items, "ammo_5.56x45_ap")

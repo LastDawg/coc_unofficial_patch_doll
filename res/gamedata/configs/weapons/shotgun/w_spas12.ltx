@@ -1,0 +1,209 @@
+[wpn_spas12]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\spas12"
+ammo_class                                         = ammo_12x70_buck, ammo_12x76_zhekan
+
+scopes 					    					   = none
+parent_section  								   = wpn_spas12
+scope_status                                       = 0
+
+fire_modes                                         = -1
+
+ammo_elapsed                                       = 8
+ammo_mag_size                                      = 8
+
+animation_slot                                     = 9
+bullet_speed                                       = 400
+cam_dispersion                                     = 5.0
+cam_dispersion_frac                                = 1.0
+cam_dispersion_inc                                 = 1.5
+cam_max_angle                                      = 15.0
+cam_max_angle_horz                                 = 8.0
+cam_relax_speed                                    = 20
+cam_return                                         = 0
+cam_step_angle_horz                                = 5.0
+class                                              = WP_ASHTG
+
+condition_shot_dec                                 = 0.002
+
+control_inertion_factor                            = 1.45f
+cost                                               = 70000
+crosshair_inertion                                 = 7.25
+description                                        = st_wpn_spas12_descr
+ef_main_weapon_type                                = 1
+ef_weapon_type                                     = 9
+fire_dispersion_base                               = 0.5
+fire_distance                                      = 250
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.70
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.0
+holder_range_modifier                              = 1.0
+hud                                                = wpn_spas12_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 1
+inv_grid_width                                     = 5
+inv_grid_x                                         = 32
+inv_grid_y                                         = 24
+inv_name                                           = st_wpn_spas12
+inv_weight                                         = 4.4
+light_color                                        = 0.6, 0.5, 0.3
+light_range                                        = 6.0
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 50
+min_radius                                         = 30
+
+misfire_chance                                     = 0.07
+
+PDM_disp_accel_factor                              = 2.0
+PDM_disp_base                                      = 0.5
+PDM_disp_crouch                                    = 1.0
+PDM_disp_crouch_no_acc                             = 1.0
+PDM_disp_vel_factor                                = 2.0
+ph_mass                                            = 4
+
+; Меняет ли авторежим анимации и rpm
+different_shot_modes                               = false
+
+rpm                         					   = 180
+; Для авторежима, можно на абакане поставить без different_shot_modes
+rpm_mode_2                                         = 180
+
+rpm_empty_click             					   = 180
+
+scheduled                                          = off
+scope_zoom_factor                                  = 1.1
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+
+silencer_status                                    = 2
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 2
+silencer_x                                         = 235
+silencer_y                                         = 10
+
+single_handed                                      = 0
+slot                                               = 2
+
+snd_reload_misfire				                   = weapons\spas12\unjam
+snd_add_cartridge                                  = weapons\spas12\load
+snd_add_cartridge_empty                            = weapons\spas12\load_empty
+snd_bore                                           = weapons\spas12\inspect
+snd_bore_jammed                                    = weapons\spas12\inspect_jammed
+snd_close_weapon                                   = weapons\spas12\close
+snd_draw                                           = weapons\spas12\draw
+snd_empty               						   = weapons\spas12\empty
+snd_holster                                        = weapons\spas12\holster
+snd_open_weapon                                    = weapons\spas12\open
+snd_open_weapon_empty                              = weapons\spas12\open_empty
+snd_reload                                         = weapons\spas12\reload
+snd_ammo_check                                     = weapons\spas12\magcheck
+snd_ammo_check_empty                               = weapons\spas12\magcheck
+
+snd_shoot               						   = weapons\spas12\shoot
+snd_shoot_distant           					   = weapons\_gunfire\spas12\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = weapons\spas12\shot_sil
+
+position                    					   = -0.024, -0.097, 0
+orientation                 					   = 0, -4, 0
+fire_point                  					   = 0,0.158,0.647
+fire_point2                 					   = 0,0.158,0.647
+shell_point                 					   = 0,0.180,0.647
+strap_bone0                 					   = bip01_spine2
+strap_bone1                 					   = bip01_spine1
+strap_orientation           					   = -15, -9, 110
+strap_position              					   = -0.26, -0.10, 0.05
+
+tri_state_reload                                   = on
+upgrade_scheme                                     = 
+upgrades                                           = 
+visual                                             = dynamics\weapons\wpn_spas12\wpn_spas12.ogf
+weapon_class                                       = shotgun
+zoom_cam_dispersion                                = 5.0
+zoom_cam_dispersion_frac                           = 0.7
+zoom_cam_dispersion_inc                            = 1.5
+zoom_cam_max_angle                                 = 8.0
+zoom_cam_max_angle_horz                            = 5.0
+zoom_cam_relax_speed                               = 10
+zoom_cam_step_angle_horz                           = 5.0
+zoom_dof                                           = 0.5, 1.0, 180
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.25
+
+shell_particles                                    = ;weapons\12ga
+flame_particles									   = weapons\generic_weapon05
+smoke_particles     							   = ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_spas12_hud]:hud_base_weapon
+hands_position                           = 0.0, 0.0, 0.0
+hands_position_16x9                      = 0.0, 0.0, 0.0
+hands_orientation                        = 0.0, 0.0, 0.0
+hands_orientation_16x9                   = 0.0, 0.0, 0.0
+aim_hud_offset_pos                       = -0.063009, 0.045002, -0.061513
+aim_hud_offset_pos_16x9                  = -0.063009, 0.045002, -0.061513
+aim_hud_offset_rot                       = 0.0101343, -0.021134, -0.031884
+aim_hud_offset_rot_16x9                  = 0.0101343, -0.021134, -0.031884
+item_orientation                         = 0,0,0
+item_position                            = 0,0,0
+
+anm_show								 = wpn_spas12_new_draw, idle
+anm_hide								 = wpn_spas12_new_holster, idle
+anm_bore               					 = wpn_spas12_new_inspect, idle
+anm_idle								 = wpn_spas12_new_idle, idle
+anm_idle_aim							 = wpn_spas12_new_aim, idle
+anm_idle_moving							 = wpn_spas12_new_walk, idle
+anm_idle_sprint							 = wpn_spas12_new_sprint, idle, 1.2
+anm_shot_l_jammed						 = wpn_spas12_new_draw, idle_jammed
+anm_shot_l								 = wpn_spas12_new_shoot_hip, shoot_empty
+anm_shots								 = wpn_spas12_new_shoot_hip
+anm_open								 = wpn_spas12_new_open, open
+anm_open_empty							 = wpn_spas12_new_open_empty, open_empty
+anm_close								 = wpn_spas12_new_close, close
+anm_add_cartridge						 = wpn_spas12_new_load
+anm_add_cartridge_empty					 = wpn_spas12_new_load_empty, load_empty
+anm_reload_misfire						 = wpn_spas12_new_unjam, unjam
+
+anm_show_empty							 = wpn_spas12_new_draw, idle_empty
+anm_hide_empty							 = wpn_spas12_new_holster, idle_empty
+anm_bore_empty               			 = wpn_spas12_new_inspect, idle_empty
+anm_idle_empty							 = wpn_spas12_new_idle, idle_empty
+anm_idle_aim_empty						 = wpn_spas12_new_aim, idle_empty
+anm_idle_moving_empty					 = wpn_spas12_new_walk, idle_empty
+anm_idle_sprint_empty					 = wpn_spas12_new_sprint, idle_empty
+
+anm_show_jammed							 = wpn_spas12_new_draw, idle_jammed
+anm_hide_jammed							 = wpn_spas12_new_holster, idle_jammed
+anm_bore_jammed              			 = wpn_spas12_new_inspect, idle_jammed
+anm_idle_jammed							 = wpn_spas12_new_idle, idle_jammed
+anm_idle_aim_jammed						 = wpn_spas12_new_aim, idle_jammed
+anm_idle_moving_jammed					 = wpn_spas12_new_walk, idle_jammed
+anm_idle_sprint_jammed					 = wpn_spas12_new_sprint, idle_jammed
+
+anm_idle_sprint_start             		 = wpn_spas12_new_sprint_start, idle
+anm_idle_sprint_end               	     = wpn_spas12_new_sprint_end, idle
+anm_idle_sprint_start_empty              = wpn_spas12_new_sprint_start, idle_empty
+anm_idle_sprint_end_empty                = wpn_spas12_new_sprint_end, idle_empty
+anm_idle_sprint_start_jammed             = wpn_spas12_new_sprint_start, idle_jammed
+anm_idle_sprint_end_jammed             	 = wpn_spas12_new_sprint_end, idle_jammed
+
+anm_ammo_check                           = wpn_spas12_new_magcheck, magcheck
+anm_ammo_check_empty                     = wpn_spas12_new_magcheck, magcheck_empty
+anm_ammo_check_jammed                    = wpn_spas12_new_magcheck, magcheck_jammed	
+	
+fire_bone                                = muzzle
+fire_point                               = 0,0,0
+shell_bone                               = shell
+shell_point                              = 0,0,0
+
+item_visual                   			 = dynamics\weapons\wpn_spas12\wpn_spas12_hud.ogf

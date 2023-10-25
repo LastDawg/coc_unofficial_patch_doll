@@ -77,11 +77,17 @@
     </auto_static>
   </wpn_crosshair_pgo>
 
-  <wpn_crosshair_1pn93 x="0" y="0" width="2048" height="1536">
+  <wpn_crosshair_1pn93_1 x="0" y="0" width="2048" height="1536">
     <auto_static x="0" y="0" width="1024" height="768" stretch="1">
-      <texture>wpn\2d_crosshair\wpn_crosshair_1pn93</texture>
+      <texture>wpn\2d_crosshair\wpn_crosshair_1pn93_1</texture>
     </auto_static>
-  </wpn_crosshair_1pn93> 
+  </wpn_crosshair_1pn93_1> 
+
+  <wpn_crosshair_1pn93_4 x="0" y="0" width="2048" height="1536">
+    <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+      <texture>wpn\2d_crosshair\wpn_crosshair_1pn93_4</texture>
+    </auto_static>
+  </wpn_crosshair_1pn93_4> 
 
   <wpn_crosshair_pn23 x="0" y="0" width="2048" height="1536">
     <auto_static x="0" y="0" width="1024" height="768" stretch="1">

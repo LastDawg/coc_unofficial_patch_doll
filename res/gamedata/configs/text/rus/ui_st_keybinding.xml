@@ -8,6 +8,9 @@
 	</string>	
 	<string id="kb_wpn_addon_flashlight">
 		<text>Такт. фонарик</text>
+	</string>	
+	<string id="kb_wpn_ammo_check">
+		<text>Проверить патроны</text>
 	</string>		
 	<string id="kb_active_jobs">
 		<text>КПК</text>

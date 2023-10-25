@@ -1,0 +1,182 @@
+[wpn_fnp90]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\wpn_fnp90"
+ammo_class                                         = ammo_5_7x28_ss190
+ammo_elapsed                                       = 50
+ammo_mag_size                                      = 50
+animation_slot                                     = 8
+bullet_speed                                       = 500
+cam_return							               = 0
+cam_relax_speed						               = 5.0
+cam_dispersion						               = 1.0
+;cam_dispersion_horz 			                   = 0.7
+cam_dispersion_inc 					               = 1.0
+cam_dispersion_frac 				               = 0.7
+cam_max_angle						               = 13.0				
+cam_max_angle_horz 					               = 13.0	
+cam_step_angle_horz	                               = 0.35
+class                                              = WP_AK74
+
+condition_shot_dec                                 = 0.000909
+
+control_inertion_factor                            = 1.15f
+cost                                               = 50000
+crosshair_inertion                                 = 4.35
+description                                        = st_wpn_fnp90_descr
+ef_main_weapon_type                                = 2
+ef_weapon_type                                     = 6
+fire_dispersion_base                               = 0.18
+fire_distance                                      = 700
+fire_modes                                         = 1, 3, -1
+grenade_class                                      = ammo_vog-25
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.38
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.00
+holder_range_modifier                              = 1.00
+hud                                                = wpn_fnp90_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 2
+inv_grid_width                                     = 4
+inv_grid_x                                         = 27
+inv_grid_y                                         = 27
+inv_name                                           = st_wpn_fnp90
+inv_weight                                         = 2.92
+launch_speed                                       = 0
+light_color                                        = 0.6, 0.5, 0.3
+light_disabled                                     = false
+light_range                                        = 5
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 40
+min_radius                                         = 30
+
+misfire_chance                                     = 0.18
+
+parent_section                                     = wpn_fnp90
+PDM_disp_base 				                       = 0.3
+PDM_disp_vel_factor 		                       = 1.0
+PDM_disp_accel_factor 			                   = 1.0
+PDM_disp_crouch	 			                       = 0.7
+PDM_disp_crouch_no_acc 			                   = 0.7
+reload_dof                                         = 0.0, 0.5, 5, 2
+rpm                                                = 800
+rpm_empty_click                                    = 200
+scheduled                                          = off
+scope_name                                         = acog_scope
+scope_status                                       = 0
+scope_x                                            = 40
+scope_y                                            = -5
+scope_zoom_factor                                  = 1.1
+scopes                                             = none
+
+shell_point										   = 0,0.188,0.082
+shell_particles	 								   = ;weapons\9x19
+fire_point										   = 0,0.188,0.392
+fire_point2										   = 0,0.188,0.392
+position										   = -0.035,-0.08,-0.03
+orientation										   = 0,-10,0
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 2
+silencer_x                                         = 178
+silencer_y                                         = 33
+single_handed                                      = 0
+slot                                               = 2
+
+snd_draw										   = weapons\p90\p90_draw
+snd_empty               						   = weapons\_dryfire\smg9_dry
+snd_holster										   = weapons\p90\p90_hide
+snd_reload										   = weapons\p90\p90_reload
+snd_reload_empty								   = weapons\p90\p90_reload_full
+snd_reload_misfire								   = weapons\p90\p90_revival
+snd_changefiremode              				   = weapons\p90\p90_firemode
+
+snd_shoot               						   = weapons\p90\p90_shoot
+snd_shoot_distant           					   = weapons\_gunfire\mp5\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = weapons\mp5\mp5_shot_sil
+
+strap_position 									   = -0.16,-0.36,0.15
+strap_orientation 								   = -10,-5,10
+strap_bone0										   = bip01_spine2
+strap_bone1										   = bip01_spine1
+
+time_to_aim                                        = 3.0
+
+upgrade_scheme                                     = 
+upgrades                                           = 
+
+use_aim_bullet                                     = false
+visual                                             = dynamics\weapons\wpn_fnp90\wpn_fnp90.ogf
+weapon_class                                       = assault_rifle
+zoom_cam_relax_speed				               = 8.0	
+zoom_cam_dispersion					               = 1.1
+zoom_cam_dispersion_inc				               = 1.0
+zoom_cam_dispersion_frac			               = 1.3
+;zoom_cam_dispersion_horz                          = 0.4
+zoom_cam_max_angle					               = 8.0
+zoom_cam_max_angle_horz				               = 8.0
+zoom_cam_step_angle_horz			               = 0.3
+zoom_dof                                           = 0.5, 1.0, 180
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.2
+
+flame_particles									   = weapons\generic_weapon03
+smoke_particles        				   	           = ghost_particles\weapons\flame_eft_pistol
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_fnp90_hud]:hud_base_weapon
+hands_position                  		 = 0.007000,-0.009000,-0.028000
+hands_position_16x9             		 = 0.007000,-0.009000,-0.028000
+hands_orientation               		 = 1.892002,3.487998,0.150000
+hands_orientation_16x9          		 = 1.892002,3.487998,0.150000
+aim_hud_offset_pos              		 = -0.068500,0.006000,-0.077326
+aim_hud_offset_pos_16x9         		 = -0.068500,0.006000,-0.077326
+aim_hud_offset_rot              		 = 0.036875,0.028915,-0.004100
+aim_hud_offset_rot_16x9        		     = 0.036875,0.028915,-0.004100
+item_position							 = 0,0,0
+item_orientation						 = 0,0,0
+
+shell_point                				 = 0,0,0
+shell_bone                				 = wpn_body
+fire_point								 = -0.006000,0.021500,0.153000
+fire_bone                  	 			 = wpn_body
+fire_point2                 			 = 0,0,0
+fire_bone2                				 = wpn_body
+
+anm_hide                                 = fnp90_gwr_hide, idle
+anm_idle                                 = fnp90_gwr_idle, idle
+anm_idle_aim                             = fnp90_gwr_aim, idle_aim
+anm_idle_aim_moving                      = fnp90_gwr_aim, idle
+anm_idle_aim_moving_crouch               = fnp90_gwr_aim, idle
+anm_idle_moving                          = fnp90_gwr_walk, idle
+anm_idle_sprint                          = fnp90_gwr_sprint, idle
+anm_reload                               = fnp90_gwr_reload, p90_reload
+anm_reload_empty                         = fnp90_gwr_reload_empty, p90_reload_full
+anm_shots                                = fnp90_gwr_shoot, p90_shoot
+anm_show                                 = fnp90_gwr_draw, idle
+anm_reload_misfire                       = fnp90_gwr_misfire, p90_revival
+anm_switch_mode                          = fnp90_gwr_fire_mode, idle
+
+anm_hide_jammed                          = fnp90_gwr_hide, idle         
+anm_idle_jammed                          = fnp90_gwr_idle, idle
+anm_idle_aim_jammed                      = fnp90_gwr_aim, idle
+anm_idle_aim_moving_jammed               = fnp90_gwr_aim, idle
+anm_idle_aim_moving_crouch_jammed        = fnp90_gwr_aim, idle
+anm_idle_moving_jammed                   = fnp90_gwr_walk, idle
+anm_idle_moving_crouch_jammed            = fnp90_gwr_walk, idle
+anm_idle_sprint_jammed                   = fnp90_gwr_sprint, idle
+anm_show_jammed                          = fnp90_gwr_draw, idle
+anm_switch_mode_jammed                   = fnp90_gwr_fire_mode, idle 
+
+item_visual            	 				 = dynamics\weapons\wpn_fnp90\wpn_fnp90_hud.ogf

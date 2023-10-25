@@ -518,15 +518,6 @@
 		<texture id="ui_inGame2_upgrade_helm_hardhat_3" x="900" y="1915" width="90" height="44" />
 		<texture id="ui_inGame2_upgrade_helm_hardhat_4" x="810" y="1959" width="90" height="44" />
 
-		<texture id="ui_inGame2_upgrade_helm_protective_1" x="540" y="1871" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_2" x="630" y="1871" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_3" x="720" y="1871" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_4" x="630" y="1915" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_5" x="720" y="1915" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_6" x="540" y="1959" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_7" x="630" y="1959" width="90" height="44" />
-		<texture id="ui_inGame2_upgrade_helm_protective_8" x="720" y="1959" width="90" height="44" />
-
 		<texture id="ui_inGame2_upgrade_helm_tactic_1" x="270" y="1871" width="90" height="44" />
 		<texture id="ui_inGame2_upgrade_helm_tactic_2" x="360" y="1871" width="90" height="44" />
 		<texture id="ui_inGame2_upgrade_helm_tactic_3" x="450" y="1871" width="90" height="44" />

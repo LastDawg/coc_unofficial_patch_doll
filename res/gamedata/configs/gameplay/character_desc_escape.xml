@@ -9,7 +9,7 @@
     <community>trader</community>
     <map_icon x="1" y="0"/>
     <terrain_sect>stalker_terrain</terrain_sect>
-    <visual>actors\stalker_unique\stalker_trader_sid</visual>
+    <visual>special_characters\stalker_trader_sid</visual>
     <rank>35692</rank>
     <reputation>2302</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
@@ -39,7 +39,7 @@
     <rank>32472</rank>
     <reputation>2201</reputation>
     <money min="1000000" max="1000000" infinitive="1" />
-    <visual>actors\stalker_unique\stalker_trader_nimble</visual>
+    <visual>special_characters\stalker_trader_nimble</visual>
     <supplies>
         [spawn] \n
 		wpn_binoc \n
@@ -79,7 +79,7 @@
     <money min="600" max="2000" infinitive="0"/>
     <snd_config>characters_voice\human\stalker_1\</snd_config>
     <crouch_type>-1</crouch_type>
-    <visual>actors\stalker_unique\stalker_neutral_wolf</visual>
+    <visual>special_characters\stalker_neutral_wolf</visual>
     <supplies>
         [spawn] \n
         wpn_pm \n
@@ -112,7 +112,7 @@
     <snd_config>characters_voice\human\build_1\</snd_config>
     <crouch_type>-1</crouch_type>
     <panic_treshold>0</panic_treshold>
-    <visual>actors\stalker_unique\stalker_neutral_fanatic</visual>
+    <visual>special_characters\stalker_neutral_fanatic</visual>
     <supplies>
         [spawn] \n
         wpn_binoc \n
@@ -142,7 +142,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>6278</rank>
     <reputation>784</reputation>
-    <visual>actors\stalker_neutral\stalker_neutral_exo_proto</visual>
+    <visual>random_characters\neutral\stalker_neutral_armor_10</visual>
     <snd_config>characters_voice\human\no_speach\</snd_config>
     <supplies>
         [spawn] \n

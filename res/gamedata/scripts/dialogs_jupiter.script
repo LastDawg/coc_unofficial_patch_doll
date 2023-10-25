@@ -339,8 +339,6 @@ function jup_a10_proverka_wpn(first_speaker, second_speaker)
 	local table = {
 					"wpn_desert_eagle",
 					"wpn_sig550",
-					"wpn_g36",
-					"wpn_g36k",
 					"wpn_groza",
 					"wpn_vintorez",
 					"wpn_svd",
@@ -760,7 +758,6 @@ function jup_b1_actor_have_good_suit(first_speaker, second_speaker)
 	local helmets_tbl = {
 						["helm_battle"] = true,
 						["helm_tactic"] = true,
-						["helm_protective"] = true,
 						}
 
 	if db.actor:item_in_slot(7) ~= nil and suits_tbl[db.actor:item_in_slot(7):section()] then
@@ -873,7 +870,6 @@ function jup_b1_stalker_squad_thanks(first_speaker, second_speaker)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_antidot", 2)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_radioprotector", 2)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_anabiotic")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "helm_protective")
 end
 
 -- Jupiter B217 functions -------------------------------------------------

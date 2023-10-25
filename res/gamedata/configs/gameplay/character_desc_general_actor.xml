@@ -10,7 +10,7 @@
         <community>actor</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral_1</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_army" no_random = "1">
@@ -24,7 +24,7 @@
         <community>actor_army</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral_1</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_bandit" no_random = "1">
@@ -38,7 +38,7 @@
         <community>actor_bandit</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_bandit\stalker_bandit_a</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_csky" no_random = "1">
@@ -52,7 +52,7 @@
         <community>actor_csky</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_nebo\stalker_nebo_r2</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_dolg" no_random = "1">
@@ -66,7 +66,7 @@
         <community>actor_dolg</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral_1</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_ecolog" no_random = "1">
@@ -80,7 +80,7 @@
         <community>actor_ecolog</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral_1</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_freedom" no_random = "1">
@@ -94,7 +94,7 @@
         <community>actor_freedom</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral_1</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_killer" no_random = "1">
@@ -108,7 +108,7 @@
         <community>actor_killer</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_merc\stalker_mercen2a_mask</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_monolith" no_random = "1">
@@ -122,7 +122,7 @@
         <community>actor_monolith</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral1b</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_stalker" no_random = "1">
@@ -136,7 +136,7 @@
         <community>actor_stalker</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_neutral\stalker_neutral_0</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>
 <specific_character id="actor_zombied" no_random = "1">
@@ -150,6 +150,6 @@
         <community>actor_zombied</community>
         <rank>0</rank>
         <reputation>0</reputation>
-        <visual>actors\stalker_zombied\stalker_zombied_1</visual>
+        <visual>special_characters\stalker_neutral_fanatic</visual>
         <terrain_sect>stalker_terrain</terrain_sect>
         </specific_character>

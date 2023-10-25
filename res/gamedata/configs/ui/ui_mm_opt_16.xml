@@ -259,6 +259,7 @@
         </check_r__enable_grass_shadow>
 		
 <!-- Новое -->	
+
        <cap_shader_nvg x="15" y="3" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_shader_nvg</text>
         </cap_shader_nvg>

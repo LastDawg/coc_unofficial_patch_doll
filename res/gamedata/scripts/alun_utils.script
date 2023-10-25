@@ -980,9 +980,7 @@ function get_addon_status(wpn,addon)
 	elseif addon == "sl" then
 		return wpn:weapon_silencer_status()
 	elseif addon == "gl" then
-		return wpn:weapon_grenadelauncher_status()
-	elseif addon == "ls" then
-		return wpn:weapon_laser_status()			
+		return wpn:weapon_grenadelauncher_status()			
 	end
 	return 0
 end
@@ -1005,20 +1003,14 @@ function get_addon_flag(wpn,with_int)
 			if with_int or get_addon_status(wpn,"gl") == 2 then
 				flag = flag+2
 			end
-		end
-		if wpn:weapon_is_laser() then
-			if with_int or get_addon_status(wpn,"ls") == 2 then
-				flag = flag+4
-			end
-		end			
+		end	
 		return flag
 	end
 
 function addon_attached(wpn,addon,flag) -- ’з что это, надо последить
 	local ft = {sc = {[1] = true,[3] = true,[5] = true,[7] = true},
 				sl = {[4] = true,[5] = true,[6] = true,[7] = true},
-				gl = {[2] = true,[3] = true,[6] = true,[7] = true},
-				ls = {[4] = true,[5] = true,[6] = true,[7] = true}}
+				gl = {[2] = true,[3] = true,[6] = true,[7] = true}}
 	if ft[addon] then
 		return ft[addon][flag or get_addon_flag(wpn,true)] == true
 	end

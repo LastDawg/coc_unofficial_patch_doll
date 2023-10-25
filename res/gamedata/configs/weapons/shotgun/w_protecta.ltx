@@ -1,0 +1,151 @@
+[wpn_protecta]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\protecta"
+parent_section                                     = wpn_protecta
+ammo_class                                         = ammo_12x70_buck, ammo_12x76_zhekan
+ammo_elapsed                                       = 12
+ammo_mag_size                                      = 12
+animation_slot                                     = 10
+bullet_speed                                       = 320
+cam_dispersion                                     = 3.0
+cam_dispersion_frac                                = 0.9
+cam_dispersion_inc                                 = 2.0
+cam_max_angle                                      = 30.0
+cam_max_angle_horz                                 = 20.0
+cam_relax_speed                                    = 6
+cam_return                                         = 0
+cam_step_angle_horz                                = 3.0
+class                                              = WP_ASHTG
+
+condition_shot_dec                                 = 0.00333
+
+control_inertion_factor                            = 1.3f
+cost                                               = 27000
+crosshair_inertion                                 = 6.85
+description                                        = st_wpn_protecta_descr
+discovery_dependency                               = 
+ef_main_weapon_type                                = 1
+ef_weapon_type                                     = 9
+fire_dispersion_base       	 	                   = 0.8
+fire_distance                                      = 100
+fire_modes                                         = 1
+fire_point                                         = 0.0, 0.158, 0.647
+fire_point2                                        = 0.0, 0.158, 0.647
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.75
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.0
+holder_range_modifier                              = 1.0
+hud                                                = wpn_protecta_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 2
+inv_grid_width                                     = 5
+inv_grid_x                                         = 27
+inv_grid_y                                         = 2
+inv_name                                           = st_wpn_protecta
+inv_weight                                         = 4.2
+light_color                                        = 0.6, 0.5, 0.3
+light_range                                        = 6.0
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 50
+min_radius                                         = 30
+misfire_chance                                     = 0.16
+orientation                                        = 0, -4, 0
+PDM_disp_accel_factor                              = 2.0
+PDM_disp_base                                      = 0.5
+PDM_disp_crouch                                    = 1.0
+PDM_disp_crouch_no_acc                             = 1.0
+PDM_disp_vel_factor                                = 2.0
+ph_mass                                            = 4
+position                                           = -0.024, -0.097, 0.0
+reload_dof                                         = 0.0, 0.5, 5, 1.7
+rpm                                                = 270
+rpm_empty_click                                    = 310
+scheduled                                          = off
+scope_status                                       = 0
+scopes                                             = none
+scope_zoom_factor                                  = 1.1
+shell_point                                        = 0.0, 0.180, 0.647
+silencer_status                                    = 0
+single_handed                                      = 0
+slot                                               = 2
+
+shell_particles	 			                       = ;weapons\12ga
+
+snd_add_cartridge                                  = weapons\protecta\reload_insert, 1.0, 1.3
+snd_bore                                           = nil
+snd_close_weapon                                   = weapons\protecta\reload_end
+snd_draw                                           = weapons\protecta\protecta_draw
+snd_empty               						   = weapons\protecta\protecta_empty
+snd_holster                                        = weapons\shotgun_holster
+snd_open_weapon                                    = weapons\protecta\reload_start, 1.0, 1.2
+snd_reload                                         = weapons\toz34_reload
+snd_reload_misfire								   = weapons\protecta\unjam
+
+snd_shoot               						   = weapons\protecta\protecta_shoot
+snd_shoot_distant           					   = weapons\_gunfire\pump\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = weapons\protecta\protecta_shoot
+
+strap_bone0                                        = bip01_spine2
+strap_bone1                                        = bip01_spine1
+strap_orientation                                  = -15, -9, 110
+strap_position                                     = -0.26, -0.15, 0.15
+tri_state_reload                                   = on
+
+upgrade_scheme                                     = upgrade_scheme_protecta
+upgrades                                           = up_gr_firstab_protecta, up_gr_seconab_protecta, up_gr_thirdab_protecta, up_gr_fourtab_protecta
+
+visual                                             = dynamics\weapons\wpn_protecta\wpn_protecta
+weapon_class                                       = shotgun
+zoom_cam_dispersion                                = 3.0
+zoom_cam_dispersion_frac                           = 0.8
+zoom_cam_dispersion_inc                            = 2.5
+zoom_cam_max_angle                                 = 20.0
+zoom_cam_max_angle_horz                            = 10.0
+zoom_cam_relax_speed                               = 7
+zoom_cam_step_angle_horz                           = 3.0
+zoom_dof                                           = 0.5, 1.0, 180
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.20
+
+flame_particles									   = weapons\generic_weapon05
+smoke_particles     							   = ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_protecta_hud]:hud_base_weapon
+hands_orientation                				   = -0.005, -0.004268, -0.001335
+hands_orientation_16x9           				   = -0.005, -0.004268, -0.001335
+hands_position                  				   = -0.013067, 0.002205, 0.006898
+hands_position_16x9              				   = -0.013067, 0.002205, 0.006898
+aim_hud_offset_pos                                 = -0.106504, 0.028453, -0.010107
+aim_hud_offset_pos_16x9                            = -0.106504, 0.028453, -0.010107
+aim_hud_offset_rot                                 = -0.000213, 0.000159, -0.000497
+aim_hud_offset_rot_16x9                            = -0.000213, 0.000159, -0.000497
+item_orientation                                   = 0,0,0
+item_position                                      = 0,0,0
+
+anm_add_cartridge                        		   = protecta_hand_reload_insert, protecta_reload_loop, 1.3
+anm_close                                          = protecta_hand_reload_end, protecta_reload_end
+anm_hide                                           = protecta_hand_holster, protecta_idle
+anm_idle                                           = protecta_hand_idle, protecta_idle
+anm_idle_aim                                       = protecta_hand_idle_aim, protecta_idle
+anm_idle_aim_moving                                = protecta_hand_moving, protecta_idle, 0.75
+anm_idle_aim_moving_crouch                         = protecta_hand_moving, protecta_idle, 0.7
+anm_idle_moving                                    = protecta_hand_moving, protecta_idle
+anm_idle_sprint                                    = protecta_hand_sprint, protecta_idle, 1.3
+anm_open                                           = protecta_hand_reload_start, protecta_reload_start, 1.2
+anm_shots                                          = protecta_hand_shoot, protecta_shoot
+anm_show                                           = protecta_hand_draw, protecta_idle
+anm_reload_misfire          			           = protecta_hand_unjam, protecta_unjam
+
+fire_bone                                          = muzzle
+fire_point                                         = 0,0,0
+item_visual                                        = dynamics\weapons\wpn_protecta\wpn_protecta_hud
+shell_bone                                         = gilza
+shell_point                                        = 0,0,0

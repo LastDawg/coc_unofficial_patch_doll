@@ -1,0 +1,197 @@
+[wpn_ks23]:new_weapon_params
+GroupControlSection         = spawn_group
+$npc                        = on
+$prefetch                   = 8
+$spawn                      = "weapons\wpn_ks23"
+scheduled                   = off
+        
+class                       = WP_ASHTG
+slot                        = 2
+animation_slot              = 9
+ef_main_weapon_type         = 1
+ef_weapon_type              = 9
+hand_dependence             = 1
+single_handed               = 1
+  
+inv_grid_height             = 2
+inv_grid_width              = 4
+inv_grid_x                  = 27
+inv_grid_y                  = 23
+
+parent_section              = wpn_ks23
+scopes                      = pu_scope
+scope_status                = 2	
+
+inv_name                    = st_wpn_ks23
+description                 = st_wpn_ks23_descr
+        
+inv_weight                  = 3.85
+cost                        = 24000
+weapon_class                = shotgun
+        
+hud                         = wpn_ks23_hud
+visual                      = dynamics\weapons\wpn_ks23\wpn_ks23.ogf
+
+position                    = -0.024, -0.117, 0
+orientation                 = 0, -3, 0
+fire_point                  = 0.0, 0.158, 0.647
+fire_point2                 = 0.0, 0.158, 0.647
+strap_bone0                 = bip01_spine2
+strap_bone1                 = bip01_spine1
+strap_position              = -0.26,-0.10,0.05
+strap_orientation           = -15,-9,110
+shell_point                 = 0, 0.180, 0.647
+
+open_weapon_cartridge       = true
+open_weapon_empty_cartridge = true
+
+ph_mass                     = 4
+        
+light_color                 = 0.6, 0.5, 0.3
+light_range                 = 6.0
+light_time                  = 0.2
+light_var_color             = 0.05
+light_var_range             = 0.5
+        
+upgrade_scheme              = 
+upgrades                    = 
+        
+tri_state_reload            = on
+fire_modes                  = 1
+ammo_class                  = ammo_23x75_buck, ammo_23x75_bullet
+ammo_elapsed                = 4
+ammo_mag_size               = 4
+        
+scope_zoom_factor			= 1.1
+grenade_launcher_status     = 0
+        
+hit_impulse                 = 60
+hit_power                   = 0.75
+hit_type                    = fire_wound
+fire_distance               = 110
+bullet_speed                = 235
+rpm                         = 60        ;60 = 1 секунда
+rpm_empty_click             = 150
+        
+zoom_dof                    	 = 0.5, 1.0, 180
+zoom_enabled                	 = true
+control_inertion_factor     	 = 1.3f
+crosshair_inertion          	 = 6.85
+fire_dispersion_base       	 	 = 0.7
+        
+misfire_chance              = 0.12
+        
+condition_shot_dec          = 0.00253
+        		
+cam_return					= 0
+cam_relax_speed         	= 20
+cam_dispersion          	= 14.4
+cam_dispersion_inc			= 15.2
+cam_dispersion_frac			= 0.9
+cam_max_angle				= 45.0
+cam_max_angle_horz			= 25.0
+cam_step_angle_horz			= 2.35
+
+zoom_cam_relax_speed		= 15
+zoom_cam_dispersion			= 3.84
+zoom_cam_dispersion_inc		= 4.3
+zoom_cam_dispersion_frac	= 0.63
+zoom_cam_max_angle			= 12.0
+zoom_cam_max_angle_horz		= 30.0
+zoom_cam_step_angle_horz	= 15.0
+		        
+PDM_disp_base 				= 1.85
+PDM_disp_vel_factor 		= 1.7
+PDM_disp_accel_factor 		= 1.0
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.8
+        
+holder_fov_modifier         = 1.0
+holder_range_modifier       = 1.0
+min_radius                  = 0
+max_radius                  = 500
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 0
+silencer_x                                         = 220
+silencer_y                                         = 16
+
+snd_reload_misfire				                   = weapons\_gunfire\win1300\revival
+snd_bore					                       = nil
+snd_draw										   = weapons\ks23\draw
+snd_holster										   = weapons\ks23\holster
+snd_empty               						   = weapons\ks23\empty
+snd_reload										   = nil
+snd_open_weapon          						   = weapons\_gunfire\win1300\load_start
+snd_open_weapon_empty          					   = weapons\_gunfire\win1300\load_start_empty
+snd_add_cartridge							   	   = weapons\_gunfire\win1300\load
+snd_add_cartridge_empty							   = weapons\_gunfire\win1300\load_empty
+snd_close_weapon       							   = weapons\_gunfire\win1300\load_end
+
+snd_pump_gun                                       = weapons\ks23\pump, 1, 1.2
+snd_shoot               						   = weapons\ks23\shot, 1, 1.3
+snd_shoot_distant           					   = weapons\_gunfire\win1300\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = nil
+
+shell_particles             					   = ;weapons\12ga
+flame_particles			    					   = weapons\generic_weapon05
+smoke_particles     							   = ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles    					   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_ks23_hud]:hud_base_weapon
+hands_position				= -0.014826,0.012727,-0.072579
+hands_orientation			= 1.445501,2.208001,0.793000
+hands_position_16x9			= -0.014826,0.012727,-0.072579
+hands_orientation_16x9		= 1.445501,2.208001,0.793000
+aim_hud_offset_pos			= -0.043303,0.027739,0.018257
+aim_hud_offset_rot			= 0.026598,0.026251,-0.039650
+aim_hud_offset_pos_16x9		= -0.043303,0.027739,0.018257
+aim_hud_offset_rot_16x9		= 0.026598,0.026251,-0.039650
+item_position               = -0.002770,0.000213,0.009085
+item_orientation            = 0, 0, 0
+
+shell_bone                  = wpn_body
+shell_point                 = 0, 0, 0
+fire_bone                   = wpn_body
+fire_point                  = 0, 0.03, 0.6
+
+anm_hide                    = pump_gwr_hide, idle
+anm_idle                    = pump_gwr_idle, idle
+anm_idle_aim                = pump_gwr_aim, idle
+anm_idle_aim_moving         = pump_gwr_walk, idle, 0.75
+anm_idle_aim_moving_crouch  = pump_gwr_walk, idle
+anm_idle_moving             = pump_gwr_walk, idle
+anm_idle_moving_crouch      = pump_gwr_walk, idle
+anm_idle_sprint             = pump_gwr_sprint, idle
+anm_shots                   = pump_gwr_shoot, shot
+anm_show                    = pump_gwr_draw, idle
+anm_open                    = pump_gwr_reload_start, load_start
+anm_open_empty              = pump_gwr_reload_empty_start, ks23_load_start_empty
+anm_add_cartridge           = pump_gwr_reload_ammo, load
+anm_add_cartridge_empty     = pump_gwr_reload_empty_ammo, load_empty
+anm_close                   = pump_gwr_reload_end, idle
+anm_reload_misfire          = pump_gwr_revival, revival
+
+item_visual                 = dynamics\weapons\wpn_ks23\wpn_ks23_hud.ogf
+
+;-----------------------------------------------------------------------------
+; Addons
+;-----------------------------------------------------------------------------
+
+[wpn_ks23_pu_scope]:wpn_ks23
+$spawn                      			 = "weapons\wpn_ks23_pu_scope"
+scope_x                     			 = 73
+scope_y                     			 = -7
+hud                         			 = wpn_ks23_pu_scope_hud
+
+[wpn_ks23_pu_scope_hud]:wpn_ks23_hud
+aim_hud_offset_pos						 = -0.043803,0.009239,-0.035743
+aim_hud_offset_rot						 = 0.065098,0.028251,-0.039650
+aim_hud_offset_pos_16x9					 = -0.043803,0.009239,-0.035743
+aim_hud_offset_rot_16x9					 = 0.065098,0.028251,-0.039650

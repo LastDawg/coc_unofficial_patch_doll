@@ -1,0 +1,259 @@
+[wpn_mr18]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\wpn_mr18"
+ammo_class                                         = ammo_7.62x54_7h1
+ammo_elapsed                                       = 1
+ammo_mag_size                                      = 1
+animation_slot                                     = 3
+bullet_speed                                       = 850
+cam_dispersion                                     = 2.5
+cam_dispersion_frac                                = 1.0
+cam_dispersion_inc                                 = 2.5
+cam_max_angle                                      = 15.0
+cam_max_angle_horz                                 = 5.0
+cam_relax_speed                                    = 4.5
+cam_return                                         = 1
+cam_step_angle_horz                                = 0.25
+cform                                              = skeleton
+class                                              = WP_AK74
+
+condition_shot_dec                                 = 0.00222
+
+control_inertion_factor                            = 2.0f
+cost                                               = 13000
+crosshair_inertion                                 = 9
+description                                        = st_wpn_mr18_descr
+ef_main_weapon_type                                = 3
+ef_weapon_type                                     = 11
+fire_dispersion_base                               = 0.08
+fire_distance                                      = 1700
+fire_modes                                         = 1
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.85
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 0.75
+holder_range_modifier                              = 2.00
+hud                                                = wpn_mr18_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 2
+inv_grid_width                                     = 5
+inv_grid_x                                         = 27
+inv_grid_y                                         = 31
+inv_name                                           = st_wpn_mr18
+inv_weight                                         = 2.6
+light_color                                        = 0.6, 0.5, 0.3
+light_disabled                                     = false
+light_range                                        = 4.0
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 90
+min_radius                                         = 50
+
+misfire_chance                                     = 0.12
+
+parent_section                                     = wpn_mr18
+PDM_disp_accel_factor                              = 1.5
+PDM_disp_base                                      = 1.3
+PDM_disp_crouch                                    = 1.0
+PDM_disp_crouch_no_acc                             = 1.0
+PDM_disp_vel_factor                                = 1.5
+ph_mass                                            = 5
+reload_dof                                         = 0, 0.5, 5, 2.2
+rpm                                                = 90
+rpm_empty_click                                    = 150
+scheduled                                          = off
+scope_name                                         = wpn_addon_scope
+scope_status                                       = 2
+scope_x                                            = 53
+scope_y                                            = 7
+scope_zoom_factor                                  = 1.1
+scopes                                             = acog_scope, pn23_scope, barska_scope, eotech_scope, specter_scope, leupold_m4_scope
+shell_particles                                    = ;weapons\762x54
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 0
+silencer_x                                         = 265
+silencer_y                                         = 19
+single_handed                                      = 0
+slot                                               = 2
+
+snd_bore                                           = weapons\izh18\izh18_ammo_check
+snd_draw										   = weapons\izh18\izh18_draw
+snd_empty               						   = weapons\_dryfire\sniper_dry
+snd_holster										   = weapons\izh18\izh18_hide
+snd_reload										   = weapons\izh18\izh18_reload
+snd_reload_misfire								   = weapons\izh18\izh18_revival
+
+snd_shoot               						   = weapons\izh18\mr_shoot
+snd_shoot1              						   = weapons\izh18\mr_shoot1
+snd_shoot_distant           					   = weapons\_gunfire\svd\medium_distance
+snd_shoot_distant_far       					   = weapons\_gunfire\svd\far_distance
+snd_silncer_shot        						   = nil
+
+position                                 		   = -0.023, -0.14, 0.00
+orientation                              		   = 0, 30, 0
+fire_point                               		   = 0, 0.168, 0.755
+fire_point2                              		   = 0, 0.168, 0.755
+strap_bone0                              		   = bip01_spine2
+strap_bone1                              		   = bip01_spine1
+strap_position                           		   = -0.26, -0.11, 0.15
+strap_orientation                        		   = -15, -9, 110
+shell_point		 			                       = 0.0, 0.129, 0.192\
+
+time_to_aim                                        = 1.0
+
+upgrade_scheme                                     = 
+upgrades                                           =
+
+use_aim_bullet                                     = true
+visual                                             = dynamics\weapons\wpn_mr18\wpn_mr18.ogf
+weapon_class                                       = sniper_rifle
+zoom_cam_dispersion                                = 0.8
+zoom_cam_dispersion_frac                           = 1.0
+zoom_cam_dispersion_inc                            = 0.8
+zoom_cam_max_angle                                 = 10.0
+zoom_cam_max_angle_horz                            = 3.0
+zoom_cam_relax_speed                               = 0.75
+zoom_cam_step_angle_horz                           = 0.25
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.25
+
+flame_particles									   = weapons\generic_weapon06
+smoke_particles									   = ghost_particles\weapons\flame_eft_ak
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_mr18_hud]:hud_base_weapon
+hands_orientation               		 = 0.4658, 0.490405, 0
+hands_orientation_16x9          		 = 0.4658, 0.490405, 0
+hands_position                  		 = -0.010162, -0.001723, -0.047022
+hands_position_16x9             		 = -0.010162, -0.001723, -0.047022
+aim_hud_offset_pos               		 = 0.015326, -0.011908, 0.022989
+aim_hud_offset_pos_16x9          		 = 0.015326, -0.011908, 0.022989
+aim_hud_offset_rot               		 = -0.005111, 0.013355, 0.001
+aim_hud_offset_rot_16x9          		 = -0.005111, 0.013355, 0.001
+item_position							 = 0, 0, 0
+item_orientation						 = -0.7586, -0.105645, 0
+
+anm_bore                                 = izh18_ammo_check
+anm_hide                                 = izh18_hide
+anm_idle                                 = izh18_idle
+anm_idle_aim                             = izh18_aim_fix
+anm_idle_aim_moving                      = izh18_walk
+anm_idle_aim_moving_crouch               = izh18_walk, idle, 0.8
+anm_idle_moving                          = izh18_walk
+anm_idle_moving_crouch                   = izh18_walk, idle, 0.8
+anm_idle_sprint                          = izh18_sprint
+anm_reload                               = izh18_reload, toz34_reload
+anm_shots                                = izh18_shoot
+anm_shots_aim                            = izh18_aim_shoot
+anm_show                                 = izh18_draw
+anm_reload_misfire                       = izh18_misfire, toz34_revival
+anm_idle_aim_start                       = izh18_aim_start
+anm_idle_aim_end                         = izh18_aim_end_fix
+
+shell_bone                               = wpn_body
+shell_point                              = 0, 0, 0
+fire_bone                                = sight
+fire_point                               = 0.0,0.0,0.1
+
+item_visual                              = dynamics\weapons\wpn_mr18\wpn_mr18_hud.ogf
+
+;-----------------------------------------------------------------------------
+; Addons
+;-----------------------------------------------------------------------------
+
+[wpn_mr18_acog_scope]:wpn_mr18
+$spawn					            = "weapons\wpn_mr18_acog_scope"
+hud						            = wpn_mr18_acog_scope_hud
+scope_x                             = 77
+scope_y                             = 3
+
+[wpn_mr18_acog_scope_hud]:wpn_mr18_hud
+aim_hud_offset_pos					= 0.015826,-0.036408,0.022989
+aim_hud_offset_rot					= 0.018639,0.010605,0.001000
+aim_hud_offset_pos_16x9				= 0.015826,-0.036408,0.022989
+aim_hud_offset_rot_16x9				= 0.018639,0.010605,0.001000
+item_visual                         = dynamics\weapons\wpn_mr18\wpn_mr18_acog_hud.ogf
+
+[wpn_mr18_barska_scope]:wpn_mr18
+$spawn             		            = "weapons\wpn_mr18_barska_scope"
+hud						            = wpn_mr18_barska_scope_hud
+scope_x                             = 81
+scope_y                             = -1
+visual								= dynamics\weapons\wpn_mr18\wpn_mr18_barska.ogf
+
+[wpn_mr18_barska_scope_hud]:wpn_mr18_hud
+aim_hud_offset_pos					= 0.014326,-0.036908,0.022989
+aim_hud_offset_rot					= -0.003611,0.013605,0.001000
+aim_hud_offset_pos_16x9				= 0.014326,-0.036908,0.022989
+aim_hud_offset_rot_16x9				= -0.003611,0.013605,0.001000
+item_visual            	 			= dynamics\weapons\wpn_mr18\wpn_mr18_barska_hud.ogf
+
+[wpn_mr18_eotech_scope]:wpn_mr18
+$spawn             		            = "weapons\wpn_mr18_eotech_scope"
+hud						            = wpn_mr18_eotech_scope_hud
+scope_x                             = 84
+scope_y                             = 1
+visual								= dynamics\weapons\wpn_mr18\wpn_mr18_eotech.ogf
+
+[wpn_mr18_eotech_scope_hud]:wpn_mr18_hud
+aim_hud_offset_pos					= 0.016326,-0.041908,0.083989
+aim_hud_offset_rot					= -0.005111,0.013355,0.001000
+aim_hud_offset_pos_16x9				= 0.016326,-0.041908,0.083989
+aim_hud_offset_rot_16x9				= -0.005111,0.013355,0.001000
+item_visual            	 			= dynamics\weapons\wpn_mr18\wpn_mr18_eotech_hud.ogf
+
+[wpn_mr18_pn23_scope]:wpn_mr18
+$spawn					            = "weapons\wpn_mr18_pn23_scope"
+hud						            = wpn_mr18_pn23_scope_hud
+scope_x                         	= 73
+scope_y                         	= 4
+visual								= dynamics\weapons\wpn_mr18\wpn_mr18_pn23.ogf
+
+[wpn_mr18_pn23_scope_hud]:wpn_mr18_hud
+aim_hud_offset_pos					= 0.015826,-0.046408,0.072989
+aim_hud_offset_rot					= 0.013639,0.014855,0.001000
+aim_hud_offset_pos_16x9				= 0.015826,-0.046408,0.072989
+aim_hud_offset_rot_16x9				= 0.013639,0.014855,0.001000
+item_visual            	 		    = dynamics\weapons\wpn_mr18\wpn_mr18_pn23_hud.ogf
+
+[wpn_mr18_specter_scope]:wpn_mr18
+$spawn                          	= "weapons\wpn_mr18_specter_scope"
+hud                             	= wpn_mr18_specter_scope_hud
+scope_x                         	= 81
+scope_y                         	= 1
+visual								= dynamics\weapons\wpn_mr18\wpn_mr18_specter.ogf
+
+[wpn_mr18_specter_scope_hud]:wpn_mr18_hud
+aim_hud_offset_pos					= 0.016326,-0.033908,0.022989
+aim_hud_offset_rot					= 0.020389,0.013855,0.001000
+aim_hud_offset_pos_16x9				= 0.016326,-0.033908,0.022989
+aim_hud_offset_rot_16x9				= 0.020389,0.013855,0.001000
+aim_hud_offset_alt_pos				= 0.017500,-0.055500,0.059000
+aim_hud_offset_alt_rot				= 0.004750,-0.006250,0.000000
+aim_hud_offset_alt_pos_16x9			= 0.017500,-0.055500,0.059000
+aim_hud_offset_alt_rot_16x9			= 0.004750,-0.006250,0.000000
+item_visual							= dynamics\weapons\wpn_mr18\wpn_mr18_specter_hud.ogf
+
+[wpn_mr18_leupold_m4_scope]:wpn_mr18
+$spawn                          	= "weapons\wpn_mr18_leupold_m4_scope"
+hud                             	= wpn_mr18_leupold_m4_scope_hud
+scope_x                         	= 57
+scope_y                         	= 8
+visual								= dynamics\weapons\wpn_mr18\wpn_mr18_leupold_m4.ogf
+
+[wpn_mr18_leupold_m4_scope_hud]:wpn_mr18_hud
+aim_hud_offset_pos					= 0.016826,-0.040908,0.073989
+aim_hud_offset_rot					= 0.101889,0.004855,0.001000
+aim_hud_offset_pos_16x9				= 0.016826,-0.040908,0.073989
+aim_hud_offset_rot_16x9				= 0.101889,0.004855,0.001000
+item_visual							= dynamics\weapons\wpn_mr18\wpn_mr18_leupold_m4_hud.ogf

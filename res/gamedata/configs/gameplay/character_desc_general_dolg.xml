@@ -2,98 +2,88 @@
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
     <icon>ui_inGame2_Dolg_r</icon>
     <snd_config>characters_voice\human\dolg_1\</snd_config>
-    <visual>actors\stalker_dolg\stalker_dolg_r</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_0_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
     <icon>ui_inGame2_Dolg_r_nohood</icon>
     <snd_config>characters_voice\human\dolg_1\</snd_config>
-    <visual>actors\stalker_dolg\stalker_dolg_r_nohood</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_duty_0_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
     <icon>ui_inGame2_Dolg_r_oldgas</icon>
     <snd_config>characters_voice\human\dolg_3\</snd_config>
-    <visual>actors\stalker_dolg\stalker_dolg_r_oldgas</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_3</visual>
 </specific_character>
 <specific_character id="sim_default_duty_0_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
     <icon>ui_inGame2_Dolg_r_gas</icon>
     <snd_config>characters_voice\human\dolg_3\</snd_config>
-    <visual>actors\stalker_dolg\stalker_dolg_r_gas</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_4</visual>
 </specific_character>
 <specific_character id="sim_default_duty_1_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
     <icon>ui_inGame2_Dolg_2_bala</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2_bala</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_5</visual>
 </specific_character>
 <specific_character id="sim_default_duty_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
     <icon>ui_inGame2_Dolg_2_nohood</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2_nohood</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_1_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
     <icon>ui_inGame2_Dolg_2_bala</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2a_bala</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_duty_1_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
     <icon>ui_inGame2_Dolg_2_nohood</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2a_nohood</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_3</visual>
 </specific_character>
 <specific_character id="sim_default_duty_2_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_2.xml"
     <icon>ui_inGame2_Dolg_2</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_4</visual>
 </specific_character>
 <specific_character id="sim_default_duty_2_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_2.xml"
     <icon>ui_inGame2_Dolg_2</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2a</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_5</visual>
 </specific_character>
 <specific_character id="sim_default_duty_2_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_2.xml"
     <icon>ui_inGame2_Dolg_2_old</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2_oldgas</visual>
+    <visual>random_characters\dolg\stalker_dolg_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
     <icon>ui_inGame2_Dolg_3</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>random_characters\dolg\stalker_dolg_mil_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
     <icon>ui_inGame2_Dolg_3</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+    <visual>random_characters\dolg\stalker_dolg_mil_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
     <icon>ui_inGame2_Dolg_5</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
+    <visual>random_characters\dolg\stalker_dolg_mil_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
     <icon>ui_inGame2_Dolg_5</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_5a</visual>
-</specific_character>
-<specific_character id="sim_default_duty_3_default_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_dolg_3.xml"
-    <icon>ui_inGame2_Dolg_1</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_1</visual>
-</specific_character>
-<specific_character id="sim_default_duty_3_default_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_dolg_3.xml"
-    <icon>ui_inGame2_Dolg_1</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_1a</visual>
+    <visual>random_characters\dolg\stalker_dolg_mil_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_duty_4_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_4.xml"
     <icon>ui_inGame2_Dolg_4</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_4</visual>
+    <visual>random_characters\dolg\stalker_dolg_heavy_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_4_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_4.xml"
     <icon>ui_inGame2_Dolg_4</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_4a</visual>
+    <visual>random_characters\dolg\stalker_dolg_exoskeleton_1</visual>
 </specific_character>

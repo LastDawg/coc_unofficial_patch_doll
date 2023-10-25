@@ -2,13 +2,12 @@
 #include "mblur.h"
 #include "dof.h"
 
-// Check Screen Space Shaders
+// Check Screen Space Shaders modules
 #include "check_screenspace.h"
 
 #ifdef SSFX_DEBAND
 	#include "screenspace_debanding.h"
 #endif
-
 /*
 struct 	v2p
 {
@@ -91,12 +90,16 @@ c2_out main( v2p_aa_AA I )
    	//float3 	img 	= tex2D		(s_image, center);
 
 	float3	img	= dof(center);
-//	float4 	bloom	= tex2D		(s_bloom, center);
 	float4 	bloom	= s_bloom.Sample( smp_rtlinear, center);
-	
-//			img 	= mblur		(center,tex2D(s_position,I.tc0),img.rgb);
-//			img 	= mblur( center, s_position.Sample( smp_nofilter, tc0), img.rgb);
-			img 	= mblur( center, ( gbd ).P, img.rgb);
+
+	if (!isSecondVPActive())
+		img = mblur( center, ( gbd ).P, img.rgb);
+
+	// Sky Debanding Implementation  - SCREEN SPACE SHADERS - UPDATE 12.5
+#ifdef SSFX_DEBAND
+	if (depth <= SKY_EPS)
+		img = ssfx_debanding(img, I.Tex0.xy);
+#endif
 
 #ifdef 	USE_DISTORT
  	float3	blurred	= bloom*def_hdr	;

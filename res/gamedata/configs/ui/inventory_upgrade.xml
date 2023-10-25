@@ -394,22 +394,6 @@
 	            <cell x="100" y="126" point_x="212" point_y="236"/>
 	        </column>
 	    </template>
-	    <template name="upgrade_scheme_helm_protective">
-	        <column>
-	            <cell x="0" y="24" point_x="162" point_y="139"/>
-	            <cell x="0" y="126" point_x="162" point_y="240"/>
-	        </column>
-	        <column>
-	            <cell x="100" y="0" point_x="211" point_y="262"/>
-	            <cell x="100" y="49" point_x="218" point_y="197"/>
-	            <cell x="100" y="126" point_x="118" point_y="159"/>
-	        </column>
-	        <column>
-	            <cell x="200" y="0" point_x="208" point_y="158"/>
-	            <cell x="200" y="49" point_x="162" point_y="198"/>
-	            <cell x="200" y="126" point_x="162" point_y="240"/>
-	        </column>
-	    </template>
 	    <template name="upgrade_scheme_helm_tactic">
 	        <column>
 	            <cell x="0" y="24" point_x="173" point_y="256"/>

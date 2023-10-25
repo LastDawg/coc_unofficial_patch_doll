@@ -277,6 +277,8 @@ end
 
 function CSurgeManager:end_surge(manual)
 
+	dar2_statistic.kill_surges()
+
 	if (self.started == true) then 
 		dxr_encyclopedia.detect_anomaly_interaction("emissions")
 		dxr_statistics.increment_statistic("emissions")

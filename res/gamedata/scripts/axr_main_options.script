@@ -95,7 +95,17 @@ function opt_menu_on_init(menu)
 				con:execute("a_ui_show_first_name off")
 			end	
 		end}
-		
+	
+	-- Fast wpn select
+	menu.gameplay_options["fast_weapon_select"] = {default=false, 	debug_only=false, 	typ="check", on_accept=function(handler,optMgr,ctrl)	
+		local con = get_console()
+			if (ctrl:GetCheck()) then
+				con:execute("g_fast_weapon_select on")
+			else
+				con:execute("g_fast_weapon_select off")
+			end	
+		end}
+	
 	-- Release dropped items 
 	menu.gameplay_options["release_dropped_items"]	= {default=true, 	debug_only=false, 	typ="check"}
 	

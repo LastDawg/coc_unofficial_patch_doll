@@ -8,7 +8,10 @@
 	</string>	
 	<string id="kb_wpn_addon_flashlight">
 		<text>Tact. Flashlight</text>
-	</string>			
+	</string>	
+	<string id="kb_wpn_ammo_check">
+		<text>Ammo check</text>
+	</string>		
 	<string id="kb_active_jobs">
 		<text>PDA</text>
 	</string>

@@ -1,0 +1,173 @@
+[wpn_toz106]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\wpn_toz106"
+ammo_class                                         = ammo_12x70_buck, ammo_12x76_zhekan
+ammo_elapsed                                       = 4
+ammo_mag_size                                      = 4
+animation_slot                                     = 2
+bullet_speed                                       = 430
+parent_section  		                           = wpn_toz106
+cam_return				                           = 0
+cam_relax_speed         						   = 8				;скорость возврата в исходное положение
+cam_dispersion          						   = 0.5				;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc								   = 0.5				;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac								   = 1.0				;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle									   = 15.0			;максимальный угол отдачи
+cam_max_angle_horz								   = 5.0				;(degree) maximum shot horizontal degree
+cam_step_angle_horz								   = 1.0				;(degree) size of step camera moved in horizontal position while shooting
+class                                              = WP_AK74
+
+out_scope_after_shot                               = true
+
+misfire_chance                                     = 0.1
+condition_shot_dec                                 = 0.00333
+
+control_inertion_factor                            = 1
+cost                                               = 2200
+crosshair_inertion                                 = 7.40
+description                                        = st_wpn_toz106_descr
+ef_main_weapon_type                                = 1
+ef_weapon_type                                     = 9
+fire_dispersion_base                               = 0.65
+fire_distance                                      = 125
+fire_modes                                         = 1
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 2
+hit_power                                          = 0.7
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.0
+holder_range_modifier                              = 1.2
+hud                                                = wpn_toz106_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 1
+inv_grid_width                                     = 4
+inv_grid_x                                         = 27
+inv_grid_y                                         = 33
+inv_name                                           = st_wpn_toz106
+inv_weight                                         = 3.2
+light_color                                        = 0.9,0.7,0.4
+light_range                                        = 4.0
+light_var_color		 		                       = 0.05
+light_var_range		 		                       = 0.5
+light_time 		 			                	   = 0.1
+max_radius                                         = 50
+min_radius                                         = 30
+PDM_disp_base 				                       = 0.5
+PDM_disp_vel_factor 		                       = 1.1
+PDM_disp_accel_factor 		                       = 1.1
+PDM_disp_crouch	 			                       = 1
+PDM_disp_crouch_no_acc 		                       = 1
+ph_mass                                            = 3
+rpm                                                = 30
+rpm_empty_click                                    = 30
+scheduled                                          = off
+scope_status                                       = 0
+scope_zoom_factor                                  = 1.1
+silencer_status                                    = 0
+single_handed                                      = 0
+slot                                               = 2
+
+snd_bore                                           = weapons\toz106\inspect
+snd_draw                                           = weapons\toz106\draw
+snd_empty               						   = weapons\toz106\empty
+snd_holster                                        = weapons\toz106\hide
+snd_reload                                         = weapons\toz106\reload
+snd_reload_empty				                   = weapons\toz106\reload_empty
+snd_reload_misfire								   = weapons\toz106\revival
+
+snd_pump_gun                    				   = weapons\toz106\bolt
+snd_shoot               						   = weapons\toz106\shoot
+snd_shoot_distant           					   = weapons\_gunfire\pump\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = weapons\toz106\shoot_sil
+
+position                                           = -0.01, -0.127, 0      ;x,y,z   (left/right, up/down, forward/back )
+orientation                                        = 0, 0, 0
+strap_position         						       = -0.15, -0.15, 0.45                       	; position (offset) and orientation of the weapon when it is strapped
+strap_orientation       						   = -25, -189, 65                              	; (3rd person view in degrees)
+strap_bone0             						   = bip01_spine2
+strap_bone1             						   = bip01_spine1
+shell_point                                        = 0, 0.129, 0.192
+fire_point                                         = 0, 0.129, 0.942
+fire_point2                                        = 0, 0.129, 0.942
+
+tri_state_reload                                   = off
+upgrade_scheme                                     =
+upgrades                                           =
+visual                                             = dynamics\weapons\wpn_toz106\wpn_toz106_fullstock_4rnd_mag_world.ogf
+weapon_class                                       = shotgun
+zoom_cam_dispersion                                = 3.0
+zoom_cam_dispersion_frac                           = 0.7
+zoom_cam_dispersion_inc                            = 3.0
+zoom_cam_max_angle                                 = 10.0
+zoom_cam_max_angle_horz                            = 5.0
+zoom_cam_relax_speed                               = 5.0
+zoom_cam_step_angle_horz                           = 1.0
+zoom_dof                                           = -1000, 1.0, 1000 ;0.5, 1.0, 180
+reload_dof                                         = 0.0, 0.5, 5, 1.7
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.2
+
+flame_particles									   = weapons\generic_weapon05
+smoke_particles     						 	   = ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_toz106_hud]:hud_base_weapon
+hands_position					= -0.026800,-0.009100,-0.135200
+hands_orientation				= 2.637301,1.826501,-2.649999
+hands_position_16x9				= -0.026800,-0.009100,-0.135200
+hands_orientation_16x9			= 2.637301,1.826501,-2.649999
+aim_hud_offset_pos				= -0.056550,0.040400,-0.082200
+aim_hud_offset_rot				= 0.031690,0.047600,-0.045330
+aim_hud_offset_pos_16x9			= -0.056550,0.040400,-0.082200
+aim_hud_offset_rot_16x9			= 0.031690,0.047600,-0.045330
+item_orientation                = 0,0,0
+item_position                   = 0,0,0
+
+anm_show						= toz106_draw_fullstock, draw
+anm_show_empty					= toz106_draw_fullstock, draw_empty
+anm_hide             			= toz106_hide_fullstock, hide
+anm_hide_empty             		= toz106_hide_fullstock, hide_empty
+anm_idle             			= toz106_idle_fullstock, idle
+anm_idle_empty             		= toz106_idle_fullstock, idle_empty
+anm_shots						= toz106_shoot_fullstock_1, shoot_1
+anm_shots1						= toz106_shoot_fullstock_2, shoot_2
+anm_shots2						= toz106_shoot_fullstock_3, shoot_3
+anm_shot_l						= toz106_shoot_fullstock_2, shoot_2 ;shoot_last
+anm_shots_aim					= toz106_shoot_aim_fullstock, shoot_1
+anm_shots_aim1					= toz106_shoot_aim_fullstock, shoot_2
+anm_shots_aim2					= toz106_shoot_aim_fullstock, shoot_3
+anm_shot_l_aim					= toz106_shoot_aim_fullstock, shoot_1 ;shoot_last
+anm_idle_aim					= toz106_idle_aim_fullstock, idle_aim
+anm_idle_aim_empty				= toz106_idle_aim_fullstock, idle_aim_empty
+anm_reload						= toz106_reload_4rnd_fullstock, reload
+anm_reload_empty				= toz106_reload_empty_4rnd_fullstock, reload_empty_old
+anm_idle_moving 				= toz106_idle_moving_fullstock, idle
+anm_idle_moving_empty 			= toz106_idle_moving_fullstock, idle_empty
+anm_idle_moving_crouch 			= toz106_idle_moving_fullstock, idle
+anm_idle_moving_crouch_empty 	= toz106_idle_moving_fullstock, idle_empty
+anm_idle_sprint					= toz106_idle_sprint_fullstock, idle
+anm_idle_sprint_empty			= toz106_idle_sprint_fullstock, idle_empty
+anm_bore						= toz106_inspect_fullstock, inspect
+anm_bore_empty					= toz106_inspect_fullstock, inspect_empty
+anm_reload_misfire				= toz106_unjam, unjam
+
+; Jammed
+
+anm_bore_jammed					= toz106_inspect_fullstock, inspect_jammed
+anm_show_jammed					= toz106_draw_fullstock, draw_jammed
+anm_hide_jammed             	= toz106_hide_fullstock, hide_jammed
+anm_idle_jammed             	= toz106_idle_fullstock, idle_jammed
+anm_idle_aim_jammed				= toz106_idle_aim_fullstock, idle_aim_jammed
+anm_idle_moving_jammed 			= toz106_idle_moving_fullstock, idle_jammed
+anm_idle_moving_crouch_jammed 	= toz106_idle_moving_fullstock, idle_jammed
+anm_idle_sprint_jammed			= toz106_idle_sprint_fullstock, idle_jammed
+
+fire_bone                       = muzzle
+fire_point                      = 0,0,0
+shell_bone                      = shell
+shell_point                     = 0,0,0
+
+item_visual             		= dynamics\weapons\wpn_toz106\wpn_toz106_fullstock_4rnd_mag_hud.ogf

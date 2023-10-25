@@ -1,0 +1,212 @@
+[wpn_beretta]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\wpn_beretta"
+ammo_class                                         = ammo_9x19_fmj, ammo_9x19_pbp
+ammo_elapsed                                       = 15
+ammo_mag_size                                      = 15
+animation_slot                                     = 1
+bullet_speed                                       = 360
+cam_dispersion                                     = 0.95
+cam_dispersion_frac                                = 1.1
+cam_dispersion_inc                                 = 0.95
+cam_max_angle                                      = 10.0
+cam_max_angle_horz                                 = 10.0
+cam_relax_speed                                    = 8
+cam_return                                         = 0
+cam_step_angle_horz                                = 0.6
+class                                              = WP_PM
+
+condition_shot_dec                                 = 0.00027
+
+control_inertion_factor                            = 1.0
+cost                                               = 22000
+crosshair_inertion                                 = 3.5
+ef_main_weapon_type                                = 0
+ef_weapon_type                                     = 5
+fire_dispersion_base                               = 0.16
+fire_distance                                      = 700
+fire_modes                                         = 1
+fire_point                                         = 0, 0.133, 0.161
+fire_point2                                        = 0, 0.133, 0.161
+grenade_class                                      = 
+grenade_launcher_status                            = 0
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.32
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.00
+holder_range_modifier                              = 1.00
+hud                                                = wpn_beretta_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 1
+inv_grid_width                                     = 2
+inv_grid_x                                         = 20
+inv_grid_y                                         = 3
+inv_name                                           = st_wpn_beretta
+description                                        = st_wpn_beretta_descr
+inv_weight                                         = 0.95
+launch_speed                                       = 0
+light_color                                        = 0.6, 0.5, 0.3
+light_disabled                                     = false
+light_range                                        = 3.0
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 35
+min_radius                                         = 0
+
+misfire_chance                                     = 0.07
+
+PDM_disp_accel_factor                              = 1.2
+PDM_disp_base                                      = 0.6
+PDM_disp_crouch                                    = 1.1
+PDM_disp_crouch_no_acc                             = 1.1
+PDM_disp_vel_factor                                = 1.2
+
+position                						   = -0.021, -0.085, 0.0
+orientation             						   = 0, 0, 0
+
+reload_dof                                         = 0, 0.5, 5, 1.7
+rpm                                                = 200
+rpm_empty_click                                    = 120
+scheduled                                          = off
+scope_status                                       = 0
+scope_zoom_factor                                  = 1.1
+shell_point                                        = 0, 0.133, 0.047
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_pistol_suppressor
+silencer_status                                    = 2
+silencer_x                                         = 71
+silencer_y                                         = -18
+single_handed                                      = 1
+slot                                               = 1
+snd_bore                                           = nil
+
+snd_bore                                           = weapons\beretta\inspect
+snd_draw                                           = weapons\beretta\draw
+snd_empty                                          = weapons\beretta\empty
+snd_holster                                        = weapons\walther_p99\walther_hide
+snd_reload										   = weapons\beretta\reload
+snd_reload_empty								   = weapons\beretta\reload_empty
+snd_reload_misfire								   = weapons\beretta\unjam
+snd_changefiremode								   = nil
+snd_ammo_check                                     = weapons\beretta\magcheck  
+snd_ammo_check_empty                               = weapons\beretta\magcheck  
+snd_ammo_check_jammed                              = weapons\beretta\magcheck  
+
+snd_shoot                                          = weapons\beretta\shoot
+snd_shoot_distant           					   = weapons\_gunfire\beretta\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        		 				   = weapons\beretta\shot_sil
+
+time_to_aim                                        = 1.0
+
+upgrade_scheme                           		   = upgrade_scheme_beretta
+upgrades                                 		   = up_gr_firstab_beretta, up_gr_seconab_beretta, up_gr_thirdab_beretta, up_gr_fourtab_beretta, up_gr_fifthab_beretta, up_gr_fifthcd_beretta
+
+use_aim_bullet                                     = false
+visual                                             = dynamics\weapons\wpn_beretta\wpn_beretta.ogf
+weapon_class                                       = 
+zoom_cam_dispersion                                = 0.4
+zoom_cam_dispersion_frac                           = 0.75
+zoom_cam_dispersion_inc                            = 0.8
+zoom_cam_max_angle                                 = 8.0
+zoom_cam_max_angle_horz                            = 8.0
+zoom_cam_relax_speed                               = 10
+zoom_cam_step_angle_horz                           = 1.5
+zoom_dof                                           = -1000, 1.0, 1000
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.15
+
+shell_particles	 				                   = ;weapons\9x19
+flame_particles									   = weapons\generic_weapon03
+smoke_particles        							   = ghost_particles\weapons\flame_eft_pistol
+silencer_smoke_particles 						   = ghost_particles\weapons\generic_smoke_eft_sil 
+
+[wpn_beretta_hud]:hud_base_weapon
+hands_position                           = 0.0, -0.0, 0.040786
+hands_position_16x9                      = 0.0, -0.0, 0.040786
+hands_orientation                        = -0.043488, 0.006106, -0.050965
+hands_orientation_16x9                   = -0.043488, 0.006106, -0.050965
+aim_hud_offset_pos                       = -0.049479,0.036511,0.000000
+aim_hud_offset_pos_16x9                  = -0.049479,0.036511,0.000000
+aim_hud_offset_rot                       = 0.008112,0.000416,-0.086627
+aim_hud_offset_rot_16x9                  = 0.008112,0.000416,-0.086627
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+; Base
+
+anm_bore                                 = m9_new_inspect, idle
+anm_show                                 = m9_new_draw, idle
+anm_hide                                 = m9_new_holster, idle
+anm_idle                                 = m9_new_idle, idle
+anm_idle_aim_moving                      = m9_new_walk, idle 
+anm_idle_aim_moving_crouch               = m9_new_walk, idle, 0.8 
+anm_idle_moving                          = m9_new_walk, idle
+anm_idle_moving_crouch                   = m9_new_walk, idle
+anm_idle_sprint                          = m9_new_sprint, idle, 1.2
+anm_reload                               = m9_new_reload_loweredpos, reload_loweredpos
+anm_reload_empty                         = m9_new_reload_empty_loweredpos, reload_empty_loweredpos
+anm_shots                                = m9_new_shoot_hip
+anm_shots_aim                            = m9_new_shoot
+anm_idle_aim                             = m9_new_aim, idle
+
+; Empty
+
+anm_bore_empty                           = m9_new_inspect, idle_empty
+anm_show_empty                           = m9_new_draw, idle_empty
+anm_hide_empty                           = m9_new_holster, idle_empty
+anm_shot_l                               = m9_new_shoot_hip , shoot_empty
+anm_shots_aim_l                          = m9_new_shoot, shoot_empty
+anm_idle_empty                           = m9_new_idle, idle_empty
+anm_idle_aim_moving_empty                = m9_new_walk, idle_empty
+anm_idle_aim_moving_crouch_empty         = m9_new_walk, idle_empty, 0.8
+anm_idle_moving_empty                    = m9_new_walk, idle_empty
+anm_idle_moving_crouch_empty             = m9_new_walk, idle_empty, 0.9
+anm_idle_sprint_empty                    = m9_new_sprint, idle_empty, 1.2
+anm_idle_aim_empty                       = m9_new_aim, idle_empty
+
+; Jammed
+
+anm_idle_jammed                    		 = m9_new_idle, idle_jammed
+anm_show_jammed                    		 = m9_new_draw, idle_jammed
+anm_hide_jammed                    		 = m9_new_holster, idle_jammed
+anm_idle_aim_jammed                		 = m9_new_aim, idle_jammed
+anm_idle_sprint_jammed             		 = m9_new_sprint, idle_jammed, 1.2
+anm_idle_moving_jammed             		 = m9_new_walk, idle_jammed
+anm_idle_moving_crouch_jammed      		 = m9_new_walk, idle_jammed, 0.8
+anm_bore_jammed                    		 = m9_new_inspect_jammed, inspect_jammed
+anm_reload_misfire                 		 = m9_new_unjam, unjam
+
+; New
+
+anm_ammo_check                           = m9_new_magcheck, magcheck
+anm_ammo_check_empty                     = m9_new_magcheck, magcheck_empty
+;anm_ammo_check_no_mag                   = m9_new_magcheck_nomag, magcheck_nomag
+;anm_ammo_check_aim                      = m9_new_magcheck_ads, magcheck_ads
+;anm_ammo_check_empty_aim                = m9_new_magcheck_ads, magcheck_empty_ads
+anm_ammo_check_jammed                    = m9_new_magcheck, 92fs_magcheck_jammed
+anm_ammo_check_empty_jammed              = m9_new_magcheck, 92fs_magcheck_jammed_empty
+anm_idle_sprint_start             	 	 = m9_new_walk2sprint, idle
+anm_idle_sprint_end             		 = m9_new_sprint2walk, idle
+anm_idle_sprint_start_empty 		     = m9_new_walk2sprint, idle_empty
+anm_idle_sprint_end_empty       		 = m9_new_sprint2walk, idle_empty
+anm_idle_sprint_start_jammed             = m9_new_walk2sprint, idle_jammed
+anm_idle_sprint_end_jammed             	 = m9_new_sprint2walk, idle_jammed
+;anm_changefiremode                 	 = m9_new_switch_mode, idle
+;anm_changefiremode_empty			     = m9_new_switch_mode, idle_empty
+;anm_changefiremode_jammed			     = m9_new_switch_mode, idle_jammed
+
+fire_point				        	     = 0, 0, 0
+fire_bone               			     = muzzle
+shell_point				        	     = 0, 0, 0
+shell_bone              			     = wpn_body
+
+item_visual                     	     = dynamics\weapons\wpn_beretta\wpn_beretta_hud.ogf

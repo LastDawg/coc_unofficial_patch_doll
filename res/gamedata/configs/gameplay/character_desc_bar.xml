@@ -12,7 +12,7 @@
 	<money min="1000000" max="1000000" infinitive="1"></money>
 	<rank>28980</rank>
 	<reputation>2408</reputation>
-	<visual>actors\stalker_unique\stalker_trader_barman</visual>
+	<visual>special_characters\stalker_trader_barman</visual>
 	<snd_config>characters_voice\human\no_speach\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies></supplies>
@@ -35,7 +35,7 @@
 	<money min="200" max="600" infinitive="0"></money>
 	<rank>14654</rank>
 	<reputation>976</reputation>
-	<visual>actors\stalker_unique\stalker_bar_security</visual>
+	<visual>special_characters\stalker_bar_security</visual>
 	<snd_config>characters_voice\human\stalker_1\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -58,7 +58,7 @@
 	<money min="200" max="600" infinitive="0"></money>
 	<rank>13032</rank>
 	<reputation>817</reputation>
-	<visual>actors\stalker_unique\stalker_bar_security</visual>
+	<visual>special_characters\stalker_bar_security</visual>
 	<snd_config>characters_voice\human\stalker_1\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -81,7 +81,7 @@
 	<money min="5000" max="10000" infinitive="0"></money>
 	<rank>21092</rank>
 	<reputation>1215</reputation>
-	<visual>actors\stalker_unique\stalker_dolg_voronin</visual>
+	<visual>special_characters\stalker_dolg_voronin</visual>
 	<snd_config>characters_voice\human\dolg_1\</snd_config>
 	<crouch_type>0</crouch_type>
 	<supplies>
@@ -111,7 +111,7 @@
 	<money min="600" max="2000" infinitive="0"></money>
 	<rank>16068</rank>
 	<reputation>524</reputation>
-	<visual>actors\stalker_unique\stalker_dolg_kitsenko</visual>
+	<visual>special_characters\stalker_dolg_kitsenko</visual>
 	<snd_config>characters_voice\human\dolg_1\</snd_config>
 	<crouch_type>0</crouch_type>
 	<supplies>
@@ -141,7 +141,7 @@
 	<rank>21336</rank>
 	<reputation>2303</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-	<visual>actors\stalker_dolg\stalker_dolg_4</visual>
+	<visual>random_characters\dolg\stalker_dolg_mil_armor_1</visual>
 	<supplies>
 		[spawn] \n
 		wpn_groza = 1 \n
@@ -168,7 +168,7 @@
 	<money min="200" max="600" infinitive="0"></money>
 	<rank>14168</rank>
 	<reputation>-2060</reputation>
-	<visual>actors\stalker_dolg\stalker_dolg_3</visual>
+	<visual>random_characters\dolg\stalker_dolg_armor_4</visual>
 	<snd_config>characters_voice\human\dolg_1\</snd_config>
 	<crouch_type>0</crouch_type>
 	<supplies>
@@ -200,7 +200,7 @@
 	<money min="1000000" max="1000000" infinitive="1"></money>
 	<rank>15352</rank>
 	<reputation>270</reputation>
-	<visual>actors\stalker_unique\stalker_dolg_petrenko</visual>
+	<visual>special_characters\stalker_dolg_petrenko</visual>
 	<snd_config>characters_voice\human\dolg_1\</snd_config>
 	<crouch_type>0</crouch_type>
 	<supplies>
@@ -235,7 +235,7 @@
 	<rank>3384</rank>
 	<reputation>376</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-	<visual>actors\stalker_dolg\stalker_dolg_2a_nohood</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_6</visual>
 	<supplies></supplies>
 #include "gameplay\character_criticals.xml"
 	<start_dialog>bar_visitors_stalker_mechanic_start</start_dialog>
@@ -260,12 +260,12 @@
 	<money min="600" max="2000" infinitive="0"></money>
 	<rank>6580</rank>
 	<reputation>265</reputation>
-	<visual>actors\stalker_unique\stalker_neutral_arnie</visual>
+	<visual>special_characters\stalker_neutral_arnie</visual>
 	<snd_config>characters_voice\human\stalker_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
 		[spawn] \n
-		wpn_lr300 \n
+		wpn_m4a1 \n
 		ammo_5.56x45_ap = 1 \n
 #include "gameplay\supplies\character_food.xml"
 #include "gameplay\supplies\character_medical.xml"
@@ -290,7 +290,7 @@
 	<money min="200" max="600" infinitive="0"></money>
 	<rank>12850</rank>
 	<reputation>847</reputation>
-	<visual>actors\stalker_unique\stalker_bar_security</visual>
+	<visual>special_characters\stalker_bar_security</visual>
 	<snd_config>characters_voice\human\stalker_1\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -316,7 +316,7 @@
 	<money min="2000" max="5000" infinitive="0"></money>
 	<rank>27850</rank>
 	<reputation>-1269</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+	<visual>random_characters\zombie\stalker_zombied_soldier_veteran_2</visual>
 	<snd_config>characters_voice\human\zombied_3\</snd_config>
 	<crouch_type>0</crouch_type>
 	<supplies>
@@ -341,7 +341,7 @@
 	<reputation>2487</reputation>
 	<snd_config>characters_voice\human\stalker_2\</snd_config>
 	<crouch_type>-1</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_2_mask</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_2</visual>
 	<supplies>
 		[spawn] \n
 		wpn_pm \n
@@ -362,7 +362,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>3912</rank>
 	<reputation>2099</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_2a_mask</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_3</visual>
 	<snd_config>characters_voice\human\stalker_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -384,7 +384,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>5034</rank>
 	<reputation>-253</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_2b_mask</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_4</visual>
 	<snd_config>characters_voice\human\stalker_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -405,7 +405,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>3936</rank>
 	<reputation>-1138</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_2c_mask</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_5</visual>
 	<snd_config>characters_voice\human\stalker_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -428,7 +428,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>3748</rank>
 	<reputation>128</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_2</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_1</visual>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -449,7 +449,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>3810</rank>
 	<reputation>-377</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_2_soc</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_6</visual>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -470,7 +470,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>14674</rank>
 	<reputation>-2143</reputation>
-	<visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
+	<visual>random_characters\neutral\stalker_neutral_scientists_1</visual>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -494,7 +494,7 @@
 	<reputation>-911</reputation>
 	<snd_config>characters_voice\human\stalker_1\</snd_config>
 	<crouch_type>-1</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_1</visual>
+	<visual>random_characters\neutral\stalker_neutral_jacket_6</visual>
 	<supplies>
 		[spawn] \n
 		wpn_bm16 \n
@@ -516,7 +516,7 @@
 	<reputation>2016</reputation>
 	<snd_config>characters_voice\human\stalker_1\</snd_config>
 	<crouch_type>-1</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_1a</visual>
+	<visual>random_characters\neutral\stalker_neutral_jacket_14</visual>
 	<supplies>
 		[spawn] \n
 		wpn_ak74u \n
@@ -541,7 +541,7 @@
 	<crouch_type>-1</crouch_type>
 	<rank>11394</rank>
 	<reputation>324</reputation>
-	<visual>actors\stalker_soldier\stalker_soldier_4</visual>
+	<visual>random_characters\military\stalker_military_mil_armor_black_1</visual>
 	<supplies>
 		[spawn] \n
 		wpn_val \n
@@ -562,7 +562,7 @@
 	<crouch_type>-1</crouch_type>
 	<rank>12948</rank>
 	<reputation>-23</reputation>
-	<visual>actors\stalker_soldier\stalker_soldier_5</visual>
+	<visual>random_characters\military\stalker_military_mil_armor_black_2</visual>
 	<supplies>
 		[spawn] \n
 		wpn_groza \n
@@ -581,7 +581,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>4508</rank>
 	<reputation>-740</reputation>
-	<visual>actors\stalker_bandit\stalker_bandit_4</visual>
+	<visual>random_characters\bandit\stalker_bandit_raincoat_1</visual>
 	<snd_config>characters_voice\human\bandit_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -602,7 +602,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>5380</rank>
 	<reputation>-601</reputation>
-	<visual>actors\stalker_bandit\stalker_bandit_4_bala</visual>
+	<visual>random_characters\bandit\stalker_bandit_raincoat_2</visual>
 	<snd_config>characters_voice\human\bandit_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -623,7 +623,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>5852</rank>
 	<reputation>-928</reputation>
-	<visual>actors\stalker_bandit\stalker_bandit_4_bala</visual>
+	<visual>random_characters\bandit\stalker_bandit_armor_2</visual>
 	<snd_config>characters_voice\human\bandit_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -644,7 +644,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>11394</rank>
 	<reputation>-1189</reputation>
-	<visual>actors\stalker_bandit\stalker_bandit_5_bala</visual>
+	<visual>random_characters\bandit\stalker_bandit_armor_3</visual>
 	<snd_config>characters_voice\human\bandit_2\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -665,7 +665,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>22894</rank>
 	<reputation>-1918</reputation>
-	<visual>actors\stalker_bandit\stalker_bandit_exo</visual>
+	<visual>random_characters\bandit\stalker_bandit_armor_5</visual>
 	<snd_config>characters_voice\human\bandit_4\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -686,7 +686,7 @@
 	<community>arena_enemy</community> <terrain_sect>stalker_terrain</terrain_sect>
 	<rank>23416</rank>
 	<reputation>-2459</reputation>
-	<visual>actors\stalker_bandit\stalker_bandit_exo</visual>
+	<visual>random_characters\bandit\stalker_bandit_armor_4</visual>
 	<snd_config>characters_voice\human\bandit_4\</snd_config>
 	<crouch_type>-1</crouch_type>
 	<supplies>
@@ -710,7 +710,7 @@
 	<reputation>1833</reputation>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>0</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+	<visual>random_characters\neutral\stalker_neutral_scientists_2</visual>
 	<supplies>
 		[spawn] \n
 		wpn_fn2000 \n
@@ -733,10 +733,10 @@
 	<reputation>1730</reputation>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>0</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_11</visual>
 	<supplies>
 		[spawn] \n
-		wpn_g36 \n
+		wpn_m4a1 \n
 		ammo_5.56x45_ss190 = 1 \n
 #include "gameplay\supplies\character_medical.xml"
 	</supplies>
@@ -754,10 +754,10 @@
 	<reputation>-2205</reputation>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>0</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_12</visual>
 	<supplies>
 		[spawn] \n
-		wpn_g36 \n
+		wpn_m4a1 \n
 		ammo_5.56x45_ss190 = 1 \n
 #include "gameplay\supplies\character_medical.xml"
 	</supplies>
@@ -775,10 +775,10 @@
 	<reputation>972</reputation>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>0</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_13</visual>
 	<supplies>
 		[spawn] \n
-		wpn_g36 \n
+		wpn_m4a1 \n
 		ammo_5.56x45_ss190 = 1 \n
 #include "gameplay\supplies\character_medical.xml"
 	</supplies>
@@ -796,10 +796,10 @@
 	<reputation>-433</reputation>
 	<snd_config>characters_voice\human\stalker_4\</snd_config>
 	<crouch_type>0</crouch_type>
-	<visual>actors\stalker_neutral\stalker_neutral_4</visual>
+	<visual>random_characters\neutral\stalker_neutral_armor_14</visual>
 	<supplies>
 		[spawn] \n
-		wpn_g36 \n
+		wpn_m4a1 \n
 		ammo_5.56x45_ss190 = 1 \n
 #include "gameplay\supplies\character_medical.xml"
 	</supplies>

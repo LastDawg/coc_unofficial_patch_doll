@@ -18,7 +18,7 @@
         [spawn] \n
         wpn_val = 1, scope \n
         ammo_9x39_ap = 1 \n
-        wpn_pb \n
+        wpn_pm \n
         ammo_9x18_pmm = 1 \n
         wpn_binoc = 1 \n
 #include "gameplay\supplies\character_food_army.xml"
@@ -48,7 +48,7 @@
         [spawn] \n
         wpn_abakan = 1 \n
         ammo_5.45x39_ap = 1 \n
-        wpn_pb \n
+        wpn_pm \n
         ammo_9x18_pmm = 1 \n
         wpn_binoc = 1 \n
 #include "gameplay\supplies\character_food_army.xml"
@@ -77,7 +77,7 @@
         [spawn] \n
         wpn_svu \n
         ammo_7.62x54_7h1 = 1 \n
-        wpn_pb \n
+        wpn_pm \n
         ammo_9x18_pmm = 1 \n
         wpn_binoc = 1 \n
 #include "gameplay\supplies\character_food_army.xml"
@@ -106,7 +106,7 @@
         [spawn] \n
         wpn_abakan = 1 \n
         ammo_5.45x39_ap = 1 \n
-        wpn_pb \n
+        wpn_pm \n
         ammo_9x18_pmm = 1 \n
         wpn_binoc = 1 \n
 #include "gameplay\supplies\character_food_army.xml"
@@ -845,7 +845,7 @@
     <visual>actors\stalker_merc\stalker_merc_4</visual>
     <supplies>
         [spawn] \n
-        wpn_g36 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ap = 1 \n
         wpn_usp \n
         ammo_11.43x23_hydro = 1 \n
@@ -949,7 +949,7 @@
     <visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
     <supplies>
         [spawn] \n
-        wpn_lr300 = 1, scope \n
+        wpn_m4a1 = 1, scope \n
         ammo_5.56x45_ap = 1 \n
         wpn_usp = 1 \n
         ammo_11.43x23_fmj = 1 \n
@@ -976,7 +976,7 @@
     <visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
     <supplies>
         [spawn] \n
-        wpn_lr300 = 1, scope \n
+        wpn_m4a1 = 1, scope \n
         ammo_5.56x45_ap = 1 \n
         wpn_usp = 1 \n
         ammo_11.43x23_fmj = 1 \n

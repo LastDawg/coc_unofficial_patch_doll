@@ -1,0 +1,303 @@
+[wpn_mr155]:new_weapon_params
+GroupControlSection         = spawn_group
+$npc                        = on
+$prefetch                   = 8
+$spawn                      = "weapons\wpn_mr155"
+scheduled                   = off
+  
+open_weapon_cartridge       = false
+open_weapon_empty_cartridge = true
+ammo_elapsed                = 9 ;Патрон в патронник
+ammo_mag_size               = 9
+ 
+class                       = WP_ASHTG
+slot                        = 2
+animation_slot              = 9
+ef_main_weapon_type         = 1
+ef_weapon_type              = 9
+hand_dependence             = 1
+single_handed               = 1
+  
+inv_grid_height             = 2
+inv_grid_width              = 6
+inv_grid_x                  = 33
+inv_grid_y                  = 14
+
+parent_section              = wpn_mr155
+scopes                      = none
+		
+inv_name                    = st_wpn_mr155
+description                 = st_wpn_mr155_descr
+        
+inv_weight                  = 4.4
+cost                        = 9000
+weapon_class                = shotgun
+        
+hud                         = wpn_mr155_hud
+visual                      = dynamics\weapons\wpn_mr155\wpn_mr155.ogf
+
+position                    = -0.024, -0.117, 0
+orientation                 = 0, -3, 0
+fire_point                  = 0.0, 0.158, 0.647
+fire_point2                 = 0.0, 0.158, 0.647
+strap_bone0                 = bip01_spine2
+strap_bone1                 = bip01_spine1
+strap_position              = -0.26,-0.10,0.05
+strap_orientation           = -15,-9,110
+shell_point                 = 0, 0.180, 0.647
+
+ph_mass                     = 4
+        
+light_color                 = 0.6, 0.5, 0.3
+light_range                 = 6.0
+light_time                  = 0.2
+light_var_color             = 0.05
+light_var_range             = 0.5
+        
+upgrade_scheme              = upgrade_scheme_wincheaster1300
+upgrades                    = up_gr_firstab_wincheaster1300, up_gr_seconab_wincheaster1300, up_gr_thirdab_wincheaster1300, up_gr_fourtab_wincheaster1300
+             
+tri_state_reload            = on
+fire_modes                  = 1
+ammo_class                  = ammo_12x70_buck, ammo_12x76_zhekan
+
+scopes 						= acog_scope, pn23_scope, barska_scope, eotech_scope, specter_scope    
+scope_status                = 2
+scope_zoom_factor			= 1.1
+
+grenade_launcher_status     = 0
+        
+hit_impulse                 = 20
+hit_power                   = 0.62
+hit_type                    = fire_wound
+fire_distance               = 150
+bullet_speed                = 240
+rpm                         = 250        ;60 = 1 секунда
+rpm_empty_click             = 250
+        
+zoom_dof                    	 = 0.5, 1.0, 180
+zoom_enabled                	 = true
+control_inertion_factor     	 = 1.3f
+crosshair_inertion          	 = 6.85
+fire_dispersion_base       	 	 = 0.9
+        
+misfire_chance              = 0.12
+        
+condition_shot_dec          = 0.00333
+        		
+cam_return					= 0
+cam_relax_speed         	= 10
+cam_dispersion          	= 3.0
+cam_dispersion_inc			= 2.0
+cam_dispersion_frac			= 0.7
+cam_max_angle				= 20.0
+cam_max_angle_horz			= 15.0
+cam_step_angle_horz			= 3.0
+
+zoom_cam_relax_speed		= 10
+zoom_cam_dispersion			= 3.0
+zoom_cam_dispersion_inc		= 2.5
+zoom_cam_dispersion_frac	= 0.7
+zoom_cam_max_angle			= 12.0
+zoom_cam_max_angle_horz		= 7.0
+zoom_cam_step_angle_horz	= 3.0
+		        
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 2.0
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+        
+holder_fov_modifier         = 1.0
+holder_range_modifier       = 1.0
+min_radius                  = 0
+max_radius                  = 500
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 2
+silencer_x                                         = 273
+silencer_y                                         = 17
+
+snd_reload_misfire				                   = weapons\mr155\mr155_unjam1
+snd_reload_misfire1				                   = weapons\mr155\mr155_unjam2
+snd_reload_misfire2				                   = weapons\mr155\mr155_unjam3
+snd_reload_misfire3				                   = weapons\mr155\mr155_unjam4
+snd_bore					                       = weapons\mr155\mr155_inspect
+snd_bore_jammed					                   = weapons\mr155\mr155_inspect_jammed
+snd_draw										   = weapons\mr155\mr155_deploy
+snd_holster										   = weapons\mr155\mr155_holster
+snd_empty               						   = weapons\mr155\mr155_empty
+snd_reload										   = nil
+snd_open_weapon          						   = weapons\mr155\mr155_open
+snd_open_weapon_empty          					   = weapons\mr155\mr155_first_reload_port1
+snd_open_weapon_empty1          				   = weapons\mr155\mr155_first_reload_port2
+snd_open_weapon_empty2          				   = weapons\mr155\mr155_first_reload_port3
+snd_open_weapon_empty3          				   = weapons\mr155\mr155_first_reload_port4
+snd_add_cartridge							   	   = weapons\mr155\mr155_add_cartridge1
+snd_add_cartridge1							   	   = weapons\mr155\mr155_add_cartridge2
+snd_add_cartridge2							   	   = weapons\mr155\mr155_add_cartridge3
+snd_add_cartridge3							   	   = weapons\mr155\mr155_add_cartridge4
+snd_add_cartridge4							   	   = weapons\mr155\mr155_add_cartridge5
+snd_add_cartridge5							   	   = weapons\mr155\mr155_add_cartridge6
+snd_add_cartridge_empty							   = weapons\mr155\mr155_load_second_ammo1
+snd_add_cartridge_empty1					       = weapons\mr155\mr155_load_second_ammo2
+snd_add_cartridge_empty2						   = weapons\mr155\mr155_load_second_ammo3
+snd_add_cartridge_empty3						   = weapons\mr155\mr155_load_second_ammo4
+snd_add_cartridge_empty4						   = weapons\mr155\mr155_load_second_ammo5
+snd_close_weapon       							   = weapons\mr155\mr155_close
+
+snd_shoot               						   = weapons\mr155\mr155_shoot
+snd_shoot_distant           					   = weapons\_gunfire\mp133\medium_distance
+snd_shoot_distant_far       					   = nil
+snd_silncer_shot        						   = weapons\mr155\mr155_shoot_sil
+
+shell_particles             					   = ;weapons\12ga
+flame_particles			   						   = weapons\generic_weapon05
+smoke_particles     							   = ghost_particles\weapons\flame_eft_shotgun
+silencer_smoke_particles    					   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_mr155_hud]:hud_base_weapon
+hands_orientation                              = -0.034, -1.181313, 0.584002
+hands_orientation_16x9                         = -0.034, -1.181313, 0.584002
+hands_position                                 = 0.008153, 0.007683, -0.02543
+hands_position_16x9                            = 0.008153, 0.007683, -0.02543
+aim_hud_offset_pos							   = -0.057500,0.027781,-0.047908
+aim_hud_offset_rot							   = -0.028740,0.000350,0.011655
+aim_hud_offset_pos_16x9						   = -0.057500,0.027781,-0.047908
+aim_hud_offset_rot_16x9						   = -0.028740,0.000350,0.011655
+item_position                                  = 0, 0, 0
+item_orientation                               = 0, 0, 0
+
+shell_bone                                     = wpn_body
+shell_point                                    = 0, 0, 0
+fire_bone                                      = wpn_body
+fire_point                                     = -0.003500,0.030000,0.749012
+
+anm_bore                                       = mp155_new_inspect, idle
+anm_show                				       = mp155_new_draw, idle
+anm_hide                				       = mp155_new_holster, idle
+anm_idle                				       = mp155_new_idle, idle
+anm_idle_aim           					       = mp155_new_aim, idle
+anm_idle_aim_moving       					   = mp155_new_walk, idle, 0.75
+anm_idle_aim_moving_crouch 					   = mp155_new_walk, idle, 0.7
+anm_idle_moving           					   = mp155_new_walk, idle
+anm_idle_moving_crouch     					   = mp155_new_walk, idle, 0.7
+anm_idle_sprint            					   = mp155_new_sprint, idle
+anm_shots                   				   = mp155_new_shoot, shoot
+anm_shot_l                  				   = mp155_new_shoot, shoot_last
+anm_open                    				   = mp155_new_reload_start, reload_start
+anm_open_empty              				   = mp155_new_reload_empty_start, reload_empty_start
+anm_add_cartridge           				   = mp155_new_reload_loop, reload_loop 
+anm_add_cartridge_empty    					   = mp155_new_reload_empty_start_second_ammo, reload_empty_start_second_ammo
+anm_close                   				   = mp155_new_reload_end, reload_end
+anm_reload_misfire          				   = mp155_new_unjam, unjam
+
+anm_hide_empty                                 = mp155_new_holster, idle_empty
+anm_idle_empty                                 = mp155_new_idle, idle_empty
+anm_idle_aim_empty                             = mp155_new_aim, idle_empty
+anm_idle_aim_moving_empty                      = mp155_new_walk, idle_empty, 0.75
+anm_idle_aim_moving_crouch_empty               = mp155_new_walk, idle_empty, 0.7
+anm_idle_moving_empty                          = mp155_new_walk, idle_empty
+anm_idle_moving_crouch_empty                   = mp155_new_walk, idle_empty, 0.7
+anm_idle_sprint_empty                          = mp155_new_sprint, idle_empty
+anm_show_empty                                 = mp155_new_draw, idle_empty
+anm_bore_empty                                 = mp155_new_inspect, idle_empty
+
+anm_hide_jammed                                = mp155_new_holster, idle_jammed
+anm_idle_jammed                                = mp155_new_idle, idle_jammed
+anm_idle_aim_jammed                            = mp155_new_aim, idle_jammed
+anm_idle_aim_moving_jammed                     = mp155_new_walk, idle_jammed, 0.75
+anm_idle_aim_moving_crouch_jammed              = mp155_new_walk, idle_jammed, 0.7
+anm_idle_moving_jammed                         = mp155_new_walk, idle_jammed
+anm_idle_moving_crouch_jammed                  = mp155_new_walk, idle_jammed, 0.7
+anm_idle_sprint_jammed                         = mp155_new_sprint, idle_jammed
+anm_show_jammed                                = mp155_new_draw, idle_jammed
+anm_bore_jammed                                = mp155_new_inspect_jammed, idle_jammed
+
+anm_sprint_end                                 = mp155_new_sprint_end, idle
+anm_sprint_end_empty                           = mp155_new_sprint_end, idle_empty
+anm_sprint_end_jammed                          = mp155_new_sprint_end, idle_jammed
+
+item_visual                                    = dynamics\weapons\wpn_mr155\wpn_mr155_hud.ogf
+
+;-----------------------------------------------------------------------------
+; Addons
+;-----------------------------------------------------------------------------
+
+[wpn_mr155_acog_scope]:wpn_mr155
+$spawn					            = "weapons\wpn_mr155_acog_scope"
+hud						            = wpn_mr155_acog_scope_hud
+scope_x                             = 72
+scope_y                             = 5
+
+[wpn_mr155_acog_scope_hud]:wpn_mr155_hud
+aim_hud_offset_pos					= -0.057000,0.000781,-0.097908
+aim_hud_offset_rot					= -0.030490,-0.004150,0.011655
+aim_hud_offset_pos_16x9				= -0.057000,0.000781,-0.097908
+aim_hud_offset_rot_16x9				= -0.030490,-0.004150,0.011655
+item_visual            	 		    = dynamics\weapons\wpn_mr155\wpn_mr155_acog_hud.ogf
+
+[wpn_mr155_barska_scope]:wpn_mr155
+$spawn             		            = "weapons\wpn_mr155_barska_scope"
+hud						            = wpn_mr155_barska_scope_hud
+scope_x                             = 72
+scope_y                             = 5
+visual								= dynamics\weapons\wpn_mr155\wpn_mr155_barska.ogf
+
+[wpn_mr155_barska_scope_hud]:wpn_mr155_hud
+aim_hud_offset_pos					= -0.057000,0.007781,-0.047908
+aim_hud_offset_rot					= -0.008990,-0.003400,0.011655
+aim_hud_offset_pos_16x9				= -0.057000,0.007781,-0.047908
+aim_hud_offset_rot_16x9				= -0.008990,-0.003400,0.011655
+item_visual            	 			= dynamics\weapons\wpn_mr155\wpn_mr155_barska_hud.ogf
+
+[wpn_mr155_eotech_scope]:wpn_mr155
+$spawn             		            = "weapons\wpn_mr155_eotech_scope"
+hud						            = wpn_mr155_eotech_scope_hud
+scope_x                             = 72
+scope_y                             = 5
+visual								= dynamics\weapons\wpn_mr155\wpn_mr155_eotech.ogf
+
+[wpn_mr155_eotech_scope_hud]:wpn_mr155_hud
+aim_hud_offset_pos					= -0.055500,0.003281,-0.047908
+aim_hud_offset_rot					= 0.004260,-0.007150,0.011655
+aim_hud_offset_pos_16x9				= -0.055500,0.003281,-0.047908
+aim_hud_offset_rot_16x9				= 0.004260,-0.007150,0.011655
+item_visual            	 			= dynamics\weapons\wpn_mr155\wpn_mr155_eotech_hud.ogf
+
+[wpn_mr155_pn23_scope]:wpn_mr155
+$spawn					            = "weapons\wpn_mr155_pn23_scope"
+hud						            = wpn_mr155_pn23_scope_hud
+scope_x                             = 72
+scope_y                             = 5
+visual								= dynamics\weapons\wpn_mr155\wpn_mr155_pn23.ogf
+
+[wpn_mr155_pn23_scope_hud]:wpn_mr155_hud
+aim_hud_offset_pos					= -0.057500,-0.003719,-0.055908
+aim_hud_offset_rot					= 0.014260,-0.004650,0.011655
+aim_hud_offset_pos_16x9				= -0.057500,-0.003719,-0.055908
+aim_hud_offset_rot_16x9				= 0.014260,-0.004650,0.011655
+item_visual            	 		    = dynamics\weapons\wpn_mr155\wpn_mr155_pn23_hud.ogf
+
+[wpn_mr155_specter_scope]:wpn_mr155
+$spawn                          	= "weapons\wpn_mr155_specter_scope"
+hud                             	= wpn_mr155_specter_scope_hud
+scope_x                             = 72
+scope_y                             = 5
+visual								= dynamics\weapons\wpn_mr155\wpn_mr155_specter.ogf
+
+[wpn_mr155_specter_scope_hud]:wpn_mr155_hud
+aim_hud_offset_pos					= -0.056000,0.002781,-0.106908
+aim_hud_offset_rot					= -0.028490,-0.008150,0.011655
+aim_hud_offset_pos_16x9				= -0.056000,0.002781,-0.106908
+aim_hud_offset_rot_16x9				= -0.028490,-0.008150,0.011655
+aim_hud_offset_alt_pos				= -0.057500,-0.018500,-0.042000
+aim_hud_offset_alt_rot				= -0.032750,-0.000000,0.000000
+aim_hud_offset_alt_pos_16x9			= -0.057500,-0.018500,-0.042000
+aim_hud_offset_alt_rot_16x9			= -0.032750,-0.000000,0.000000
+item_visual							= dynamics\weapons\wpn_mr155\wpn_mr155_specter_hud.ogf

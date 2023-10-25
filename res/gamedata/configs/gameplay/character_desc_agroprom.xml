@@ -12,7 +12,7 @@
     <terrain_sect>stalker_terrain</terrain_sect>
     <rank>25982</rank>
     <reputation>1249</reputation>
-    <visual>actors\stalker_unique\stalker_soldier_kuznetsov</visual>
+    <visual>special_characters\stalker_soldier_kuznetsov</visual>
     <snd_config>characters_voice\human\military_1\</snd_config>
     <supplies>
         [spawn] \n
@@ -44,7 +44,7 @@
     <rank>19180</rank>
     <reputation>1172</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
-    <visual>actors\stalker_soldier\stalker_soldier_4m</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_helmet_1</visual>
     <snd_config>characters_voice\human\military_3\</snd_config>
     <supplies>
         [spawn] \n
@@ -73,7 +73,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>11974</rank>
     <reputation>573</reputation>
-    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+    <visual>random_characters\military\stalker_military_armor_middle_helmet_2</visual>
     <snd_config>characters_voice\human\military_1\</snd_config>
     <supplies>
         [spawn] \n

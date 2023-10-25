@@ -49,56 +49,6 @@ glow_texture                             = glow\glow_torch_r2
 glow_radius                              = 0.3			
 
 ;-------------
-; LASER
-;-------------
-
-[wpn_addon_laser]:identity_immunities
-discovery_dependency                     =
-$spawn                                   = "weapons\addons\wpn_addon_laser"
-class                                    = WP_LASER
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_laser_anpeq.ogf
-description                              = st_addon_laser_descr
-$prefetch                                = 32
-slot                                     = -1
-cost                                     = 5000
-inv_name                                 = st_addon_laser
-inv_weight                               = 0.4
-
-inv_grid_width                           = 1
-inv_grid_height                          = 1
-inv_grid_x                               = 35
-inv_grid_y                               = 34
-
-[wpn_addon_laser_weaver_an_peq]:wpn_addon_laser, tactical_torch
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_laser_anpeq.ogf
-inv_name                                 = st_wpn_addon_laser_weaver_an_peq
-description                              = st_wpn_addon_laser_weaver_an_peq_descr
-cost                                     = 30000
-inv_weight                               = 0.21
-
-inv_grid_width                           = 1
-inv_grid_height                          = 1
-inv_grid_x                               = 35
-inv_grid_y                               = 34
-
-torch_cone_bones                         = flashlight_cone
-support_flashlight                       = true
-
-[wpn_addon_laser_weaver_zenit]:wpn_addon_laser, tactical_torch
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_laser_zenit.ogf
-inv_name                                 = st_wpn_addon_laser_weaver_zenit
-description                              = st_wpn_addon_laser_weaver_zenit_descr
-cost                                     = 25000
-inv_weight                               = 0.16
-
-inv_grid_width                           = 1
-inv_grid_height                          = 1
-inv_grid_x                               = 36
-inv_grid_y                               = 34
-
-support_flashlight                       = true
-
-;-------------
 ; SILENCER
 ;-------------
 
@@ -198,6 +148,7 @@ inv_grid_width                           = 2
 inv_grid_height                          = 1
 inv_grid_x                               = 35
 inv_grid_y                               = 38
+
 grenade_vel                              = 56
 
 cam_dispersion_k                         = 0.85
@@ -226,8 +177,9 @@ inv_weight                               = 1.1
 inv_grid_width                           = 2
 inv_grid_height                          = 1
 inv_grid_x                               = 35
-inv_grid_y                               = 35
-grenade_vel                              = 40
+inv_grid_y                               = 40
+
+grenade_vel                              = 56
 
 cam_dispersion_k                         = 0.85
 cam_dispersion_inc_k                     = 0.85

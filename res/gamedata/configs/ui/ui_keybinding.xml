@@ -35,7 +35,8 @@
 		<command id="kb_firemode_next"					exe="wpn_firemode_next"/>
 		<command id="kb_firemode_prev"					exe="wpn_firemode_prev"/>		
  		<command id="kb_wpn_addon_laser"				exe="wpn_addon_laser"/>		
- 		<command id="kb_wpn_addon_flashlight"			exe="wpn_addon_flashlight"/>				
+ 		<command id="kb_wpn_addon_flashlight"			exe="wpn_addon_flashlight"/>	
+ 		<command id="kb_wpn_ammo_check"					exe="wpn_ammo_check"/>			
 	</group>
 	<group name="kb_grp_inventory">
 		<command id="kb_inventory"						exe="inventory"/>

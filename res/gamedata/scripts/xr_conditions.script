@@ -1585,7 +1585,7 @@ end
 
 function actor_has_nimble_weapon(actor, npc)
 	local need_item = {}
-	need_item["wpn_g36"] = true
+	need_item["wpn_m4a1"] = true
 	for k,v in pairs(need_item) do
 		if actor:object(k) ~= nil then
 			return true
@@ -1596,7 +1596,7 @@ end
 
 function actor_has_active_nimble_weapon(actor, npc)
 	local need_item = {}
-	need_item["wpn_g36"] = true
+	need_item["wpn_m4a1"] = true
 
 	if actor:item_in_slot(2) ~= nil and need_item[actor:item_in_slot(2):section()] == true then
 		return true

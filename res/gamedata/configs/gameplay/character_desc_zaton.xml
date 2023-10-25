@@ -662,7 +662,7 @@
     <visual>actors\stalker_neutral\stalker_neutral_2</visual>
     <supplies>
         [spawn] \n
-        wpn_l85 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ss190  = 1 \n
         wpn_beretta \n
         ammo_9x19_fmj = 1 \n
@@ -779,7 +779,7 @@
         <visual>actors\stalker_merc\stalker_merc_4</visual>
         <supplies>
         [spawn] \n
-        wpn_lr300 = 1, scope, silencer \n
+        wpn_m4a1 = 1, scope, silencer \n
         ammo_5.56x45_ap = 1 \n
         wpn_walther = 1 \n
         ammo_9x19_pbp = 1 \n
@@ -837,7 +837,7 @@
     <visual>actors\stalker_merc\stalker_merc_2</visual>
     <supplies>
         [spawn] \n
-        wpn_l85 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ss190 = 1 \n
         wpn_beretta \n
         ammo_9x19_fmj = 1 \n
@@ -911,10 +911,8 @@
     <visual>actors\stalker_merc\stalker_merc_2</visual>
     <supplies>
         [spawn] \n
-        wpn_l85 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ss190  = 1 \n
-        wpn_hpsa \n
-        ammo_9x19_fmj = 2 \n
 #include "gameplay\supplies\character_medical.xml"
 #include "gameplay\supplies\character_drugs_2.xml"
     </supplies>
@@ -1264,7 +1262,7 @@
     <visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
     <supplies>
         [spawn] \n
-        wpn_lr300 = 1 \n
+        wpn_m4a1 = 1 \n
         ammo_5.56x45_ap = 1 \n
         wpn_colt1911 = 1 \n
         ammo_11.43x23_hydro = 1 \n
@@ -1478,7 +1476,7 @@
     <visual>actors\stalker_merc\stalker_merc_4</visual>
     <supplies>
         [spawn] \n
-        wpn_lr300 = 1, silencer, scope \n
+        wpn_m4a1 = 1, silencer, scope \n
         ammo_5.56x45_ap = 1 \n
         wpn_walther \n
         ammo_9x19_pbp = 1 \n
@@ -1506,7 +1504,7 @@
     <visual>actors\stalker_merc\stalker_merc_4</visual>
     <supplies>
         [spawn] \n
-        wpn_lr300 = 1, scope \n
+        wpn_m4a1 = 1, scope \n
         ammo_5.56x45_ap = 1 \n
         wpn_usp = 1, silencer = 1 \n
         ammo_11.43x23_hydro = 1 \n

@@ -67,29 +67,6 @@ scope_zoom_factor                        = 1.1
 scope_dynamic_zoom                       = off
 inv_icon_to_back                         = true
 
-[1p29_scope]:identity_immunities, default_scope
-GroupControlSection                      = spawn_group
-slot							         = -1
-discovery_dependency                     =
-cform                                    = skeleton
-class                                    = WP_SCOPE
-$spawn                                   = "weapons\addons\1p29_scope"
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_1p29.ogf
-cost                                     = 13000
-inv_name                                 = st_1p29_scope
-description                              = st_1p29_scope_descr
-inv_weight                               = 0.8
-inv_grid_width                           = 1
-inv_grid_height                          = 1
-inv_grid_x                               = 37
-inv_grid_y                               = 35
-scope_texture                            = wpn_crosshair_1p29
-scope_zoom_factor                        = 4
-3d_zoom_factor                           = 1.1
-3d_fov                                   = 0.5
-scope_dynamic_zoom                       = off
-inv_icon_to_back                         = true
-
 [1p59_scope]:identity_immunities, default_scope
 GroupControlSection                      = spawn_group
 slot							         = -1
@@ -238,28 +215,6 @@ scope_zoom_factor                        = 4
 3d_zoom_factor                           = 1.1
 3d_fov                                   = 0.5
 
-[susat_scope]:identity_immunities, default_scope
-GroupControlSection                      = spawn_group
-slot							         = -1
-discovery_dependency                     =
-cform                                    = skeleton
-class                                    = WP_SCOPE
-$spawn                                   = "weapons\addons\susat_scope"
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
-cost                                     = 15000
-inv_name                                 = st_addon_susat_scope
-description                              = st_addon_susat_scope_descr
-inv_weight                               = 0.417
-inv_grid_width                           = 1
-inv_grid_height                          = 1
-inv_grid_x                               = 38
-inv_grid_y                               = 38
-scope_dynamic_zoom                       = off
-scope_texture                            = wpn_crosshair_susat
-scope_zoom_factor                        = 4
-3d_zoom_factor                           = 1.1
-3d_fov                                   = 0.5
-
 [pn23_scope]:identity_immunities, default_scope
 GroupControlSection                      = spawn_group
 slot							         = -1
@@ -279,7 +234,7 @@ inv_grid_y                               = 34
 scope_texture                            = wpn_crosshair_pn23
 scope_dynamic_zoom                       = off
 scope_zoom_factor                        = 3
-scope_nightvision                        = scope_nightvision_2
+scope_nightvision                        = scope_nightvision_3
 3d_zoom_factor                           = 1.1
 3d_fov                                   = 0.5
 
@@ -305,24 +260,48 @@ scope_zoom_factor                        = 16
 3d_fov                                   = 0.25
 scope_dynamic_zoom                       = on
 
-[1pn93_scope]:identity_immunities, default_scope
+[1pn93_1_scope]:identity_immunities, default_scope
 GroupControlSection                      = spawn_group
 slot							         = -1
 discovery_dependency                     =
 cform                                    = skeleton
 class                                    = WP_SCOPE
-$spawn                                   = "weapons\addons\1pn93_scope"
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_1pn93.ogf
+$spawn                                   = "weapons\addons\1pn93_1_scope"
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_1pn93_1.ogf
 cost                                     = 20000
-inv_name                                 = st_addon_1pn93_scope
-description                              = st_addon_1pn93_scope_descr
+inv_name                                 = st_addon_1pn93_1_scope
+description                              = st_addon_1pn93_1_scope_descr
+inv_weight                               = 1.0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 37
+inv_grid_y                               = 33
+scope_texture                            = wpn_crosshair_1pn93_1
+scope_nightvision                        = scope_nightvision_2
+scope_zoom_factor                        = 4
+3d_zoom_factor                           = 1.1
+3d_fov                                   = 0.5
+scope_dynamic_zoom                       = off
+inv_icon_to_back                         = true
+
+[1pn93_4_scope]:identity_immunities, default_scope
+GroupControlSection                      = spawn_group
+slot							         = -1
+discovery_dependency                     =
+cform                                    = skeleton
+class                                    = WP_SCOPE
+$spawn                                   = "weapons\addons\1pn93_4_scope"
+visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_1pn93_4.ogf
+cost                                     = 25000
+inv_name                                 = st_addon_1pn93_4_scope
+description                              = st_addon_1pn93_4_scope_descr
 inv_weight                               = 1.200
 inv_grid_width                           = 1
 inv_grid_height                          = 1
 inv_grid_x                               = 37
 inv_grid_y                               = 38
-scope_texture                            = wpn_crosshair_1pn93
-scope_nightvision                        = scope_nightvision_2
+scope_texture                            = wpn_crosshair_1pn93_4
+scope_nightvision                        = scope_nightvision_3
 scope_zoom_factor                        = 4
 3d_zoom_factor                           = 1.1
 3d_fov                                   = 0.5
@@ -352,27 +331,28 @@ scope_zoom_factor						 = 3.5
 scope_dynamic_zoom                       = off
 use_alt_aim_hud 						 = true
 
-[leupold_rifleman_scope]:identity_immunities, default_scope
-GroupControlSection                      = spawn_group
+[type97_scope]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
 slot							         = -1
-discovery_dependency                     =
-cform                                    = skeleton
-class                                    = WP_SCOPE
-$spawn                                   = "weapons\addons\leupold_rifleman_scope"
-visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_leupold_rifleman.ogf
-cost                                     = 20000
-inv_name                                 = st_leupold_rifleman_scope
-description                              = st_leupold_rifleman_scope_descr
-inv_weight                               = 0.371
-inv_grid_width                           = 2
-inv_grid_height                          = 1
-inv_grid_x                               = 39
-inv_grid_y                               = 38
-scope_texture                            = wpn_crosshair_leupold_rifleman
-scope_zoom_factor                        = 9
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "weapons\addons\type97_scope"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope_pu.ogf
+cost									 = 7500
+inv_name								 = st_addon_type97_scope
+description								 = st_addon_type97_scope_descr
+inv_weight								 = 0.270
+inv_grid_width     						 = 1
+inv_grid_height    						 = 1
+inv_grid_x         						 = 38
+inv_grid_y         						 = 39
+scope_texture							 = wpn_crosshair_4x34
+scope_zoom_factor						 = 2.5
 3d_zoom_factor                           = 1.1
-3d_fov                                   = 0.32
-scope_dynamic_zoom                       = on
+3d_fov                                   = 0.65
+scope_dynamic_zoom                       = off
+use_alt_aim_hud 						 = true
 
 ;-----------------------------------------------------------------------------
 ; Old scope system (Call of Chernobyl and Call of Pripyat)

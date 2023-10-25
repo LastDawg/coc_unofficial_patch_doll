@@ -2,6 +2,9 @@
 #include "lmodel.h"
 #include "shadow.h"
 
+// Check Screen Space Shaders modules & addons
+#include "check_screenspace.h"
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // This is the basic primitive used by convex, volumetric lights
 // for example spot-lights, one face of the omni lights, etc.
@@ -46,6 +49,7 @@ float4 main( p_volume I ) : SV_Target
 # ifndef USE_R2_STATIC_SUN
 			m 	= _P.w		;
 # endif
+
         // ----- light-model
       	float        		rsqr;
         float4        		light   = plight_local( m, _P, _N, Ldynamic_pos, Ldynamic_pos.w, rsqr );
@@ -69,9 +73,8 @@ float4 main( p_volume I ) : SV_Target
 							PS.x	= dot( P4, m_lmap[0] );
 							PS.y	= dot( P4, m_lmap[1] );
                 #endif
-                //lightmap= tex2Dproj         (s_lmap,        PS);        //
 				//	Can use linear with mip point
-				lightmap 			= s_lmap.Sample( smp_rtlinear, PS.xy / PS.w );        //
+				lightmap 			= s_lmap.Sample( smp_rtlinear, PS.xy / PS.w );
         #endif
 
         return blendp ( Ldynamic_color * light * s * lightmap, I.tc );

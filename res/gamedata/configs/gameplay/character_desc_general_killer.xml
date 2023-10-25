@@ -1,65 +1,70 @@
 <specific_character id="sim_default_killer_1_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_1.xml"
     <icon>ui_inGame2_merc_2_bala</icon>
-    <visual>actors\stalker_merc\stalker_merc_2_bala</visual>
+    <visual>random_characters\killer\stalker_killer_light_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_killer_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_1.xml"
     <icon>ui_inGame2_merc_2_nohood</icon>
-    <visual>actors\stalker_merc\stalker_merc_2a_nohood</visual>
-</specific_character>
-<specific_character id="sim_default_killer_1_default_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_killer_1.xml"
-    <icon>ui_inGame2_merc_2_bala</icon>
-    <visual>actors\stalker_merc\stalker_merc_2b_bala</visual>
-</specific_character>
-<specific_character id="sim_default_killer_1_default_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_killer_1.xml"
-    <icon>ui_inGame2_merc_s</icon>
-    <visual>actors\stalker_merc\stalker_merc_s_gas</visual>
-</specific_character>
-<specific_character id="sim_default_killer_1_default_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_killer_1.xml"
-    <icon>ui_inGame2_merc_s</icon>
-    <visual>actors\stalker_merc\stalker_merc_2_gas</visual>
+    <visual>random_characters\killer\stalker_killer_light_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_killer_2_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_2.xml"
     <icon>ui_inGame2_merc_2</icon>
-    <visual>actors\stalker_merc\stalker_merc_2</visual>
+    <visual>random_characters\killer\stalker_killer_middle_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_killer_2_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_2.xml"
     <icon>ui_inGame2_merc_2</icon>
-    <visual>actors\stalker_merc\stalker_merc_2a</visual>
+    <visual>random_characters\killer\stalker_killer_middle_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_killer_2_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_2.xml"
     <icon>ui_inGame2_merc_2</icon>
-    <visual>actors\stalker_merc\stalker_merc_2b</visual>
+    <visual>random_characters\killer\stalker_killer_middle_armor_3</visual>
 </specific_character>
 <specific_character id="sim_default_killer_2_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_2.xml"
     <icon>ui_inGame2_merc_s_merc</icon>
-    <visual>actors\stalker_merc\stalker_merc_s</visual>
+    <visual>random_characters\killer\stalker_killer_middle_armor_4</visual>
+</specific_character>
+<specific_character id="sim_default_killer_2_default_4" team_default = "1">
+	#include "gameplay\profiles\character_desc_killer_2.xml"
+    <icon>ui_inGame2_merc_s_merc</icon>
+    <visual>random_characters\killer\stalker_killer_middle_armor_5</visual>
 </specific_character>
 <specific_character id="sim_default_killer_3_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_3.xml"
     <icon>ui_inGame2_merc_1</icon>
-    <visual>actors\stalker_merc\stalker_merc_1</visual>
+    <visual>random_characters\killer\stalker_killer_middle_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_killer_3_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_3.xml"
     <icon>ui_inGame2_merc_3</icon>
-    <visual>actors\stalker_merc\stalker_merc_3</visual>
+    <visual>random_characters\killer\stalker_killer_middle_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_killer_3_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_3.xml"
     <icon>ui_inGame2_merc_3</icon>
-    <visual>actors\stalker_merc\stalker_merc_3</visual>
+    <visual>random_characters\killer\stalker_killer_scientists_1</visual>
+</specific_character>
+<specific_character id="sim_default_killer_3_default_3" team_default = "1">
+	#include "gameplay\profiles\character_desc_killer_3.xml"
+    <icon>ui_inGame2_merc_3</icon>
+    <visual>random_characters\killer\stalker_killer_middle_armor_3</visual>
+</specific_character>
+<specific_character id="sim_default_killer_3_default_4" team_default = "1">
+	#include "gameplay\profiles\character_desc_killer_3.xml"
+    <icon>ui_inGame2_merc_3</icon>
+    <visual>random_characters\killer\stalker_killer_middle_armor_4</visual>
+</specific_character>
+<specific_character id="sim_default_killer_3_default_5" team_default = "1">
+	#include "gameplay\profiles\character_desc_killer_3.xml"
+    <icon>ui_inGame2_merc_3</icon>
+    <visual>random_characters\killer\stalker_killer_middle_armor_5</visual>
 </specific_character>
 <specific_character id="sim_default_killer_4_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_4.xml"
     <icon>ui_inGame2_merc_4</icon>
-    <visual>actors\stalker_merc\stalker_merc_4</visual>
+    <visual>random_characters\killer\stalker_killer_heavy_armor_1</visual>
 </specific_character>

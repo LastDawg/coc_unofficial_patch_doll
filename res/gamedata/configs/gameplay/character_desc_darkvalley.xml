@@ -12,7 +12,7 @@
     <rank>13050</rank>
     <reputation>1097</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
-    <visual>actors\stalker_bandit\stalker_bandita_1</visual>
+    <visual>random_characters\bandit\stalker_bandit_armor_3</visual>
     <snd_config>characters_voice\human\no_speach\</snd_config>
     <supplies>
         [spawn] \n
@@ -43,7 +43,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>7030</rank>
     <reputation>733</reputation>
-    <visual>actors\stalker_bandit\stalker_bandit_5_bala</visual>
+    <visual>random_characters\bandit\stalker_bandit_raincoat_1</visual>
     <snd_config>characters_voice\human\bandit_2\</snd_config>
     <supplies>
         [spawn] \n
@@ -77,11 +77,11 @@
     <snd_config>characters_voice\human\no_speach\</snd_config>
     <rank>23014</rank>
     <reputation>-2192</reputation>
-    <visual>actors\stalker_unique\stalker_bandit_sultan</visual>
+    <visual>special_characters\stalker_bandit_sultan</visual>
     <supplies>
         [spawn] \n
-        wpn_desert_eagle = 1 \n
-        ammo_11.43x23_hydro = 1 \n
+        wpn_sks_short = 1 \n
+        ammo_7_62x39_fmj = 1 \n
 #include "gameplay\supplies\character_food.xml"
 #include "gameplay\supplies\character_medical.xml"
 #include "gameplay\supplies\character_drugs.xml"
@@ -106,7 +106,7 @@
     <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
     <rank>4810</rank>
     <reputation>874</reputation>
-    <visual>actors\stalker_neutral\stalker_neutral_2_mask</visual>
+    <visual>random_characters\neutral\stalker_neutral_armor_4</visual>
     <supplies>
         [spawn] \n
     </supplies>
@@ -122,7 +122,7 @@
     <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
     <rank>3354</rank>
     <reputation>632</reputation>
-    <visual>actors\stalker_neutral\stalker_neutral_2_nohood</visual>
+    <visual>random_characters\neutral\stalker_neutral_armor_8</visual>
     <supplies>
         [spawn] \n
     </supplies>
@@ -139,7 +139,7 @@
     <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
     <rank>4104</rank>
     <reputation>593</reputation>
-    <visual>actors\stalker_unique\stalker_ecolog_corp_1</visual>
+    <visual>random_characters\ecolog\stalker_ecolog_white</visual>
     <supplies>
         [spawn] \n
     </supplies>
@@ -156,7 +156,7 @@
     <money min="2000" max="5000" infinitive="0"></money>
     <rank>8116</rank>
     <reputation>824</reputation>
-    <visual>actors\stalker_unique\stalker_ecolog_corp_2</visual>
+    <visual>random_characters\ecolog\stalker_ecolog_white</visual>
     <snd_config>characters_voice\human\ecolog_1\</snd_config>
     <crouch_type>1</crouch_type>
     <supplies>

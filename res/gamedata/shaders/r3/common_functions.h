@@ -20,17 +20,9 @@ void tonemap( out float4 low, out float4 high, float3 rgb, float scale)
 
 	const float fWhiteIntensitySQR = fWhiteIntensity*fWhiteIntensity;
 
-//	low		=	(rgb/(rgb + 1)).xyzz;
 	low		=	( (rgb*(1+rgb/fWhiteIntensitySQR)) / (rgb+1) ).xyzz;
 
 	high	=	rgb.xyzz/def_hdr;	// 8x dynamic range
-
-/*
-	rgb		=	rgb*scale;
-
-	low		=	rgb.xyzz;
-	high	=	low/def_hdr;	// 8x dynamic range
-*/
 }
 
 float4 combine_bloom( float3  low, float4 high)	
@@ -475,7 +467,4 @@ uint alpha_to_coverage ( float alpha, float2 pos2d )
 }
 #endif
 #endif
-
-
-
 #endif	//	common_functions_h_included

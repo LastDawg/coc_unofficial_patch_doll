@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
+	<string id="st_itm_cold_weapon_toolkit">
+		<text>Whetstone Set</text>
+	</string>
+	<string id="st_itm_cold_weapon_toolkit_descr">
+		<text>A set of special tools for sharpening a knife.</text>
+	</string>	
+	<string id="st_item_use_water_flask">
+		<text>Water flask</text>
+	</string>
+	<string id="st_item_use_water_flask_descr">
+		<text>An army flask, which is usually filled with water.</text>
+	</string>
 	<string id="st_bolt">
 		<text>Bolt</text>
 	</string>

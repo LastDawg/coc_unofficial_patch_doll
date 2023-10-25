@@ -142,7 +142,6 @@ function get_object_data(sobj)
 		["WP_SCOPE"] = this.get_item_data,
 		["WP_SILEN"] = this.get_item_data,
 		["WP_GLAUN"] = this.get_item_data,
-		["WP_LASER"] = this.get_item_data,
 		
 		["ZS_MBALD"] = this.get_anom_zone_data,
 		["ZS_GALAN"] = this.get_anom_zone_data,
@@ -302,7 +301,6 @@ function set_object_data(t,sobj)
 		["WP_SCOPE"] = this.set_item_data,
 		["WP_SILEN"] = this.set_item_data,
 		["WP_GLAUN"] = this.set_item_data,
-		["WP_LASER"] = this.set_item_data,
 		
 		["ZS_MBALD"] = this.set_anom_zone_data,
 		["ZS_GALAN"] = this.set_anom_zone_data,

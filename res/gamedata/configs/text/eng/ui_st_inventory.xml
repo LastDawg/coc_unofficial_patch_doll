@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
+	<string id="ui_inv_repair_speed">
+		<text>Repair</text>
+	</string>		
+	<string id="ui_inv_charge_speed">
+		<text>Charge</text>
+	</string>			
 	<string id="ui_inv_thirst">
 		<text>Filling</text>
 	</string>	
@@ -65,10 +71,7 @@
 	</string>
 	<string id="st_attach_silencer_to_pistol">
 		<text>attach suppressor to</text>
-	</string>
-	<string id="st_attach_laser_to_weapon">
-		<text>attach tact. block to</text>
-	</string>			
+	</string>		
 	<string id="st_base_cost">
 		<text>Price</text>
 	</string>
@@ -86,10 +89,7 @@
 	</string>
 	<string id="st_detach_silencer">
 		<text>detach suppressor</text>
-	</string>
-	<string id="st_detach_laser">
-		<text>detach tact. block</text>
-	</string>			
+	</string>		
 	<string id="st_dress_outfit">
 		<text>wear suit</text>
 	</string>

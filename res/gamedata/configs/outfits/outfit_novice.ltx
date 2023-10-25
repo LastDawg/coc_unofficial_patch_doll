@@ -56,7 +56,7 @@ cost                                     = 2000
 
 power_loss                               = 0.03
 
-bones_koeff_protection                   = actor_armor_novice
+bones_koeff_protection                   = 0_armory_class
 
 inv_grid_width                           = 2
 inv_grid_height                          = 2
@@ -144,7 +144,6 @@ inv_name                                 = trenchcoat_outfit_name
 description                              = trenchcoat_outfit_description
 inv_weight                               = 2
 
-inv_grid_height                          = 3
 inv_grid_x                               = 16
 inv_grid_y                               = 12
 
@@ -179,67 +178,6 @@ explosion_immunity                       = 0.05
 fire_wound_immunity                      = 0.038
 
 [sect_trenchcoat_outfit_immunities_add]
-burn_immunity                            = -0.02
-strike_immunity                          = 0.0
-shock_immunity                           = -0.01
-wound_immunity                           = -0.01
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = -0.02
-explosion_immunity                       = -0.01
-fire_wound_immunity                      = -0.01
-
-;---------------------------------------------------------------------------------------------
-;		Коричневый плащ
-;---------------------------------------------------------------------------------------------
-
-[trenchcoat_brown_outfit]:outfit_novice_base
-$spawn                                   = "outfit\trenchcoat_brown_outfit"
-visual                                   = dynamics\outfit\bandit_commander_outfit
-actor_visual                             = actors\stalker_bandit\stalker_bandit_5_merc.ogf
-npc_visual                               = actors\stalker_bandit\stalker_bandit_5_merc.ogf
-player_hud_section                       = actor_hud_bandit_trench
-
-
-inv_name                                 = trenchcoat_brown_outfit_name
-description                              = trenchcoat_brown_outfit_description
-inv_weight                               = 2
-
-inv_grid_height                          = 3
-inv_grid_x                               = 14
-inv_grid_y                               = 12
-
-cost                                     = 3000
-
-power_loss                               = 0.05
-
-hit_fraction_actor                       = 0.85
-
-immunities_sect                          = sect_trenchcoat_brown_outfit_immunities
-
-burn_protection                          = 0.024
-shock_protection                         = 0.0
-radiation_protection                     = 0.0
-chemical_burn_protection                 = 0.012
-telepatic_protection                     = 0.0
-strike_protection                        = 0.05
-explosion_protection                     = 0.05
-wound_protection                         = 0.04
-
-character_portrait                       = ui_inGame2_bandit_6d
-
-[sect_trenchcoat_brown_outfit_immunities]
-burn_immunity                            = 0.095
-strike_immunity                          = 0.01
-shock_immunity                           = 0.05
-wound_immunity                           = 0.05
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.095
-explosion_immunity                       = 0.05
-fire_wound_immunity                      = 0.038
-
-[sect_trenchcoat_brown_outfit_immunities_add]
 burn_immunity                            = -0.02
 strike_immunity                          = 0.0
 shock_immunity                           = -0.01

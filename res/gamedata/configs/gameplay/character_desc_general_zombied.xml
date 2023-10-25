@@ -3,84 +3,56 @@
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_1</icon>
 	<reputation min="-1000" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_bandit_1</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_novice_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_bandit_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_1</icon>
 	<reputation min="-1000" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_bandit_1</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_1_bandit_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_1.xml"
-	<name>GENERATE_NAME_bandit</name>
-	<icon>ui_inGame2_Zombied_bandit_1</icon>
-	<reputation min="-1000" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_bandit_1a</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_1_bandit_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_1.xml"
-	<name>GENERATE_NAME_bandit</name>
-	<icon>ui_inGame2_Zombied_bandit_1</icon>
-	<reputation min="-1000" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_bandit_1b</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_1_bandit_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_1.xml"
-	<name>GENERATE_NAME_bandit</name>
-	<icon>ui_inGame2_Zombied_bandit_3</icon>
-	<reputation min="-1200" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_bandit_3</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_1_bandit_6" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_1.xml"
-	<name>GENERATE_NAME_bandit</name>
-	<icon>ui_inGame2_Zombied_bandit_3</icon>
-	<reputation min="-1200" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_bandit_3a</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_novice_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_csky_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_csky_r</icon>
 	<reputation min="-500" max="600" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_nebo_r</visual>
+	<visual>random_characters\zombie\stalker_zombied_csky_novice_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_duty_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_private</name>
 	<icon>ui_inGame2_Zombied_dolg_r</icon>
 	<reputation min="-400" max="600" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_dolg_r</visual>
+	<visual>random_characters\zombie\stalker_zombied_duty_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_freedom_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_freedom_1</icon>
 	<reputation min="-600" max="700" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_freedom_1</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_freedom_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_freedom_1</icon>
 	<reputation min="-600" max="700" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_freedom_1a</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_advanced_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_stalker_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_neutral_1</icon>
 	<reputation min="-500" max="600" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_neutral_1</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_stalker_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_neutral_1</icon>
 	<reputation min="-500" max="600" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_neutral_1_</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_advanced_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_stalker_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
@@ -89,409 +61,241 @@
 	<reputation min="-500" max="600" />
 	<visual>actors\stalker_zombied\stalker_zombied_1_neutral_1a</visual>
 </specific_character>
-<specific_character id="sim_default_zombied_1_stalker_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_1.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_1</icon>
-	<reputation min="-500" max="600" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_neutral_1b</visual>
-</specific_character>
 <specific_character id="sim_default_zombied_2_bandit_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_2</icon>
 	<reputation min="-1500" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_bandit_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_bandit_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_2s</icon>
 	<reputation min="-1500" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_bandit_2s</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_advanced_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_bandit_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_2</icon>
 	<reputation min="-2000" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_bandit_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_advanced_3</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_bandit_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_2</icon>
 	<reputation min="-2000" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_bandit_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_advanced_4</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_csky_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_csky_s</icon>
 	<reputation min="-800" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_nebo_s</visual>
+	<visual>random_characters\zombie\stalker_zombied_csky_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_duty_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_sergeant</name>
 	<icon>ui_inGame2_Zombied_dolg_2</icon>
 	<reputation min="-600" max="1000" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_dolg_2</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_duty_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_senior_sergeant</name>
-	<icon>ui_inGame2_Zombied_dolg_2</icon>
-	<reputation min="-700" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_dolg_2</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_duty_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_senior_sergeant</name>
-	<icon>ui_inGame2_Zombied_dolg_2</icon>
-	<reputation min="-700" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_dolg_2a</visual>
+	<visual>random_characters\zombie\stalker_zombied_duty_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_ecolog_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_ecolog_guard</icon>
 	<reputation min="0" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_ecolog_guard</visual>
+	<visual>random_characters\zombie\stalker_zombied_ecolog_green_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_freedom_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_freedom_2</icon>
 	<reputation min="-800" max="1000" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_freedom_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_advanced_3</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_freedom_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_freedom_2</icon>
 	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_freedom_2</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_freedom_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_freedom_2</icon>
-	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_freedom_2a</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_advanced_4</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_merc_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_merc_2</icon>
 	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_merc_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_killer_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_merc_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_merc_2</icon>
 	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_merc_2a</visual>
+	<visual>random_characters\zombie\stalker_zombied_killer_advanced_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_merc_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_merc_2</icon>
 	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_merc_2b</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_merc_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_merc_s</icon>
-	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_merc_s</visual>
+	<visual>random_characters\zombie\stalker_zombied_killer_advanced_3</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_military_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_sergeant</name>
 	<icon>ui_inGame2_Zombied_soldier_2</icon>
 	<reputation min="-800" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_soldier_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_soldier_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_stalker_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_neutral_2</icon>
 	<reputation min="-800" max="1000" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_neutral_2</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_2_stalker_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_2.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_neutral_2</icon>
 	<reputation min="-800" max="1000" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_neutral_2b</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_stalker_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_2</icon>
-	<reputation min="-800" max="1000" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_neutral_2c</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_stalker_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_2</icon>
-	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_neutral_2_soc</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_stalker_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_2</icon>
-	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_neutral_2a</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_2_stalker_6" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_2.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_2</icon>
-	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_2_neutral_2d</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_advanced_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_bandit_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_mil</icon>
 	<reputation min="-2500" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_bandit_mil</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_csky_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_nauchniy_2</icon>
 	<reputation min="-1000" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_nebo_seva</visual>
+	<visual>random_characters\zombie\stalker_zombied_csky_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_duty_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_lieutenant</name>
 	<icon>ui_inGame2_Zombied_nauchniy_1</icon>
 	<reputation min="-800" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_dolg_1</visual>
+	<visual>random_characters\zombie\stalker_zombied_duty_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_duty_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_lieutenant</name>
 	<icon>ui_inGame2_Zombied_nauchniy_1</icon>
 	<reputation min="-800" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_dolg_1a</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_duty_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_lieutenant</name>
-	<icon>ui_inGame2_Zombied_dolg_3</icon>
-	<reputation min="-800" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_dolg_3</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_duty_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_lieutenant</name>
-	<icon>ui_inGame2_Zombied_dolg_3</icon>
-	<reputation min="-800" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_dolg_3</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_duty_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_lieutenant</name>
-	<icon>ui_inGame2_Zombied_dolg_3</icon>
-	<reputation min="-800" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_dolg_3</visual>
+	<visual>random_characters\zombie\stalker_zombied_duty_veteran_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_freedom_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_freedom_3</icon>
 	<reputation min="-1000" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_freedom_3</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_freedom_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_nauchniy_3</icon>
 	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_freedom_0</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_freedom_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_freedom_5</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_freedom_5</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_freedom_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_freedom_5</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_freedom_5a</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_veteran_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_merc_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_nauchniy_1</icon>
 	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_merc_1</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_merc_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_nauchniy_1</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_merc_1</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_merc_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_merc_3</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_merc_3</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_merc_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_merc_3</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_merc_3</visual>
+	<visual>random_characters\zombie\stalker_zombied_killer_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_military_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_senior_sergeant</name>
 	<icon>ui_inGame2_Zombied_soldier_2</icon>
 	<reputation min="-800" max="1500" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_soldier_3</visual>
+	<visual>random_characters\zombie\stalker_zombied_soldier_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_military_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_lieutenant</name>
 	<icon>ui_inGame2_Zombied_soldier_4</icon>
 	<reputation min="-800" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_soldier_4</visual>
+	<visual>random_characters\zombie\stalker_zombied_soldier_veteran_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_stalker_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_nauchniy_2</icon>
 	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_nauchniy</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_stalker_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_nauchniy_2</icon>
 	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_nauchniy_1</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_advanced_2</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_3_stalker_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_3.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_nauchniy_2</icon>
 	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_nauchniy_2</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_stalker_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_3</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_neutral_3</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_3_stalker_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_3.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_3</icon>
-	<reputation min="-1500" max="2100" />
-	<visual>actors\stalker_zombied\stalker_zombied_3_neutral_3a</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_scientists_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_bandit_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_bandit</name>
 	<icon>ui_inGame2_Zombied_bandit_exo</icon>
 	<reputation min="-2500" max="0" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_bandit_exo</visual>
+	<visual>random_characters\zombie\stalker_zombied_bandit_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_csky_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_csky_exo</icon>
 	<reputation min="-1000" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_nebo_exo</visual>
+	<visual>random_characters\zombie\stalker_zombied_csky_advanced_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_duty_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_captain</name>
 	<icon>ui_inGame2_Zombied_dolg_4</icon>
 	<reputation min="-900" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_dolg_4</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_4_duty_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_4.xml"
-	<name>GENERATE_NAME_captain</name>
-	<icon>ui_inGame2_Zombied_dolg_4</icon>
-	<reputation min="-900" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_dolg_4a</visual>
+	<visual>random_characters\zombie\stalker_zombied_duty_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_freedom_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_freedom_4</icon>
 	<reputation min="-1500" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_freedom_4</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_4_freedom_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_4.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_freedom_4</icon>
-	<reputation min="-1500" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_freedom_4a</visual>
+	<visual>random_characters\zombie\stalker_zombied_freedom_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_merc_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_merc_4</icon>
 	<reputation min="-2000" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_merc_4</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_4_merc_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_4.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_merc_4</icon>
-	<reputation min="-2000" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_merc_4</visual>
+	<visual>random_characters\zombie\stalker_zombied_killer_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_military_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_captain</name>
 	<icon>ui_inGame2_Zombied_soldier_5</icon>
 	<reputation min="-900" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_soldier_5</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_4_military_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_4.xml"
-	<name>GENERATE_NAME_captain</name>
-	<icon>ui_inGame2_Zombied_soldier_exo</icon>
-	<reputation min="-900" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_soldier_exo</visual>
+	<visual>random_characters\zombie\stalker_zombied_soldier_veteran_1</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_4_stalker_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_4.xml"
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_neutral_4</icon>
 	<reputation min="-1500" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_neutral_4</visual>
-</specific_character>
-<specific_character id="sim_default_zombied_4_stalker_2" team_default = "1">
-	#include "gameplay\profiles\character_desc_zombied_4.xml"
-	<name>GENERATE_NAME_stalker</name>
-	<icon>ui_inGame2_Zombied_neutral_4</icon>
-	<reputation min="-1500" max="2500" />
-	<visual>actors\stalker_zombied\stalker_zombied_4_neutral_4a</visual>
+	<visual>random_characters\zombie\stalker_zombied_neutral_scientists_1</visual>
 </specific_character>

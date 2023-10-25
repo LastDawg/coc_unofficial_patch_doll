@@ -245,5 +245,28 @@
 		<value x="117" y="0" width="30" height="20" magnitude="1" unit_str="st_meters">
 			<text font="letterica16" vert_align="c"/>
 		</value>
-	</det_af_vis_radius>			
+	</det_af_vis_radius>		
+
+	<repair_restore_speed x="0" y="0" width="214" height="20" >
+		<caption x="0" y="0" width="15" height="20" stretch="1">
+			<texture>ui_am_prop_repair_restore_speed</texture>
+			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
+		</caption>
+			<texture_minus>ui_am_prop_repair_restore_speed_minus</texture_minus>			
+		<value x="117" y="0" width="30" height="20" magnitude="1" accuracy="3">
+			<text font="letterica16" vert_align="c"/>
+		</value>
+	</repair_restore_speed>	
+
+	<device_charge_restore_speed x="0" y="0" width="214" height="20" >
+		<caption x="0" y="0" width="15" height="20" stretch="1">
+			<texture>ui_am_prop_device_charge_restore_speed</texture>
+			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
+		</caption>
+			<texture_minus>ui_am_prop_device_charge_restore_speed_minus</texture_minus>			
+		<value x="117" y="0" width="30" height="20" magnitude="1" accuracy="3">
+			<text font="letterica16" vert_align="c"/>
+		</value>
+	</device_charge_restore_speed>	
+	
 </af_params>

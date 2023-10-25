@@ -1,5 +1,6 @@
 local sleep_control = nil
 local wide = false
+
 class "sleep_dialog" (CUIScriptWnd)
 function sleep_dialog:__init() super()
 	self:SetWndRect(Frect():set(0,0,1024,768))
@@ -178,6 +179,10 @@ end
 
 --------------------------------------------------------------------------------
 function dream_callback()
+
+	local sysini = system_ini()
+	local sleepeness_v_sleep = sysini:r_float_ex("actor_condition","sleepeness_v_sleep",1)
+
 	if sleep_control.forced then
 		level.add_cam_effector("camera_effects\\surge_01.anm", 10, false, "ui_sleep_dialog.dream_callback2")
 	else
@@ -187,6 +192,10 @@ function dream_callback()
 	local hours = sleep_control.forced or sleep_control.time_track:GetIValue()
 	--printf("dream_callback hours=%s",hours)
 	level.change_game_time(0,hours,0)
+	
+	if (sleepeness_v_sleep > 0) then
+		db.actor.sleepeness = -sleepeness_v_sleep * time_global()
+	end
 	
 	surge_manager.get_surge_manager().time_forwarded = true
 	psi_storm_manager.get_psi_storm_manager().time_forwarded = true

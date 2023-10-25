@@ -687,6 +687,9 @@
 	<string id="ui_mm_show_first_name">
 		<text>NPC has first names</text>
 	</string>	
+	<string id="ui_mm_fast_weapon_select">
+		<text>Fast Weapon Select</text>
+	</string>	
 	
 	<string id="ui_mm_mode_wpn_aim_toggle">
 		<text>Mode: always in sight</text>

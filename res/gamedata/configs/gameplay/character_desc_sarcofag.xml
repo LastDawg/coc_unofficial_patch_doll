@@ -104,7 +104,7 @@
     <snd_config>characters_voice\human\stalker_4\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_pb \n
+        wpn_pm \n
         ammo_9x18_fmj = 1 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -185,7 +185,7 @@
     <snd_config>characters_voice\human\stalker_4\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_pb \n
+        wpn_pm \n
         ammo_9x18_fmj = 1 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -307,7 +307,7 @@
     <snd_config>characters_voice\human\bandit_4\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_l85 = 1, 0, 1, 0 \n
+        wpn_m4a1 = 1, 0, 1, 0 \n
         ammo_5.56x45_ap = 2 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -527,7 +527,7 @@
     <snd_config>characters_voice\human\freedom_3\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_lr300 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ss190 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -607,7 +607,7 @@
     <snd_config>characters_voice\human\freedom_3\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_lr300 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ap = 1 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -987,7 +987,7 @@
     <snd_config>characters_voice\human\military_3\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_g36 = 1 \n
+        wpn_m4a1 = 1 \n
         ammo_5.56x45_ss190 = 1 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -1047,7 +1047,7 @@
     <snd_config>characters_voice\human\killer_3\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_g36 = 1 \n
+        wpn_m4a1 = 1 \n
         ammo_5.56x45_ss190 = 1 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>
@@ -1207,7 +1207,7 @@
     <snd_config>characters_voice\human\monolith_3\</snd_config>
     <supplies>
         [spawn] \n
-        wpn_g36 \n
+        wpn_m4a1 \n
         ammo_5.56x45_ap = 1 \n
     </supplies>
     <start_dialog>hello_dialog</start_dialog>

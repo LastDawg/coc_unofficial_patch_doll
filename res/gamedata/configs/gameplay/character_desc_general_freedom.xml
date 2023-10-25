@@ -3,147 +3,125 @@
     <icon>ui_inGame2_Freedom_1_mask</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_1\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1_mask</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_0_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1_mask</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_1\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1a_mask</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_0_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_3</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_0_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1a</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_4</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_0_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1b</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_5</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_0_default_5" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1c</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_6</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_1_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1_oldgas</icon>
     <class>sim_default_freedom_1</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1_oldgas</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_7</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
     <icon>ui_inGame2_Freedom_1_oldgas</icon>
     <class>sim_default_freedom_1</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_1a_oldgas</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_8</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_1_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_1.xml"
     <icon>ui_inGame2_Freedom_2_mask</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_2_mask</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_9</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_1_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_1.xml"
     <icon>ui_inGame2_Freedom_2_mask</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_2a_mask</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_10</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
     <icon>ui_inGame2_Freedom_2</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_2</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_11</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
     <icon>ui_inGame2_Freedom_2</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_2a</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_12</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
     <icon>ui_inGame2_Freedom_3</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_1\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_13</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
     <icon>ui_inGame2_Freedom_2_halfgas</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_2_halfgas</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_14</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
     <icon>ui_inGame2_Freedom_2_halfgas</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_2a_halfgas</visual>
-</specific_character>
-<specific_character id="sim_default_freedom_2_default_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_freedom_2.xml"
-    <icon>ui_inGame2_Freedom_2_old</icon>
-    <class>sim_default_freedom_2</class>
-    <snd_config>characters_voice\human\freedom_3\</snd_config>
-    <visual>actors\stalker_freedom\stalker_freedom_2_oldgas</visual>
+    <visual>random_characters\freedom\stalker_freedom_light_armor_15</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_3.xml"
     <icon>ui_inGame2_Freedom_3_gas</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_3_gas</visual>
+    <visual>random_characters\freedom\stalker_freedom_middle_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_3.xml"
     <icon>ui_inGame2_Freedom_3_gas</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_3_gas</visual>
+    <visual>random_characters\freedom\stalker_freedom_middle_armor_2</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_3.xml"
     <icon>ui_inGame2_Freedom_5</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_5</visual>
-</specific_character>
-<specific_character id="sim_default_freedom_3_default_3" team_default = "1">
-	#include "gameplay\profiles\character_desc_freedom_3.xml"
-    <icon>ui_inGame2_Freedom_5</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_5a</visual>
-</specific_character>
-<specific_character id="sim_default_freedom_3_default_4" team_default = "1">
-	#include "gameplay\profiles\character_desc_freedom_3.xml"
-    <icon>ui_inGame2_Freedom_0</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_0</visual>
-</specific_character>
-<specific_character id="sim_default_freedom_3_default_5" team_default = "1">
-	#include "gameplay\profiles\character_desc_freedom_3.xml"
-    <icon>ui_inGame2_Freedom_0</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_0</visual>
+    <visual>random_characters\freedom\stalker_freedom_scientists_1</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_4_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_4.xml"
     <icon>ui_inGame2_Freedom_4</icon>
     <class>sim_default_freedom_4</class>
-    <visual>actors\stalker_freedom\stalker_freedom_4</visual>
+    <visual>random_characters\freedom\stalker_freedom_heavy_armor_1</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_4_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_4.xml"
     <icon>ui_inGame2_Freedom_4</icon>
-    <visual>actors\stalker_freedom\stalker_freedom_4a</visual>
+    <visual>random_characters\freedom\stalker_freedom_exoskeleton_1</visual>
 </specific_character>

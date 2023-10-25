@@ -133,7 +133,7 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 			result, spawn_sec, value = ini:r_line(section,i,"","")
 			if (spawn_sec and spawn_sec ~= "" and sys_ini:section_exist(spawn_sec)) then 
 				local cond,prob,count,ammo_type,cur_scope = 1,1,1,0,0
-				local bLauncher, bScope, bSight, bSilencer, bLaser
+				local bLauncher, bScope, bSight, bSilencer
 				local sight, sights, variant_section
 				if (value and value ~= "") then
 					local _a,_b = string.find(value,",") 
@@ -148,10 +148,7 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 					end 
 					if (string.find(value,"silencer")) then 
 						bSilencer = true
-					end
-					if (string.find(value,"laser")) then 
-						bLaser = true
-					end							
+					end					
 					if (string.find(value,"sight")) then 
 						bSight = true
 					end			
@@ -181,9 +178,7 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 						elseif (a == "scope") then
 							bScope = math.random() <= (tonumber(b) or 0)
 						elseif (a == "silencer") then
-							bSilencer = math.random() <= (tonumber(b) or 0)
-						elseif (a == "laser") then
-							bLaser = math.random() <= (tonumber(b) or 0)									
+							bSilencer = math.random() <= (tonumber(b) or 0)									
 						elseif (a == "sight") then
 							bSight = math.random() <= (tonumber(b) or 0)							
 						elseif (a == "skins") then
@@ -238,10 +233,6 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 								if (bSilencer and se_item.silencer_status == cse_alife_item_weapon.eAddonAttachable) then
 									flags:set(cse_alife_item_weapon.eWeaponAddonSilencer,true)
 								end
-	
-								if (bLaser and se_item.laser_status == cse_alife_item_weapon.eAddonAttachable) then
-									flags:set(cse_alife_item_weapon.eWeaponAddonLaser,true)
-								end	
 							end
 						end
 					end
@@ -309,7 +300,7 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 				local create_section = selected[1]
 				local value = selected[2]
 				local cond,count,ammo_type,cur_scope = 1,1,0,0
-				local bLauncher, bScope, bSight, bSilencer, bLaser
+				local bLauncher, bScope, bSight, bSilencer
 				local sight, sights, skins, variant_section
 				if (value and value ~= "") then
 					-- parse params
@@ -325,10 +316,7 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 					end 
 					if (string.find(value,"silencer")) then 
 						bSilencer = true
-					end
-					if (string.find(value,"laser")) then 
-						bLaser = true
-					end								
+					end						
 					if (string.find(value,"sight")) then 
 						bSight = true
 					end				
@@ -357,9 +345,7 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 						elseif (a == "scope") then
 							bScope = math.random() <= (tonumber(b) or 0)
 						elseif (a == "silencer") then
-							bSilencer = math.random() <= (tonumber(b) or 0)
-						elseif (a == "laser") then
-							bLaser = math.random() <= (tonumber(b) or 0)								
+							bSilencer = math.random() <= (tonumber(b) or 0)							
 						elseif (a == "sight") then
 							bSight = math.random() <= (tonumber(b) or 0)							
 						elseif (a == "skins") then
@@ -410,15 +396,11 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 
 						if (bSilencer and se_item.silencer_status == cse_alife_item_weapon.eAddonAttachable) then
 							flags:set(cse_alife_item_weapon.eWeaponAddonSilencer,true)
-						end
-						
-						if (bLaser and se_item.laser_status == cse_alife_item_weapon.eAddonAttachable) then
-							flags:set(cse_alife_item_weapon.eWeaponAddonLaser,true)
-						end						
+						end					
 	
 						-- Create the ammo 
 						se_item:set_ammo_type(ammo_type)
-						--printf("spawn_loadout%s wpn=%s ammo_type=%s scope=%s launcher=%s silencer=%s laser=%s",itr_count,create_section,ammo_type,bScope,bLauncher,bSilencer,bLaser)
+						--printf("spawn_loadout%s wpn=%s ammo_type=%s scope=%s launcher=%s silencer=%s",itr_count,create_section,ammo_type,bScope,bLauncher,bSilencer)
 
 						local ammos = alun_utils.parse_list(sys_ini,create_section,"ammo_class")
 						local ammo_section = ammos[ammo_type+1]

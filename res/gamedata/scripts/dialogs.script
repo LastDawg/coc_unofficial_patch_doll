@@ -1254,7 +1254,6 @@ function is_pistol(npc, item)
 	or(section=="wpn_colt1911")
 	or(section=="wpn_desert_eagle")
 	or(section=="wpn_fort")
-	or(section=="wpn_pb")
 	or(section=="wpn_pm")
 	or(section=="wpn_usp")
 	or(section=="wpn_walther") then

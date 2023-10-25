@@ -14,7 +14,7 @@
 	<rank>14430</rank>
 	<reputation>1403</reputation>
 	<money min="1000000" max="1000000" infinitive="1" />
-	<visual>actors\stalker_nebo\stalker_nebo_1</visual>
+	<visual>random_characters\clear_sky\stalker_csky_light_armor_1</visual>
 	<supplies>
 		[spawn] \n
 		wpn_ak74u = 1 \n
@@ -41,7 +41,7 @@
 	<rank>31506</rank>
 	<reputation>2485</reputation>
 	<money min="10000" max="10000" infinitive="0" />
-	<visual>actors\stalker_unique\stalker_doc</visual>
+	<visual>special_characters\stalker_doc</visual>
 	<supplies>
 		[spawn] \n
 		cit_doctors_key = 1 \n
@@ -67,7 +67,7 @@
 	<rank>12280</rank>
 	<reputation>1246</reputation>
 	<money min="1000000" max="1000000" infinitive="1" />
-	<visual>actors\stalker_nebo\stalker_nebo_s_mask</visual>
+	<visual>random_characters\clear_sky\stalker_csky_light_armor_2</visual>
 	<supplies>
 		[spawn] \n
 		wpn_sig550 \n
@@ -102,7 +102,7 @@
 	<rank>21786</rank>
 	<reputation>1559</reputation>
 	<money min="1000000" max="1000000" infinitive="1" />
-	<visual>actors\stalker_nebo\stalker_nebo_s_old</visual>
+	<visual>random_characters\clear_sky\stalker_csky_light_armor_3</visual>
 	<supplies></supplies>
 #include "gameplay\character_criticals.xml"
 	<start_dialog>mar_base_owl_stalker_trader_start_dialog</start_dialog>
@@ -129,7 +129,7 @@
 	<rank>14994</rank>
 	<reputation>1891</reputation>
 	<money min="10000" max="10000" infinitive="0" />
-	<visual>actors\stalker_unique\stalker_nebo_novikov</visual>
+	<visual>special_characters\stalker_nebo_novikov</visual>
 	<supplies>
 		[spawn] \n
 		wpn_fort \n
@@ -162,7 +162,7 @@
 	<snd_config>characters_voice\human\stalker_2\</snd_config>
 	<rank>27344</rank>
 	<reputation>2314</reputation>
-	<visual>actors\stalker_unique\stalker_nebo_cold</visual>
+	<visual>special_characters\stalker_nebo_cold</visual>
 	<supplies>
 		[spawn] \n
 		wpn_desert_eagle = 1 \n

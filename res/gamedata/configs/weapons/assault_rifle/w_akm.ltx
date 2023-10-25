@@ -1,0 +1,253 @@
+[wpn_akm]:new_weapon_params
+$npc                                               = on
+$prefetch                                          = 8
+$spawn                                             = "weapons\wpn_akm"
+class                                              = WP_AK74
+weapon_class                                       = assault_rifle
+ammo_class                                         = ammo_7_62x39_fmj, ammo_7_62x39_ap
+ammo_elapsed                                       = 30
+ammo_mag_size                                      = 30
+
+scopes                                             = none
+parent_section                                     = wpn_akm
+
+animation_slot                                     = 2
+bullet_speed                                       = 715
+
+bullet_bones                                       = ammo
+
+position                                 		   = -0.026, -0.175, 0.0
+orientation                              		   = 0, 0, 0
+fire_point                              		   = 0, 0.218, 0.656
+fire_point2                              		   = 0, 0.161, 0.583
+shell_point                                        = 0.07,0.2,0.466
+strap_bone0                             		   = bip01_spine2
+strap_bone1                              		   = bip01_spine1
+strap_position                           		   = -0.18, -0.45, 0.2
+strap_orientation                        		   = -10, -5, 10
+
+cam_dispersion                                     = 1.0
+cam_dispersion_frac                                = 1.0
+cam_dispersion_inc                                 = 0.5
+cam_max_angle                                      = 22.0
+cam_max_angle_horz                                 = 13.0
+cam_relax_speed                                    = 11
+cam_return                                         = 0
+cam_step_angle_horz                                = 0.35
+
+condition_shot_dec                                 = 0.000250
+
+control_inertion_factor                            = 1.2f
+cost                                               = 13000
+crosshair_inertion                                 = 6
+inv_name                                           = st_wpn_akm
+description                                        = st_wpn_akm_descr
+ef_main_weapon_type                                = 2
+ef_weapon_type                                     = 8
+fire_dispersion_base                               = 0.28
+fire_distance                                      = 800
+fire_modes                                         = 1, -1
+grenade_class                                      = ammo_vog-25
+grenade_launcher_name                              = wpn_addon_grenade_launcher
+grenade_launcher_status                            = 2
+grenade_launcher_x                                 = 124
+grenade_launcher_y                                 = 24
+GroupControlSection                                = spawn_group
+hand_dependence                                    = 1
+hit_power                                          = 0.54
+hit_type                                           = fire_wound
+holder_fov_modifier                                = 1.0
+holder_range_modifier                              = 1.0
+hud                                                = wpn_akm_hud
+installed_upgrades                                 = 
+inv_grid_height                                    = 2
+inv_grid_width                                     = 5
+inv_grid_x                                         = 22
+inv_grid_y                                         = 24
+inv_weight                                         = 3.3
+launch_speed                                       = 76
+light_color                                        = 0.6, 0.5, 0.3
+light_disabled                                     = false
+light_range                                        = 5
+light_time                                         = 0.2
+light_var_color                                    = 0.05
+light_var_range                                    = 0.5
+max_radius                                         = 50
+min_radius                                         = 30
+
+misfire_chance                                     = 0.06
+
+PDM_disp_accel_factor                              = 2.0
+PDM_disp_base                                      = 0.5
+PDM_disp_crouch                                    = 1.0
+PDM_disp_crouch_no_acc                             = 1.0
+PDM_disp_vel_factor                                = 2.0
+
+reload_dof                                         = 0.0, 0.5, 5, 2
+rpm                                                = 600
+rpm_empty_click                                    = 200
+scheduled                                          = off
+scope_status                                       = 0
+scope_zoom_factor                                  = 1.1
+
+silencer_light_color                               = 0.6, 0.5, 0.3
+silencer_light_range                               = 0.01
+silencer_light_time                                = 0.2
+silencer_light_var_color                           = 0.05
+silencer_light_var_range                           = 0.5
+silencer_name                                      = wpn_addon_rifle_suppressor
+silencer_status                                    = 2
+silencer_x                                         = 236
+silencer_y                                         = 10
+single_handed                                      = 0
+slot                                               = 2
+
+snd_bore										   = nil
+snd_draw										   = weapons\ak74\ak74_show
+snd_holster				                           = weapons\ak74\ak74_hide
+snd_empty               						   = weapons\ak74\ak74_empty
+snd_reload										   = weapons\ak74\ak74_r
+snd_reload_empty								   = weapons\ak74\ak74_re
+snd_reload_misfire								   = weapons\ak74\ak74_mis
+snd_shoot_grenade       						   = weapons\ak74\ak74_gl_shoot
+snd_reload_grenade								   = weapons\ak74\ak74_gl_re
+snd_changefiremode                                 = weapons\ak74\ak74_mode_switch
+snd_switch                                         = weapons\ak74\ak74_gl_on
+snd_ammo_check                                     = weapons\ak74\ak74_ammo_check  
+snd_ammo_check_jammed                              = weapons\ak74\ak74_ammo_check  
+snd_ammo_check_empty_jammed                        = weapons\ak74\ak74_ammo_check  
+
+snd_shoot               						   = weapons\ak74\ak74_shoot
+snd_shoot_distant                                  = weapons\_gunfire\ak74\medium_distance
+snd_shoot_distant_far                              = nil
+snd_silncer_shot        						   = weapons\ak74\ak74_shot_sil
+
+shell_particles                                    = ;weapons\545x39
+
+time_to_aim                                        = 3.0
+
+upgrade_scheme                                     = 
+upgrades                                           = 
+
+use_aim_bullet                                     = false
+visual                                             = dynamics\weapons\wpn_akm\wpn_akm_world.ogf
+
+zoom_cam_dispersion                                = 0.9
+zoom_cam_dispersion_frac                           = 0.7
+zoom_cam_dispersion_inc                            = 0.45
+zoom_cam_max_angle                                 = 15.0
+zoom_cam_max_angle_horz                            = 10.0
+zoom_cam_relax_speed                               = 12
+zoom_cam_step_angle_horz                           = 0.3
+zoom_dof                                           = 0.5, 1.0, 180
+zoom_enabled                                       = true
+zoom_rotate_time                                   = 0.2
+
+misfire_one_cartridge_remove                       = true
+
+flame_particles									   = amik\weapons\ak_shoot_00
+smoke_particles									   = ghost_particles\weapons\flame_eft_ak
+grenade_flame_particles 						   = amik\weapons\grenade_flame_particles\grenade_flame_particles_00
+silencer_smoke_particles   						   = ghost_particles\weapons\generic_smoke_eft_sil
+
+[wpn_akm_hud]:hud_base_weapon
+hands_orientation                		 = 0.299094, 0.334508, 0
+hands_orientation_16x9           		 = 0.299094, 0.334508, 0
+hands_position                   		 = -0.005319, -0.000639, -0.015996
+hands_position_16x9              		 = -0.005319, -0.000639, -0.015996
+aim_hud_offset_pos						 = -0.057585,0.015992,-0.063158
+aim_hud_offset_rot						 = 0.003905,-0.000065,0.008665
+aim_hud_offset_pos_16x9					 = -0.057585,0.015992,-0.063158
+aim_hud_offset_rot_16x9					 = 0.003905,-0.000065,0.008665
+gl_hud_offset_pos						 = -0.098046,-0.293584,-0.268799
+gl_hud_offset_rot						 = -0.627223,0.059512,0.046114
+gl_hud_offset_pos_16x9					 = -0.098046,-0.293584,-0.268799
+gl_hud_offset_rot_16x9					 = -0.627223,0.059512,0.046114
+item_position							 = 0.000004,-0.00010,-0.00800
+item_orientation						 = 0,0,0
+
+; Base
+
+anm_bore                                 = sdm_ak74_bore, idle
+anm_hide                                 = sdm_ak74_holster, idle
+anm_idle                                 = sdm_ak74_idle, idle, 0.75
+anm_idle_aim                             = sdm_ak74_aim, idle
+anm_idle_aim_moving                      = sdm_ak74_aim, idle, 0.50
+anm_idle_aim_moving_crouch               = sdm_ak74_aim, idle, 0.50
+anm_idle_moving                          = sdm_ak74_move, idle, 0.92
+anm_idle_moving_crouch                   = sdm_ak74_move, idle, 0.88
+anm_idle_sprint                          = sdm_ak74_sprint, idle, 1.2
+anm_reload                               = sdm_ak74_r
+anm_reload_empty                         = sdm_ak74_re
+anm_shots                                = sdm_ak74_shot
+anm_shots_aim                            = sdm_ak74_shot_aim
+anm_show                                 = sdm_ak74_draw, idle
+anm_reload_misfire                       = sdm_ak74_mis
+;anm_reload_misfire_aim                  = sdm_ak74_mis_aim, sdm_ak74_mis
+
+; With GL 
+
+anm_bore_w_gl                            = sdm_ak74_bore_w_gl, idle
+anm_hide_w_gl                            = sdm_ak74_holster_w_gl, idle
+anm_idle_w_gl                            = sdm_ak74_idle_w_gl, idle, 0.75
+anm_idle_w_gl_aim                        = sdm_ak74_aim_w_gl, idle
+anm_idle_moving_w_gl_aim                 = sdm_ak74_aim_w_gl, idle, 0.50
+anm_idle_moving_crouch_w_gl_aim          = sdm_ak74_aim_w_gl, idle, 0.50
+anm_idle_moving_w_gl                     = sdm_ak74_move_w_gl, idle, 0.92
+anm_idle_moving_crouch_w_gl              = sdm_ak74_move_w_gl, idle, 0.88
+anm_idle_sprint_w_gl                     = sdm_ak74_sprint_w_gl, idle, 1.2
+anm_reload_w_gl                          = sdm_ak74_r_w_gl
+anm_reload_empty_w_gl                    = sdm_ak74_re_w_gl
+anm_shots_w_gl                           = sdm_ak74_shot_w_gl
+anm_shots_w_gl_aim                       = sdm_ak74_shot_aim_w_gl
+anm_show_w_gl                            = sdm_ak74_draw_w_gl, idle
+anm_reload_misfire_w_gl                  = sdm_ak74_mis_w_gl, sdm_ak74_mis
+;anm_reload_misfire_w_gl_aim             = sdm_ak74_mis_w_gl_aim, sdm_ak74_mis
+
+; GL 	 
+
+;anm_bore_g                              = blnd_ak74m_inspect_gl, idle
+anm_hide_g                               = sdm_ak74_hide_g
+anm_idle_g                               = sdm_ak74_idle_g, idle_g
+anm_idle_g_aim                           = sdm_ak74_aim_g, idle_g
+anm_idle_moving_crouch_g_aim             = sdm_ak74_aim_g, idle_g
+anm_idle_moving_g                        = sdm_ak74_move_g, idle_g
+anm_idle_moving_g_aim                    = sdm_ak74_aim_g, idle_g
+anm_idle_sprint_g                        = sdm_ak74_sprint_g, idle_g
+anm_reload_g                             = sdm_ak74_g_reload
+anm_shots_g                              = sdm_ak74_shot_g, idle_g
+anm_show_g                               = sdm_ak74_draw_g
+anm_switch_g                             = sdm_ak74_gl_on
+anm_switch                               = sdm_ak74_gl_off	
+
+; NEW
+
+anm_changefiremode                       = sdm_ak74_mod_switch, idle
+;anm_changefiremode_aim                  = sdm_ak74_mod_switch_aim, idle
+anm_sprint_start             			 = sdm_ak74_sprint_start, idle
+anm_sprint_end               			 = sdm_ak74_sprint_end, idle
+anm_ammo_check                  		 = sdm_ak74_ammo_check
+anm_ammo_check_empty             		 = sdm_ak74_ammo_check_empty
+;anm_ammo_check_aim                   	 = sdm_ak74_ammo_check_aim, sdm_ak74_ammo_check_aim
+anm_ammo_check_empty_aim             	 = sdm_ak74_ammo_check_aim,sdm_ak74_ammo_check_empty_aim
+
+anm_changefiremode_w_gl                  = sdm_ak74_mod_switch_w_gl, idle
+;anm_changefiremode_w_gl_aim             = sdm_ak74_mod_switch_w_gl_aim, idle
+anm_sprint_start_w_gl             		 = sdm_ak74_sprint_start_w_gl, idle
+anm_sprint_end_w_gl               		 = sdm_ak74_sprint_end_w_gl, idle
+anm_ammo_check_w_gl                   	 = sdm_ak74_ammo_check_w_gl, sdm_ak74_ammo_check_w_gl
+anm_ammo_check_empty_w_gl             	 = sdm_ak74_ammo_check_empty_w_gl, sdm_ak74_ammo_check_empty_w_gl
+;anm_ammo_check_w_gl_aim                 = sdm_ak74_ammo_check_aim_w_gl, sdm_ak74_ammo_check_aim_w_gl
+anm_ammo_check_empty_w_gl_aim            = sdm_ak74_ammo_check_aim_w_gl, sdm_ak74_ammo_check_empty_aim_w_gl 
+
+anm_sprint_start_g             			 = sdm_ak74_sprint_start_g, idle_g
+anm_sprint_end_g               			 = sdm_ak74_sprint_end_g, idle_g
+
+shell_point                 			 = 0,0,0
+shell_bone                				 = gilza
+fire_point								 = 0,0,0
+fire_bone                   			 = muzzle
+fire_point2                 			 = 0,0,0
+fire_bone2                				 = muzzle_gl
+
+item_visual                              = dynamics\weapons\wpn_akm\wpn_akm_hud.ogf

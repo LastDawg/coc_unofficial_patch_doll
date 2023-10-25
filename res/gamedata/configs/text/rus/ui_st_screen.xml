@@ -66,6 +66,18 @@
 	<string id="gun_broken">
 		<text>Оружие сломано и требует ремонта.</text>
 	</string>	
+	<string id="weapon_ammo_check_full">
+		<text>Скорее всего полон.</text>
+	</string>
+	<string id="weapon_ammo_check_over_half">
+		<text>Больше половины.</text>
+	</string>
+	<string id="weapon_ammo_check_under_half">
+		<text>Меньше половины.</text>
+	</string>		
+	<string id="weapon_ammo_check_empty">
+		<text>Здесь пусто.</text>
+	</string>	
 	<string id="inventory_box_use">
 		<text>Обыскать ящик ($$ACTION_USE$$)</text>
 	</string>

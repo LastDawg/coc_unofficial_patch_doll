@@ -13,8 +13,6 @@ function put_the_actor_to_sleep()
 	level_weathers.get_weather_manager():forced_weather_change()
 	surge_manager.get_surge_manager().time_forwarded = true
 
-	db.actor:give_info_portion("actor_is_sleeping")
-
 	xr_effects.disable_ui_only(db.actor, nil)
 	db.actor.sleepeness = -0.5
 	level.add_cam_effector("camera_effects\\surge_02.anm", 10, false, "new_utils.mind_loss_callback")
@@ -58,7 +56,6 @@ function mind_loss_callback2()
 	get_console():execute("snd_volume_eff "..tostring(_G.amb_vol))
 	_G.amb_vol = 0
 	_G.mus_vol = 0
-	disable_info("actor_is_sleeping")
 end
 
 function generate_phantoms()

@@ -66,7 +66,6 @@ function register(object_factory)
 	cs_register	(object_factory, "CScope",						"se_item.se_item",						"WP_SCOPE",			"wpn_scope_s")
 	cs_register	(object_factory, "CSilencer",	  				"se_item.se_item",						"WP_SILEN",			"wpn_silencer_s")
 	cs_register	(object_factory, "CGrenadeLauncher",			"se_item.se_item",						"WP_GLAUN",			"wpn_grenade_launcher_s")
-	cs_register	(object_factory, "CLaser",					    "se_item.se_item",						"WP_LASER",			"wpn_laser_s")
 	-- OUTFITS ----------------------------------------------------------------------------------------------------------------------------
 
 	cs_register	(object_factory, "CCustomOutfit",  				"se_item.se_outfit",					"E_STLK",			"equ_stalker_s")

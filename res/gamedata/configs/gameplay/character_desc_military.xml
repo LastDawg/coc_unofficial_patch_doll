@@ -12,7 +12,7 @@
 	<rank>15996</rank>
 	<reputation>1793</reputation>
 	<money min="1000000" max="1000000" infinitive="1"/>
-	<visual>actors\stalker_unique\stalker_freedom_skinflint</visual>
+	<visual>special_characters\stalker_freedom_skinflint</visual>
 	<snd_config>characters_voice\human\freedom_1\</snd_config>
 	<supplies></supplies>
 #include "gameplay\character_criticals.xml"
@@ -34,7 +34,7 @@
 	<mechanic_mode>1</mechanic_mode>
 	<rank>12966</rank>
 	<reputation>1338</reputation>
-	<visual>actors\stalker_freedom\stalker_freedom_1a_mask</visual>
+	<visual>random_characters\freedom\stalker_freedom_light_armor_4</visual>
 	<snd_config>characters_voice\human\freedom_1\</snd_config>
 	<supplies></supplies>
 #include "gameplay\character_criticals.xml"
@@ -59,7 +59,7 @@
 	<terrain_sect>stalker_terrain</terrain_sect>
 	<rank>17716</rank>
 	<reputation>1462</reputation>
-	<visual>actors\stalker_freedom\stalker_freedom_5</visual>
+	<visual>random_characters\freedom\stalker_freedom_middle_armor_1</visual>
 	<supplies>
 		[spawn] \n
 		wpn_usp  \n
@@ -87,7 +87,7 @@
 	<terrain_sect>stalker_terrain</terrain_sect>
 	<rank>17208</rank>
 	<reputation>97</reputation>
-	<visual>actors\stalker_freedom\stalker_freedom_5</visual>
+	<visual>random_characters\freedom\stalker_freedom_middle_armor_2</visual>
 	<supplies>
 		[spawn] \n
 		wpn_usp  \n
@@ -116,12 +116,12 @@
 	<terrain_sect>stalker_terrain</terrain_sect>
 	<rank>26740</rank>
 	<reputation>2285</reputation>
-	<visual>actors\stalker_unique\stalker_freedom_lukash</visual>
+	<visual>special_characters\stalker_freedom_lukash</visual>
 	<supplies>
 		[spawn] \n
 		wpn_usp  \n
 		ammo_11.43x23_hydro = 1 \n
-		wpn_g36 \n
+		wpn_m4a1 \n
 		ammo_5.56x45_ap = 1 \n
 #include "gameplay\supplies\character_items.xml"
 #include "gameplay\supplies\character_medical_sci.xml"
