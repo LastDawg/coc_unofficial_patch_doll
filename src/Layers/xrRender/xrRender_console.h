@@ -164,6 +164,7 @@ extern ECORE_API float ps_r2_rain_drops_speed;     // Скорость капель
 
 extern ECORE_API int opt_static;
 extern ECORE_API int opt_dynamic;
+extern ECORE_API float ps_r2_reflections_distance;
 
 enum
 {

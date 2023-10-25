@@ -157,6 +157,8 @@ float ps_r__Detail_rainbow_hemi = 0.75f;
 
 int opt_static = 2;
 int opt_dynamic = 2;
+float ps_r2_reflections_distance = 300.0f;
+
 Flags32 psDeviceFlags2 = {0};
 
 // Вращение древ
@@ -1175,6 +1177,7 @@ void xrRender_initconsole()
 
     CMD3(CCC_Mask, "r3_volumetric_smoke", &ps_r2_ls_flags, R3FLAG_VOLUMETRIC_SMOKE);
     CMD1(CCC_memory_stats, "render_memory_stats");
+    CMD4(CCC_Float,	"r3_reflections_dist", &ps_r2_reflections_distance, 100.f, 1000.f); //Дальность отражений
 
     // CMD3(CCC_Mask, "r2_sun_ignore_portals", &ps_r2_ls_flags, R2FLAG_SUN_IGNORE_PORTALS);
 }
