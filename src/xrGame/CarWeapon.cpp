@@ -129,10 +129,8 @@ void CCarWeapon::UpdateFire()
             if (p_overheat)
             {
                 if (p_overheat->IsPlaying())
-                {
                     p_overheat->Stop(FALSE);
-                    CParticlesObject::Destroy(p_overheat);
-                }
+                CParticlesObject::Destroy(p_overheat);
             }
             if (m_firing_disabled)
                 m_firing_disabled = false;
