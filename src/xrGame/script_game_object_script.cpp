@@ -114,6 +114,7 @@ SCRIPT_EXPORT(CScriptGameObject, (), {
                 value("weapon_zoom_in", int(GameObject::eOnWeaponZoomIn)),
                 value("weapon_zoom_out", int(GameObject::eOnWeaponZoomOut)),
                 value("weapon_magazine_empty", int(GameObject::eOnWeaponMagazineEmpty)),
+                value("weapon_unjam", int(GameObject::eOnWeaponUnjam)),
 
                 value("map_location_added", int(GameObject::eMapLocationAdded))],
 

@@ -83,6 +83,7 @@ enum ECallbackType
     eOnWeaponJammed,
     eOnWeaponFired,
     eOnWeaponMagazineEmpty,
+    eOnWeaponUnjam,
 
     eDummy = u32(-1),
 };

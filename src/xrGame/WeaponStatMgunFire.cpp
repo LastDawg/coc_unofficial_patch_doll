@@ -34,6 +34,7 @@ void CWeaponStatMgun::UpdateFire()
     inheritedShooting::UpdateFlameParticles();
     inheritedShooting::UpdateLight();
 
+
     if (m_overheat_enabled)
     {
         m_overheat_value -= m_overheat_decr_quant;

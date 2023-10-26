@@ -963,6 +963,12 @@ void CWeaponMagazined::OnAnimationEnd(u32 state)
             m_magazine.pop_back();
         }
 
+#ifdef EXTENDED_WEAPON_CALLBACKS // Alundaio
+        IGameObject* object = smart_cast<IGameObject*>(H_Parent());
+        if (object)
+            object->callback(GameObject::eOnWeaponUnjam)(object->lua_game_object(), this->lua_game_object());
+#endif
+
         SwitchState(eIdle);
     }
     break;
