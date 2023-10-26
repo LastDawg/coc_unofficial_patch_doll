@@ -70,6 +70,8 @@ CCarWeapon::CCarWeapon(CPhysicsShellHolder* obj)
     m_fire_norm.set(0, 1, 0);
     m_fire_dir.set(0, 0, 1);
     m_fire_pos.set(0, 0, 0);
+
+    m_firing_disabled = false;
 }
 
 CCarWeapon::~CCarWeapon()
@@ -83,6 +85,12 @@ void CCarWeapon::Load(LPCSTR section)
     inheritedShooting::Load(section);
     HUD_SOUND_ITEM::LoadSound(section, "snd_shoot", m_sndShot, SOUND_TYPE_WEAPON_SHOOTING);
     m_Ammo->Load(pSettings->r_string(section, "ammo_class"), 0);
+
+    m_overheat_enabled = pSettings->line_exist(section, "overheat_enabled") ? !!pSettings->r_bool(section, "overheat_enabled") : false;
+    m_overheat_time_quant = READ_IF_EXISTS(pSettings, r_float, section, "overheat_time_quant", 0.025f);
+    m_overheat_decr_quant = READ_IF_EXISTS(pSettings, r_float, section, "overheat_decr_quant", 0.002f);
+    m_overheat_threshold = READ_IF_EXISTS(pSettings, r_float, section, "overheat_threshold", 110.f);
+    m_overheat_particles = READ_IF_EXISTS(pSettings, r_string, section, "overheat_particles", "damage_fx\\burn_creatures00");
 }
 
 void CCarWeapon::UpdateCL()
@@ -113,10 +121,65 @@ void CCarWeapon::UpdateFire()
             FireEnd();
     };
 
+    if (m_overheat_enabled)
+    {
+        m_overheat_value -= m_overheat_decr_quant;
+        if (m_overheat_value < 100.f)
+        {
+            if (p_overheat)
+            {
+                if (p_overheat->IsPlaying())
+                {
+                    p_overheat->Stop(FALSE);
+                    CParticlesObject::Destroy(p_overheat);
+                }
+            }
+            if (m_firing_disabled)
+                m_firing_disabled = false;
+        }
+        else
+        {
+            if (p_overheat)
+            {
+                Fmatrix pos;
+                pos.set(get_ParticlesXFORM());
+                pos.c.set(get_CurrentFirePoint());
+                p_overheat->SetXFORM(pos);
+            }
+        }
+    }
+
     if (!IsWorking())
     {
         clamp(fShotTimeCounter, 0.0f, flt_max);
+        clamp(m_overheat_value, 0.0f, m_overheat_threshold);
         return;
+    }
+
+    if (m_overheat_enabled)
+    {
+        m_overheat_value += m_overheat_time_quant;
+        clamp(m_overheat_value, 0.0f, m_overheat_threshold);
+
+        if (m_overheat_value >= 100.f)
+        {
+            if (!p_overheat)
+            {
+                p_overheat = CParticlesObject::Create(m_overheat_particles.c_str(), FALSE);
+                Fmatrix pos;
+                pos.set(get_ParticlesXFORM());
+                pos.c.set(get_CurrentFirePoint());
+                p_overheat->SetXFORM(pos);
+                p_overheat->Play(false);
+            }
+
+            if (m_overheat_value >= m_overheat_threshold)
+            {
+                m_firing_disabled = true;
+                FireEnd();
+                return;
+            }
+        }
     }
 
     if (fShotTimeCounter <= 0)
@@ -149,6 +212,9 @@ void CCarWeapon::ResetBoneCallbacks()
 
 void CCarWeapon::UpdateBarrelDir()
 {
+    if (m_firing_disabled) // Перегрев
+        return;
+
     IKinematics* K = smart_cast<IKinematics*>(m_object->Visual());
     m_fire_bone_xform = K->LL_GetTransform(m_fire_bone);
 
@@ -203,7 +269,13 @@ float CCarWeapon::FireDirDiff()
 
 const Fvector& CCarWeapon::get_CurrentFirePoint() { return m_fire_pos; }
 const Fmatrix& CCarWeapon::get_ParticlesXFORM() { return m_fire_bone_xform; }
-void CCarWeapon::FireStart() { inheritedShooting::FireStart(); }
+void CCarWeapon::FireStart() 
+{ 
+    if (m_firing_disabled) // Перегрев
+        return;
+
+    inheritedShooting::FireStart(); 
+}
 void CCarWeapon::FireEnd()
 {
     inheritedShooting::FireEnd();
