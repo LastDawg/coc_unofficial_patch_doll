@@ -8,7 +8,11 @@
 
 #pragma once
 
-IC const CVisualMemoryManager::VISIBLES& CVisualMemoryManager::objects() const { return (*m_objects); }
+IC const CVisualMemoryManager::VISIBLES& CVisualMemoryManager::objects() const
+{ 
+	m_objects->erase(std::remove_if(m_objects->begin(), m_objects->end(), [](const auto& obj) { return obj.m_object->getDestroy(); }), m_objects->end());
+	return *m_objects;
+}
 IC const CVisualMemoryManager::RAW_VISIBLES& CVisualMemoryManager::raw_objects() const { return (m_visible_objects); }
 IC const CVisualMemoryManager::NOT_YET_VISIBLES& CVisualMemoryManager::not_yet_visible_objects() const
 {

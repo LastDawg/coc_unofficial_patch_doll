@@ -24,8 +24,8 @@ IC CSoundMemoryManager::CSoundMemoryManager(
 
 IC const CSoundMemoryManager::SOUNDS& CSoundMemoryManager::objects() const
 {
-    VERIFY(m_sounds);
-    return (*m_sounds);
+	m_sounds->erase(std::remove_if(m_sounds->begin(), m_sounds->end(), [](const auto& obj) { return obj.m_object->getDestroy(); }), m_sounds->end());
+	return *m_sounds;
 }
 
 IC void CSoundMemoryManager::priority(const ESoundTypes& sound_type, u32 priority)

@@ -50,7 +50,7 @@
 #   define R2_SHADERS_BACKWARDS_COMPATIBILITY
 #endif
 
-#define COC_DEBUG
+//#define COC_DEBUG
 
 #ifdef COC_DEBUG
 #   define NON_FATAL_VERIFY
