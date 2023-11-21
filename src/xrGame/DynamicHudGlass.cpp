@@ -25,17 +25,16 @@ namespace DynamicHudGlass
 		CCustomOutfit* outfit = smart_cast<CCustomOutfit*>(Actor()->inventory().ItemFromSlot(OUTFIT_SLOT));
         CTorch* torch = smart_cast<CTorch*>(Actor()->inventory().ItemFromSlot(TORCH_SLOT));
 
-        if (torch)
-        {
-            NightVisionType = torch->m_NightVisionType;
-        }
-        else
 		if (helmet)
 		{
 			float condition = helmet->GetCondition();
 			HudGlassElement = 0;
 			bool HelmetHasGlass = helmet->m_b_HasGlass;
-			NightVisionType = helmet->m_NightVisionType;
+
+            if (torch)
+                NightVisionType = torch->m_NightVisionType;
+            else
+			    NightVisionType = helmet->m_NightVisionType;
 
 			if (HelmetHasGlass)
 			{
@@ -66,7 +65,11 @@ namespace DynamicHudGlass
 			float condition = outfit->GetCondition();
 			bool OutfitHasGlass = outfit->m_b_HasGlass;
 			HudGlassElement = 0;
-			NightVisionType = outfit->m_NightVisionType;
+
+            if (torch)
+                NightVisionType = torch->m_NightVisionType;
+            else
+			    NightVisionType = outfit->m_NightVisionType;
 
 			if (OutfitHasGlass)
 			{
@@ -95,6 +98,11 @@ namespace DynamicHudGlass
 		{
 			HudGlassElement = 0;
 			DynamicHudGlassEnabled = false;
+
+            if (torch)
+                NightVisionType = torch->m_NightVisionType;
+            else
+                NightVisionType = 0;
 		}
 	}
 }
