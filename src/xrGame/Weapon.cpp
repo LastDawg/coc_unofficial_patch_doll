@@ -3193,7 +3193,9 @@ void CWeapon::LoadCurrentScopeParams(LPCSTR section)
     }
     if (pSettings->line_exist(section, "scope_texture_alt") && m_zoomtype == 1) // Альт. прицеливание
     {
-        bAltScopeIsHasTexture = true;
+        scope_tex_name = pSettings->r_string(section, "scope_texture_alt");
+        if (xr_strcmp(scope_tex_name, "none") != 0)
+            bAltScopeIsHasTexture = true;
     }
 
     bScopeSupportClipReload = READ_IF_EXISTS(pSettings, r_bool, section, "scope_support_clip_reload", true);
