@@ -52,7 +52,7 @@ struct SSpecificCharacterData : CSharedResource
 #ifdef XRGAME_EXPORTS
 
     //начальный диалог
-    shared_str m_StartDialog;
+    DIALOG_ID_VECTOR m_StartDialog;
     //диалоги актера, которые будут доступны только при встрече с данным персонажем
     DIALOG_ID_VECTOR m_ActorDialogs;
 

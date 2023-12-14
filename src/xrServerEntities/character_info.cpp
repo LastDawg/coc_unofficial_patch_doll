@@ -33,7 +33,7 @@ CCharacterInfo::CCharacterInfo()
 #ifdef XRGAME_EXPORTS
     m_CurrentRank.set(NO_RANK);
     m_CurrentReputation.set(NO_REPUTATION);
-    m_StartDialog = NULL;
+    m_StartDialog.clear();
     m_Sympathy = 0.0f;
 #endif
 }
@@ -75,7 +75,7 @@ void CCharacterInfo::InitSpecificCharacter(shared_str new_id)
     }
     if (Community().index() == NO_COMMUNITY_INDEX)
         SetCommunity(m_SpecificCharacter.Community().index());
-    if (!m_StartDialog || !m_StartDialog.size())
+    if (!m_StartDialog.size())
         m_StartDialog = m_SpecificCharacter.data()->m_StartDialog;
 }
 
@@ -174,15 +174,35 @@ const shared_str& CCharacterInfo::IconName() const
     return m_SpecificCharacter.IconName();
 }
 
-shared_str CCharacterInfo::StartDialog() const { return m_StartDialog; }
+const DIALOG_ID_VECTOR& CCharacterInfo::StartDialog() const
+{
+    return m_StartDialog;
+}
 const DIALOG_ID_VECTOR& CCharacterInfo::ActorDialogs() const
 {
     R_ASSERT(m_SpecificCharacterId.size());
     return m_SpecificCharacter.data()->m_ActorDialogs;
 }
 
-void CCharacterInfo::load(IReader& stream) { stream.r_stringZ(m_StartDialog); }
-void CCharacterInfo::save(NET_Packet& stream) { stream.w_stringZ(m_StartDialog); }
+void CCharacterInfo::load(IReader& stream)
+{
+    u16 DialogsNum = stream.r_u16();
+    m_StartDialog.clear();
+    for (u16 i = 0; i < DialogsNum; ++i)
+    {
+        shared_str DialogName;
+        stream.r_stringZ(DialogName);
+        m_StartDialog.push_back(DialogName);
+    }
+}
+void CCharacterInfo::save(NET_Packet& stream)
+{
+    stream.w_u16(m_StartDialog.size());
+    for (auto& Dialog : m_StartDialog)
+    {
+        stream.w_stringZ(Dialog);
+    }
+}
 #endif
 
 void CCharacterInfo::InitXmlIdToIndex()
