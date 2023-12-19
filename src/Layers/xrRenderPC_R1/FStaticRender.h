@@ -85,7 +85,7 @@ private:
     void LoadSWIs(CStreamReader* fs);
     BOOL add_Dynamic(dxRender_Visual* pVisual, u32 planes); // normal processing
     void add_Static(dxRender_Visual* pVisual, u32 planes);
-    void add_leafs_Dynamic(dxRender_Visual* pVisual, bool ignore = true); // if detected node's full visibility
+    void add_leafs_Dynamic(dxRender_Visual* pVisual); // if detected node's full visibility
     void add_leafs_Static(dxRender_Visual* pVisual); // if detected node's full visibility
 
 public:
@@ -133,7 +133,7 @@ public:
     virtual void flush() override;
     virtual void set_Object(IRenderable* O) override;
     virtual void add_Occluder(Fbox2& bb_screenspace) override; // mask screen region as oclluded
-    virtual void add_Visual(IRenderVisual* V, bool ignore_opt = false) override; // add visual leaf (no culling performed at all)
+    virtual void add_Visual(IRenderVisual* V) override; // add visual leaf (no culling performed at all)
     virtual void add_Geometry(IRenderVisual* V) override; // add visual(s)	(all culling performed)
 
     // wallmarks

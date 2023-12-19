@@ -43,12 +43,6 @@ enum
     // 24-32 bit - reserved to Editor
 };
 
-extern Flags32 psDeviceFlags2;
-enum
-{
-    rsOptShadowGeom = (1 << 0),
-};
-
 //. ENGINE_API extern u32 psCurrentMode ;
 ENGINE_API extern u32 psCurrentVidMode[];
 ENGINE_API extern u32 psCurrentBPP;

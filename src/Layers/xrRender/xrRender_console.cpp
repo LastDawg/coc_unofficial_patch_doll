@@ -155,11 +155,7 @@ float ps_r__Detail_rainbow_hemi = 0.75f;
 
 // Оптимизация
 
-int opt_static = 2;
-int opt_dynamic = 2;
 float ps_r2_reflections_distance = 300.0f;
-
-Flags32 psDeviceFlags2 = {0};
 
 // Вращение древ
 
@@ -903,12 +899,6 @@ void xrRender_initconsole()
     CMD4(CCC_Vector4, "shader_param_6", &ps_dev_param_6, tw2_min, tw2_max);
     CMD4(CCC_Vector4, "shader_param_7", &ps_dev_param_7, tw2_min, tw2_max);
     CMD4(CCC_Vector4, "shader_param_8", &ps_dev_param_8, tw2_min, tw2_max);
-
-    // Оптимизация
-    CMD4(CCC_Integer, "r__optimize_static_geom", &opt_static, 0, 4);
-    CMD4(CCC_Integer, "r__optimize_dynamic_geom", &opt_dynamic, 0, 4);
-    psDeviceFlags2.set(rsOptShadowGeom, TRUE);
-    CMD3(CCC_Mask, "r__optimize_shadow_geom", &psDeviceFlags2, rsOptShadowGeom);
 
 	// Screen Space Shaders
     CMD4(CCC_Vector4, "ssfx_wpn_dof_1", &ps_ssfx_wpn_dof_1, tw2_min, tw2_max);
