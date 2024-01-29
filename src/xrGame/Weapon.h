@@ -526,6 +526,9 @@ protected:
     float m_fMinRadius;
     float m_fMaxRadius;
 
+    //Давать ли доиграть анимацию выстрела после выстрела (надо для анимаций с вылетающими гильзами)
+    bool dont_interrupt_shot_anm{};
+
 protected:
     //для второго ствола
     void StartFlameParticles2();

@@ -664,7 +664,7 @@ void CWeapon::Load(LPCSTR section)
     m_nearwall_target_hud_fov = READ_IF_EXISTS(pSettings, r_float, section, "nearwall_target_hud_fov", 0.27f);
     m_nearwall_speed_mod = READ_IF_EXISTS(pSettings, r_float, section, "nearwall_speed_mod", 10.f);
 
-// Настройки стрейфа (боковая ходьба)
+    // Настройки стрейфа (боковая ходьба)
     const Fvector vZero = {0.f, 0.f, 0.f};
     Fvector vDefStrafeValue;
     vDefStrafeValue.set(vZero);
@@ -705,6 +705,9 @@ void CWeapon::Load(LPCSTR section)
 
     // Скорость утечки выносливости во время прицеливания
     fActorPowerLeakAimSpeed = READ_IF_EXISTS(pSettings, r_float, section, "actor_power_leak_aim_speed", 0.f);
+
+    // Доиграть анимацию выстрела? OGSR
+    dont_interrupt_shot_anm = READ_IF_EXISTS(pSettings, r_bool, section, "dont_interrupt_shot_anm", true);
 
     // Скрытие костей из GWR
     if (pSettings->line_exist(section, "silencer_bone"))

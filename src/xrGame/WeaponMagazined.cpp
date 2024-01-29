@@ -662,6 +662,16 @@ void CWeaponMagazined::UpdateCL()
     }
 
     UpdateSounds();
+
+    if (bHasBulletsToHide)
+    {
+        const int AE = GetAmmoElapsed();
+
+        last_hide_bullet = AE >= bullet_cnt ? bullet_cnt : bullet_cnt - AE - 1;
+
+        if (AE == 0)
+            last_hide_bullet = -1;
+    }
 }
 
 void CWeaponMagazined::UpdateSounds()
@@ -2188,14 +2198,6 @@ bool CWeaponMagazined::GetBriefInfo(II_BriefInfo& info)
     xr_sprintf(int_str, "%d", ae);
     info.cur_ammo = int_str;
 
-	if (bHasBulletsToHide)
-    {
-        last_hide_bullet = ae >= bullet_cnt ? bullet_cnt : bullet_cnt - ae - 1;
-
-        if (ae == 0)
-            last_hide_bullet = -1;
-    }
-
     if (HasFireModes())
     {
         if (m_iQueueSize == WEAPON_ININITE_QUEUE)
@@ -2457,7 +2459,7 @@ void CWeaponMagazined::OnMotionMark(u32 state, const motion_marks& M)
             ae += m_ammoElapsed.type1;
         }
 
-        last_hide_bullet = ae >= bullet_cnt ? bullet_cnt : bullet_cnt - ae - 1;
+        last_hide_bullet = (ae >= bullet_cnt || unlimited_ammo()) ? bullet_cnt : bullet_cnt - ae - 1;
 
         //Msg("Next reload: count %d with type %d", ae, ammo_type);
 
