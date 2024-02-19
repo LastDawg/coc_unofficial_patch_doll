@@ -71,12 +71,18 @@ public:
     void Switch();
     void Switch(bool light_on);
     bool torch_active() const;
+    void UpdateUseAnim();
     u32 m_NightVisionType;
 
     virtual bool can_be_attached() const;
 
     // CAttachableItem
     virtual void enable(bool value);
+
+	int m_iActionTiming;
+    int m_iAnimLength;
+    bool m_bActivated;
+    bool m_bSwitched;
 
     shared_str m_NightVisionSect;
     bool m_bNightVisionEnabled; // Ðåæèì ÏÍÂ

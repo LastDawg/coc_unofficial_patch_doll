@@ -787,6 +787,7 @@ public:
 
     bool m_bTorchNightVision;
     bool m_bEatAnimActive;
+    bool m_bActionAnimInProcess;
 
 	// Real Wolf. Start. 14.10.2014
     void block_action(EGameActions cmd);

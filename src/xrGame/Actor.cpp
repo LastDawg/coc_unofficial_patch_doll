@@ -91,6 +91,7 @@ const float respawn_auto = 7.f;
 #include "PDA.h"
 //-Alundaio
 #include "XrayGameConstants.h"
+#include "../xrPhysics/ElevatorState.h"
 
 static float IReceived = 0;
 static float ICoincidenced = 0;
@@ -98,6 +99,8 @@ extern float cammera_into_collision_shift;
 
 string32 ACTOR_DEFS::g_quick_use_slots[4] = {NULL, NULL, NULL, NULL};
 // skeleton
+
+extern bool g_block_all_except_movement;
 
 static Fbox bbStandBox;
 static Fbox bbCrouchBox;
@@ -216,6 +219,7 @@ CActor::CActor() : CEntityAlive(), current_ik_cam_shift(0)
     m_bNightVisionOn = false;
     m_bTorchNightVision = false;
     m_bEatAnimActive = false;
+    m_bActionAnimInProcess = false;
 }
 
 CActor::~CActor()

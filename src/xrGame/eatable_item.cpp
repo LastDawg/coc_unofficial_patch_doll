@@ -176,6 +176,8 @@ void CEatableItem::StartAnimation()
 
     m_bItmStartAnim = false;
     g_actor_allow_ladder = false;
+    Actor()->m_bActionAnimInProcess = true;
+
     if (!strstr(Core.Params, "-dev") || !strstr(Core.Params, "-dbg"))
         g_block_all_except_movement = true;
 
@@ -233,6 +235,7 @@ void CEatableItem::UpdateUseAnim()
             m_bActivated = false;
             g_block_all_except_movement = false;
             g_actor_allow_ladder = true;
+            Actor()->m_bActionAnimInProcess = false;
 
             if (effector)
                 RemoveEffector(Actor(), effUseItem);
