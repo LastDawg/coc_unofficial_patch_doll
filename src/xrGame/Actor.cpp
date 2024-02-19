@@ -92,7 +92,7 @@ const float respawn_auto = 7.f;
 //-Alundaio
 #include "XrayGameConstants.h"
 #include "../xrPhysics/ElevatorState.h"
-
+#include "../xrPhysics/ElevatorState.h"
 static float IReceived = 0;
 static float ICoincidenced = 0;
 extern float cammera_into_collision_shift;
@@ -220,6 +220,9 @@ CActor::CActor() : CEntityAlive(), current_ik_cam_shift(0)
     m_bTorchNightVision = false;
     m_bEatAnimActive = false;
     m_bActionAnimInProcess = false;
+    m_bNVGSwitched = false;
+    m_iNVGAnimLength = 0;
+    m_iActionTiming = 0;
 }
 
 CActor::~CActor()
@@ -1397,6 +1400,9 @@ void CActor::shedule_Update(u32 DT)
 	if (Actor())
         DynamicHudGlass::UpdateDynamicHudGlass();
 
+	if (Actor()->m_bActionAnimInProcess && m_bNVGActivated)
+        UpdateUseAnim();
+
 	UpdateInventoryItems();
 };
 
@@ -2279,6 +2285,92 @@ void CActor::On_SetEntity()
 }
 
 bool CActor::unlimited_ammo() { return !!psActorFlags.test(AF_UNLIMITEDAMMO); }
+
+
+void CActor::CheckNVGAnimation()
+{
+    CWeapon* Wpn = smart_cast<CWeapon*>(inventory().ActiveItem());
+	CHelmet* pHelmet = smart_cast<CHelmet*>(inventory().ItemFromSlot(HELMET_SLOT));
+	CCustomOutfit* pOutfit = smart_cast<CCustomOutfit*>(inventory().ItemFromSlot(OUTFIT_SLOT));
+    CTorch* pTorch = smart_cast<CTorch*>(inventory().ItemFromSlot(TORCH_SLOT));
+
+	if (Wpn && Wpn->IsZoomed())
+		return;
+
+	LPCSTR anim_sect = READ_IF_EXISTS(pSettings, r_string, "actions_animations", "switch_nightvision_section", nullptr);
+
+	if (!anim_sect)
+	{
+		SwitchNightVision(!m_bNightVisionOn);
+		return;
+	}
+
+	if (!(pHelmet && pHelmet->m_NightVisionSect.size()) && !(pOutfit && pOutfit->m_NightVisionSect.size()) && !(pTorch && pTorch->m_NightVisionSect.size()))
+		return;
+
+	if (Wpn && !(Wpn->GetState() == CWeapon::eIdle))
+		return;
+
+	m_bNVGActivated = true;
+
+    int anim_timer = READ_IF_EXISTS(pSettings, r_u32, anim_sect, "anim_timing", 0);
+
+	g_block_all_except_movement = true;
+	g_actor_allow_ladder = false;
+
+	LPCSTR use_cam_effector = READ_IF_EXISTS(pSettings, r_string, anim_sect, !Wpn ? "anim_camera_effector" : "anim_camera_effector_weapon", nullptr);
+	float effector_intensity = READ_IF_EXISTS(pSettings, r_float, anim_sect, "cam_effector_intensity", 1.0f);
+	float anim_speed = READ_IF_EXISTS(pSettings, r_float, anim_sect, "anim_speed", 1.0f);
+
+	if (pSettings->line_exist(anim_sect, "anm_use"))
+	{
+        g_player_hud->script_anim_play(!inventory().GetActiveSlot() ? 2 : 1, anim_sect, !Wpn ? "anm_use" : "anm_use_weapon", true, anim_speed);
+
+		if (use_cam_effector)
+            g_player_hud->PlayBlendAnm(use_cam_effector, 0, anim_speed, effector_intensity, false);
+
+		m_iNVGAnimLength = Device.dwTimeGlobal + g_player_hud->motion_length_script(anim_sect, !Wpn ? "anm_use" : "anm_use_weapon", anim_speed);
+	}
+
+	if (pSettings->line_exist(anim_sect, "snd_using"))
+	{
+		if (m_action_anim_sound._feedback())
+			m_action_anim_sound.stop();
+
+		shared_str snd_name = pSettings->r_string(anim_sect, "snd_using");
+		m_action_anim_sound.create(snd_name.c_str(), st_Effect, sg_SourceType);
+		m_action_anim_sound.play(NULL, sm_2D);
+	}
+
+	m_iActionTiming = Device.dwTimeGlobal + anim_timer;
+
+	m_bNVGSwitched = false;
+    m_bActionAnimInProcess = true;
+}
+
+void CActor::UpdateUseAnim()
+{
+    if ((m_iActionTiming <= Device.dwTimeGlobal && !m_bNVGSwitched) && g_Alive())
+    {
+        m_iActionTiming = Device.dwTimeGlobal;
+        SwitchNightVision(!m_bNightVisionOn);
+        m_bNVGSwitched = true;
+    }
+
+    if (m_bNVGActivated)
+    {
+        if ((m_iNVGAnimLength <= Device.dwTimeGlobal) || !g_Alive())
+        {
+            m_iNVGAnimLength = Device.dwTimeGlobal;
+            m_iActionTiming = Device.dwTimeGlobal;
+            m_action_anim_sound.stop();
+            g_block_all_except_movement = false;
+            g_actor_allow_ladder = true;
+            m_bActionAnimInProcess = false;
+            m_bNVGActivated = false;
+        }
+    }
+}
 
 void CActor::SwitchNightVision(bool vision_on, bool use_sounds, bool send_event)
 {
