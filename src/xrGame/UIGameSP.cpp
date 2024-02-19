@@ -93,7 +93,7 @@ bool CUIGameSP::IR_UIOnKeyboardPress(int dik)
         return false;
 
 	// Затычка на худ аджаст
-    if (strstr(Core.Params, "-dev") || strstr(Core.Params, "-dbg"))
+    if (Actor()->active_cam() == eacFirstEye && (strstr(Core.Params, "-dev") || strstr(Core.Params, "-dbg")))
     {
         hud_adjust_mode_keyb(dik);
         attach_adjust_mode_keyb(dik);

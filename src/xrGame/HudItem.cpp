@@ -561,7 +561,7 @@ void CHudItem::OnH_A_Independent()
 void CHudItem::on_b_hud_detach() { m_sounds.StopAllSounds(); }
 void CHudItem::on_a_hud_attach()
 {
-    if (m_current_motion_def)
+    if (m_current_motion_def && m_current_motion.size())
     {
         PlayHUDMotion_noCB(m_current_motion, FALSE);
 #ifdef DEBUG
@@ -623,7 +623,9 @@ u32 CHudItem::PlayHUDMotionIfExists(std::initializer_list<const char*> Ms, const
         dbg_anim_name += M;
         dbg_anim_name += ", ";
     }
-    Msg("~~[%s] Motions [%s] not found for [%s]", __FUNCTION__, dbg_anim_name.c_str(), HudSection().c_str());
+#ifdef DEBUG
+    Msg("~ [WARNING] [%s]: Motions [%s] not found for [%s]", __FUNCTION__, dbg_anim_name.c_str(), HudSection().c_str());
+#endif
 
     return 0;
 }
@@ -777,7 +779,7 @@ bool CHudItem::isHUDAnimationExist(pcstr anim_name) const
             return true;
     }
 #ifdef DEBUG
-    Msg("~ [WARNING] ------ Animation [%s] does not exist in [%s]", anim_name, HudSection().c_str());
+    Msg("~ [WARNING] [%s]: Animation [%s] does not exist in [%s]", __FUNCTION__, anim_name, HudSection().c_str());
 #endif
     return false;
 }

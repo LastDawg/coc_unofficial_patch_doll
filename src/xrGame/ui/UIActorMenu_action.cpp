@@ -135,6 +135,16 @@ bool CUIActorMenu::OnItemDrop(CUICellItem* itm)
                 GO2 ? GO2->lua_game_object() : 0, (int)t_old, (int)t_new) == false)
                 return false;
         }
+        CUICellItem* cell_item = new_owner->GetCellItemUnderCursor();
+        PIItem item_in_cell = cell_item ? (PIItem)cell_item->m_pData : NULL;
+
+        if (old_owner == new_owner && item_in_cell && item_in_cell->CanAttach(CurrentIItem()))
+        {
+            AttachAddon(item_in_cell);
+            UpdateItemsPlace();
+            return true;
+        }
+
         //-Alundaio
         return false;
     }

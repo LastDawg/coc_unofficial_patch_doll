@@ -143,6 +143,8 @@ public:
     virtual CUICellItem* RemoveItem(CUICellItem* itm, bool force_root);
     void CreateDragItem(CUICellItem* itm);
 
+    CUICellItem* GetCellItemUnderCursor();
+
     void DestroyDragItem();
     void ClearAll(bool bDestroy);
     void Compact();
@@ -192,6 +194,7 @@ public:
     Ivector2 PickCell(const Fvector2& abs_pos); //Alundaio made public
     bool ValidCell(const Ivector2& pos) const; //Alundaio made public
     CUICell& GetCellAt(const Ivector2& pos); //Alundaio made public
+    CUICell* GetCellAtP(const Ivector2& pos);
 
 protected:
     virtual void Draw();

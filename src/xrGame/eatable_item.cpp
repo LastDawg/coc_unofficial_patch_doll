@@ -78,6 +78,12 @@ void CEatableItem::Load(LPCSTR section)
 void CEatableItem::load(IReader& packet)
 {
     inherited::load(packet);
+
+    if (g_block_all_except_movement)
+		g_block_all_except_movement = false;
+
+	if (!g_actor_allow_ladder)
+		g_actor_allow_ladder = true;
 }
 
 void CEatableItem::save(NET_Packet& packet)
