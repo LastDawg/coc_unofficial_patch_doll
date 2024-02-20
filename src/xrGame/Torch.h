@@ -70,6 +70,7 @@ public:
 	void SwitchTorchMode();
     void Switch();
     void Switch(bool light_on);
+    void ProcessSwitch();
     bool torch_active() const;
     void UpdateUseAnim();
     u32 m_NightVisionType;

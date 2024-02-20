@@ -196,7 +196,7 @@ public:
     virtual void UpdateInventoryItems();
     float HitArtefactsOnBelt(float hit_power, ALife::EHitType hit_type);
     float GetProtection_ArtefactsOnBelt(ALife::EHitType hit_type);
-    void UpdateUseAnim();
+    void UpdateNVGUseAnim();
 
 protected:
     //звук тяжелого дыхания
@@ -695,7 +695,8 @@ public:
     virtual bool InventoryAllowSprint();
     virtual void OnNextWeaponSlot();
     virtual void OnPrevWeaponSlot();
-    void CheckNVGAnimation();
+    void NVGAnimCheckDetector();
+    void StartNVGAnimation();
     void SwitchNightVision();
     void SwitchTorch();
 #if defined(DEBUG) || defined(COC_DEBUG)

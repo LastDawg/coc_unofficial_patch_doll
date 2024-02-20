@@ -92,7 +92,9 @@ const float respawn_auto = 7.f;
 //-Alundaio
 #include "XrayGameConstants.h"
 #include "../xrPhysics/ElevatorState.h"
-#include "../xrPhysics/ElevatorState.h"
+#include "CustomDetector.h"
+#include "Flashlight.h"
+
 static float IReceived = 0;
 static float ICoincidenced = 0;
 extern float cammera_into_collision_shift;
@@ -1400,8 +1402,11 @@ void CActor::shedule_Update(u32 DT)
 	if (Actor())
         DynamicHudGlass::UpdateDynamicHudGlass();
 
-	if (Actor()->m_bActionAnimInProcess && m_bNVGActivated)
-        UpdateUseAnim();
+	if (m_bActionAnimInProcess)
+    {
+        if (m_bNVGActivated)
+            UpdateNVGUseAnim();
+    }
 
 	UpdateInventoryItems();
 };
@@ -2286,8 +2291,19 @@ void CActor::On_SetEntity()
 
 bool CActor::unlimited_ammo() { return !!psActorFlags.test(AF_UNLIMITEDAMMO); }
 
+void CActor::NVGAnimCheckDetector()
+{
+    CCustomDetector* pDet = smart_cast<CCustomDetector*>(inventory().ItemFromSlot(DETECTOR_SLOT));
+    CFlashlight* pFlashlight = smart_cast<CFlashlight*>(inventory().ItemFromSlot(DETECTOR_SLOT));
 
-void CActor::CheckNVGAnimation()
+    if ((!pDet && !pFlashlight) || pDet && pDet->IsHidden() || pFlashlight && pFlashlight->IsHidden())
+    {
+        StartNVGAnimation();
+        return;
+    }
+}
+
+void CActor::StartNVGAnimation()
 {
     CWeapon* Wpn = smart_cast<CWeapon*>(inventory().ActiveItem());
 	CHelmet* pHelmet = smart_cast<CHelmet*>(inventory().ItemFromSlot(HELMET_SLOT));
@@ -2348,7 +2364,7 @@ void CActor::CheckNVGAnimation()
     m_bActionAnimInProcess = true;
 }
 
-void CActor::UpdateUseAnim()
+void CActor::UpdateNVGUseAnim()
 {
     if ((m_iActionTiming <= Device.dwTimeGlobal && !m_bNVGSwitched) && g_Alive())
     {

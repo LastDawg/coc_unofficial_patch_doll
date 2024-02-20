@@ -22,6 +22,8 @@
 #include "player_hud.h"
 #include "Weapon.h"
 #include "ActorEffector.h"
+#include "CustomDetector.h"
+#include "Flashlight.h"
 
 static const float		TORCH_INERTION_CLAMP		= PI_DIV_6;
 static const float		TORCH_INERTION_SPEED_MAX	= 7.5f;
@@ -164,6 +166,21 @@ void CTorch::Load(LPCSTR section)
 }
 
 void CTorch::Switch()
+{
+    if (OnClient())
+        return;
+
+    CCustomDetector* pDet = smart_cast<CCustomDetector*>(Actor()->inventory().ItemFromSlot(DETECTOR_SLOT));
+    CFlashlight* pFlashlight = smart_cast<CFlashlight*>(Actor()->inventory().ItemFromSlot(DETECTOR_SLOT));
+
+    if ((!pDet && !pFlashlight) || pDet && pDet->IsHidden() || pFlashlight && pFlashlight->IsHidden())
+    {
+        ProcessSwitch();
+        return;
+    }
+}
+
+void CTorch::ProcessSwitch()
 {
     if (!m_bTorchModeEnabled)   
         return;
@@ -417,6 +434,7 @@ void CTorch::OnH_B_Independent(bool just_before_destroy)
 void CTorch::UpdateCL()
 {
     inherited::UpdateCL();
+
     ConditionUpdate();
 
 	if (Actor()->m_bActionAnimInProcess && m_bActivated)
