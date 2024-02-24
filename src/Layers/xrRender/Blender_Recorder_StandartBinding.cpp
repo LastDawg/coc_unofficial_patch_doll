@@ -415,13 +415,28 @@ static class cl_pda_params : public R_constant_setup
 
     virtual void setup(R_constant* C)
     {
-        float pda_factor = g_pGamePersistent->pda_shader_data.pda_display_factor;
-        float pda_psy_factor = g_pGamePersistent->pda_shader_data.pda_psy_influence;
-        float pda_display_brightness = g_pGamePersistent->pda_shader_data.pda_displaybrightness;
+        float pda_factor = g_pGamePersistent->devices_shader_data.pda_display_factor;
+        float pda_psy_factor = g_pGamePersistent->devices_shader_data.pda_psy_influence;
+        float pda_display_brightness = g_pGamePersistent->devices_shader_data.pda_displaybrightness;
         RCache.set_c(C, pda_factor, pda_psy_factor, pda_display_brightness, 0.0f);
     }
 
 } binder_pda_params;
+
+static class cl_device_params : public R_constant_setup
+{
+    u32 marker;
+    Fvector4 result;
+
+    virtual void setup(R_constant* C)
+    {
+        float device_global_psy_factor = g_pGamePersistent->devices_shader_data.device_global_psy_influence;
+        float device_psy_zone_factor = g_pGamePersistent->devices_shader_data.device_psy_zone_influence;
+        float device_rad_zone_factor = g_pGamePersistent->devices_shader_data.device_radiation_zone_influence;
+        RCache.set_c(C, device_global_psy_factor, device_psy_zone_factor, device_rad_zone_factor, 0.0f);
+    }
+
+} binder_device_params;
 
 // Laser
 extern Fvector4 ps_wpn_laser;
@@ -627,6 +642,8 @@ void CBlender_Compile::SetMapping()
 
     // PDA display
     r_Constant("pda_params", &binder_pda_params);
+    // Nightvision
+    r_Constant("device_influence", &binder_device_params);
 
     // Laser
     r_Constant("wpn_laser", &binder_wpn_laser);

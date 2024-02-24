@@ -94,6 +94,7 @@ const float respawn_auto = 7.f;
 #include "../xrPhysics/ElevatorState.h"
 #include "CustomDetector.h"
 #include "Flashlight.h"
+#include "ui/UIHudStatesWnd.h"
 
 static float IReceived = 0;
 static float ICoincidenced = 0;
@@ -225,6 +226,8 @@ CActor::CActor() : CEntityAlive(), current_ik_cam_shift(0)
     m_bNVGSwitched = false;
     m_iNVGAnimLength = 0;
     m_iActionTiming = 0;
+
+    m_fDevicesPsyFactor = 0.0f;
 }
 
 CActor::~CActor()
@@ -1088,6 +1091,17 @@ void CActor::UpdateCL()
 
     m_bPickupMode = false;
     m_bInfoDraw = false;
+
+    CUIHudStatesWnd* wnd = CurrentGameUI()->UIMainIngameWnd->get_hud_states();
+
+	g_pGamePersistent->devices_shader_data.device_global_psy_influence = m_fDevicesPsyFactor;
+	g_pGamePersistent->devices_shader_data.device_psy_zone_influence = wnd->get_zone_cur_power(ALife::eHitTypeTelepatic) * 10;
+	g_pGamePersistent->devices_shader_data.device_radiation_zone_influence = wnd->get_zone_cur_power(ALife::eHitTypeRadiation) * 60;
+
+	luabind::functor<bool> funct;
+
+	if (GEnv.ScriptEngine->functor("new_utils.devices_check_surge", funct))
+        funct();
 }
 
 float NET_Jump = 0;

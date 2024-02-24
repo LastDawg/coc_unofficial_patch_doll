@@ -1,5 +1,21 @@
 -- ЧИТАЕТСЯ ИЗ ДВИЖКА
 
+function devices_check_surge()
+	if surge_manager.is_started() then
+
+		local m = surge_manager.get_surge_manager()
+
+		if m.blowout_sound then
+			game.set_devices_psy_factor(game.get_devices_psy_factor() + 0.00075)
+		end
+
+		return true
+	else
+		game.set_devices_psy_factor(game.get_devices_psy_factor() - 0.0025)
+		return false
+	end
+end
+
 function remember_volume_status()
 	_G.mus_vol = get_console():get_float("snd_volume_music")
 	_G.amb_vol = get_console():get_float("snd_volume_eff")
@@ -82,6 +98,42 @@ function generate_phantoms()
 			end
 		end
 	end
+end
+
+function act_h_s(sect, needed) -- actor_have_section -- Имеет ли актор опред. кол-во секций
+	if not needed then
+		needed = 1
+	end
+	local count = 0
+	local function itr(actor, item) 
+		if item:section() == sect then 
+			count = count + 1 
+		end 
+	end
+	db.actor:iterate_inventory(itr, db.actor)
+	return count >= needed 
+end
+
+function act_d_h_s(sect, needed) -- actor_have_section -- Не имеет ли актор опред. кол-во секций
+	if not needed then
+		needed = 1
+	end
+	local count = 0
+	local function itr(actor, item) 
+		if item:section() == sect then 
+			count = count + 1 
+		end 
+	end
+	db.actor:iterate_inventory(itr, db.actor)
+	return count < needed 
+end
+
+function act_h_m(count) -- actor_have_money  -- Имеет ли актор опред. кол-во денег
+	return db.actor:money() >= count
+end
+
+function give_task(name)
+	task_manager.get_task_manager():give_task(name)
 end
 
 function on_game_start()

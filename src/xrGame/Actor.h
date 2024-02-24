@@ -197,6 +197,8 @@ public:
     float HitArtefactsOnBelt(float hit_power, ALife::EHitType hit_type);
     float GetProtection_ArtefactsOnBelt(ALife::EHitType hit_type);
     void UpdateNVGUseAnim();
+    float GetCamHeightFactor() { return m_fCamHeightFactor; }
+    void SetCamHeightFactor(float height) { m_fCamHeightFactor = height; }
 
 protected:
     //звук тяжелого дыхания
@@ -797,6 +799,9 @@ public:
     void unblock_action(EGameActions cmd);
     // Real Wolf. End. 14.10.2014
 
+	float GetDevicesPsyFactor() { return m_fDevicesPsyFactor; }
+    void SetDevicesPsyFactor(float psy_factor) { m_fDevicesPsyFactor = psy_factor; }
+
 protected:
     bool m_bNightVisionOn;
     bool m_bNightVisionAllow;
@@ -804,6 +809,7 @@ protected:
     bool m_bNVGSwitched;
     int m_iNVGAnimLength;
     int m_iActionTiming;
+    float m_fDevicesPsyFactor;
 
     ref_sound m_action_anim_sound;
 

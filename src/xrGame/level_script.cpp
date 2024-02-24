@@ -724,6 +724,28 @@ bool actor_allow_ladder()
 	return g_actor_allow_ladder;
 }
 
+float get_devices_psy_factor()
+{
+	if (Actor())
+		return Actor()->GetDevicesPsyFactor();
+
+	Msg("![get_devices_psy_factor]: Actor not found!");
+	return 0;
+}
+
+void set_devices_psy_factor(float psy_factor)
+{
+	clamp(psy_factor, 0.0f, 1.0f);
+
+	if (Actor())
+	{
+		Actor()->SetDevicesPsyFactor(psy_factor);
+		return;
+	}
+
+	Msg("![set_devices_psy_factor]: Actor not found!");
+}
+
 u8 get_active_cam()
 {
     CActor* actor = smart_cast<CActor*>(Level().CurrentViewEntity());
@@ -1061,8 +1083,9 @@ IC static void CLevel_Export(lua_State* luaState)
 	    def("set_actor_allow_ladder", set_actor_allow_ladder),
 	    def("actor_ladder_allowed", actor_allow_ladder),
         def("reload_language", &reload_language),
-        def("log_stack_trace", &xrDebug::LogStackTrace)
-
+        def("log_stack_trace", &xrDebug::LogStackTrace),
+		def("get_devices_psy_factor", &get_devices_psy_factor),
+		def("set_devices_psy_factor", &set_devices_psy_factor)
     ];
 };
 // clang-format on

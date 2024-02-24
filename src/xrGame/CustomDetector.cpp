@@ -309,11 +309,11 @@ void CCustomDetector::UpdateCL()
     {
         if (GetCondition() >= 0.01)
         {
-            g_pGamePersistent->pda_shader_data.pda_display_factor = 1.f;
+            g_pGamePersistent->devices_shader_data.pda_display_factor = 1.f;
         }
         else
         {
-            g_pGamePersistent->pda_shader_data.pda_display_factor = 0.f;
+            g_pGamePersistent->devices_shader_data.pda_display_factor = 0.f;
             ResetUI();
         }
     }

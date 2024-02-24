@@ -165,12 +165,15 @@ public:
     virtual void SetLoadStageTitle(pcstr /*ls_title*/) {}
     virtual bool CanBePaused() { return true; }
 
-	struct pda_data
+	struct devices_data
     {
         float pda_display_factor;
         float pda_psy_influence;
         float pda_displaybrightness;
-    } pda_shader_data;
+        float device_global_psy_influence;
+        float device_psy_zone_influence;
+        float device_radiation_zone_influence;
+    } devices_shader_data;
 
 	struct laser_data
     {

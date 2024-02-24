@@ -3,7 +3,6 @@ coc_ranking_list = {}
 local actor_rank_place
 dialog_closed = false
 
-
 ----------------------------------------------------------------------------
 -- Engine->lua function calls 
 ----------------------------------------------------------------------------
@@ -145,6 +144,7 @@ end
 -- Engine->lua function calls 
 ----------------------------------------------------------------------------
 local primary_objects_tbl = nil
+
 function fill_primary_objects()
 	if not primary_objects_tbl then
 		primary_objects_tbl = {}
@@ -159,9 +159,11 @@ function fill_primary_objects()
 	
 	for k,v in pairs(primary_objects_tbl) do
 		local obj_id = get_story_object_id(v.target)
-		if (obj_id and level.map_has_object_spot(obj_id,"primary_object") == 0) then
-			level.map_add_object_spot_ser(obj_id, "primary_object", v.hint)
+                --/ SGM in
+		if (obj_id and level.map_has_object_spot(obj_id,"primary_object") == 0 and has_alife_info(v.target)) then
+		   level.map_add_object_spot(obj_id, "primary_object", v.hint)		
 		end
+                --/ SGM out
 	end
 end
 
@@ -169,6 +171,28 @@ function add_quick_slot_items_on_game_start()
 	local ini = system_ini()
 	for i=0,3 do
 		get_console():execute( strformat("slot_%s %s",i, ini:r_string_ex("actor","quick_item_"..tostring(i+1)) or "") )
+	end
+end
+
+function check_surge() -- from engine
+	local pda = db.actor:item_in_slot(8)
+
+	if not pda then
+		return false
+	end
+
+	if surge_manager.is_started() then
+
+		local m = surge_manager.get_surge_manager()
+
+		if m.blowout_sound then
+			pda:set_psy_factor(pda:psy_factor() + 0.00075)
+		end
+
+		return true
+	else
+		pda:set_psy_factor(pda:psy_factor() - 0.0025)
+		return false
 	end
 end
 
@@ -182,6 +206,7 @@ end
 
 function on_game_start()
 	RegisterScriptCallback("npc_on_net_spawn",npc_on_net_spawn)
+	RegisterScriptCallback("actor_on_update",check_and_found_pda_areas)	
 end
 
 ----------------------------------------------------------------------------
@@ -320,6 +345,7 @@ function coc_rankings_set_description(index)
 end
 
 -- called from engine! must return string!
+
 function coc_rankings_set_icon(index)
 	local se_obj = coc_ranking_list[index] ~= nil and alife_object(coc_ranking_list[index])
 	if (se_obj) then
@@ -349,6 +375,7 @@ function coc_rankings_set_icon(index)
 end
 
 -- map spots
+
 function add_location(sid, location, hint)
 	local obj_id = story_objects.object_id_by_story_id[story_id]
 	if (obj_id) then
@@ -375,9 +402,64 @@ function is_map_spot_present(sid, location)
 	return false
 end
 
-function pda_use() -- from engine
+-- from engine
+
+function pda_use()
 	return true
 end
 
-function on_low_battery() -- from engine
+function on_low_battery()
+end
+
+-- script
+
+function check_and_found_pda_areas()
+	if not primary_objects_tbl then
+		primary_objects_tbl = {}
+		local ini = ini_file("plugins\\pda_map_spots.ltx")
+		local line_count = ini:line_count("pda_map_spots") or 0
+		for k = 0, line_count - 1 do
+			local junk1, section, value = ini:r_line("pda_map_spots", k, "", "")
+			local object_tbl = { target = section, hint = value}
+			table.insert(primary_objects_tbl, object_tbl)
+		end
+	end
+
+	for k,v in pairs(primary_objects_tbl) do
+		if db.actor:dont_has_info(v.target) then
+			local obj_id = get_story_object_id(v.target)
+			if obj_id and db.storage[obj_id] and db.storage[obj_id].object then
+				local level_dist = {
+					k00_marsh			= 30,
+					k01_darkscape       = 45,
+					k02_trucks_cemetery	= 30,
+					l01_escape			= 20,
+					l02_garbage			= 25,
+					l03_agroprom		= 25,
+					l04_darkvalley		= 30,
+					l05_bar				= 20,
+					l07_military		= 25,
+					l08_yantar			= 25,
+					l09_deadcity		= 30,
+					l10_limansk			= 15,
+					l10_radar			= 30,
+					l10_red_forest		= 30,
+					l11_hospital		= 30,
+					l11_pripyat			= 30,
+					l12_stancia			= 30,
+					l13_generators      = 15,
+					pripyat				= 30,
+					zaton				= 30,				
+					jupiter				= 30
+				}
+				if db.storage[obj_id].object:position():distance_to(db.actor:position()) <= (level_dist[level.name()] or 100) then
+					give_info(v.target)
+					dxr_statistics.increment_rank(25)
+					SetHudMsg(game.translate_string(v.hint),5)
+					xr_sound.set_sound_play(db.actor:id(), "new_area_opened_tip")
+					fill_primary_objects()			
+				end	
+			end
+		end
+	end
 end

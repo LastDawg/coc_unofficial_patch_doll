@@ -334,6 +334,11 @@ float rand(float n)
     return frac(cos(n)*343.42);
 }
 
+float generic_noise(float2 tc)
+{
+    return frac(sin(dot(tc, float2(12.0, 78.0) + (timers.x) )) * 43758.0)*0.25f; 
+}
+
 //////////////////////////////////////////////////////////////////////////
 //	Aplha to coverage code
 #if ( defined( MSAA_ALPHATEST_DX10_1_ATOC ) || defined( MSAA_ALPHATEST_DX10_1 ) )
