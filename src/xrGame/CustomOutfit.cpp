@@ -29,6 +29,7 @@ CCustomOutfit::CCustomOutfit()
     m_BonesProtectionSect = NULL;
     m_b_HasGlass = false;
     m_NightVisionType = 0;
+    m_bHasLSS = false;
 }
 
 CCustomOutfit::~CCustomOutfit() 
@@ -126,6 +127,7 @@ void CCustomOutfit::Load(LPCSTR section)
 
 	m_b_HasGlass = !!READ_IF_EXISTS(pSettings, r_bool, section, "has_glass", FALSE);
     m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, section, "night_vision_type", 0);
+    m_bHasLSS = READ_IF_EXISTS(pSettings, r_bool, section, "has_ls_system", false);
 }
 
 void CCustomOutfit::ReloadBonesProtection()
