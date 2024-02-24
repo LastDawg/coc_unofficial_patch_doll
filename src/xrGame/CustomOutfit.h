@@ -67,7 +67,9 @@ public:
     bool bIsUnvestAvaliable;
     bool m_b_HasGlass;
     bool m_bHasLSS;
+    shared_str m_sShaderNightVisionSect;
     u32 m_NightVisionType;
+    float m_fNightVisionLumFactor;
 
     virtual u32 ef_equipment_type() const;
     virtual BOOL BonePassBullet(int boneID);

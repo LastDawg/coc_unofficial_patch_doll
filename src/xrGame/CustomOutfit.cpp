@@ -30,6 +30,7 @@ CCustomOutfit::CCustomOutfit()
     m_b_HasGlass = false;
     m_NightVisionType = 0;
     m_bHasLSS = false;
+    m_fNightVisionLumFactor = 0.0f;
 }
 
 CCustomOutfit::~CCustomOutfit() 
@@ -126,8 +127,11 @@ void CCustomOutfit::Load(LPCSTR section)
     m_flags.set(FUsingCondition, READ_IF_EXISTS(pSettings, r_bool, section, "use_condition", true));
 
 	m_b_HasGlass = !!READ_IF_EXISTS(pSettings, r_bool, section, "has_glass", FALSE);
-    m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, section, "night_vision_type", 0);
     m_bHasLSS = READ_IF_EXISTS(pSettings, r_bool, section, "has_ls_system", false);
+
+	m_sShaderNightVisionSect = READ_IF_EXISTS(pSettings, r_string, section, "shader_nightvision_sect", "shader_nightvision_default");
+	m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, m_sShaderNightVisionSect, "shader_nightvision_type", 0);
+	m_fNightVisionLumFactor = READ_IF_EXISTS(pSettings, r_float, m_sShaderNightVisionSect, "shader_nightvision_lum_factor", 0.0f);
 }
 
 void CCustomOutfit::ReloadBonesProtection()
@@ -329,11 +333,22 @@ bool CCustomOutfit::install_upgrade_impl(LPCSTR section, bool test)
         section, "fire_wound_protection", &CInifile::r_float, m_HitTypeProtection[ALife::eHitTypeFireWound], test);
     //	result |= process_if_exists( section, "physic_strike_protection", &CInifile::r_float,
     // m_HitTypeProtection[ALife::eHitTypePhysicStrike], test );
+
     LPCSTR str;
     bool result2 = process_if_exists_set(section, "nightvision_sect", &CInifile::r_string, str, test);
     if (result2 && !test)
     {
         m_NightVisionSect._set(str);
+    }
+    result |= result2;
+
+	result2 = process_if_exists_set(section, "shader_nightvision_sect", &CInifile::r_string, str, test);
+    if (result2 && !test)
+    {
+        m_sShaderNightVisionSect._set(str);
+        m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, m_sShaderNightVisionSect, "shader_nightvision_type", 0);
+        m_fNightVisionLumFactor =
+            READ_IF_EXISTS(pSettings, r_float, m_sShaderNightVisionSect, "shader_nightvision_lum_factor", 0.0f);
     }
     result |= result2;
 
@@ -362,7 +377,6 @@ bool CCustomOutfit::install_upgrade_impl(LPCSTR section, bool test)
     result |= process_if_exists(section, "thirst_restore_speed", &CInifile::r_float, m_fThirstRestoreSpeed, test);
     result |= process_if_exists(section, "intoxication_restore_speed", &CInifile::r_float, m_fIntoxicationRestoreSpeed, test);
     result |= process_if_exists(section, "sleepeness_restore_speed", &CInifile::r_float, m_fSleepenessRestoreSpeed, test);
-    result |= process_if_exists(section, "night_vision_type", &CInifile::r_u32, m_NightVisionType, test);
 
     result |= process_if_exists(section, "power_loss", &CInifile::r_float, m_fPowerLoss, test);
     clamp(m_fPowerLoss, 0.0f, 1.0f);

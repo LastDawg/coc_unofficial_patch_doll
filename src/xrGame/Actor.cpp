@@ -2427,12 +2427,16 @@ void CActor::SwitchNightVision(bool vision_on, bool use_sounds, bool send_event)
             if (m_bNightVisionOn && !bIsActiveNow)
             {
                 m_night_vision->Start(pHelmet->m_NightVisionSect, this, use_sounds);
+
+				if (ps_r__ShaderNVG)
+                    g_pGamePersistent->devices_shader_data.nightvision_lum_factor = pHelmet->m_fNightVisionLumFactor;
             }
         }
         else
         {
             m_night_vision->OnDisabled(this, use_sounds);
             m_bNightVisionOn = false;
+            g_pGamePersistent->devices_shader_data.nightvision_lum_factor = 0.0f;
         }
     }
     else
@@ -2445,12 +2449,16 @@ void CActor::SwitchNightVision(bool vision_on, bool use_sounds, bool send_event)
                 if (m_bNightVisionOn && !bIsActiveNow)
                 {
                     m_night_vision->Start(pOutfit->m_NightVisionSect, this, use_sounds);
+
+                    if (ps_r__ShaderNVG)
+						g_pGamePersistent->devices_shader_data.nightvision_lum_factor = pOutfit->m_fNightVisionLumFactor;
                 }
             }
             else
             {
                 m_night_vision->OnDisabled(this, use_sounds);
                 m_bNightVisionOn = false;
+                g_pGamePersistent->devices_shader_data.nightvision_lum_factor = 0.0f;
             }
         }
     }
@@ -2463,6 +2471,9 @@ void CActor::SwitchNightVision(bool vision_on, bool use_sounds, bool send_event)
             {
                 m_night_vision->Start(pTorch->m_NightVisionSect, this, use_sounds);
                 m_bTorchNightVision = true;
+
+				if (ps_r__ShaderNVG)
+                    g_pGamePersistent->devices_shader_data.nightvision_lum_factor = pHelmet->m_fNightVisionLumFactor;
             }
         }
         else
@@ -2470,6 +2481,7 @@ void CActor::SwitchNightVision(bool vision_on, bool use_sounds, bool send_event)
             m_night_vision->OnDisabled(this, use_sounds);
             m_bNightVisionOn = false;
             m_bTorchNightVision = false;
+            g_pGamePersistent->devices_shader_data.nightvision_lum_factor = 0.0f;
         }
     }
 

@@ -61,6 +61,7 @@ CTorch::CTorch(void)
 	torch_mode = 1;
 
     m_NightVisionType = 0;
+    m_fNightVisionLumFactor = 0.0f;
 
 	m_iAnimLength = 0;
     m_iActionTiming = 0;
@@ -162,7 +163,9 @@ void CTorch::Load(LPCSTR section)
     else
         m_NightVisionSect = "";
 
-    m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, section, "night_vision_type", 0);
+	m_sShaderNightVisionSect = READ_IF_EXISTS(pSettings, r_string, section, "shader_nightvision_sect", "shader_nightvision_default");
+	m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, m_sShaderNightVisionSect, "shader_nightvision_type", 0);
+	m_fNightVisionLumFactor = READ_IF_EXISTS(pSettings, r_float, m_sShaderNightVisionSect, "shader_nightvision_lum_factor", 0.0f);
 }
 
 void CTorch::Switch()
@@ -674,15 +677,31 @@ bool CTorch::install_upgrade_impl(LPCSTR section, bool test)
     result |= process_if_exists(section, "passive_decay_rate", &CInifile::r_float, m_fPassiveDecayRate, test);
     result |= process_if_exists(section, "power_decay_rate", &CInifile::r_float, m_fDecayRate, test);
     result |= process_if_exists(section, "inv_weight", &CInifile::r_float, m_weight, test);
-    result |= process_if_exists(section, "night_vision_type", &CInifile::r_u32, m_NightVisionType, test);
+
+    bool result2 = process_if_exists_set(section, "nightvision_sect", &CInifile::r_string, str, test);
+    if (result2 && !test)
+    {
+        m_NightVisionSect._set(str);
+    }
+    result |= result2;
+
+	result2 = process_if_exists_set(section, "shader_nightvision_sect", &CInifile::r_string, str, test);
+    if (result2 && !test)
+    {
+        m_sShaderNightVisionSect._set(str);
+        m_NightVisionType = READ_IF_EXISTS(pSettings, r_u32, m_sShaderNightVisionSect, "shader_nightvision_type", 0);
+        m_fNightVisionLumFactor =
+            READ_IF_EXISTS(pSettings, r_float, m_sShaderNightVisionSect, "shader_nightvision_lum_factor", 0.0f);
+    }
+    result |= result2;
 
     bool value = m_bTorchModeEnabled;
-    bool result2 = process_if_exists_set(section, "torch_allowed", &CInifile::r_bool, value, test);
-    if (result2 && !test)
+    bool result3 = process_if_exists_set(section, "torch_allowed", &CInifile::r_bool, value, test);
+    if (result3 && !test)
     {
         m_bTorchModeEnabled = !!value;
     }
-    result |= result2;
+    result |= result3;
 
     return result;
 }

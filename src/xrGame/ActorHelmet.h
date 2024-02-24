@@ -48,7 +48,9 @@ public:
 
     float m_fShowNearestEnemiesDistance;
     bool m_b_HasGlass;
+    shared_str m_sShaderNightVisionSect;
     u32 m_NightVisionType;
+    float m_fNightVisionLumFactor;
 
     void ReloadBonesProtection();
     void AddBonesProtection(LPCSTR bones_section);

@@ -73,7 +73,9 @@ public:
     void ProcessSwitch();
     bool torch_active() const;
     void UpdateUseAnim();
+    shared_str m_sShaderNightVisionSect;
     u32 m_NightVisionType;
+    float m_fNightVisionLumFactor;
 
     virtual bool can_be_attached() const;
 

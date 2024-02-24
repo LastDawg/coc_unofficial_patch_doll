@@ -162,7 +162,7 @@ void CRenderTarget::phase_combine()
 			std::max(envdesc.ambient.z * 2.f, minamb),
 			0
         };
-        ambclr.mul(ps_r2_sun_lumscale_amb);
+        ambclr.mul(ps_r2_sun_lumscale_amb + g_pGamePersistent->devices_shader_data.nightvision_lum_factor);
 
         //.		Fvector4	envclr			= { envdesc.sky_color.x*2+EPS,	envdesc.sky_color.y*2+EPS,
         // envdesc.sky_color.z*2+EPS,	envdesc.weight					};
@@ -408,8 +408,11 @@ void CRenderTarget::phase_combine()
         bool NightVisionEnabled = g_pGamePersistent->GetActorNightvision();
         bool IsActorAlive = g_pGamePersistent->GetActorAliveStatus();
         int NightVisionType = g_pGamePersistent->GetNightvisionType();
+
         if (IsActorAlive && NightVisionEnabled && NightVisionType > 0 && ps_r__ShaderNVG == 1)
             phase_nightvision();
+        else
+            g_pGamePersistent->devices_shader_data.nightvision_lum_factor = 0.0f;
     }
 
 	// Compute blur textures
