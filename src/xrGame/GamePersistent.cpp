@@ -1040,7 +1040,15 @@ bool CGamePersistent::GetActor()
 
 bool CGamePersistent::GetActorNightvision()
 {
-	return	(Actor()->GetNightVisionStatus());
+	CHelmet* pHelmet = smart_cast<CHelmet*>(Actor()->inventory().ItemFromSlot(HELMET_SLOT));
+	CCustomOutfit* pOutfit = smart_cast<CCustomOutfit*>(Actor()->inventory().ItemFromSlot(OUTFIT_SLOT));
+
+	if (pHelmet)
+		return (Actor()->GetNightVisionStatus() && pHelmet->m_NightVisionSect.size());
+	else if (pOutfit)
+		return (Actor()->GetNightVisionStatus() && pOutfit->m_NightVisionSect.size());
+
+	return false;
 }
 
 float CGamePersistent::GetActorMaxHealth()
