@@ -2473,7 +2473,7 @@ void CActor::SwitchNightVision(bool vision_on, bool use_sounds, bool send_event)
                 m_bTorchNightVision = true;
 
 				if (ps_r__ShaderNVG)
-                    g_pGamePersistent->devices_shader_data.nightvision_lum_factor = pHelmet->m_fNightVisionLumFactor;
+                    g_pGamePersistent->devices_shader_data.nightvision_lum_factor = pTorch->m_fNightVisionLumFactor;
             }
         }
         else

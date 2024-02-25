@@ -1042,8 +1042,11 @@ bool CGamePersistent::GetActorNightvision()
 {
 	CHelmet* pHelmet = smart_cast<CHelmet*>(Actor()->inventory().ItemFromSlot(HELMET_SLOT));
 	CCustomOutfit* pOutfit = smart_cast<CCustomOutfit*>(Actor()->inventory().ItemFromSlot(OUTFIT_SLOT));
+    CTorch* pTorch = smart_cast<CTorch*>(Actor()->inventory().ItemFromSlot(TORCH_SLOT));
 
-	if (pHelmet)
+	if (pTorch)
+        return (Actor()->GetNightVisionStatus() && pTorch->m_NightVisionSect.size());
+    else if (pHelmet)
 		return (Actor()->GetNightVisionStatus() && pHelmet->m_NightVisionSect.size());
 	else if (pOutfit)
 		return (Actor()->GetNightVisionStatus() && pOutfit->m_NightVisionSect.size());
