@@ -394,7 +394,6 @@ SCRIPT_EXPORT(CUIActorMenu, (CUIDialogWnd),
 			.def_readonly("m_ui_weapon_icon", &CUIHudStatesWnd::m_ui_weapon_icon)
 			.def_readonly("m_ui_health_bar", &CUIHudStatesWnd::m_ui_health_bar)
 			.def_readonly("m_ui_stamina_bar", &CUIHudStatesWnd::m_ui_stamina_bar)
-            .def_readonly("m_ui_intoxication_bar", &CUIHudStatesWnd::m_ui_intoxication_bar)
             .def_readonly("m_ui_radiation_bar", &CUIHudStatesWnd::m_ui_radiation_bar)
 			.def_readonly("m_radia_damage", &CUIHudStatesWnd::m_radia_damage)
 				

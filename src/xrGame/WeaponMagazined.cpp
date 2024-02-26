@@ -428,6 +428,8 @@ void CWeaponMagazined::UnloadMagazine(bool spawn_ammo)
         bMisfire = false;
     else if (IsMisfire() && !IsGrenadeLauncherAttached())
         bMisfire = false;
+
+    SwitchState(eIdle);
 }
 
 int CWeaponMagazined::CheckAmmoBeforeReload(u8& v_ammoType)

@@ -291,7 +291,7 @@ void CUIMainIngameWnd::Draw()
     CActor* pActorOwner = smart_cast<CActor*>(pInvOwner);
     CPda* pda = pActorOwner->GetPDA();
 
-    if (pInvOwner && pActorOwner && pda && pda->GetCondition() > 0.0)
+    if (g_SingleGameDifficulty != egdMaster && pInvOwner && pActorOwner && pda && pda->GetCondition() > 0.0)
     {
         UIZoneMap->visible = true;
         UIZoneMap->Render();

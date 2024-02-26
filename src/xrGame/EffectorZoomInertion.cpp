@@ -22,24 +22,12 @@ CEffectorZoomInertion::~CEffectorZoomInertion() {}
 void CEffectorZoomInertion::LoadParams(LPCSTR Section, LPCSTR Prefix)
 {
     string256 full_name;
-    m_fCameraMoveEpsilon = READ_IF_EXISTS(pSettings, r_float, Section,
-        strconcat(sizeof(full_name), full_name, Prefix, "camera_move_epsilon"),
-        pSettings->r_float(EFFECTOR_ZOOM_SECTION, "camera_move_epsilon"));
-    m_fDispMin =
-        READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "disp_min"),
-            pSettings->r_float(EFFECTOR_ZOOM_SECTION, "disp_min"));
-    m_fSpeedMin =
-        READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "speed_min"),
-            pSettings->r_float(EFFECTOR_ZOOM_SECTION, "speed_min"));
-    m_fZoomAimingDispK =
-        READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "zoom_aim_disp_k"),
-            pSettings->r_float(EFFECTOR_ZOOM_SECTION, "zoom_aim_disp_k"));
-    m_fZoomAimingSpeedK =
-        READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "zoom_aim_speed_k"),
-            pSettings->r_float(EFFECTOR_ZOOM_SECTION, "zoom_aim_speed_k"));
-    m_dwDeltaTime =
-        READ_IF_EXISTS(pSettings, r_u32, Section, strconcat(sizeof(full_name), full_name, Prefix, "delta_time"),
-            pSettings->r_u32(EFFECTOR_ZOOM_SECTION, "delta_time"));
+    m_fCameraMoveEpsilon = READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "camera_move_epsilon"), pSettings->r_float(EFFECTOR_ZOOM_SECTION, "camera_move_epsilon"));
+    m_fDispMin = READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "disp_min"), pSettings->r_float(EFFECTOR_ZOOM_SECTION, "disp_min"));
+    m_fSpeedMin = READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "speed_min"), pSettings->r_float(EFFECTOR_ZOOM_SECTION, "speed_min"));
+    m_fZoomAimingDispK = READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "zoom_aim_disp_k"), pSettings->r_float(EFFECTOR_ZOOM_SECTION, "zoom_aim_disp_k"));
+    m_fZoomAimingSpeedK = READ_IF_EXISTS(pSettings, r_float, Section, strconcat(sizeof(full_name), full_name, Prefix, "zoom_aim_speed_k"), pSettings->r_float(EFFECTOR_ZOOM_SECTION, "zoom_aim_speed_k"));
+    m_dwDeltaTime = READ_IF_EXISTS(pSettings, r_u32, Section, strconcat(sizeof(full_name), full_name, Prefix, "delta_time"), pSettings->r_u32(EFFECTOR_ZOOM_SECTION, "delta_time"));
 };
 
 void CEffectorZoomInertion::Load()
@@ -79,8 +67,7 @@ void CEffectorZoomInertion::SetParams(float disp)
     if (m_fFloatSpeed < m_fSpeedMin)
         m_fFloatSpeed = m_fSpeedMin;
 
-    //для того, чтоб сразу прошел пересчет направления
-    //движения прицела
+    //  Для того, чтоб сразу прошел пересчет направления движения прицела
     if (!fis_zero(old_disp - m_fDispRadius, EPS))
         m_fEpsilon = 2 * m_fDispRadius;
 }
@@ -100,7 +87,7 @@ BOOL CEffectorZoomInertion::ProcessCam(SCamEffectorInfo& info)
 {
     bool camera_moved = false;
 
-    //определяем двигал ли прицелом актер
+    // Определяем двигал ли прицелом актер
     if (!info.d.similar(m_vOldCameraDir, m_fCameraMoveEpsilon))
         camera_moved = true;
 

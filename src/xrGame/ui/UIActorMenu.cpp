@@ -202,7 +202,7 @@ void CUIActorMenu::Draw()
     CActor* pActor = smart_cast<CActor*>(pInvOwner);
     CPda* pda = pActor->GetPDA();
 
-    if (pInvOwner && pActor && pda && pda->GetCondition() > 0.0) // Скрываем мини-карту, если КПК нет в слоте или если у него нет энергии
+    if (g_SingleGameDifficulty != egdMaster && pInvOwner && pActor && pda && pda->GetCondition() > 0.0) // Скрываем мини-карту, если КПК нет в слоте или если у него нет энергии // Скрываем, если игра на мастере
     {
         CurrentGameUI()->UIMainIngameWnd->DrawZoneMap();
         CurrentGameUI()->UIMainIngameWnd->DrawMainIndicatorsForInventory();

@@ -21,7 +21,7 @@
 #include "../ActorBackpack.h"
 #include "../ActorUnvest.h"
 
-CUIHudStatesWnd::CUIHudStatesWnd() : m_b_force_update(true), m_timer_1sec(0), m_last_health(0.0f), m_radia_self(0.0f), m_radia_hit(0.0f), m_last_intoxication(0.0f)
+CUIHudStatesWnd::CUIHudStatesWnd() : m_b_force_update(true), m_timer_1sec(0), m_last_health(0.0f), m_radia_self(0.0f), m_radia_hit(0.0f)
 {
     for (int i = 0; i < ALife::infl_max_count; ++i)
     {
@@ -93,7 +93,6 @@ void CUIHudStatesWnd::InitFromXml(CUIXml& xml, LPCSTR path)
     m_back = UIHelper::CreateStatic(xml, "back", this);
     m_ui_health_bar = UIHelper::CreateProgressBar(xml, "progress_bar_health", this);
     m_ui_stamina_bar = UIHelper::CreateProgressBar(xml, "progress_bar_stamina", this);
-    m_ui_intoxication_bar = UIHelper::CreateProgressBar(xml, "progress_bar_intoxication", this);
     m_ui_radiation_bar = UIHelper::CreateProgressBar(xml, "progress_bar_radiation", this);
     //	m_back_v          = UIHelper::CreateStatic( xml, "back_v", this );
     //	m_static_armor    = UIHelper::CreateStatic( xml, "static_armor", this );
@@ -229,11 +228,6 @@ void CUIHudStatesWnd::Update()
 
 void CUIHudStatesWnd::UpdateHealth(CActor* actor)
 {
-    //	if ( Device.dwTimeGlobal - m_timer_1sec > 1000 ) // 1 sec
-    //	{
-    //		m_timer_1sec = Device.dwTimeGlobal;
-    //	}
-
     float cur_health = actor->GetfHealth();
     m_ui_health_bar->SetProgressPos(iCeil(cur_health * 100.0f * 35.f) / 35.f);
     if (_abs(cur_health - m_last_health) > m_health_blink)
@@ -247,14 +241,6 @@ void CUIHudStatesWnd::UpdateHealth(CActor* actor)
     if (!actor->conditions().IsCantSprint())
     {
         m_ui_stamina_bar->m_UIProgressItem.ResetColorAnimation();
-    }
-
-    float cur_intoxication = actor->conditions().GetIntoxication();
-    m_ui_intoxication_bar->SetProgressPos(iCeil(cur_intoxication * 100.0f * 35.f) / 35.f);
-    if (_abs(cur_intoxication - m_last_intoxication) < m_health_blink)
-    {
-        m_last_intoxication = cur_intoxication;
-        m_ui_intoxication_bar->m_UIProgressItem.ResetColorAnimation();
     }
 
     float cur_radiation = actor->conditions().GetRadiation();
@@ -317,7 +303,7 @@ void CUIHudStatesWnd::UpdateHealth(CActor* actor)
 void CUIHudStatesWnd::UpdateActiveItemInfo(CActor* actor)
 {
     PIItem item = actor->inventory().ActiveItem();
-    if (item)
+    if (item && g_SingleGameDifficulty != egdMaster) // Убираем иконку патронов с худа на мастере
     {
         if (m_b_force_update)
         {
@@ -378,11 +364,21 @@ void CUIHudStatesWnd::UpdateActiveItemInfo(CActor* actor)
         m_fire_mode->Show(false);
         m_ui_grenade->Show(false);
     }
+
+    // Убираем иконку патронов с худа на мастере
+    if (g_SingleGameDifficulty == egdMaster)
+    {
+        m_back->Show(false);
+    }
+    else
+    {
+        m_back->Show(true);
+    }
 }
 
 void CUIHudStatesWnd::SetAmmoIcon(const shared_str& sect_name)
 {
-    if (!sect_name.size())
+    if (!sect_name.size() || g_SingleGameDifficulty == egdMaster) // Убираем иконку патронов с худа на мастере
     {
         m_ui_weapon_icon->Show(false);
         return;

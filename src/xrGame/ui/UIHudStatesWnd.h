@@ -38,7 +38,6 @@ public:
 
     CUIProgressBar* m_ui_health_bar;
     CUIProgressBar* m_ui_stamina_bar;
-    CUIProgressBar* m_ui_intoxication_bar;
     CUIProgressBar* m_ui_radiation_bar;
 
     CUIStatic* m_radia_damage;
@@ -46,7 +45,6 @@ private:
     float m_last_health;
     float m_health_blink;
     float m_radiation_blink;
-    float m_last_intoxication;
 
     float m_radia_self;
 
