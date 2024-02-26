@@ -5,10 +5,23 @@
 #include "xr_level_controller.h"
 #include "actor.h"
 #include "inventory.h"
+#include "ai_sounds.h"
 #include "XrayGameConstants.h"
 
-CBolt::CBolt(void) { m_thrower_id = u16(-1); }
+CBolt::CBolt(void) 
+{ 
+    m_thrower_id = u16(-1); 
+}
+
 CBolt::~CBolt(void) {}
+
+void CBolt::Load(LPCSTR section)
+{
+    inherited::Load(section);
+    m_sounds.LoadSound(section, "snd_throw_start", "sndThrowStart", false, ESoundTypes(SOUND_TYPE_WEAPON_RECHARGING));
+    m_sounds.LoadSound(section, "snd_throw", "sndThrow", false, ESoundTypes(SOUND_TYPE_WEAPON_RECHARGING));
+}
+
 void CBolt::OnH_A_Chield()
 {
     inherited::OnH_A_Chield();
@@ -19,10 +32,20 @@ void CBolt::OnH_A_Chield()
 
 void CBolt::State(u32 state, u32 old_state)
 {
+    auto actor = smart_cast<CActor*>(this->H_Parent());
+
     switch (GetState())
     {
-    case eThrowEnd: {
-        if (GameConstants::GetLessBolts() && smart_cast<CActor*>(this->H_Parent()) && (Level().CurrentViewEntity() == H_Parent()))
+    case eThrowStart: 
+    {
+        if (!m_sounds.FindSoundItem("sndThrowStart", false) && !actor)
+            return;
+
+        PlaySound("sndThrowStart", actor->Position());
+    } break;
+    case eThrowEnd: 
+    {
+        if (GameConstants::GetLessBolts() && actor && (Level().CurrentViewEntity() == H_Parent()))
         {
             if (m_pPhysicsShell)
                 m_pPhysicsShell->Deactivate();
@@ -35,8 +58,7 @@ void CBolt::State(u32 state, u32 old_state)
                 DestroyObject();
             }
         }
-    }
-    break;
+    } break;
     }
     inherited::State(state, old_state);
 }
@@ -57,11 +79,19 @@ void CBolt::OnAnimationEnd(u32 state)
 void CBolt::Throw()
 {
     CMissile* l_pBolt = smart_cast<CMissile*>(m_fake_missile);
+
     if (!l_pBolt)
         return;
+
     l_pBolt->set_destroy_time(u32(m_dwDestroyTimeMax / phTimefactor));
     inherited::Throw();
     spawn_fake_missile();
+
+	auto actor = smart_cast<CActor*>(this->H_Parent());
+    if (!m_sounds.FindSoundItem("sndThrow", false) && !actor)
+        return;
+
+    PlaySound("sndThrow", actor->Position());
 }
 
 bool CBolt::Useful() const

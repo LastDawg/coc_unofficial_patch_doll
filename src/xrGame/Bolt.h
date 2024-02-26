@@ -10,6 +10,7 @@ public:
     CBolt();
     virtual ~CBolt();
 
+    virtual void Load(LPCSTR section);
     virtual void OnH_A_Chield();
 
     virtual void SetInitiator(u16 id);
