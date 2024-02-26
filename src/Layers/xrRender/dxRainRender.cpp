@@ -45,8 +45,8 @@ dxRainRender::dxRainRender()
         hGeom_Drops.create(D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1, RCache.Vertex.Buffer(), RCache.Index.Buffer());
 
 #if defined(USE_DX10) || defined(USE_DX11)
-        if (RImplementation.o.ssfx_rain)
-            SH_Splash.create("effects\\rain", "shaders\\rain_splash"); // effects\\rain_splash ГДЕ?
+        //if (RImplementation.o.ssfx_rain)
+            //SH_Splash.create("effects\\rain", "shaders\\rain_splash"); 
 #endif
 
         FS.r_close(F);
@@ -76,7 +76,7 @@ void dxRainRender::Render(CEffect_Rain& owner)
         _drop_len = ps_ssfx_rain_1.x;
         _drop_width = ps_ssfx_rain_1.y;
         _drop_speed = ps_ssfx_rain_1.z;
-        _splash_SH = SH_Splash;
+        //_splash_SH = SH_Splash;
     }
 #endif
 
@@ -253,15 +253,16 @@ void dxRainRender::Render(CEffect_Rain& owner)
     {
         float dt = Device.fTimeDelta;
         _IndexStream& _IS = RCache.Index;
-        if (ps_r2_ls_flags_ext.test(R4FLAGEXT_NEW_RAIN))
-        {
-            RCache.set_Shader(_splash_SH);
-            RCache.set_c(s_shader_setup, ps_ssfx_rain_3); // Alpha, Refraction
-        }
-        else
-        {
-            RCache.set_Shader(DM_Drop->shader);
-        }
+        RCache.set_Shader(DM_Drop->shader);
+        //if (ps_r2_ls_flags_ext.test(R4FLAGEXT_NEW_RAIN))
+        //{
+            //RCache.set_Shader(_splash_SH);
+            //RCache.set_c(s_shader_setup, ps_ssfx_rain_3); // Alpha, Refraction
+        //}
+        //else
+        //{
+            //RCache.set_Shader(DM_Drop->shader);
+        //}
 
         Fmatrix mXform, mScale;
         int pcount = 0;

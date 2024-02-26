@@ -396,12 +396,6 @@ void CRender::create()
         }
     }
 
-	// Ascii's Screen Space Shaders - Check if SSS shaders exist
-    string_path fn;
-    o.ssfx_rain = FS.exist(fn, "$game_shaders$", "r3\\effects_rain_splash", ".ps") ? 1 : 0;
-
-    Msg("- SSS RAIN SHADER INSTALLED %i", o.ssfx_rain);
-
     // constants
     RImplementation.Resources->RegisterConstantSetup("parallax", &binder_parallax);
     RImplementation.Resources->RegisterConstantSetup("water_intensity", &binder_water_intensity);
