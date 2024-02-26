@@ -46,7 +46,7 @@ dxRainRender::dxRainRender()
 
 #if defined(USE_DX10) || defined(USE_DX11)
         if (RImplementation.o.ssfx_rain)
-            SH_Splash.create("effects\\rain_splash", "fx\\fx_rain");
+            SH_Splash.create("effects\\rain", "shaders\\rain_splash"); // effects\\rain_splash ГДЕ?
 #endif
 
         FS.r_close(F);

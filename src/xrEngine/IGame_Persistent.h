@@ -81,8 +81,8 @@ public:
     xr_vector<CPS_Instance*> ps_needtoplay;
 
 public:
-    u32 m_last_ray_pick_time;
-    bool m_isInHideout;
+    u32 m_last_ray_pick_time{};
+    bool m_isInHideout{};
     bool IsActorInHideout();
 
     void destroy_particles(const bool& all_particles);
