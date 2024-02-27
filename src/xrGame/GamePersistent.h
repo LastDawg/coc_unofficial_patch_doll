@@ -111,6 +111,7 @@ public:
     bool GetActor();
     bool IsCamFirstEye();
     bool GetActorNightvision();
+    bool GetActorHelmetStatus();
     float GetActorMaxHealth() override;
     float GetActorHealth() override;
     float GetActorMaxPower() override;

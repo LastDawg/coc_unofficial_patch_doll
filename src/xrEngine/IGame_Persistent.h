@@ -139,6 +139,7 @@ public:
     virtual bool IsCamFirstEye()            { return 0; };
     virtual bool GetActorNightvision()      { return 0; };
     virtual int  GetNightvisionType()       { return 0; };
+    virtual bool GetActorHelmetStatus()     { return 0; };
 
     virtual void RegisterModel(IRenderVisual* V)
 #ifndef _EDITOR

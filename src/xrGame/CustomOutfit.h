@@ -80,6 +80,7 @@ public:
     void ApplySkinModel(CActor* pActor, bool bDress, bool bHUDOnly);
     void ReloadBonesProtection();
     void AddBonesProtection(LPCSTR bones_section);
+    bool IsHelmetAvaliable() const { return bIsHelmetAvaliable; }
 
     IC int GetOutfitNV_Type() const { return m_NightVisionType; }
 

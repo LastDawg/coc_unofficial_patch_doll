@@ -38,6 +38,7 @@
 #include "ActorHelmet.h"
 #include "ActorCondition.h"
 #include "XrayGameConstants.h"
+#include "Inventory.h"
 
 #ifndef MASTER_GOLD
 #include "custommonster.h"
@@ -1030,7 +1031,26 @@ bool CGamePersistent::GetActorAliveStatus()
 
 bool CGamePersistent::IsCamFirstEye()
 {
-	return	(Actor()->active_cam() == eacFirstEye);
+	return	(Actor() && Actor()->active_cam() == eacFirstEye);
+}
+
+bool CGamePersistent::GetActorHelmetStatus()
+{
+    if (!Actor())
+        return false;
+
+	CCustomOutfit* outfit = Actor()->GetOutfit();
+	CHelmet* helmet = smart_cast<CHelmet*>(Actor()->inventory().ItemFromSlot(HELMET_SLOT));
+
+	if (outfit || helmet)
+	{
+		if (outfit && !outfit->IsHelmetAvaliable())
+			return true;
+		else if (helmet)
+			return true;
+	}
+
+	return false;
 }
 
 bool CGamePersistent::GetActor()

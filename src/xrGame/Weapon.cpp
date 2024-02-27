@@ -706,9 +706,6 @@ void CWeapon::Load(LPCSTR section)
     // Скорость утечки выносливости во время прицеливания
     fActorPowerLeakAimSpeed = READ_IF_EXISTS(pSettings, r_float, section, "actor_power_leak_aim_speed", 0.f);
 
-    // Доиграть анимацию выстрела? OGSR
-    dont_interrupt_shot_anm = READ_IF_EXISTS(pSettings, r_bool, section, "dont_interrupt_shot_anm", true);
-
     // Скрытие костей из GWR
     if (pSettings->line_exist(section, "silencer_bone"))
         m_sWpn_silencer_bone = pSettings->r_string(section, "silencer_bone");

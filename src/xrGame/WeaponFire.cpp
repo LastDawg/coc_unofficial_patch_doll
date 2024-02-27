@@ -128,8 +128,7 @@ void CWeapon::StopShooting()
     if (m_pFlameParticles && m_pFlameParticles->IsLooped())
         StopFlameParticles();
 
-    if (!dont_interrupt_shot_anm)
-        SwitchState(eIdle);
+    SwitchState(eIdle);
 
     bWorking = false;
 }
