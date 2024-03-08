@@ -129,7 +129,7 @@ void CCustomDetector::OnStateSwitch(u32 S, u32 oldState)
 		if (!IsUsingCondition() || (IsUsingCondition() && GetCondition() > 0.0))
             TurnDetectorInternal(true);
 
-        m_sounds.PlaySound("sndShow", Fvector().set(0, 0, 0), this, true, false);
+        m_sounds.PlaySound(m_bFastAnimMode ? "sndShowFast" : "sndShow", Fvector().set(0, 0, 0), this, true, false);
         PlayHUDMotion(m_bFastAnimMode ? "anm_show_fast" : "anm_show", FALSE /*TRUE*/, this, GetState());
         SetPending(TRUE);
     }
@@ -138,7 +138,7 @@ void CCustomDetector::OnStateSwitch(u32 S, u32 oldState)
     {
         if (oldState != eHiding)
         {
-            m_sounds.PlaySound("sndHide", Fvector().set(0, 0, 0), this, true, false);
+            m_sounds.PlaySound(m_bFastAnimMode ? "sndHideFast" : "sndHide", Fvector().set(0, 0, 0), this, true, false);
             PlayHUDMotion(m_bFastAnimMode ? "anm_hide_fast" : "anm_hide", FALSE/*TRUE*/, this, GetState());
             SetPending(TRUE);
         }
@@ -210,6 +210,8 @@ void CCustomDetector::Load(LPCSTR section)
 
     m_sounds.LoadSound(section, "snd_draw", "sndShow");
     m_sounds.LoadSound(section, "snd_holster", "sndHide");
+    m_sounds.LoadSound(section, "snd_draw_fast", "sndShowFast");
+    m_sounds.LoadSound(section, "snd_holster_fast", "sndHideFast");
 }
 
 void CCustomDetector::shedule_Update(u32 dt)

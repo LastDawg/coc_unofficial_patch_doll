@@ -190,14 +190,14 @@ void CEngineAPI::CreateRendererList()
         }
     };
 
-    //checkRenderer(R1_LIBRARY, RENDERER_R1, 0);
+    checkRenderer(R1_LIBRARY, RENDERER_R1, 0);
     if (m_renderers[R2_LIBRARY]->IsLoaded())
     {
         modes.emplace_back(RENDERER_R2A, 1);
         modes.emplace_back(RENDERER_R2, 2);
     }
-    //checkRenderer(R2_LIBRARY, RENDERER_R2_5, 3);
-    //checkRenderer(R3_LIBRARY, RENDERER_R3, 4);
+    checkRenderer(R2_LIBRARY, RENDERER_R2_5, 3);
+    checkRenderer(R3_LIBRARY, RENDERER_R3, 4);
     checkRenderer(R4_LIBRARY, RENDERER_R4, 5);
 
     modes.emplace_back(xr_token(nullptr, -1));
