@@ -640,7 +640,7 @@ class CSE_ALifeHumanStalker : public CSE_ALifeHumanAbstract, public CSE_PHSkelet
     using inherited2 = CSE_PHSkeleton;
 
 public:
-    shared_str m_start_dialog;
+    DIALOG_ID_VECTOR m_start_dialog;
 
     CSE_ALifeHumanStalker(LPCSTR caSection);
     virtual ~CSE_ALifeHumanStalker();

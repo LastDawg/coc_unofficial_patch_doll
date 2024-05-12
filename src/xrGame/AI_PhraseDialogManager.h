@@ -21,16 +21,17 @@ public:
     virtual void UpdateAvailableDialogs(CPhraseDialogManager* partner);
     virtual void AnswerPhrase(DIALOG_SHARED_PTR& phrase_dialog);
 
-    virtual void SetStartDialog(shared_str phrase_dialog);
-    virtual void SetDefaultStartDialog(shared_str phrase_dialog);
-    virtual shared_str GetStartDialog() { return m_sStartDialog; }
+    virtual void SetStartDialog(const DIALOG_ID_VECTOR& phrase_dialog);
+    virtual void SetStartDialog(const shared_str& phrase_dialog); // for xr_meet logic, add dialog at the beginning of array
+    virtual void SetDefaultStartDialog(const DIALOG_ID_VECTOR& phrase_dialog);
+    virtual const DIALOG_ID_VECTOR& GetStartDialog() { return m_sStartDialog; }
     virtual void RestoreDefaultStartDialog();
 
 protected:
     //диалог, если не NULL, то его персонаж запустит
     //при встрече с актером
-    shared_str m_sStartDialog;
-    shared_str m_sDefaultStartDialog;
+    DIALOG_ID_VECTOR m_sStartDialog;
+    DIALOG_ID_VECTOR m_sDefaultStartDialog;
 
     using DIALOG_SHARED_VECTOR = xr_vector<DIALOG_SHARED_PTR>;
     //список диалогов, на которые нужно ответить

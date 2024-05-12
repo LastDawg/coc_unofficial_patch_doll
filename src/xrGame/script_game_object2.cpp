@@ -330,7 +330,7 @@ void CScriptGameObject::GetStartDialog()
     CAI_PhraseDialogManager* pDialogManager = smart_cast<CAI_PhraseDialogManager*>(&object());
     if (!pDialogManager)
         return;
-    pDialogManager->GetStartDialog();
+    pDialogManager->GetStartDialog(); // TODO: Don't forget, this returns an array of start dialogs!
 }
 void CScriptGameObject::RestoreDefaultStartDialog()
 {
